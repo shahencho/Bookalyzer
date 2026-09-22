@@ -2,10 +2,12 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { BookOpen, Sparkles, Trophy } from "lucide-react";
 import { useLang } from "@/components/layout/LangProvider";
 import { t, UI } from "@/lib/i18n";
 import { BookCover } from "@/components/layout/BookCover";
+import { fetchOrRedirect } from "@/lib/fetchOrRedirect";
 
 const READING_MODES = [
   { id: "short", labelKey: "modeShort", points: 5, badge: "Bronze", badgeClass: "bk-bg-bronze", icon: BookOpen },
@@ -21,14 +23,13 @@ interface BookSummary {
 
 export default function ModeSelectPage({ params }: { params: Promise<{ bookId: string }> }) {
   const { bookId } = use(params);
+  const router = useRouter();
   const { lang } = useLang();
   const [book, setBook] = useState<BookSummary | null>(null);
 
   useEffect(() => {
-    fetch(`/api/books/${bookId}`)
-      .then((r) => r.json())
-      .then(setBook);
-  }, [bookId]);
+    fetchOrRedirect<BookSummary | null>(`/api/books/${bookId}`, router, "/child/login", null).then(setBook);
+  }, [bookId, router]);
 
   return (
     <div className="bk-bg-cream min-h-[560px] px-6 py-10">

@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Search, User, Sparkles, BookOpen } from "lucide-react";
 import { useLang } from "@/components/layout/LangProvider";
 import { t, UI } from "@/lib/i18n";
 import { BookCover } from "@/components/layout/BookCover";
+import { fetchOrRedirect } from "@/lib/fetchOrRedirect";
 
 // Static placeholder list — books not yet on the platform, shown to signal
 // future growth. Not wired to any book/mode/assessment flow.
@@ -26,6 +28,7 @@ interface LibraryBook {
 }
 
 export default function ChildLibraryPage() {
+  const router = useRouter();
   const { lang } = useLang();
   const [books, setBooks] = useState<LibraryBook[]>([]);
   const [q, setQ] = useState("");
@@ -37,11 +40,10 @@ export default function ChildLibraryPage() {
     if (q) params.set("q", q);
     if (genre) params.set("genre", genre);
     setLoading(true);
-    fetch(`/api/books?${params.toString()}`)
-      .then((r) => r.json())
+    fetchOrRedirect(`/api/books?${params.toString()}`, router, "/child/login", [] as LibraryBook[])
       .then(setBooks)
       .finally(() => setLoading(false));
-  }, [q, genre, lang]);
+  }, [q, genre, lang, router]);
 
   const genres = [...new Set(books.map((b) => b.genre))];
 

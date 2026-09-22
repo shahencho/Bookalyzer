@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft, User, Award, Clock } from "lucide-react";
 import { useLang } from "@/components/layout/LangProvider";
 import { t, UI } from "@/lib/i18n";
 import { RewardBar } from "@/components/child/RewardBar";
 import { BadgeTally } from "@/components/child/BadgeTally";
+import { fetchOrRedirect } from "@/lib/fetchOrRedirect";
 
 interface ChildMe {
   name: string;
@@ -24,14 +26,13 @@ interface ChildMe {
 const MODE_LABEL_KEY: Record<string, string> = { SHORT: "modeShort", EXTENDED: "modeExtended", PHYSICAL: "modePhysical" };
 
 export default function ChildProfilePage() {
+  const router = useRouter();
   const { lang } = useLang();
   const [me, setMe] = useState<ChildMe | null>(null);
 
   useEffect(() => {
-    fetch("/api/child/me")
-      .then((r) => r.json())
-      .then(setMe);
-  }, []);
+    fetchOrRedirect<ChildMe | null>("/api/child/me", router, "/child/login", null).then(setMe);
+  }, [router]);
 
   if (!me) return <div className="bk-bg-cream min-h-[560px] px-6 py-10 text-center bk-slate text-sm">...</div>;
 

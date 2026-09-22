@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useLang } from "@/components/layout/LangProvider";
 import { t, UI } from "@/lib/i18n";
 import { BookCover } from "@/components/layout/BookCover";
+import { fetchOrRedirect } from "@/lib/fetchOrRedirect";
 
 interface BookDetail {
   id: number;
@@ -29,10 +30,8 @@ export default function ReadPage({ params }: { params: Promise<{ bookId: string 
   const [starting, setStarting] = useState(false);
 
   useEffect(() => {
-    fetch(`/api/books/${bookId}`)
-      .then((r) => r.json())
-      .then(setBook);
-  }, [bookId]);
+    fetchOrRedirect<BookDetail | null>(`/api/books/${bookId}`, router, "/child/login", null).then(setBook);
+  }, [bookId, router]);
 
   async function handleStart() {
     setStarting(true);

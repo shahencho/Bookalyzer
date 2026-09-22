@@ -2,11 +2,13 @@
 
 import { use, useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft, User, Sparkles, Clock } from "lucide-react";
 import { BloomBreakdownChart } from "@/components/parent/BloomBreakdownChart";
 import { ScoreHistoryChart } from "@/components/parent/ScoreHistoryChart";
 import { useLang } from "@/components/layout/LangProvider";
 import { t, UI } from "@/lib/i18n";
+import { fetchOrRedirect } from "@/lib/fetchOrRedirect";
 
 interface ChildDetail {
   id: number;
@@ -24,14 +26,13 @@ interface ChildDetail {
 
 export default function ChildDetailPage({ params }: { params: Promise<{ childId: string }> }) {
   const { childId } = use(params);
+  const router = useRouter();
   const { lang } = useLang();
   const [child, setChild] = useState<ChildDetail | null>(null);
 
   useEffect(() => {
-    fetch(`/api/parent/children/${childId}`)
-      .then((r) => r.json())
-      .then(setChild);
-  }, [childId]);
+    fetchOrRedirect<ChildDetail | null>(`/api/parent/children/${childId}`, router, "/parent/login", null).then(setChild);
+  }, [childId, router]);
 
   if (!child) return <div className="bk-bg-cream min-h-[560px] px-6 py-10 text-center bk-slate text-sm">Loading...</div>;
 

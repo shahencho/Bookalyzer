@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { User } from "lucide-react";
 import { useLang } from "@/components/layout/LangProvider";
 import { t, UI } from "@/lib/i18n";
+import { fetchOrRedirect } from "@/lib/fetchOrRedirect";
 
 interface ChildSummary {
   id: number;
@@ -17,14 +19,13 @@ interface ChildSummary {
 }
 
 export default function ParentDashboardPage() {
+  const router = useRouter();
   const { lang } = useLang();
   const [children, setChildren] = useState<ChildSummary[]>([]);
 
   useEffect(() => {
-    fetch("/api/parent/children")
-      .then((r) => r.json())
-      .then(setChildren);
-  }, []);
+    fetchOrRedirect("/api/parent/children", router, "/parent/login", [] as ChildSummary[]).then(setChildren);
+  }, [router]);
 
   return (
     <div className="bk-bg-cream min-h-[560px] px-6 py-10">

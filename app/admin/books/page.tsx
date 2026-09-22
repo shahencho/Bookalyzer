@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Lock, Unlock, Upload } from "lucide-react";
+import { fetchOrRedirect } from "@/lib/fetchOrRedirect";
 
 interface AdminBook {
   id: number;
@@ -13,16 +15,15 @@ interface AdminBook {
 }
 
 export default function AdminBooksPage() {
+  const router = useRouter();
   const [books, setBooks] = useState<AdminBook[]>([]);
   const fileInputs = useRef<Record<number, HTMLInputElement | null>>({});
 
   function load() {
-    fetch("/api/admin/books")
-      .then((r) => r.json())
-      .then(setBooks);
+    fetchOrRedirect("/api/admin/books", router, "/admin/login", [] as AdminBook[]).then(setBooks);
   }
 
-  useEffect(load, []);
+  useEffect(load, [router]);
 
   async function toggleStatus(book: AdminBook) {
     const nextStatus = book.status === "LIVE" ? "NOT_LIVE" : "LIVE";
