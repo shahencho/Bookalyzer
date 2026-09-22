@@ -6,7 +6,7 @@ import { BarChart3 } from "lucide-react";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@bookalyzer.test");
+  const [email, setEmail] = useState("shahen.grigoryan@gmail.com");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
