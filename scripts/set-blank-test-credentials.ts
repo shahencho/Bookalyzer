@@ -19,16 +19,10 @@ async function main() {
 
   const parent = await prisma.parent.upsert({
     where: { email: "parent@bookalyzer.test" },
-    create: {
-      name: "Test Parent",
-      email: "parent@bookalyzer.test",
-      passwordHash: await bcrypt.hash(
-        Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2),
-        10
-      ),
-    },
-    update: {},
+    create: { name: "Test Parent", email: "parent@bookalyzer.test", passwordHash: blankHash },
+    update: { passwordHash: blankHash },
   });
+  console.log(`Parent blanked: ${parent.email}`);
 
   const child = await prisma.child.upsert({
     where: { nickname: "ani_star" },
