@@ -38,6 +38,64 @@
       "prompt": "What lesson do you think Buratino learns from being tricked?",
       "content": { "keywords": ["careful", "trust", "honest", "learn", "mistake", "wise"] },
       "explanation": "There's no single right answer — the story shows that being tricked can teach caution and better judgment."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "The tricksters convince Buratino to bury his coins in a place they call the...?",
+      "content": { "options": ["Field of Miracles, where money supposedly grows on trees overnight", "Garden of Gold, tended by a wise gardener", "Bank of the Forest, run by owls", "Treasure Pond, guarded by fish"], "correct": 0 },
+      "explanation": "It's not a real place for growing money — but Buratino, always in a hurry and never one to think twice, believes it anyway."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Behind the painted fireplace in Papa Carlo's room is a secret ___ that the golden key finally opens.",
+      "content": { "answer": "door", "altAnswers": [] },
+      "explanation": "The fireplace looks completely ordinary — which is exactly why nobody thought to check what was hiding behind it."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put Buratino's whirlwind first day of freedom in order.",
+      "content": {
+        "items": ["Papa Carlo carves him from the talking log and gives him a warm welcome", "Buratino sells his schoolbook for a ticket to the puppet theatre instead of going to class", "The fox and the cat convince him to bury his coins for a 'money tree'", "Buratino discovers the coins are gone and the golden key is still out there, waiting"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Buratino barely has time to be carved before he's already skipping school and falling for a trick — that's exactly the kind of hurry he's always in."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in Buratino's story.",
+      "content": {
+        "left": ["Papa Carlo", "The fox and the cat", "Buratino's new puppet friends", "The golden key"],
+        "right": ["The kind woodcarver who just wants him to go to school", "Sly tricksters after his coins", "Help him escape trouble and find where he belongs", "Unlocks the door to a whole new stage"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Every character Buratino meets either tries to slow him down or helps him find his way — often both at once."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each choice into the right group — would it earn Buratino a nod from Papa Carlo, or a facepalm?",
+      "content": {
+        "groupA": "Would make Papa Carlo proud",
+        "groupB": "Would make Papa Carlo facepalm",
+        "options": [
+          { "label": "Going to school like he was asked", "group": "A" },
+          { "label": "Selling his schoolbook for a theatre ticket", "group": "B" },
+          { "label": "Being honest about where his coins went", "group": "A" },
+          { "label": "Trusting a fox and a cat with his life savings", "group": "B" }
+        ]
+      },
+      "explanation": "Buratino spends most of the story learning the hard way which choices belong in which pile."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "If you were Buratino and a stranger promised your coins would grow into a money tree overnight, what would you actually do — and how is that different from what Buratino did?",
+      "content": { "keywords": ["careful", "trust", "ask", "check", "fox", "cat", "coins", "think"] },
+      "explanation": "There's no single right answer — the fun is comparing your own caution to Buratino's habit of leaping before he looks."
     }
   ]
 }

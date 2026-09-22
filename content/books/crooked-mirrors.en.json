@@ -44,6 +44,64 @@
       "prompt": "Why do you think Olya needed to see her own flaws reflected in a mirror world to change?",
       "content": { "keywords": ["honest", "reflect", "mirror", "truth", "change", "learn"] },
       "explanation": "There's no single right answer — seeing a problem reflected back can make it easier to recognize in yourself."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "In the mirror kingdom, backward names are common. What does 'Yalo' spell if you reverse it?",
+      "content": { "options": ["Olya", "Lyoa", "Ayol", "Oyla"], "correct": 0 },
+      "explanation": "Yalo is simply Olya's name written backward — a small clue that hints at the kingdom's whole reversed logic before you even meet her."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "In this kingdom, telling the truth is dangerous, but telling a smooth ___ can win you favor at court.",
+      "content": { "answer": "lie", "altAnswers": ["compliment", "flattery"] },
+      "explanation": "The kingdom rewards exactly the opposite of what Olya's own bad habits back home were built on — which is precisely the point."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put Olya's journey through the mirror kingdom in order.",
+      "content": {
+        "items": ["Olya avoids telling the truth back in her own world", "She steps through an old mirror into the reversed kingdom", "She meets Yalo, her own mirror-twin, and sees the kingdom's unfair rules up close", "Olya finally tells the truth, even though it's frightening, to help others"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Olya's journey mirrors her own growth — she starts by avoiding the truth and ends by choosing it, even when it's hard."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each figure to their part in the mirror kingdom.",
+      "content": {
+        "left": ["Olya", "Yalo", "The boy-king", "The oppressed children"],
+        "right": ["Arrives from the real world, used to dodging the truth", "Olya's mirror-twin, born into this backward world", "Rules by rewarding flattery and punishing honesty", "Need Olya and Yalo's courage to be helped"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Olya and Yalo make an unlikely pair — one still learning the value of honesty, one who's lived her whole life without it being safe."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "In the real, non-mirror world, sort each behavior into the right group.",
+      "content": {
+        "groupA": "Usually considered a good habit",
+        "groupB": "Usually considered a bad habit",
+        "options": [
+          { "label": "Telling the truth, even when it's uncomfortable", "group": "A" },
+          { "label": "Making excuses to avoid getting in trouble", "group": "B" },
+          { "label": "Flattering someone just to win their favor", "group": "B" },
+          { "label": "Standing up for someone being treated unfairly", "group": "A" }
+        ]
+      },
+      "explanation": "Notice that the mirror kingdom rewards exactly the habits from Group B and punishes the ones from Group A — that's the whole joke of a 'crooked' kingdom."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "If YOU stepped through a mirror into a kingdom where lying was rewarded and honesty was risky, do you think you'd act like Olya at the start of the story, or like Olya at the end? Why?",
+      "content": { "keywords": ["honest", "truth", "lie", "brave", "change", "risk"] },
+      "explanation": "There's no single right answer — the story is really asking whether courage to be honest is something you already have, or something you grow into."
     }
   ]
 }

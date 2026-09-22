@@ -55,6 +55,64 @@
       "prompt": "Why do you think friendship matters so much when facing something dangerous?",
       "content": { "keywords": ["friend", "trust", "help", "together", "brave", "support"] },
       "explanation": "There's no single right answer — the story suggests that trust and teamwork make courage possible."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "The boy's two closest friends turn out to be essential for a reason beyond just company. Why?",
+      "content": { "options": ["Each of them brings a different strength to solving the mystery together", "They do all his homework for him", "They're the only ones who believe he's actually a wizard", "They already know exactly what the dark wizard is planning"], "correct": 0 },
+      "explanation": "It's teamwork, not magic alone, that lets the three of them get as far as they do."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The boy learns about his past, and the wizarding world itself, largely by attending a famous school of ___.",
+      "content": { "answer": "magic", "altAnswers": [] },
+      "explanation": "The school is where nearly everything the boy needs to learn — about spells, his past, and the danger ahead — comes together."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the boy's first year at the school in order.",
+      "content": {
+        "items": ["He learns on his eleventh birthday that he's a wizard", "He arrives at the school and makes his first real friends", "He and his friends start noticing something dangerous hidden in the castle", "Facing the danger takes more courage and quick thinking than any lesson taught"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The school teaches him spells — but the real test at the end needs more than what any classroom covers."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each part of the story to the role it plays.",
+      "content": {
+        "left": ["The eleventh birthday", "The school", "The two closest friends", "The hidden danger in the castle"],
+        "right": ["The moment everything changes for the boy", "Where he learns who he really is, not just magic", "Make the real difference when things get hard", "Connects back to the dark wizard from his past"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Every piece of the boy's first year builds toward the same discovery — that his past and his future are connected."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each thing into the right group.",
+      "content": {
+        "groupA": "Something the boy needed magic lessons for",
+        "groupB": "Something the boy needed courage and friendship for, not magic",
+        "options": [
+          { "label": "Learning spells and potions in class", "group": "A" },
+          { "label": "Facing the danger hidden in the castle", "group": "B" },
+          { "label": "Understanding how the school itself works", "group": "A" },
+          { "label": "Trusting his friends when things got frightening", "group": "B" }
+        ]
+      },
+      "explanation": "The school teaches plenty — but the story's real climax needs qualities no class can fully cover."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "If you found out on your birthday that you belonged to a hidden magical world, what's the first thing you'd want to learn — and who would you want with you when you found out?",
+      "content": { "keywords": ["magic", "wizard", "friend", "learn", "discover", "excited"] },
+      "explanation": "There's no single right answer — the story suggests that who you share a discovery with matters as much as the discovery itself."
     }
   ]
 }

@@ -59,6 +59,64 @@
       "prompt": "Do you think the glad game is a healthy way to deal with hard times, or does it ignore real problems? Explain.",
       "content": { "keywords": ["honest", "real", "feelings", "cope", "positive", "ignore", "healthy"] },
       "explanation": "There's no single right answer — the story shows both the comfort and the limits of relentless positivity."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "The glad game has one simple rule. What is it?",
+      "content": { "options": ["Find something to be glad about, no matter the situation", "Never talk about anything sad", "Win by staying quiet the longest", "Only play it when things are already going well"], "correct": 0 },
+      "explanation": "The glad game isn't about pretending bad things don't happen — it's about hunting for a reason to feel glad anyway, even a small one."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Pollyanna first learns the glad game from her ___.",
+      "content": { "answer": "father", "altAnswers": [] },
+      "explanation": "It's a game her father taught her, and one she keeps playing even after he's gone."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the town's changing relationship with the glad game in order.",
+      "content": {
+        "items": ["Pollyanna arrives in town already playing the glad game on her own", "She teaches it to Aunt Polly and others around her, one by one", "An accident leaves Pollyanna badly injured and unable to walk", "The whole town plays the glad game back at her, to lift her spirits"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Pollyanna spends the whole story quietly planting something that the town finally harvests when she needs it most."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each person to how the glad game changes them.",
+      "content": {
+        "left": ["Aunt Polly", "A grumpy neighbor", "Pollyanna", "The whole town"],
+        "right": ["Slowly learns to open her strict heart", "Softens, thanks to Pollyanna's influence", "Keeps playing the game even in her darkest moment", "Returns Pollyanna's kindness when she needs it most"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "The glad game spreads through the whole town like a quiet chain reaction, one person at a time."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each response into the right group.",
+      "content": {
+        "groupA": "A 'glad game' answer Pollyanna might actually give",
+        "groupB": "Not really how the glad game works",
+        "options": [
+          { "label": "Finding one small good thing, even in a hard moment", "group": "A" },
+          { "label": "Pretending nothing bad ever happened at all", "group": "B" },
+          { "label": "Being honestly grateful for something small", "group": "A" },
+          { "label": "Refusing to ever feel sad about anything", "group": "B" }
+        ]
+      },
+      "explanation": "The glad game isn't about ignoring hard feelings — it's about finding something real to hold onto alongside them."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Try the glad game yourself: think of something recently that felt disappointing or hard. What's one small thing you could honestly feel glad about, even in that moment?",
+      "content": { "keywords": ["glad", "grateful", "hard", "positive", "small", "honest"] },
+      "explanation": "There's no single right answer — that's exactly the point of the glad game."
     }
   ]
 }

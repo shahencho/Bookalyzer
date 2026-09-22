@@ -55,6 +55,64 @@
       "prompt": "Why do you think Christopher Robin's friends keep going on adventures together even when things often go wrong?",
       "content": { "keywords": ["friend", "together", "adventure", "help", "silly", "brave"] },
       "explanation": "There's no single right answer — the friends seem to enjoy being together and helping each other more than getting things exactly right."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "When Pooh has 'a rumbly in his tumbly,' what does that usually mean?",
+      "content": { "options": ["He's hungry and thinking about honey", "He's about to go on an expedition", "He's worried about Eeyore", "He's had too much honey already"], "correct": 0 },
+      "explanation": "A 'rumbly in his tumbly' is Pooh's own way of saying he's hungry — which, for Pooh, usually means honey isn't far from his thoughts."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The friends set off on an 'expedition' to find the North Pole without really knowing what a North Pole actually ___.",
+      "content": { "answer": "is", "altAnswers": [] },
+      "explanation": "Not knowing exactly what they're looking for has never stopped the Hundred Acre Wood friends from a good adventure."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put Pooh's honey mishap in order.",
+      "content": {
+        "items": ["Pooh visits Rabbit's house and helps himself to a very large amount of honey", "He tries to leave through Rabbit's narrow front door", "He gets completely stuck, halfway in and halfway out", "His friends have to help pull him free"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "It's a classic Pooh problem: too much honey now means too much trouble later."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each friend to the small adventure they're best known for.",
+      "content": {
+        "left": ["Pooh", "Piglet", "Eeyore", "Rabbit"],
+        "right": ["Gets stuck in a doorway after eating too much honey", "Worries, but joins in anyway", "Loses his tail and everyone helps look for it", "Organizes the group, whether they asked for it or not"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each small adventure in the Hundred Acre Wood fits the friend at the center of it perfectly."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each line into the right group.",
+      "content": {
+        "groupA": "Sounds exactly like something Pooh would say",
+        "groupB": "Doesn't sound like Pooh at all",
+        "options": [
+          { "label": "'It's always a good time for a little something to eat'", "group": "A" },
+          { "label": "'I never worry about anything, especially not honey'", "group": "B" },
+          { "label": "'Think, think, think'", "group": "A" },
+          { "label": "'I'd rather skip breakfast and get right to work'", "group": "B" }
+        ]
+      },
+      "explanation": "Pooh is famously food-focused and slow to worry — the two 'not Pooh' lines are exactly backward from how he really is."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Pooh's adventures are always small and simple, but they still end up feeling like real adventures to him and his friends. What's a small, simple moment in your own life that felt like a little adventure?",
+      "content": { "keywords": ["adventure", "simple", "small", "friend", "fun", "everyday"] },
+      "explanation": "There's no single right answer — the Hundred Acre Wood suggests that adventure doesn't have to be big to feel real."
     }
   ]
 }

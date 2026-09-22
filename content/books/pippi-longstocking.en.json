@@ -55,6 +55,64 @@
       "prompt": "Do you think it would be fun or difficult to live like Pippi, with no grown-ups telling you what to do? Explain.",
       "content": { "keywords": ["free", "fun", "difficult", "responsibility", "alone", "rules"] },
       "explanation": "There's no single right answer — Pippi's freedom looks fun, but it also means handling everything, including danger, entirely on her own."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Pippi has her own particular way of handling grown-up rules she doesn't like. What is it?",
+      "content": { "options": ["She simply does things her own way and lets the rules catch up", "She always asks permission first, just in case", "She avoids grown-ups completely, out of fear", "She follows every rule exactly, to avoid any trouble"], "correct": 0 },
+      "explanation": "Rules don't scare Pippi — she just goes ahead and does things her own way, and somehow it usually works out."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Pippi believes her father, a sea captain, is now the king of a faraway ___.",
+      "content": { "answer": "island", "altAnswers": [] },
+      "explanation": "It's one of Pippi's most delightfully unusual beliefs about her own family."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put a typical Pippi day in order.",
+      "content": {
+        "items": ["Pippi wakes up alone at Villa Villekulla, with only Mr. Nilsson and her horse for company", "Tommy and Annika come over, and an ordinary chore turns into a wild game", "Pippi outsmarts a grown-up — a burglar, a policeman, or anyone else who tries to interfere", "The day ends with Pippi showing a surprising bit of quiet kindness"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Underneath all the wildness, Pippi's days usually follow the same warm shape."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each detail about Pippi to what it tells you about her.",
+      "content": {
+        "left": ["Lifting her horse over her head", "Living with no grown-ups at all", "Refusing to go to school", "Being kind to Tommy and Annika"],
+        "right": ["She's impossibly, almost magically strong", "She answers to no one's rules but her own", "She'd rather learn life her own unusual way", "Her wildness never gets in the way of real friendship"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Every strange thing about Pippi turns out to say something true about who she really is underneath."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each behavior into the right group — would Pippi actually do it?",
+      "content": {
+        "groupA": "Something Pippi would actually do",
+        "groupB": "Something Pippi would never do",
+        "options": [
+          { "label": "Outwit a burglar without even breaking a sweat", "group": "A" },
+          { "label": "Ask a grown-up for permission before having fun", "group": "B" },
+          { "label": "Turn a boring chore into a game", "group": "A" },
+          { "label": "Follow a rule just because everyone else does", "group": "B" }
+        ]
+      },
+      "explanation": "Once you know Pippi, you can usually guess which side of this list she'd land on."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Pippi turns chores into games and rules into suggestions. What's one everyday task YOU do that you think Pippi would turn into something more fun — and how do you think she'd do it?",
+      "content": { "keywords": ["game", "fun", "chore", "rule", "imagine", "play"] },
+      "explanation": "There's no single right answer — the fun is imagining ordinary life through Pippi's completely unordinary eyes."
     }
   ]
 }

@@ -44,6 +44,64 @@
       "prompt": "Do you think Neznaika's confidence is a good thing or a bad thing? Explain.",
       "content": { "keywords": ["confidence", "honest", "careful", "brag", "learn", "mistake"] },
       "explanation": "There's no single right answer — the story shows both the fun and the danger of overconfidence."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Neznaika's biggest habit — the one that gets him into the most trouble — is...?",
+      "content": { "options": ["Claiming he knows things he actually doesn't", "Being too quiet and shy to ask for help", "Working too carefully and slowly", "Never wanting to try anything new"], "correct": 0 },
+      "explanation": "Neznaika's confidence is never in short supply — actual knowledge is the part he keeps running out of."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Neznaika's biggest adventure takes him all the way to the ___, where he sees a strange society built on money and greed.",
+      "content": { "answer": "Moon", "altAnswers": [] },
+      "explanation": "It's a much bigger trip than his earlier homemade hot-air balloon ride — and a much bigger lesson, too."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put Neznaika's adventures in order, from smallest to biggest.",
+      "content": {
+        "items": ["Neznaika boasts about things he doesn't actually know", "His mistakes cause real trouble for the tiny cucumber-sized town", "He takes a wild ride in a homemade hot-air balloon", "He travels all the way to the Moon and sees a society built on greed"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Each adventure is bigger than the last — but the boasting-before-knowing habit that started it all never really changes."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their approach to problems.",
+      "content": {
+        "left": ["Neznaika", "Znaika the inventor", "The town's doctor", "Guslya the musician"],
+        "right": ["Talks big first, thinks later", "Studies carefully before acting", "Handles things with steady patience", "Practices skill instead of boasting about it"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Neznaika's friends all share one trait he's still learning: doing the careful work before claiming the credit."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each of Neznaika's habits into the right group.",
+      "content": {
+        "groupA": "Something Neznaika is actually good at",
+        "groupB": "Something Neznaika only pretends to be good at",
+        "options": [
+          { "label": "Sounding confident and cheerful", "group": "A" },
+          { "label": "Actually knowing how things work before trying them", "group": "B" },
+          { "label": "Getting friends to like and forgive him", "group": "A" },
+          { "label": "Being careful enough to avoid causing trouble", "group": "B" }
+        ]
+      },
+      "explanation": "Neznaika's real talents — charm and cheer — are genuine. It's the knowing-what-he's-doing part he still has to earn."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Neznaika talks big before he actually knows what he's doing. Can you think of a time being extra confident helped you — or a time it got you into trouble, like it does for Neznaika?",
+      "content": { "keywords": ["confidence", "brag", "mistake", "learn", "trouble", "try"] },
+      "explanation": "There's no single right answer — confidence can push you to try new things, but it can also get ahead of what you actually know, just like it does for Neznaika."
     }
   ]
 }

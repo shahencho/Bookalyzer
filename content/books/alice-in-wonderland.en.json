@@ -54,6 +54,64 @@
       "prompt": "Why do you think Alice stays fairly calm even though Wonderland keeps changing the rules around her?",
       "content": { "keywords": ["curious", "brave", "calm", "adapt", "confused", "imagination"] },
       "explanation": "There's no single right answer — Alice's curiosity and adaptability help her keep going even when nothing makes sense."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "In Wonderland, the Cheshire Cat can do something no ordinary cat can. What is it?",
+      "content": { "options": ["Disappear completely, except for his grin", "Read minds", "Turn invisible only at night", "Talk backward"], "correct": 0 },
+      "explanation": "The Cheshire Cat has a habit of vanishing bit by bit, leaving just his wide grin floating in the air — which Alice finds almost as odd as the cat talking at all."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "At the mad tea party, it's always ___ o'clock, and nobody seems bothered by that.",
+      "content": { "answer": "six", "altAnswers": [] },
+      "explanation": "The Hatter's watch is stuck, so the tea party is frozen at teatime forever — perfectly logical, by Wonderland standards."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put Alice's tumble into Wonderland in order.",
+      "content": {
+        "items": ["Alice, bored, notices a White Rabbit talking and checking a pocket watch", "She follows him down a rabbit hole and falls for a very long time", "She eats and drinks strange things that make her grow and shrink", "She ends up before the fierce Queen of Hearts"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Each step gets a little stranger than the last — which is really just Wonderland's way of saying hello."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each Wonderland rule to how backward it really is.",
+      "content": {
+        "left": ["A cat can vanish, leaving only its smile", "A queen can shout to behead someone over nothing", "A watch can be permanently stuck at teatime", "A drink can make you shrink instead of quench your thirst"],
+        "right": ["Smiles don't usually exist without a face attached", "Punishments don't usually fit such tiny 'crimes'", "Time doesn't usually just... stop", "Drinks don't usually change your size"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Wonderland's whole trick is taking something almost-normal and bending just one rule of it until it's completely absurd."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each event into the right group.",
+      "content": {
+        "groupA": "Would happen in the real world",
+        "groupB": "Only makes sense in Wonderland",
+        "options": [
+          { "label": "A rabbit worrying about being late", "group": "A" },
+          { "label": "A cat's grin floating in the air on its own", "group": "B" },
+          { "label": "A girl feeling curious about a strange noise", "group": "A" },
+          { "label": "A cup of tea that never runs out because time is frozen", "group": "B" }
+        ]
+      },
+      "explanation": "Wonderland always starts from something ordinary, then twists it — that's exactly what makes it Wonderland."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "If you fell down your own rabbit hole into a world where one everyday rule stopped making sense — like time, or size, or gravity — which rule would you want it to be, and why?",
+      "content": { "keywords": ["time", "size", "gravity", "rule", "strange", "imagine", "wonder"] },
+      "explanation": "There's no single right answer — the fun of Wonderland is imagining which ordinary rule would be the most interesting to break."
     }
   ]
 }

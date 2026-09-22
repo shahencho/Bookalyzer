@@ -55,6 +55,64 @@
       "prompt": "Even though Emil causes so much trouble, why do you think the people of Lönneberga still care about him?",
       "content": { "keywords": ["kind", "brave", "mischief", "heart", "help", "forgive"] },
       "explanation": "There's no single right answer — Emil's mischief never comes from meanness, and he's shown real bravery and generosity when it counts."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Emil's scrapes are famous for one thing: they're never mean-spirited. What do most of them have in common?",
+      "content": { "options": ["They start with good intentions that go hilariously wrong", "They're carefully planned to cause trouble", "They involve breaking rules just to be rebellious", "They happen because Emil refuses to help around the farm"], "correct": 0 },
+      "explanation": "Emil never sets out to cause chaos — he's usually just trying to help, play, or solve a problem, and it spirals from there."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Emil once gets his head stuck in a soup ___ at the village fair.",
+      "content": { "answer": "tureen", "altAnswers": ["bowl", "pot"] },
+      "explanation": "It's one of Emil's most famous mishaps — and, true to form, not something he meant to happen."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put Emil's most famous scrapes in the order the stories describe them.",
+      "content": {
+        "items": ["Emil gets his head stuck in a soup tureen at the fair", "He accidentally 'sells' his own father at a play-acting auction", "A snowstorm threatens Alfred the farmhand's life", "Emil risks everything to get Alfred through the storm to a doctor"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The silly mishaps come first — but when something actually serious happens, Emil's true character shows up."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each moment to what it reveals about Emil.",
+      "content": {
+        "left": ["Getting his head stuck in a tureen", "'Selling' his father at a pretend auction", "Carving little wooden men in the shed", "Saving Alfred during the snowstorm"],
+        "right": ["Even his mishaps come from playful curiosity", "His mischief is silly, never mean", "He makes the most of even his punishments", "His good heart shows up when it matters most"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Every Emil story pairs comedy with a small piece of who he really is underneath it."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each moment into the right group.",
+      "content": {
+        "groupA": "Definitely earns Emil some shed time",
+        "groupB": "Definitely does NOT earn Emil shed time",
+        "options": [
+          { "label": "Getting his head stuck in a soup tureen", "group": "A" },
+          { "label": "Accidentally 'selling' his father at an auction", "group": "A" },
+          { "label": "Risking his safety to save Alfred in the snowstorm", "group": "B" },
+          { "label": "Sharing what he has with people who have less", "group": "B" }
+        ]
+      },
+      "explanation": "Emil's father locks him up for the loud, silly trouble — never for the moments that show real courage or kindness."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Emil spends his shed time carving little wooden men instead of sulking. What's something YOU do to turn a boring or frustrating moment into something good, like Emil does?",
+      "content": { "keywords": ["carve", "shed", "turn", "positive", "make", "time", "good"] },
+      "explanation": "There's no single right answer — the fun is thinking about your own version of Emil's wooden men."
     }
   ]
 }

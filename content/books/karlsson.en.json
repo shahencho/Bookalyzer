@@ -44,6 +44,64 @@
       "prompt": "Why do you think Kid needed a friend like Karlsson?",
       "content": { "keywords": ["lonely", "friend", "play", "imagination", "fun", "adventure"] },
       "explanation": "There's no single right answer — the story suggests Kid needed both fun and companionship."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Before trying almost anything, Karlsson makes sure to announce one thing first. What is it?",
+      "content": { "options": ["That he is the world's best at whatever he's about to do", "That he needs a moment to prepare", "That he's a little nervous", "That someone else might do it better"], "correct": 0 },
+      "explanation": "Modesty has never once slowed Karlsson down — everything he attempts, he's already decided he's the world's best at."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Karlsson's little house is hidden on the ___, exactly where no grown-up ever thinks to look.",
+      "content": { "answer": "roof", "altAnswers": [] },
+      "explanation": "It's right there in the title — and somehow still the last place any adult checks."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the shape of Kid and Karlsson's friendship in the order it usually happens.",
+      "content": {
+        "items": ["Kid feels overlooked and a little lonely at home", "Karlsson flies in through the window, uninvited and full of confidence", "The two get swept into a scheme that only Kid ever seems to get blamed for", "Karlsson simply flies home to his roof, leaving Kid to explain everything"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "It's a pattern that repeats through the whole book: Karlsson arrives, chaos follows, and he's gone again before anyone can hold him responsible."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each person to how they fit into Karlsson's world.",
+      "content": {
+        "left": ["Kid", "Kid's parents", "The housekeeper hired to watch the children", "Karlsson himself"],
+        "right": ["His loyal partner in mischief", "Adults who never quite catch Karlsson in the act", "Someone Karlsson delights in tormenting", "Utterly convinced he's the best at everything, always"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Everyone around Karlsson plays a different part in his one-man show — whether they realize it or not."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each statement into the right group.",
+      "content": {
+        "groupA": "True about Karlsson",
+        "groupB": "Not true about Karlsson (nice try!)",
+        "options": [
+          { "label": "Flies with a propeller on his back", "group": "A" },
+          { "label": "Modestly avoids talking about himself", "group": "B" },
+          { "label": "Lives in a little house on the roof", "group": "A" },
+          { "label": "Never wants to play and prefers being alone", "group": "B" }
+        ]
+      },
+      "explanation": "Two of these are the exact opposite of who Karlsson is — he never stops talking about himself, and he never stops wanting to play."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "If Karlsson had to pick one moment from this story to 'prove' he's really the world's best — what do you think he'd brag about, and why?",
+      "content": { "keywords": ["fly", "propeller", "roof", "best", "prank", "friend", "fun"] },
+      "explanation": "There's no single right answer — the fun is in picking a moment that fits Karlsson's larger-than-life idea of himself."
     }
   ]
 }

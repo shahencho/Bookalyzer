@@ -54,6 +54,64 @@
       "prompt": "Do you think Mowgli belongs more with the wolves or with humans? Explain your thinking.",
       "content": { "keywords": ["family", "belong", "choice", "jungle", "human", "home"] },
       "explanation": "There's no single right answer — Mowgli is shaped by both worlds, and the story leaves the choice open."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Mowgli earns the jungle's respect through one thing above all. What is it?",
+      "content": { "options": ["Courage, not strength", "Being the fastest runner in the jungle", "Tricking the other animals", "Avoiding Shere Khan entirely"], "correct": 0 },
+      "explanation": "Mowgli is smaller and weaker than most jungle animals — it's his courage, not his muscles, that earns their respect."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Mowgli calls fire the '___ flower' — the one thing every creature in the jungle fears.",
+      "content": { "answer": "red", "altAnswers": [] },
+      "explanation": "It's Mowgli's own nickname for fire, and the key to how he finally outwits Shere Khan."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put Mowgli's path through the jungle in order.",
+      "content": {
+        "items": ["Wolves find and raise Mowgli as one of their own cubs", "Baloo and Bagheera teach him the Law of the Jungle", "Mowgli outwits Shere Khan using fire", "Mowgli must decide whether he belongs with the wolves or with humans"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Each stage builds toward the same question the story leaves open at the end: where does Mowgli really belong?"
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each teacher to the lesson they give Mowgli.",
+      "content": {
+        "left": ["Baloo the bear", "Bagheera the panther", "The wolf pack", "Shere Khan"],
+        "right": ["Teaches him the Law of the Jungle directly", "Protects him quietly, without needing thanks", "Raises him and gives him a family", "Teaches him, without meaning to, what real danger looks like"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Even Mowgli's enemy ends up teaching him something — just not on purpose."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each statement into the right group.",
+      "content": {
+        "groupA": "True about the Law of the Jungle, as Mowgli learns it",
+        "groupB": "Not true about the Law of the Jungle",
+        "options": [
+          { "label": "Courage matters more than raw strength", "group": "A" },
+          { "label": "Every creature in the jungle fears fire", "group": "A" },
+          { "label": "The strongest animal always makes the rules", "group": "B" },
+          { "label": "Humans and jungle animals never have anything to learn from each other", "group": "B" }
+        ]
+      },
+      "explanation": "Two of these sound like they could be jungle rules but are actually the opposite of what Mowgli's story teaches."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Mowgli has to choose between the jungle family that raised him and the human world he was born into. If you were Mowgli, what's one question you'd want answered before making that choice?",
+      "content": { "keywords": ["choose", "family", "belong", "jungle", "human", "question"] },
+      "explanation": "There's no single right answer — the story leaves Mowgli's choice open on purpose, so there's no single right question either."
     }
   ]
 }

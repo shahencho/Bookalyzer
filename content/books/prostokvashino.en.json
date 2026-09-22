@@ -44,6 +44,64 @@
       "prompt": "Why do you think Uncle Fyodor manages so well on his own?",
       "content": { "keywords": ["responsible", "capable", "independent", "calm", "sensible", "care"] },
       "explanation": "There's no single right answer — the story suggests he's simply more responsible and calm than most children his age."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Matroskin the cat has a very particular way of looking at problems. Which of these sounds most like him?",
+      "content": { "options": ["'We could sell something we don't need, to buy something we do'", "'Let's wait for someone else to fix it'", "'I'd rather not think about it at all'", "'Whatever happens, happens'"], "correct": 0 },
+      "explanation": "Matroskin is famously practical and a bit sharp-tongued — always ready with a plan, usually one involving getting something for free."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Uncle Fyodor, Matroskin, and Sharik build their new life together in the village of ___.",
+      "content": { "answer": "Prostokvashino", "altAnswers": [] },
+      "explanation": "It's right there in the title — the quiet countryside village that gives the whole book its name."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the household's countryside life in order.",
+      "content": {
+        "items": ["Uncle Fyodor leaves the city with Matroskin the cat", "Shy Sharik the dog joins their new household", "The trio raises a cow and deals with a mischievous local postman", "Their ramshackle house slowly becomes a real, happy home"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "It's a small, cozy story — the biggest 'adventure' is just steadily turning a rundown house into a home."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in the new household.",
+      "content": {
+        "left": ["Uncle Fyodor", "Matroskin", "Sharik", "Uncle Fyodor's parents"],
+        "right": ["Surprisingly sensible for how young he is", "Practical, a little sharp-tongued, always has a plan", "Shy but loyal, happiest with his new friends", "Worried back in the city, not realizing how well things are going"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Every member of the household — even the ones left behind in the city — plays a distinct part in the story's gentle humor."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each trait into the right group.",
+      "content": {
+        "groupA": "Fits Uncle Fyodor",
+        "groupB": "Fits Matroskin the cat",
+        "options": [
+          { "label": "Acts far more sensibly than most grown-ups", "group": "A" },
+          { "label": "Talks, and always has an opinion about money", "group": "B" },
+          { "label": "Left the city to build a new life in the countryside", "group": "A" },
+          { "label": "Practical almost to the point of being a little stingy", "group": "B" }
+        ]
+      },
+      "explanation": "Uncle Fyodor and Matroskin make an odd pair — a very grown-up boy and a very opinionated cat — which is exactly why they get along."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Uncle Fyodor manages a whole household on his own, better than some grown-ups might expect. What's one thing you think he does that makes it work so well?",
+      "content": { "keywords": ["responsible", "calm", "sensible", "plan", "care", "independent"] },
+      "explanation": "There's no single right answer — the story suggests being calm, responsible, and willing to solve problems together goes a long way, no matter how old you are."
     }
   ]
 }

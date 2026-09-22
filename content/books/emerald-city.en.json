@@ -39,6 +39,64 @@
       "prompt": "Which companion's wish do you relate to most, and why?",
       "content": { "keywords": ["brain", "heart", "courage", "home", "relate", "wish"] },
       "explanation": "There's no single right answer — each wish reflects something most people want at some point."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What accidentally defeats the wicked witch at the very start of the story?",
+      "content": { "options": ["Ellie's house, carried by the cyclone, lands on her", "The Scarecrow scares her away", "The Tin Woodman chops through her spell", "The Lion roars her out of the kingdom"], "correct": 0 },
+      "explanation": "It's about the least heroic-looking defeat possible — a falling house — which is exactly why it takes everyone by surprise, witch included."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Ellie follows the road of yellow bricks toward the ___ City, where a wizard is said to grant wishes.",
+      "content": { "answer": "Emerald", "altAnswers": [] },
+      "explanation": "It's right there in the title — the whole journey is aimed at one glowing green city."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the journey to the Emerald City in order.",
+      "content": {
+        "items": ["A cyclone sweeps Ellie and her dog into a magical land", "Ellie sets off down the road of yellow bricks, joined one by one by the Scarecrow, Tin Woodman, and Lion", "The friends face a second wicked witch and her flying monkeys", "The group finally reaches the Wizard, and learns his power isn't what it seemed"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Each companion joins the road trip before the real danger — the flying monkeys — shows up to test them."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each companion to what they discover by the end.",
+      "content": {
+        "left": ["Scarecrow", "Tin Woodman", "Cowardly Lion", "Ellie"],
+        "right": ["Was clever all along, brain or not", "Had a caring heart the whole time", "Was brave exactly when it counted", "Had the way home inside her the whole time"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "The twist for every single companion is the same shape: what they were searching for outside themselves was already inside them."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each companion by what they believe they're missing.",
+      "content": {
+        "groupA": "Believes they're missing something about their mind or heart",
+        "groupB": "Believes they're missing courage or a way home",
+        "options": [
+          { "label": "Scarecrow, who wants a brain", "group": "A" },
+          { "label": "Tin Woodman, who wants a heart", "group": "A" },
+          { "label": "Cowardly Lion, who wants courage", "group": "B" },
+          { "label": "Ellie, who wants to go home", "group": "B" }
+        ]
+      },
+      "explanation": "The four wishes split neatly into two kinds of 'missing piece' — but the story's answer to all four turns out to be the same."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "If you could ask the Wizard for one thing, like Ellie's companions did, what would it be — and do you think, like them, you might already have it?",
+      "content": { "keywords": ["brain", "heart", "courage", "home", "wish", "already", "inside"] },
+      "explanation": "There's no single right answer — the story's whole point is that the thing you think you're missing might already be closer than you'd guess."
     }
   ]
 }
