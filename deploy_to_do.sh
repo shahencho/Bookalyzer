@@ -14,9 +14,9 @@ if [ ! -s .env ]; then
   exit 1
 fi
 
-set -a
-source .env
-set +a
+# Deliberately NOT sourcing .env into this shell: Next.js and Prisma both
+# load it themselves. Exporting NODE_ENV=production here would make `npm ci`
+# skip devDependencies (tailwindcss/postcss/typescript), breaking the build.
 
 echo "==> Fetching latest code"
 git fetch origin main
