@@ -1,0 +1,59 @@
+{
+  "book_slug": "mowgli",
+  "language": "en",
+  "title": "Mowgli",
+  "author": "Rudyard Kipling",
+  "genre": "Adventure",
+  "short_summary": "A man-cub named Mowgli is found alone in the Indian jungle and raised by a pack of wolves. Baloo the bear and Bagheera the panther become his teachers and friends, showing him the Law of the Jungle. But the tiger Shere Khan, who hates humans, wants Mowgli gone — and the boy must decide whether he truly belongs among the wolves, or with his own kind.",
+  "extended_summary": "A man-cub named Mowgli is found alone in the Indian jungle and raised by a pack of wolves. Baloo the bear and Bagheera the panther become his teachers and friends, showing him the Law of the Jungle. But the tiger Shere Khan, who hates humans, wants Mowgli gone — and the boy must decide whether he truly belongs among the wolves, or with his own kind.\n\nAs Mowgli grows, he learns to speak with the animals and earns their respect through courage rather than strength. When Shere Khan finally corners him, Mowgli outwits the tiger using fire — the one thing every jungle creature fears — and proves himself a leader in his own right. Eventually, drawn by curiosity about the human village nearby, Mowgli must choose between the only family he's known and the world he was born into.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who raises Mowgli after he is found alone in the jungle?",
+      "content": { "options": ["A pack of wolves", "A family of monkeys", "A herd of elephants", "A group of hunters"], "correct": 0 },
+      "explanation": "A wolf pack adopts Mowgli as one of their own cubs."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in Mowgli's life.",
+      "content": {
+        "left": ["Baloo", "Bagheera", "Shere Khan", "Mowgli"],
+        "right": ["Teaches him the Law of the Jungle", "Watches over him as a quiet guide", "Wants him gone from the jungle", "Must choose where he belongs"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Baloo teaches the rules, Bagheera protects quietly, Shere Khan is the threat, and Mowgli faces the central choice."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Every creature in the jungle fears one thing above all: ___.",
+      "content": { "answer": "fire", "altAnswers": [] },
+      "explanation": "Mowgli uses fire, which he calls the 'red flower,' to defeat Shere Khan."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Mowgli's jungle family",
+        "groupB": "Threats to Mowgli",
+        "options": [
+          { "label": "Baloo", "group": "A" },
+          { "label": "Bagheera", "group": "A" },
+          { "label": "The wolf pack", "group": "A" },
+          { "label": "Shere Khan", "group": "B" }
+        ]
+      },
+      "explanation": "Baloo, Bagheera, and the wolf pack raise and protect Mowgli, while Shere Khan is his one real enemy."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Mowgli belongs more with the wolves or with humans? Explain your thinking.",
+      "content": { "keywords": ["family", "belong", "choice", "jungle", "human", "home"] },
+      "explanation": "There's no single right answer — Mowgli is shaped by both worlds, and the story leaves the choice open."
+    }
+  ]
+}

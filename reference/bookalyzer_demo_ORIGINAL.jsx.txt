@@ -1,0 +1,1522 @@
+
+/
+bookalyzer
+bookalyzer
+# Bookalyzer MVP Specification v1.0
+
+## Status
+
+APPROVED
+
+This document defines the scope of the MVP and serves as the baseline for UI design and development.
+
+---
+
+# Vision
+
+Bookalyzer motivates children to read more books by combining structured reading assessments based on Bloom's Taxonomy, gamification, and meaningful insights for parents.
+
+The application **does not replace books**.
+
+Its goal is to encourage children to progress toward reading complete physical books.
+
+---
+
+# MVP Goal
+
+Validate the following hypothesis:
+
+> Children enjoy completing structured reading assessments, while parents gain valuable insights into their children's reading comprehension.
+
+---
+
+# Platform
+
+Desktop Web Application only.
+
+Mobile applications are out of scope.
+
+---
+
+# Supported Book
+
+Only one book will be available:
+
+**The Little Prince**
+
+The software must be designed so additional books can be added later without code changes.
+
+---
+
+# User Roles
+
+## Child
+
+Reads summaries or physical book.
+
+Completes assessments.
+
+Earns rewards.
+
+---
+
+## Parent
+
+Creates child accounts.
+
+Views progress.
+
+Receives assessment reports.
+
+---
+
+## Administrator
+
+Manages books.
+
+Uploads summaries.
+
+Creates and manages assessments.
+
+Publishes books.
+
+---
+
+# Reading Modes
+
+Every book supports three reading modes.
+
+The child may choose any mode.
+
+No restrictions.
+
+## Mode 1
+
+Short Summary
+
+Purpose:
+
+Quick introduction.
+
+Reward:
+
+5 points
+
+Achievement:
+
+Bronze
+
+---
+
+## Mode 2
+
+Extended Summary
+
+Purpose:
+
+Better understanding.
+
+Reward:
+
+5 points
+
+Achievement:
+
+Silver
+
+---
+
+## Mode 3
+
+Physical Book
+
+The application does not contain the complete electronic book.
+
+The child confirms they have read the physical book.
+
+Reward:
+
+5 points (temporary MVP value)
+
+Achievement:
+
+Gold
+
+Highest recognition.
+
+---
+
+# Reading Flow
+
+Book Library
+
+↓
+
+Select Book
+
+↓
+
+Choose Reading Mode
+
+↓
+
+Read Content
+
+↓
+
+Start Assessment
+
+↓
+
+Complete Assessment
+
+↓
+
+Results
+
+↓
+
+XP
+
+↓
+
+Parent Dashboard updated
+
+---
+
+# Reading Assessment
+
+The assessment follows Bloom's Taxonomy.
+
+Question structure is identical across all books.
+
+Only content changes.
+
+Supported question types:
+
+- Multiple Choice
+- Ordering
+- Matching
+- Classification
+- Ranking
+- Crossword
+- Fill Missing Word
+- Open Answer
+
+Questions are presented in random order where applicable.
+
+---
+
+# Question Bank
+
+Two question sources are supported.
+
+## 1. Curated Questions
+
+Created by educational experts.
+
+Uploaded by Administrator.
+
+Frozen after approval.
+
+This is the default assessment.
+
+Example:
+
+The Little Prince assessment created by Zaven's team.
+
+---
+
+## 2. AI Generated Questions
+
+Supported by architecture.
+
+Not enabled in MVP.
+
+May be used in future versions.
+
+AI never replaces approved curated content.
+
+---
+
+# Assessment Attempts
+
+Unlimited.
+
+Children may retry assessments at any time.
+
+---
+
+# Navigation During Assessment
+
+Children may:
+
+- Move Next
+- Move Previous
+
+Answers remain editable until assessment is submitted.
+
+---
+
+# Assessment Progress
+
+Assessment progress is automatically saved.
+
+If the browser closes, the child may continue later.
+
+---
+
+# Results Screen
+
+Display:
+
+- Overall score
+- Correct answers
+- Incorrect answers
+- Correct explanations (where available)
+- XP earned
+- Badge earned
+
+---
+
+# Parent Dashboard
+
+Display:
+
+- Books completed
+- Reading mode selected
+- Overall assessment score
+- Bloom Taxonomy breakdown
+- Reading history
+- Number of attempts
+- XP earned
+
+Generate a summary such as:
+
+"Your child demonstrates strong understanding of the story and excellent memory of key events. More practice is recommended in analyzing character motivations."
+
+This summary may be AI-generated internally but should appear as a natural educational insight.
+
+---
+
+# Scoring
+
+Initial MVP scoring:
+
+Each completed reading mode awards:
+
+5 Points
+
+Reward economy will be redesigned later.
+
+---
+
+# Reading Verification
+
+No attempt is made to verify whether the child actually read the physical book.
+
+The assessment itself serves as the verification mechanism.
+
+A child who demonstrates sufficient understanding receives the corresponding score.
+
+---
+
+# Book Library
+
+The homepage displays a library.
+
+Initially:
+
+- The Little Prince (Available)
+- Pinocchio (Coming Soon)
+- Tom Sawyer (Coming Soon)
+
+This communicates future platform growth.
+
+---
+
+# Child Authentication
+
+Parent creates child profile.
+
+Child logs in using:
+
+- Nickname
+- PIN Code
+
+No email required.
+
+---
+
+# Parent Account
+
+One parent account may manage multiple children.
+
+---
+
+# Languages
+
+Platform architecture supports localization.
+
+MVP content is Armenian only.
+
+Additional languages will be added later.
+
+---
+
+# Admin Workflow
+
+Administrator creates a new book using the following workflow:
+
+Create Book
+
+↓
+
+Upload Cover
+
+↓
+
+Upload Short Summary
+
+↓
+
+Upload Extended Summary
+
+↓
+
+Upload Bloom Assessment
+
+↓
+
+Review
+
+↓
+
+Publish
+
+No approval workflow is required for MVP.
+
+---
+
+# Product Principles
+
+1. Books come first.
+Bookalyzer encourages reading rather than replacing books.
+
+2. Bloom's Taxonomy is the educational foundation.
+Every assessment follows the same methodology.
+
+3. Learning over testing.
+Unlimited attempts and constructive feedback encourage improvement.
+
+4. Parents receive educational insights, not just percentages.
+
+5. Content is the primary asset.
+The platform is designed around books, summaries, and assessments.
+
+6. Start simple.
+Features outside the MVP are deferred to future phases.
+
+---
+
+# Out of Scope
+
+The following are intentionally excluded:
+
+- Mobile applications
+- Teacher Portal
+- Publisher Portal
+- AI Reading Companion
+- AI-generated assessments
+- Payments
+- Marketplace
+- Friend system
+- Chat
+- Leaderboards
+- Advanced reward economy
+- Recommendation engine
+- Performance optimization
+- Analytics dashboard for publishers
+
+---
+
+# Success Criteria
+
+The MVP is considered successful if:
+
+- Children complete reading assessments.
+- Children return to complete additional assessments.
+- Parents understand and value the reports.
+- The platform motivates children to progress from summaries toward reading complete physical books.
+- Administrators can add new books and assessments without software changes.
+
+---
+
+# Phase 2 Candidate Features
+
+- AI-generated assessments
+- AI Reading Companion
+- Teacher Portal
+- Publisher Portal
+- Mobile applications
+- Advanced gamification
+- Personalized recommendations
+- Adaptive difficulty
+- Social features
+- Payment and subscription model
+
+
+
+
+
+
+Recents
+Summarizing conversation stopping point with Zaven
+4 minutes ago
+MVP3 feature requirements review
+12 hours ago
+JSX and MD file creation
+Aug 17
+I added 16 new books that we w...
+Aug 10
+💬 I need you think and share 5 i…
+Aug 3
+Popular books for children ages 5-13
+Aug 3
+Ready to begin
+Aug 3
+Instructions
+Add instructions to tailor Claude’s responses
+
+Memory
+Only you
+View and manage what Claude remembers from your chats.
+
+We’ve migrated to a new memory system. You have 4 days left if you’d like to export this project’s legacy memory.
+
+Context
+1% of project capacity used
+
+added new books into liblrary
+1.1kB
+
+text
+
+
+
+
+Books We Need To Add Into Our Library
+847B
+
+text
+
+
+
+
+bookalyzer_demo.jsx
+45.9kB
+
+jsx
+
+
+
+
+bookalyzer-mvp-addendum-v1.0.md
+5.2kB
+
+md
+
+
+
+Folder
+Only you
+Add a folder on this computer for Claude to work in.
+
+Scheduled
+Set up recurring tasks for this project.
+
+bookalyzer_demo.jsx
+import { useState } from "react";
+import {
+  BookOpen, Star, Award, Sparkles, ChevronRight, ChevronLeft, Check, X,
+  Users, Upload, ArrowRight, ArrowLeft, PlusCircle, Rocket, Trophy,
+  BarChart3, Clock, User, Lock, LogOut
+} from "lucide-react";
+ 
+/* ============================== STYLE TOKENS ============================== */
+const GlobalStyle = () => (
+  <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+ 
+    .bk-root{ font-family:'Inter',sans-serif; color:#24303F; }
+    .bk-display{ font-family:'Fraunces',serif; }
+    .bk-mono{ font-family:'IBM Plex Mono',monospace; letter-spacing:.02em; }
+ 
+    .bk-bg-night{ background:radial-gradient(ellipse at 50% -10%, #2F4066 0%, #1B2436 55%, #10151F 100%); }
+    .bk-bg-cream{ background:#FBF7EF; }
+    .bk-bg-card{ background:#FFFFFF; }
+ 
+    .bk-ink{ color:#24303F; }
+    .bk-slate{ color:#5B6B7C; }
+    .bk-cream-text{ color:#F3ECDD; }
+    .bk-cream-slate{ color:#A9B3C8; }
+ 
+    .bk-gold{ color:#E3A94F; } .bk-bg-gold{ background:#E3A94F; }
+    .bk-rose{ color:#D8697A; } .bk-bg-rose{ background:#D8697A; }
+    .bk-sage{ color:#6B9080; } .bk-bg-sage{ background:#6B9080; }
+    .bk-silver{ color:#9AA5B1; } .bk-bg-silver{ background:#9AA5B1; }
+    .bk-bronze{ color:#B4772F; } .bk-bg-bronze{ background:#B4772F; }
+ 
+    .bk-border{ border-color:#E7DFCC; }
+    .bk-border-night{ border-color:#3A4A6B; }
+ 
+    .bk-btn-primary{ background:#E3A94F; color:#1B2436; }
+    .bk-btn-primary:hover{ background:#D69A3E; }
+    .bk-btn-dark{ background:#1B2436; color:#F3ECDD; }
+    .bk-btn-dark:hover{ background:#252F45; }
+    .bk-btn-outline{ border:1.5px solid #24303F; color:#24303F; background:transparent; }
+    .bk-btn-outline:hover{ background:#24303F; color:#fff; }
+ 
+    .bk-star-dot{ position:absolute; border-radius:9999px; background:#F3E3B8; }
+ 
+    .bk-card{ box-shadow:0 1px 2px rgba(27,36,54,.06), 0 8px 24px rgba(27,36,54,.05); }
+    .bk-tab{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+ 
+    .bk-node{ width:14px; height:14px; border-radius:9999px; }
+    .bk-node-line{ height:1.5px; background:#D9CFB4; flex:1; }
+  `}</style>
+);
+ 
+/* ============================== MOCK DATA ============================== */
+const BOOKS = [
+  { id: "little-prince", title: "The Little Prince", author: "Antoine de Saint-Exupéry", status: "available" },
+  { id: "pinocchio", title: "Pinocchio", author: "Carlo Collodi", status: "coming-soon" },
+  { id: "tom-sawyer", title: "Tom Sawyer", author: "Mark Twain", status: "coming-soon" },
+];
+ 
+const READING_MODES = [
+  { id: "short", label: "Short Summary", purpose: "A quick introduction to the story.", points: 5, badge: "Bronze", badgeClass: "bk-bg-bronze", icon: BookOpen },
+  { id: "extended", label: "Extended Summary", purpose: "A deeper telling, for better understanding.", points: 5, badge: "Silver", badgeClass: "bk-bg-silver", icon: Sparkles },
+  { id: "physical", label: "Physical Book", purpose: "Read the real book, then confirm here.", points: 5, badge: "Gold", badgeClass: "bk-bg-gold", icon: Trophy },
+];
+ 
+const SHORT_SUMMARY = `A pilot crash-lands in the Sahara desert and meets a curious little boy who
+says he has come from a tiny planet far away. The boy, a prince, tells the
+pilot about the single rose he left behind, and about the strange grown-ups
+he visited on his journey — a king with no subjects, a businessman who
+counts stars he cannot own, a lamplighter obeying an order that no longer
+makes sense. On Earth, the prince meets a fox who asks to be tamed, and
+learns that what matters most is often invisible to the eye.`;
+ 
+const EXTENDED_SUMMARY = SHORT_SUMMARY + `\n\nThe fox explains that taming means creating ties — that a tamed rose
+becomes unlike any other rose in the world, simply because time was spent
+on it. The prince realizes his own rose, ordinary as she seemed, is
+irreplaceable because he loved and cared for her. Before returning to his
+planet and his rose, the prince leaves the pilot with a quiet truth: it is
+the time we give to someone that makes them matter, and the eye is blind
+to that — you have to look with the heart.`;
+ 
+const QUESTIONS = [
+  {
+    id: 1, type: "mc", bloom: "Remember",
+    prompt: "Where does the pilot first meet the little prince?",
+    options: ["In the Sahara desert", "In a big city", "On a ship at sea", "In a quiet forest"],
+    correct: 0,
+    explanation: "The pilot's plane has crash-landed in the desert when the little prince appears.",
+  },
+  {
+    id: 2, type: "ordering", bloom: "Understand",
+    prompt: "Put these events in the order they happen in the story.",
+    items: [
+      "The prince leaves his tiny planet and the rose he loves",
+      "He visits several small planets and their odd grown-up residents",
+      "He meets a fox on Earth who teaches him about taming",
+      "He meets the pilot, stranded in the desert",
+    ],
+    correctOrder: [0, 1, 3, 2],
+    explanation: "The prince's journey takes him past the planets, then to Earth, where he meets the pilot before he meets the fox.",
+  },
+  {
+    id: 3, type: "matching", bloom: "Analyze",
+    prompt: "Match each character to what matters most to them.",
+    left: ["The Businessman", "The King", "The Fox", "The Little Prince"],
+    right: ["Owning and counting the stars", "Being obeyed by someone, anyone", "Being tamed, and having a friend", "Caring for his one rose"],
+    correctMap: { 0: 0, 1: 1, 2: 2, 3: 3 },
+    explanation: "Each grown-up is consumed by one narrow idea, while the prince and the fox understand relationships.",
+  },
+  {
+    id: 4, type: "fillblank", bloom: "Remember",
+    prompt: 'The fox tells the prince: "What is essential is invisible to the ___."',
+    answer: "eye", altAnswers: ["eyes"],
+    explanation: 'The full line is "It is only with the heart that one can see rightly."',
+  },
+  {
+    id: 5, type: "classification", bloom: "Analyze",
+    prompt: "Sort each character into the right group.",
+    groupA: "Lost in serious grown-up matters",
+    groupB: "Understands what matters",
+    options: [
+      { label: "The Businessman", group: "A" },
+      { label: "The King", group: "A" },
+      { label: "The Fox", group: "B" },
+      { label: "The Rose", group: "B" },
+    ],
+    explanation: "The businessman and king are absorbed by status and control; the fox and rose understand care and connection.",
+  },
+  {
+    id: 6, type: "open", bloom: "Evaluate",
+    prompt: "Why do you think the fox wanted the little prince to tame him? Explain in your own words.",
+    keywords: ["friend", "relationship", "special", "unique", "bond", "love", "time", "care", "connect"],
+    explanation: "There's no single right answer — the fox wants a bond that makes the prince unique to him, and him to the prince.",
+  },
+];
+ 
+const CHILDREN = [
+  {
+    id: "ani", name: "Ani", age: 8, nickname: "ani_star",
+    booksCompleted: 1, xp: 15, attempts: 2, lastMode: "physical", lastScore: 83,
+    bloom: { Remember: 90, Understand: 75, Analyze: 80, Evaluate: 70 },
+    history: [
+      { date: "Jul 22, 2026", mode: "Short Summary", score: 67 },
+      { date: "Jul 28, 2026", mode: "Physical Book", score: 83 },
+    ],
+    insight: "Ani demonstrates strong recall of key events and characters. More practice is recommended in explaining why characters make the choices they do.",
+  },
+  {
+    id: "levon", name: "Levon", age: 10, nickname: "levon_reads",
+    booksCompleted: 0, xp: 5, attempts: 1, lastMode: "short", lastScore: 50,
+    bloom: { Remember: 60, Understand: 40, Analyze: 45, Evaluate: 30 },
+    history: [{ date: "Jul 30, 2026", mode: "Short Summary", score: 50 }],
+    insight: "Levon is just getting started with The Little Prince. Trying the Extended Summary next could help build a fuller picture of the story before the next assessment.",
+  },
+];
+ 
+/* ============================== HELPERS ============================== */
+function StarField({ count = 40 }) {
+  const stars = Array.from({ length: count }, (_, i) => {
+    const seed = (i * 97) % 100;
+    return {
+      top: `${(i * 37) % 100}%`,
+      left: `${(i * 61 + seed) % 100}%`,
+      size: 1 + (i % 3),
+      opacity: 0.3 + ((i * 13) % 50) / 100,
+    };
+  });
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {stars.map((s, i) => (
+        <div key={i} className="bk-star-dot" style={{ top: s.top, left: s.left, width: s.size, height: s.size, opacity: s.opacity }} />
+      ))}
+    </div>
+  );
+}
+ 
+function BadgeDot({ badge, size = 10 }) {
+  const cls = badge === "Gold" ? "bk-bg-gold" : badge === "Silver" ? "bk-bg-silver" : "bk-bg-bronze";
+  return <span className={`inline-block rounded-full ${cls}`} style={{ width: size, height: size }} />;
+}
+ 
+function ProgressPath({ steps, currentIndex }) {
+  return (
+    <div className="flex items-center w-full max-w-xl mx-auto mb-8">
+      {steps.map((label, i) => (
+        <div key={label} className="flex items-center flex-1 last:flex-none">
+          <div className="flex flex-col items-center gap-1.5">
+            <div
+              className="bk-node flex items-center justify-center"
+              style={{
+                background: i <= currentIndex ? "#1B2436" : "#EDE6D3",
+                border: i === currentIndex ? "2px solid #E3A94F" : "none",
+              }}
+            />
+            <span className="bk-mono text-[10px] bk-slate whitespace-nowrap">{label}</span>
+          </div>
+          {i < steps.length - 1 && <div className="bk-node-line mx-2 mb-4" />}
+        </div>
+      ))}
+    </div>
+  );
+}
+ 
+function TopNav({ role, setRole, onReset }) {
+  const tabs = [
+    { id: "select", label: "Home" },
+    { id: "child", label: "Child" },
+    { id: "parent", label: "Parent" },
+    { id: "admin", label: "Admin" },
+  ];
+  return (
+    <div className="w-full bk-bg-night px-6 py-3 flex items-center justify-between">
+      <div className="flex items-center gap-2 bk-cream-text">
+        <Rocket size={18} className="bk-gold" />
+        <span className="bk-display text-lg tracking-tight">Bookalyzer</span>
+        <span className="bk-mono text-[10px] bk-cream-slate ml-2 hidden sm:inline">MVP DEMO</span>
+      </div>
+      <div className="flex items-center gap-1">
+        {tabs.map((t) => (
+          <button
+            key={t.id}
+            onClick={() => setRole(t.id)}
+            className={`bk-tab px-3 py-1.5 rounded-full transition-colors ${
+              role === t.id ? "bk-bg-gold" : "bk-cream-slate hover:text-white"
+            }`}
+            style={role === t.id ? { color: "#1B2436" } : {}}
+          >
+            {t.label}
+          </button>
+        ))}
+        <button onClick={onReset} className="bk-tab px-3 py-1.5 rounded-full bk-cream-slate hover:text-white flex items-center gap-1">
+          <LogOut size={12} /> Reset
+        </button>
+      </div>
+    </div>
+  );
+}
+ 
+/* ============================== LANDING ============================== */
+function RoleSelect({ setRole }) {
+  const cards = [
+    { id: "child", title: "I'm a Child", desc: "Read a book and take on an assessment adventure.", icon: Rocket },
+    { id: "parent", title: "I'm a Parent", desc: "See how your child is reading and understanding.", icon: Users },
+    { id: "admin", title: "I'm an Admin", desc: "Add books, upload summaries, publish assessments.", icon: BarChart3 },
+  ];
+  return (
+    <div className="relative bk-bg-night min-h-[560px] flex flex-col items-center justify-center px-6 py-16 overflow-hidden">
+      <StarField count={60} />
+      <div className="relative text-center mb-12">
+        <p className="bk-mono text-xs bk-gold mb-3 tracking-widest">A STORY-FIRST READING APP</p>
+        <h1 className="bk-display bk-cream-text text-4xl sm:text-5xl font-semibold mb-3">Bookalyzer</h1>
+        <p className="bk-cream-slate max-w-md mx-auto">
+          Books come first. Bookalyzer motivates children toward the whole story —
+          one assessment, one small planet at a time.
+        </p>
+      </div>
+      <div className="relative grid sm:grid-cols-3 gap-4 max-w-3xl w-full">
+        {cards.map((c) => (
+          <button
+            key={c.id}
+            onClick={() => setRole(c.id)}
+            className="bk-bg-cream rounded-2xl p-6 text-left hover:-translate-y-1 transition-transform bk-card"
+          >
+            <c.icon size={22} className="bk-gold mb-4" />
+            <div className="bk-display text-lg mb-1">{c.title}</div>
+            <div className="bk-slate text-sm">{c.desc}</div>
+            <div className="flex items-center gap-1 text-xs bk-mono mt-4 bk-ink">
+              ENTER <ArrowRight size={12} />
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+ 
+/* ============================== CHILD FLOW ============================== */
+function ChildApp() {
+  const [screen, setScreen] = useState("login");
+  const [nickname, setNickname] = useState("");
+  const [pin, setPin] = useState("");
+  const [selectedMode, setSelectedMode] = useState(null);
+  const [physicalConfirmed, setPhysicalConfirmed] = useState(false);
+  const [qIndex, setQIndex] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+ 
+  const steps = ["Library", "Mode", "Read", "Assess", "Results"];
+  const stepIndex = { login: 0, library: 0, modeSelect: 1, read: 2, assessment: 3, results: 4 }[screen] ?? 0;
+ 
+  const resetJourney = () => {
+    setSelectedMode(null); setPhysicalConfirmed(false); setQIndex(0); setAnswers({}); setSubmitted(false);
+  };
+ 
+  if (screen === "login") {
+    return (
+      <div className="relative bk-bg-night min-h-[560px] flex items-center justify-center px-6 py-16 overflow-hidden">
+        <StarField count={50} />
+        <div className="relative bk-bg-cream rounded-2xl p-8 w-full max-w-sm bk-card">
+          <Rocket className="bk-gold mb-4" size={26} />
+          <h2 className="bk-display text-2xl mb-1">Hey there!</h2>
+          <p className="bk-slate text-sm mb-6">Log in with your nickname and PIN.</p>
+          <label className="bk-mono text-[10px] bk-slate">NICKNAME</label>
+          <input
+            value={nickname} onChange={(e) => setNickname(e.target.value)}
+            placeholder="ani_star" className="w-full border bk-border rounded-lg px-3 py-2 mt-1 mb-4 outline-none"
+          />
+          <label className="bk-mono text-[10px] bk-slate">PIN CODE</label>
+          <input
+            value={pin} onChange={(e) => setPin(e.target.value)} type="password" maxLength={4}
+            placeholder="••••" className="w-full border bk-border rounded-lg px-3 py-2 mt-1 mb-6 outline-none"
+          />
+          <button onClick={() => setScreen("library")} className="w-full bk-btn-primary rounded-lg py-2.5 font-medium">
+            Start reading
+          </button>
+        </div>
+      </div>
+    );
+  }
+ 
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      {screen !== "login" && <ProgressPath steps={steps} currentIndex={stepIndex} />}
+ 
+      {screen === "library" && (
+        <div className="max-w-3xl mx-auto">
+          <h2 className="bk-display text-2xl mb-1">Book Library</h2>
+          <p className="bk-slate text-sm mb-6">Choose a book to begin your journey.</p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {BOOKS.map((b) => (
+              <div key={b.id} className={`rounded-2xl p-5 bk-card ${b.status === "available" ? "bk-bg-night" : "bg-white border bk-border"}`}>
+                <div className={`h-28 rounded-lg mb-4 flex items-center justify-center ${b.status === "available" ? "bk-bg-gold" : "bg-[#EDE6D3]"}`}>
+                  <BookOpen size={26} className={b.status === "available" ? "text-[#1B2436]" : "bk-slate"} />
+                </div>
+                <div className={`bk-display text-lg mb-1 ${b.status === "available" ? "bk-cream-text" : ""}`}>{b.title}</div>
+                <div className={`text-xs mb-4 ${b.status === "available" ? "bk-cream-slate" : "bk-slate"}`}>{b.author}</div>
+                {b.status === "available" ? (
+                  <button onClick={() => setScreen("modeSelect")} className="w-full bk-btn-primary rounded-lg py-2 text-sm font-medium">
+                    Open book
+                  </button>
+                ) : (
+                  <div className="w-full text-center bk-mono text-[10px] bk-slate py-2 border bk-border rounded-lg">COMING SOON</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+ 
+      {screen === "modeSelect" && (
+        <div className="max-w-3xl mx-auto">
+          <h2 className="bk-display text-2xl mb-1">Choose how to read</h2>
+          <p className="bk-slate text-sm mb-6">The Little Prince — pick any mode, no restrictions.</p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {READING_MODES.map((m) => (
+              <button
+                key={m.id}
+                onClick={() => { setSelectedMode(m.id); setScreen("read"); }}
+                className="text-left bg-white rounded-2xl p-5 bk-card hover:-translate-y-1 transition-transform"
+              >
+                <div className={`w-9 h-9 rounded-full flex items-center justify-center mb-4 ${m.badgeClass}`}>
+                  <m.icon size={16} className="text-white" />
+                </div>
+                <div className="bk-display text-lg mb-1">{m.label}</div>
+                <div className="bk-slate text-sm mb-4">{m.purpose}</div>
+                <div className="flex items-center justify-between bk-mono text-[10px] bk-slate">
+                  <span>+{m.points} XP</span>
+                  <span className="flex items-center gap-1"><BadgeDot badge={m.badge} /> {m.badge}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+ 
+      {screen === "read" && (
+        <div className="max-w-xl mx-auto bg-white rounded-2xl p-8 bk-card">
+          <div className="bk-mono text-[10px] bk-gold mb-2">{READING_MODES.find((m) => m.id === selectedMode)?.label.toUpperCase()}</div>
+          <h2 className="bk-display text-2xl mb-4">The Little Prince</h2>
+          {selectedMode === "physical" ? (
+            <div>
+              <p className="bk-slate text-sm mb-6 leading-relaxed">
+                Bookalyzer doesn't contain the full book — grab your physical copy of
+                The Little Prince and read it. When you're done, confirm below.
+              </p>
+              <label className="flex items-center gap-3 mb-6 cursor-pointer">
+                <input type="checkbox" checked={physicalConfirmed} onChange={(e) => setPhysicalConfirmed(e.target.checked)} className="w-4 h-4" />
+                <span className="text-sm">I've read the physical book</span>
+              </label>
+            </div>
+          ) : (
+            <p className="bk-slate text-sm mb-6 leading-relaxed whitespace-pre-line">
+              {selectedMode === "short" ? SHORT_SUMMARY : EXTENDED_SUMMARY}
+            </p>
+          )}
+          <button
+            disabled={selectedMode === "physical" && !physicalConfirmed}
+            onClick={() => setScreen("assessment")}
+            className="bk-btn-dark rounded-lg px-5 py-2.5 text-sm font-medium disabled:opacity-30"
+          >
+            Start assessment
+          </button>
+        </div>
+      )}
+ 
+      {screen === "assessment" && (
+        <AssessmentScreen
+          qIndex={qIndex} setQIndex={setQIndex}
+          answers={answers} setAnswers={setAnswers}
+          onSubmit={() => { setSubmitted(true); setScreen("results"); }}
+        />
+      )}
+ 
+      {screen === "results" && (
+        <ResultsScreen
+          answers={answers} selectedMode={selectedMode}
+          onDone={() => { resetJourney(); setScreen("library"); }}
+        />
+      )}
+    </div>
+  );
+}
+ 
+function AssessmentScreen({ qIndex, setQIndex, answers, setAnswers, onSubmit }) {
+  const q = QUESTIONS[qIndex];
+  const setAnswer = (val) => setAnswers((a) => ({ ...a, [q.id]: val }));
+  const answer = answers[q.id];
+ 
+  return (
+    <div className="max-w-xl mx-auto bg-white rounded-2xl p-8 bk-card">
+      <div className="flex items-center justify-between mb-1">
+        <span className="bk-mono text-[10px] bk-gold">QUESTION {qIndex + 1} / {QUESTIONS.length}</span>
+        <span className="bk-mono text-[10px] bk-slate">BLOOM: {q.bloom.toUpperCase()}</span>
+      </div>
+      <div className="w-full h-1 bg-[#EDE6D3] rounded-full mb-6 overflow-hidden">
+        <div className="h-full bk-bg-gold" style={{ width: `${((qIndex + 1) / QUESTIONS.length) * 100}%` }} />
+      </div>
+ 
+      <h3 className="bk-display text-xl mb-6 leading-snug">{q.prompt}</h3>
+ 
+      {q.type === "mc" && (
+        <div className="flex flex-col gap-2">
+          {q.options.map((opt, i) => (
+            <button
+              key={i} onClick={() => setAnswer(i)}
+              className={`text-left px-4 py-2.5 rounded-lg border text-sm ${answer === i ? "bk-bg-night bk-cream-text border-transparent" : "bk-border hover:bg-[#FBF7EF]"}`}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+      )}
+ 
+      {q.type === "ordering" && (
+        <OrderingInput items={q.items} value={answer || q.items.map((_, i) => i)} onChange={setAnswer} />
+      )}
+ 
+      {q.type === "matching" && (
+        <MatchingInput left={q.left} right={q.right} value={answer || {}} onChange={setAnswer} />
+      )}
+ 
+      {q.type === "fillblank" && (
+        <input
+          value={answer || ""} onChange={(e) => setAnswer(e.target.value)}
+          placeholder="Type your answer" className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm"
+        />
+      )}
+ 
+      {q.type === "classification" && (
+        <ClassificationInput q={q} value={answer || {}} onChange={setAnswer} />
+      )}
+ 
+      {q.type === "open" && (
+        <textarea
+          value={answer || ""} onChange={(e) => setAnswer(e.target.value)}
+          rows={4} placeholder="Write your answer..." className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm"
+        />
+      )}
+ 
+      <div className="flex items-center justify-between mt-8">
+        <button
+          disabled={qIndex === 0} onClick={() => setQIndex((i) => i - 1)}
+          className="flex items-center gap-1 bk-btn-outline rounded-lg px-4 py-2 text-sm disabled:opacity-20"
+        >
+          <ArrowLeft size={14} /> Previous
+        </button>
+        {qIndex < QUESTIONS.length - 1 ? (
+          <button onClick={() => setQIndex((i) => i + 1)} className="flex items-center gap-1 bk-btn-dark rounded-lg px-4 py-2 text-sm">
+            Next <ArrowRight size={14} />
+          </button>
+        ) : (
+          <button onClick={onSubmit} className="flex items-center gap-1 bk-btn-primary rounded-lg px-5 py-2 text-sm font-medium">
+            Submit assessment <Check size={14} />
+          </button>
+        )}
+      </div>
+      <p className="bk-mono text-[9px] bk-slate mt-4">Progress saves automatically — you can close and continue later.</p>
+    </div>
+  );
+}
+ 
+function OrderingInput({ items, value, onChange }) {
+  const move = (idx, dir) => {
+    const next = [...value];
+    const target = idx + dir;
+    if (target < 0 || target >= next.length) return;
+    [next[idx], next[target]] = [next[target], next[idx]];
+    onChange(next);
+  };
+  return (
+    <div className="flex flex-col gap-2">
+      {value.map((itemIdx, pos) => (
+        <div key={itemIdx} className="flex items-center gap-2 border bk-border rounded-lg px-3 py-2 text-sm">
+          <span className="bk-mono text-[10px] bk-slate w-4">{pos + 1}</span>
+          <span className="flex-1">{items[itemIdx]}</span>
+          <button onClick={() => move(pos, -1)} className="bk-slate hover:bk-ink px-1">↑</button>
+          <button onClick={() => move(pos, 1)} className="bk-slate hover:bk-ink px-1">↓</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+ 
+function MatchingInput({ left, right, value, onChange }) {
+  return (
+    <div className="flex flex-col gap-2">
+      {left.map((l, i) => (
+        <div key={i} className="flex items-center gap-3">
+          <span className="text-sm w-40 shrink-0">{l}</span>
+          <select
+            value={value[i] ?? ""}
+            onChange={(e) => onChange({ ...value, [i]: Number(e.target.value) })}
+            className="flex-1 border bk-border rounded-lg px-2 py-1.5 text-sm outline-none"
+          >
+            <option value="" disabled>Choose a match...</option>
+            {right.map((r, j) => (
+              <option key={j} value={j}>{r}</option>
+            ))}
+          </select>
+        </div>
+      ))}
+    </div>
+  );
+}
+ 
+function ClassificationInput({ q, value, onChange }) {
+  return (
+    <div className="flex flex-col gap-2">
+      {q.options.map((opt, i) => (
+        <div key={i} className="flex items-center justify-between border bk-border rounded-lg px-3 py-2">
+          <span className="text-sm">{opt.label}</span>
+          <div className="flex gap-1.5">
+            {["A", "B"].map((g) => (
+              <button
+                key={g} onClick={() => onChange({ ...value, [i]: g })}
+                className={`bk-mono text-[10px] px-2.5 py-1 rounded-full border ${value[i] === g ? "bk-bg-night bk-cream-text border-transparent" : "bk-border"}`}
+              >
+                {g === "A" ? q.groupA : q.groupB}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+ 
+/* ---------- grading ---------- */
+function gradeQuestion(q, answer) {
+  if (answer === undefined) return 0;
+  if (q.type === "mc") return answer === q.correct ? 1 : 0;
+  if (q.type === "fillblank") {
+    const norm = (s) => (s || "").trim().toLowerCase();
+    return norm(answer) === q.answer || (q.altAnswers || []).some((a) => norm(answer) === a) ? 1 : 0;
+  }
+  if (q.type === "ordering") {
+    const correctCount = answer.filter((v, i) => v === q.correctOrder[i]).length;
+    return correctCount / q.correctOrder.length;
+  }
+  if (q.type === "matching") {
+    const total = q.left.length;
+    let correct = 0;
+    for (let i = 0; i < total; i++) if (answer[i] === q.correctMap[i]) correct++;
+    return correct / total;
+  }
+  if (q.type === "classification") {
+    const total = q.options.length;
+    let correct = 0;
+    q.options.forEach((opt, i) => { if (answer[i] === opt.group) correct++; });
+    return correct / total;
+  }
+  if (q.type === "open") {
+    const text = (answer || "").toLowerCase();
+    return q.keywords.some((k) => text.includes(k)) ? 1 : 0;
+  }
+  return 0;
+}
+ 
+function ResultsScreen({ answers, selectedMode, onDone }) {
+  const scores = QUESTIONS.map((q) => gradeQuestion(q, answers[q.id]));
+  const overall = Math.round((scores.reduce((a, b) => a + b, 0) / QUESTIONS.length) * 100);
+  const mode = READING_MODES.find((m) => m.id === selectedMode);
+ 
+  return (
+    <div className="max-w-xl mx-auto">
+      <div className="bk-bg-night rounded-2xl p-8 text-center bk-card mb-6 relative overflow-hidden">
+        <StarField count={25} />
+        <div className="relative">
+          <div className={`w-14 h-14 rounded-full mx-auto flex items-center justify-center mb-4 ${mode.badgeClass}`}>
+            <Trophy size={22} className="text-white" />
+          </div>
+          <div className="bk-mono text-[10px] bk-gold mb-2">{mode.badge.toUpperCase()} BADGE EARNED</div>
+          <h2 className="bk-display bk-cream-text text-3xl mb-1">{overall}%</h2>
+          <p className="bk-cream-slate text-sm">Overall score · +{mode.points} XP earned</p>
+        </div>
+      </div>
+ 
+      <div className="flex flex-col gap-3">
+        {QUESTIONS.map((q, i) => {
+          const s = scores[i];
+          const correct = s === 1;
+          return (
+            <div key={q.id} className="bg-white rounded-xl p-4 bk-card">
+              <div className="flex items-start gap-3">
+                <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${correct ? "bk-bg-sage" : s > 0 ? "bk-bg-gold" : "bg-[#E7B0B7]"}`}>
+                  {correct ? <Check size={13} className="text-white" /> : <X size={13} className="text-white" />}
+                </div>
+                <div className="flex-1">
+                  <div className="text-sm font-medium mb-1">{q.prompt}</div>
+                  <div className="bk-mono text-[10px] bk-slate mb-1">
+                    {s === 1 ? "Correct" : s > 0 ? `Partial credit (${Math.round(s * 100)}%)` : "Not quite"} · {q.bloom}
+                  </div>
+                  <div className="bk-slate text-xs">{q.explanation}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+ 
+      <button onClick={onDone} className="w-full bk-btn-dark rounded-lg py-2.5 text-sm font-medium mt-6">
+        Back to library
+      </button>
+    </div>
+  );
+}
+ 
+/* ============================== PARENT FLOW ============================== */
+function ParentApp() {
+  const [screen, setScreen] = useState("dashboard");
+  const [childId, setChildId] = useState(null);
+  const child = CHILDREN.find((c) => c.id === childId);
+ 
+  if (screen === "detail" && child) {
+    return <ChildDetail child={child} onBack={() => setScreen("dashboard")} />;
+  }
+ 
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="bk-display text-2xl mb-1">Parent Dashboard</h2>
+        <p className="bk-slate text-sm mb-6">One account, all your children's reading in one place.</p>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {CHILDREN.map((c) => (
+            <button
+              key={c.id}
+              onClick={() => { setChildId(c.id); setScreen("detail"); }}
+              className="text-left bg-white rounded-2xl p-5 bk-card hover:-translate-y-1 transition-transform"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bk-bg-night flex items-center justify-center">
+                  <User size={16} className="bk-gold" />
+                </div>
+                <div>
+                  <div className="bk-display text-lg leading-tight">{c.name}</div>
+                  <div className="bk-mono text-[10px] bk-slate">AGE {c.age} · @{c.nickname}</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div>
+                  <div className="bk-display text-lg">{c.booksCompleted}</div>
+                  <div className="bk-mono text-[9px] bk-slate">BOOKS</div>
+                </div>
+                <div>
+                  <div className="bk-display text-lg">{c.lastScore}%</div>
+                  <div className="bk-mono text-[9px] bk-slate">LAST SCORE</div>
+                </div>
+                <div>
+                  <div className="bk-display text-lg bk-gold">{c.xp}</div>
+                  <div className="bk-mono text-[9px] bk-slate">XP</div>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+ 
+function ChildDetail({ child, onBack }) {
+  const bloomEntries = Object.entries(child.bloom);
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      <div className="max-w-3xl mx-auto">
+        <button onClick={onBack} className="flex items-center gap-1 bk-slate text-sm mb-6 hover:bk-ink">
+          <ArrowLeft size={14} /> Back to dashboard
+        </button>
+ 
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-12 h-12 rounded-full bk-bg-night flex items-center justify-center">
+            <User size={20} className="bk-gold" />
+          </div>
+          <div>
+            <h2 className="bk-display text-2xl">{child.name}</h2>
+            <div className="bk-mono text-[10px] bk-slate">AGE {child.age} · @{child.nickname}</div>
+          </div>
+        </div>
+ 
+        <div className="grid sm:grid-cols-4 gap-3 mb-6">
+          {[
+            ["Books completed", child.booksCompleted],
+            ["Attempts", child.attempts],
+            ["Last score", `${child.lastScore}%`],
+            ["XP earned", child.xp],
+          ].map(([label, val]) => (
+            <div key={label} className="bg-white rounded-xl p-4 bk-card text-center">
+              <div className="bk-display text-2xl">{val}</div>
+              <div className="bk-mono text-[9px] bk-slate mt-1">{label.toUpperCase()}</div>
+            </div>
+          ))}
+        </div>
+ 
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <BarChart3 size={16} className="bk-gold" />
+            <div className="bk-display text-lg">Bloom's Taxonomy breakdown</div>
+          </div>
+          <div className="flex flex-col gap-3">
+            {bloomEntries.map(([level, pct]) => (
+              <div key={level}>
+                <div className="flex justify-between text-xs mb-1">
+                  <span>{level}</span>
+                  <span className="bk-mono bk-slate">{pct}%</span>
+                </div>
+                <div className="w-full h-2 bg-[#EDE6D3] rounded-full overflow-hidden">
+                  <div className="h-full bk-bg-gold" style={{ width: `${pct}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+ 
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <div className="flex items-center gap-2 mb-3">
+            <Sparkles size={16} className="bk-gold" />
+            <div className="bk-display text-lg">Insight</div>
+          </div>
+          <p className="bk-slate text-sm leading-relaxed">{child.insight}</p>
+        </div>
+ 
+        <div className="bg-white rounded-2xl p-6 bk-card">
+          <div className="flex items-center gap-2 mb-4">
+            <Clock size={16} className="bk-gold" />
+            <div className="bk-display text-lg">Reading history</div>
+          </div>
+          <div className="flex flex-col divide-y bk-border">
+            {child.history.map((h, i) => (
+              <div key={i} className="flex items-center justify-between py-2.5 text-sm">
+                <span className="bk-slate">{h.date}</span>
+                <span>{h.mode}</span>
+                <span className="bk-mono">{h.score}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+ 
+/* ============================== ADMIN FLOW ============================== */
+const WIZARD_STEPS = ["Create Book", "Upload Cover", "Short Summary", "Extended Summary", "Bloom Assessment", "Review", "Publish"];
+ 
+function AdminApp() {
+  const [screen, setScreen] = useState("list");
+  const [books, setBooks] = useState(BOOKS);
+  const [wizardStep, setWizardStep] = useState(0);
+  const [draft, setDraft] = useState({ title: "", author: "", cover: "", short: "", extended: "", questions: [] });
+  const [qDraft, setQDraft] = useState({ prompt: "", type: "mc", bloom: "Remember" });
+ 
+  const resetWizard = () => {
+    setWizardStep(0);
+    setDraft({ title: "", author: "", cover: "", short: "", extended: "", questions: [] });
+  };
+ 
+  const publish = () => {
+    setBooks((bs) => [...bs, { id: draft.title.toLowerCase().replace(/\s+/g, "-") || "new-book", title: draft.title || "Untitled Book", author: draft.author || "Unknown", status: "available" }]);
+    setWizardStep(wizardStep + 1);
+  };
+ 
+  if (screen === "wizard") {
+    return (
+      <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+        <div className="max-w-xl mx-auto">
+          <button onClick={() => { setScreen("list"); resetWizard(); }} className="flex items-center gap-1 bk-slate text-sm mb-6 hover:bk-ink">
+            <ArrowLeft size={14} /> Cancel
+          </button>
+ 
+          <div className="flex flex-wrap gap-2 mb-6">
+            {WIZARD_STEPS.map((s, i) => (
+              <span key={s} className={`bk-mono text-[9px] px-2 py-1 rounded-full ${i === wizardStep ? "bk-bg-night bk-cream-text" : i < wizardStep ? "bk-bg-sage text-white" : "bg-[#EDE6D3] bk-slate"}`}>
+                {i + 1}. {s}
+              </span>
+            ))}
+          </div>
+ 
+          <div className="bg-white rounded-2xl p-8 bk-card">
+            {wizardStep === 0 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Create Book</h3>
+                <label className="bk-mono text-[10px] bk-slate">TITLE</label>
+                <input value={draft.title} onChange={(e) => setDraft({ ...draft, title: e.target.value })} placeholder="e.g. The Jungle Book" className="w-full border bk-border rounded-lg px-3 py-2 mt-1 mb-4 outline-none text-sm" />
+                <label className="bk-mono text-[10px] bk-slate">AUTHOR</label>
+                <input value={draft.author} onChange={(e) => setDraft({ ...draft, author: e.target.value })} placeholder="e.g. Rudyard Kipling" className="w-full border bk-border rounded-lg px-3 py-2 mt-1 outline-none text-sm" />
+              </div>
+            )}
+ 
+            {wizardStep === 1 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Upload Cover</h3>
+                <div className="border-2 border-dashed bk-border rounded-xl p-8 text-center mb-4">
+                  <Upload size={20} className="bk-slate mx-auto mb-2" />
+                  <p className="bk-slate text-sm">Drop a cover image, or type a filename to simulate an upload.</p>
+                </div>
+                <input value={draft.cover} onChange={(e) => setDraft({ ...draft, cover: e.target.value })} placeholder="cover-final.png" className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm" />
+              </div>
+            )}
+ 
+            {wizardStep === 2 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Upload Short Summary</h3>
+                <textarea value={draft.short} onChange={(e) => setDraft({ ...draft, short: e.target.value })} rows={5} placeholder="Paste or write the short summary..." className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm" />
+              </div>
+            )}
+ 
+            {wizardStep === 3 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Upload Extended Summary</h3>
+                <textarea value={draft.extended} onChange={(e) => setDraft({ ...draft, extended: e.target.value })} rows={5} placeholder="Paste or write the extended summary..." className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm" />
+              </div>
+            )}
+ 
+            {wizardStep === 4 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Bloom Assessment</h3>
+                <div className="flex flex-col gap-2 mb-4">
+                  {draft.questions.length === 0 && <p className="bk-slate text-sm">No questions added yet.</p>}
+                  {draft.questions.map((q, i) => (
+                    <div key={i} className="flex items-center justify-between border bk-border rounded-lg px-3 py-2 text-sm">
+                      <span>{q.prompt || "(untitled question)"}</span>
+                      <span className="bk-mono text-[9px] bk-slate">{q.type.toUpperCase()} · {q.bloom.toUpperCase()}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t bk-border pt-4">
+                  <input value={qDraft.prompt} onChange={(e) => setQDraft({ ...qDraft, prompt: e.target.value })} placeholder="Question text" className="w-full border bk-border rounded-lg px-3 py-2 mb-2 outline-none text-sm" />
+                  <div className="flex gap-2 mb-3">
+                    <select value={qDraft.type} onChange={(e) => setQDraft({ ...qDraft, type: e.target.value })} className="flex-1 border bk-border rounded-lg px-2 py-1.5 text-sm outline-none">
+                      {["mc", "ordering", "matching", "classification", "ranking", "crossword", "fillblank", "open"].map((t) => <option key={t} value={t}>{t}</option>)}
+                    </select>
+                    <select value={qDraft.bloom} onChange={(e) => setQDraft({ ...qDraft, bloom: e.target.value })} className="flex-1 border bk-border rounded-lg px-2 py-1.5 text-sm outline-none">
+                      {["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"].map((b) => <option key={b} value={b}>{b}</option>)}
+                    </select>
+                  </div>
+                  <button
+                    onClick={() => { if (qDraft.prompt) { setDraft({ ...draft, questions: [...draft.questions, qDraft] }); setQDraft({ prompt: "", type: "mc", bloom: "Remember" }); } }}
+                    className="flex items-center gap-1 bk-btn-outline rounded-lg px-3 py-1.5 text-sm"
+                  >
+                    <PlusCircle size={14} /> Add question
+                  </button>
+                </div>
+              </div>
+            )}
+ 
+            {wizardStep === 5 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Review</h3>
+                <div className="flex flex-col gap-2 text-sm">
+                  <div><span className="bk-mono text-[10px] bk-slate">TITLE</span><br />{draft.title || "—"}</div>
+                  <div><span className="bk-mono text-[10px] bk-slate">AUTHOR</span><br />{draft.author || "—"}</div>
+                  <div><span className="bk-mono text-[10px] bk-slate">COVER</span><br />{draft.cover || "—"}</div>
+                  <div><span className="bk-mono text-[10px] bk-slate">QUESTIONS</span><br />{draft.questions.length} added</div>
+                </div>
+                <p className="bk-slate text-xs mt-4">Once published, the curated assessment is frozen. To fix an error later, unpublish and republish.</p>
+              </div>
+            )}
+ 
+            {wizardStep === 6 && (
+              <div className="text-center py-6">
+                <div className="w-14 h-14 rounded-full bk-bg-sage mx-auto flex items-center justify-center mb-4">
+                  <Check size={22} className="text-white" />
+                </div>
+                <h3 className="bk-display text-xl mb-2">Published</h3>
+                <p className="bk-slate text-sm mb-6">{draft.title || "The book"} is now live in the library.</p>
+                <button onClick={() => { setScreen("list"); resetWizard(); }} className="bk-btn-dark rounded-lg px-5 py-2.5 text-sm font-medium">
+                  Back to book list
+                </button>
+              </div>
+            )}
+ 
+            {wizardStep < 6 && (
+              <div className="flex items-center justify-between mt-8">
+                <button disabled={wizardStep === 0} onClick={() => setWizardStep((s) => s - 1)} className="flex items-center gap-1 bk-btn-outline rounded-lg px-4 py-2 text-sm disabled:opacity-20">
+                  <ArrowLeft size={14} /> Back
+                </button>
+                {wizardStep === 5 ? (
+                  <button onClick={publish} className="flex items-center gap-1 bk-btn-primary rounded-lg px-5 py-2 text-sm font-medium">
+                    Publish book <Check size={14} />
+                  </button>
+                ) : (
+                  <button onClick={() => setWizardStep((s) => s + 1)} className="flex items-center gap-1 bk-btn-dark rounded-lg px-4 py-2 text-sm">
+                    Next <ArrowRight size={14} />
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+ 
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex items-center justify-between mb-1">
+          <h2 className="bk-display text-2xl">Book Management</h2>
+          <button onClick={() => setScreen("wizard")} className="flex items-center gap-1.5 bk-btn-primary rounded-lg px-4 py-2 text-sm font-medium">
+            <PlusCircle size={15} /> Add new book
+          </button>
+        </div>
+        <p className="bk-slate text-sm mb-6">Books can be added without any code changes.</p>
+ 
+        <div className="bg-white rounded-2xl bk-card overflow-hidden">
+          <div className="grid grid-cols-[1fr_auto_auto] gap-4 px-5 py-3 bk-mono text-[9px] bk-slate border-b bk-border">
+            <span>TITLE</span><span>STATUS</span><span></span>
+          </div>
+          {books.map((b) => (
+            <div key={b.id} className="grid grid-cols-[1fr_auto_auto] gap-4 px-5 py-4 items-center border-b bk-border last:border-0">
+              <div>
+                <div className="text-sm font-medium">{b.title}</div>
+                <div className="bk-slate text-xs">{b.author}</div>
+              </div>
+              <span className={`bk-mono text-[9px] px-2 py-1 rounded-full ${b.status === "available" ? "bk-bg-sage text-white" : "bg-[#EDE6D3] bk-slate"}`}>
+                {b.status === "available" ? "PUBLISHED" : "COMING SOON"}
+              </span>
+              <span className="bk-mono text-[9px] bk-slate flex items-center gap-1">
+                {b.status === "available" && <Lock size={11} />} {b.status === "available" ? "LOCKED" : "—"}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+ 
+/* ============================== APP ROOT ============================== */
+export default function BookalyzerDemo() {
+  const [role, setRole] = useState("select");
+  const [resetKey, setResetKey] = useState(0);
+ 
+  return (
+    <div className="bk-root w-full min-h-screen" key={resetKey}>
+      <GlobalStyle />
+      <TopNav role={role} setRole={setRole} onReset={() => { setResetKey((k) => k + 1); setRole("select"); }} />
+      {role === "select" && <RoleSelect setRole={setRole} />}
+      {role === "child" && <ChildApp key={`child-${resetKey}`} />}
+      {role === "parent" && <ParentApp key={`parent-${resetKey}`} />}
+      {role === "admin" && <AdminApp key={`admin-${resetKey}`} />}
+    </div>
+  );
+}
+ 

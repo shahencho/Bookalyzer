@@ -1,0 +1,49 @@
+{
+  "book_slug": "prostokvashino",
+  "language": "en",
+  "title": "Holidays in Prostokvashino",
+  "author": "Eduard Uspensky",
+  "genre": "Family Story",
+  "copyright_status": "active copyright",
+  "short_summary": "A resourceful boy named Uncle Fyodor (nicknamed for how grown-up he acts) leaves the city with a talking cat named Matroskin to live in a quiet countryside house in the village of Prostokvashino. Together with a shy dog named Sharik, they build a happy, unusual little household — solving problems his own way, since he acts far more sensibly than most grown-ups.",
+  "extended_summary": "A resourceful boy named Uncle Fyodor (nicknamed for how grown-up he acts) leaves the city with a talking cat named Matroskin to live in a quiet countryside house in the village of Prostokvashino. Together with a shy dog named Sharik, they build a happy, unusual little household — solving problems his own way, since he acts far more sensibly than most grown-ups.\n\nAs the trio settles in, they raise a cow, deal with a mischievous local postman, and slowly turn their ramshackle house into a real home. Meanwhile, Uncle Fyodor's worried parents search for him back in the city, not realizing their son is doing just fine — better, in some ways, than when he was under their constant watch.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who does Uncle Fyodor move to the countryside with?",
+      "content": { "options": ["A talking cat", "His grandmother", "A group of friends", "A teacher"], "correct": 0 },
+      "explanation": "Uncle Fyodor moves with Matroskin, a cat who can talk."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The cat's name is ___.",
+      "content": { "answer": "Matroskin", "altAnswers": [] },
+      "explanation": "Matroskin is the clever, practical cat who moves to Prostokvashino with Uncle Fyodor."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Lives in Prostokvashino",
+        "groupB": "Worried, back in the city",
+        "options": [
+          { "label": "Uncle Fyodor", "group": "A" },
+          { "label": "Matroskin the cat", "group": "A" },
+          { "label": "Sharik the dog", "group": "A" },
+          { "label": "Uncle Fyodor's parents", "group": "B" }
+        ]
+      },
+      "explanation": "The new countryside household is made up of Uncle Fyodor, Matroskin, and Sharik, while his parents stay behind, searching for him."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think Uncle Fyodor manages so well on his own?",
+      "content": { "keywords": ["responsible", "capable", "independent", "calm", "sensible", "care"] },
+      "explanation": "There's no single right answer — the story suggests he's simply more responsible and calm than most children his age."
+    }
+  ]
+}

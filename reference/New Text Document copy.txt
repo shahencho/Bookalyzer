@@ -1,0 +1,2873 @@
+import { useState, useMemo } from "react";
+import {
+  BookOpen, Star, Award, Sparkles, ChevronRight, ChevronLeft, Check, X,
+  Users, Upload, ArrowRight, ArrowLeft, PlusCircle, Rocket, Trophy,
+  BarChart3, Clock, User, Lock, LogOut, Search, Gift, TrendingUp, Globe, Medal
+} from "lucide-react";
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  LineChart, Line, Legend
+} from "recharts";
+
+/* ============================== STYLE TOKENS ============================== */
+const GlobalStyle = () => (
+  <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+    .bk-root{ font-family:'Inter',sans-serif; color:#24303F; }
+    .bk-display{ font-family:'Fraunces',serif; }
+    .bk-mono{ font-family:'IBM Plex Mono',monospace; letter-spacing:.02em; }
+
+    .bk-bg-night{ background:radial-gradient(ellipse at 50% -10%, #2F4066 0%, #1B2436 55%, #10151F 100%); }
+    .bk-bg-cream{ background:#FBF7EF; }
+    .bk-bg-card{ background:#FFFFFF; }
+
+    .bk-ink{ color:#24303F; }
+    .bk-slate{ color:#5B6B7C; }
+    .bk-cream-text{ color:#F3ECDD; }
+    .bk-cream-slate{ color:#A9B3C8; }
+
+    .bk-gold{ color:#E3A94F; } .bk-bg-gold{ background:#E3A94F; }
+    .bk-rose{ color:#D8697A; } .bk-bg-rose{ background:#D8697A; }
+    .bk-sage{ color:#6B9080; } .bk-bg-sage{ background:#6B9080; }
+    .bk-silver{ color:#9AA5B1; } .bk-bg-silver{ background:#9AA5B1; }
+    .bk-bronze{ color:#B4772F; } .bk-bg-bronze{ background:#B4772F; }
+    .bk-plum{ color:#7A5C7E; } .bk-bg-plum{ background:#7A5C7E; }
+
+    .bk-border{ border-color:#E7DFCC; }
+    .bk-border-night{ border-color:#3A4A6B; }
+
+    .bk-btn-primary{ background:#E3A94F; color:#1B2436; }
+    .bk-btn-primary:hover{ background:#D69A3E; }
+    .bk-btn-dark{ background:#1B2436; color:#F3ECDD; }
+    .bk-btn-dark:hover{ background:#252F45; }
+    .bk-btn-outline{ border:1.5px solid #24303F; color:#24303F; background:transparent; }
+    .bk-btn-outline:hover{ background:#24303F; color:#fff; }
+
+    .bk-star-dot{ position:absolute; border-radius:9999px; background:#F3E3B8; }
+
+    .bk-card{ box-shadow:0 1px 2px rgba(27,36,54,.06), 0 8px 24px rgba(27,36,54,.05); }
+    .bk-tab{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+
+    .bk-node{ width:14px; height:14px; border-radius:9999px; }
+    .bk-node-line{ height:1.5px; background:#D9CFB4; flex:1; }
+
+    .bk-avatar-btn{ width:34px; height:34px; border-radius:9999px; display:flex; align-items:center; justify-content:center; background:#2F4066; border:1.5px solid #E3A94F; cursor:pointer; }
+    .bk-lang-toggle{ display:flex; border:1px solid #3A4A6B; border-radius:9999px; overflow:hidden; }
+    .bk-lang-toggle button{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.06em; padding:5px 9px; background:transparent; color:#A9B3C8; }
+    .bk-lang-toggle button.active{ background:#E3A94F; color:#1B2436; }
+  `}</style>
+);
+
+/* ============================== I18N ============================== */
+const t = (obj, lang) => (obj ? (obj[lang] ?? obj.en) : "");
+
+const UI = {
+  navHome: { en: "Home", hy: "Գլխավոր", ru: "Главная" },
+  navChild: { en: "Child", hy: "Երեխա", ru: "Ребёнок" },
+  navParent: { en: "Parent", hy: "Ծնող", ru: "Родитель" },
+  navAdmin: { en: "Admin", hy: "Ադմին", ru: "Админ" },
+  navReset: { en: "Reset", hy: "Զրոյացնել", ru: "Сброс" },
+
+  landingEyebrow: { en: "A STORY-FIRST READING APP", hy: "ՊԱՏՄՈՒԹՅՈՒՆ-ԱՌԱՋԻՆ ԸՆԹԵՐՑԱՆՈՒԹՅԱՆ ԾՐԱԳԻՐ", ru: "ПРИЛОЖЕНИЕ ДЛЯ ЧТЕНИЯ, ГДЕ ИСТОРИЯ — НА ПЕРВОМ МЕСТЕ" },
+  landingTagline: { en: "Books come first. Bookalyzer motivates children toward the whole story — one assessment, one small planet at a time.", hy: "Գիրքն է առաջինը։ Bookalyzer-ը երեխաներին մղում է դեպի ամբողջ պատմությունը՝ մեկ առաջադրանք, մեկ փոքրիկ մոլորակ մեկ առ մեկ։", ru: "Книга — на первом месте. Bookalyzer мотивирует детей дочитывать историю целиком — одно задание, одна маленькая планета за раз." },
+  cardChildTitle: { en: "I'm a Child", hy: "Ես երեխա եմ", ru: "Я — ребёнок" },
+  cardChildDesc: { en: "Read a book and take on an assessment adventure.", hy: "Կարդա գիրք և անցիր առաջադրանքի արկածախնդրություն։", ru: "Читай книгу и проходи задания-приключения." },
+  cardParentTitle: { en: "I'm a Parent", hy: "Ես ծնող եմ", ru: "Я — родитель" },
+  cardParentDesc: { en: "See how your child is reading and understanding.", hy: "Տես, թե ինչպես է քո երեխան կարդում և հասկանում։", ru: "Смотрите, как ваш ребёнок читает и понимает книги." },
+  cardAdminTitle: { en: "I'm an Admin", hy: "Ես ադմին եմ", ru: "Я — админ" },
+  cardAdminDesc: { en: "Add books, upload summaries, publish assessments.", hy: "Ավելացրու գրքեր, վերբեռնիր ամփոփումներ, հրապարակիր առաջադրանքներ։", ru: "Добавляйте книги, загружайте пересказы, публикуйте задания." },
+  enter: { en: "ENTER", hy: "ՄՈՒՏՔ", ru: "ВОЙТИ" },
+
+  loginHeading: { en: "Hey there!", hy: "Բարև ձեզ!", ru: "Привет!" },
+  loginSub: { en: "Log in with your nickname and PIN.", hy: "Մուտք գործեք ձեր մականունով և PIN կոդով։", ru: "Войдите с вашим никнеймом и PIN-кодом." },
+  nicknameLabel: { en: "NICKNAME", hy: "ՄԱԿԱՆՈՒՆ", ru: "НИКНЕЙМ" },
+  pinLabel: { en: "PIN CODE", hy: "PIN ԿՈԴ", ru: "PIN-КОД" },
+  startReading: { en: "Start reading", hy: "Սկսել կարդալ", ru: "Начать чтение" },
+
+  stepLibrary: { en: "Library", hy: "Գրադարան", ru: "Библиотека" },
+  stepMode: { en: "Mode", hy: "Ձևաչափ", ru: "Формат" },
+  stepRead: { en: "Read", hy: "Կարդալ", ru: "Чтение" },
+  stepAssess: { en: "Assess", hy: "Առաջադրանք", ru: "Задание" },
+  stepResults: { en: "Results", hy: "Արդյունքներ", ru: "Результаты" },
+
+  libraryHeading: { en: "Book Library", hy: "Գրքերի գրադարան", ru: "Библиотека книг" },
+  librarySub: { en: "Choose a book to begin your journey.", hy: "Ընտրիր գիրք՝ քո ճանապարհորդությունը սկսելու համար։", ru: "Выбери книгу, чтобы начать своё путешествие." },
+  searchPlaceholder: { en: "Search books or authors...", hy: "Փնտրել գրքեր կամ հեղինակներ...", ru: "Поиск книг или авторов..." },
+  openBook: { en: "Open book", hy: "Բացել գիրքը", ru: "Открыть книгу" },
+  comingSoon: { en: "COMING SOON", hy: "ՇՈՒՏՈՎ", ru: "СКОРО" },
+  noResults: { en: "No books match your search.", hy: "Որոնմանը համապատասխան գրքեր չեն գտնվել։", ru: "По вашему запросу книг не найдено." },
+  recommendedHeading: { en: "Recommended for you", hy: "Առաջարկվում է ձեզ համար", ru: "Рекомендуем вам" },
+  recommendedSub: { en: "Based on age and books already read — not yet playable on Bookalyzer.", hy: "Հիմնված տարիքի և արդեն կարդացած գրքերի վրա. դեռ հասանելի չէ Bookalyzer-ում։", ru: "На основе возраста и уже прочитанных книг — пока недоступно в Bookalyzer." },
+  notOnPlatform: { en: "Not yet on Bookalyzer", hy: "Դեռ Bookalyzer-ում չէ", ru: "Пока нет в Bookalyzer" },
+
+  modeHeading: { en: "Choose how to read", hy: "Ընտրիր ինչպես կարդալ", ru: "Выберите формат чтения" },
+  modeSub: { en: "Pick any mode, no restrictions.", hy: "Ընտրիր ցանկացած ձևաչափ, սահմանափակումներ չկան։", ru: "Выберите любой формат, без ограничений." },
+
+  startAssessment: { en: "Start assessment", hy: "Սկսել առաջադրանքը", ru: "Начать задание" },
+  physicalInstructions: { en: "Bookalyzer doesn't contain the full book — grab your physical copy and read it. When you're done, confirm below.", hy: "Bookalyzer-ը չի պարունակում ամբողջ գիրքը՝ վերցրու քո տպագիր օրինակը և կարդա այն։ Ավարտելուց հետո հաստատիր ստորև։", ru: "В Bookalyzer нет полного текста книги — возьмите бумажную книгу и прочитайте её. Когда закончите, подтвердите ниже." },
+  physicalConfirm: { en: "I've read the physical book", hy: "Ես կարդացել եմ տպագիր գիրքը", ru: "Я прочитал(а) бумажную книгу" },
+
+  questionLabel: { en: "QUESTION", hy: "ՀԱՐՑ", ru: "ВОПРОС" },
+  bloomLabel: { en: "BLOOM", hy: "ԲԼՈՒՄ", ru: "БЛУМ" },
+  previous: { en: "Previous", hy: "Նախորդը", ru: "Назад" },
+  next: { en: "Next", hy: "Հաջորդը", ru: "Далее" },
+  submitAssessment: { en: "Submit assessment", hy: "Հանձնել առաջադրանքը", ru: "Отправить задание" },
+  autosaveNote: { en: "Progress saves automatically — you can close and continue later.", hy: "Առաջընթացը պահպանվում է ավտոմատ կերպով. կարող ես փակել և շարունակել ավելի ուշ։", ru: "Прогресс сохраняется автоматически — можно закрыть и продолжить позже." },
+  chooseMatch: { en: "Choose a match...", hy: "Ընտրիր համապատասխանություն...", ru: "Выберите пару..." },
+  typeAnswer: { en: "Type your answer", hy: "Մուտքագրիր պատասխանը", ru: "Введите ответ" },
+  writeAnswer: { en: "Write your answer...", hy: "Գրիր քո պատասխանը...", ru: "Напишите ответ..." },
+
+  badgeEarned: { en: "BADGE EARNED", hy: "ՇՔԱՆՇԱՆ ՇԱՀՎԱԾ", ru: "ЗНАЧОК ПОЛУЧЕН" },
+  overallScore: { en: "Overall score", hy: "Ընդհանուր միավոր", ru: "Общий результат" },
+  xpEarned: { en: "XP earned", hy: "XP վաստակված", ru: "XP получено" },
+  correct: { en: "Correct", hy: "Ճիշտ", ru: "Верно" },
+  partialCredit: { en: "Partial credit", hy: "Մասնակի միավոր", ru: "Частично верно" },
+  notQuite: { en: "Not quite", hy: "Ոչ ճիշտ", ru: "Не совсем" },
+  backToLibrary: { en: "Back to library", hy: "Վերադառնալ գրադարան", ru: "Назад в библиотеку" },
+
+  profileHeading: { en: "My Profile", hy: "Իմ պրոֆիլը", ru: "Мой профиль" },
+  booksCompleted: { en: "BOOKS COMPLETED", hy: "ԱՎԱՐՏՎԱԾ ԳՐՔԵՐ", ru: "ЗАВЕРШЕНО КНИГ" },
+  attempts: { en: "ATTEMPTS", hy: "ՓՈՐՁԵՐ", ru: "ПОПЫТКИ" },
+  lastScore: { en: "LAST SCORE", hy: "ՎԵՐՋԻՆ ՄԻԱՎՈՐ", ru: "ПОСЛЕДНИЙ РЕЗУЛЬТАТ" },
+  xp: { en: "XP", hy: "XP", ru: "XP" },
+  myBadges: { en: "My badges", hy: "Իմ շքանշանները", ru: "Мои значки" },
+  myHistory: { en: "My reading history", hy: "Իմ ընթերցանության պատմությունը", ru: "История моего чтения" },
+  rewardHeading: { en: "Free book reward", hy: "Անվճար գրքի պարգև", ru: "Награда — бесплатная книга" },
+  rewardProgress: { en: "qualifying quizzes this month", hy: "որակավորող առաջադրանք այս ամիս", ru: "зачётных заданий в этом месяце" },
+  rewardExplain: { en: "Read the physical book, score 90%+, and complete 20 of these each month to earn a free book from us.", hy: "Կարդա տպագիր գիրքը, հավաքիր 90%+ և ամեն ամիս ավարտիր 20 այդպիսի առաջադրանք՝ մեզնից անվճար գիրք ստանալու համար։", ru: "Читайте бумажную книгу, набирайте 90%+ и проходите 20 таких заданий каждый месяц, чтобы получить от нас бесплатную книгу." },
+
+  parentHeading: { en: "Parent Dashboard", hy: "Ծնողի վահանակ", ru: "Панель родителя" },
+  parentSub: { en: "One account, all your children's reading in one place.", hy: "Մեկ հաշիվ, ձեր բոլոր երեխաների ընթերցանությունը մեկ տեղում։", ru: "Один аккаунт — чтение всех ваших детей в одном месте." },
+  booksLabel: { en: "BOOKS", hy: "ԳՐՔԵՐ", ru: "КНИГИ" },
+  lastScoreLabel: { en: "LAST SCORE", hy: "ՎԵՐՋԻՆ ՄԻԱՎՈՐ", ru: "ПОСЛЕДНИЙ РЕЗУЛЬТАТ" },
+  xpLabelShort: { en: "XP", hy: "XP", ru: "XP" },
+  rewardMini: { en: "toward free book", hy: "անվճար գրքի ճանապարհին", ru: "до бесплатной книги" },
+
+  backDash: { en: "Back to dashboard", hy: "Վերադառնալ վահանակ", ru: "Назад к панели" },
+  bloomBreakdown: { en: "Bloom's Taxonomy breakdown", hy: "Բլումի տաքսոնոմիայի բաշխվածություն", ru: "Разбивка по таксономии Блума" },
+  insight: { en: "Insight", hy: "Դիտարկում", ru: "Наблюдение" },
+  readingHistory: { en: "Reading history", hy: "Ընթերցանության պատմություն", ru: "История чтения" },
+  overallProgress: { en: "Overall progress since joining", hy: "Ընդհանուր առաջընթաց միանալու պահից", ru: "Общий прогресс с момента начала" },
+  viewBookDetail: { en: "View book detail", hy: "Դիտել գրքի մանրամասները", ru: "Подробнее о книге" },
+
+  bookDetailBack: { en: "Back to child detail", hy: "Վերադառնալ երեխայի էջ", ru: "Назад к профилю ребёнка" },
+  byModeHeading: { en: "Score by reading mode", hy: "Միավոր՝ ըստ ընթերցանության ձևաչափի", ru: "Результат по формату чтения" },
+  modeShort: { en: "Short Summary", hy: "Համառոտ ամփոփում", ru: "Краткий пересказ" },
+  modeExtended: { en: "Extended Summary", hy: "Ընդլայնված ամփոփում", ru: "Расширенный пересказ" },
+  modePhysical: { en: "Physical Book", hy: "Տպագիր գիրք", ru: "Бумажная книга" },
+  noAttempt: { en: "Not attempted yet", hy: "Դեռ չի փորձարկվել", ru: "Ещё не пройдено" },
+
+  addNewBook: { en: "Add new book", hy: "Ավելացնել նոր գիրք", ru: "Добавить книгу" },
+  bookMgmt: { en: "Book Management", hy: "Գրքերի կառավարում", ru: "Управление книгами" },
+  bookMgmtSub: { en: "Books can be added without any code changes.", hy: "Գրքերը կարող են ավելացվել առանց կոդի փոփոխության։", ru: "Книги можно добавлять без изменений в коде." },
+};
+
+/* ============================== BOOK CONTENT ============================== */
+const BOOKS = [
+  {
+    id: "little-prince",
+    title: { en: "The Little Prince", hy: "Փոքրիկ Իշխանը", ru: "Маленький принц" },
+    author: "Antoine de Saint-Exupéry",
+    status: "available",
+    shortSummary: {
+      en: `A pilot crash-lands in the Sahara desert and meets a curious little boy who
+says he has come from a tiny planet far away. The boy, a prince, tells the
+pilot about the single rose he left behind, and about the strange grown-ups
+he visited on his journey — a king with no subjects, a businessman who
+counts stars he cannot own, a lamplighter obeying an order that no longer
+makes sense. On Earth, the prince meets a fox who asks to be tamed, and
+learns that what matters most is often invisible to the eye.`,
+      hy: `Օդաչուն կործանվում է Սահարայի անապատում և հանդիպում է հետաքրքրասեր փոքրիկ
+տղայի, ով ասում է, որ եկել է հեռավոր մի փոքրիկ մոլորակից։ Իշխանիկը պատմում է
+օդաչուին այն մեկ վարդի մասին, որին թողել է իր մոլորակում, և այն տարօրինակ
+մեծահասակների մասին, որոնց այցելել է իր ճանապարհորդության ընթացքում՝ արքա
+առանց հպատակների, գործարար, ով հաշվում է աստղեր, որոնց չի կարող տիրանալ,
+լապտերավառ, ով կատարում է հրաման, որն այլևս իմաստ չունի։ Երկրի վրա Իշխանիկը
+հանդիպում է աղվեսի, ով խնդրում է, որ իրեն «ընտելացնեն», և հասկանում է, որ
+ամենակարևորը հաճախ անտեսանելի է աչքի համար։`,
+    },
+    extendedSummary: {
+      en: `A pilot crash-lands in the Sahara desert and meets a curious little boy who
+says he has come from a tiny planet far away. The boy, a prince, tells the
+pilot about the single rose he left behind, and about the strange grown-ups
+he visited on his journey — a king with no subjects, a businessman who
+counts stars he cannot own, a lamplighter obeying an order that no longer
+makes sense. On Earth, the prince meets a fox who asks to be tamed, and
+learns that what matters most is often invisible to the eye.
+
+The fox explains that taming means creating ties — that a tamed rose
+becomes unlike any other rose in the world, simply because time was spent
+on it. The prince realizes his own rose, ordinary as she seemed, is
+irreplaceable because he loved and cared for her. Before returning to his
+planet and his rose, the prince leaves the pilot with a quiet truth: it is
+the time we give to someone that makes them matter, and the eye is blind
+to that — you have to look with the heart.`,
+      hy: `Օդաչուն կործանվում է Սահարայի անապատում և հանդիպում է հետաքրքրասեր փոքրիկ
+տղայի, ով ասում է, որ եկել է հեռավոր մի փոքրիկ մոլորակից։ Իշխանիկը պատմում է
+օդաչուին այն մեկ վարդի մասին, որին թողել է իր մոլորակում, և այն տարօրինակ
+մեծահասակների մասին, որոնց այցելել է իր ճանապարհորդության ընթացքում՝ արքա
+առանց հպատակների, գործարար, ով հաշվում է աստղեր, որոնց չի կարող տիրանալ,
+լապտերավառ, ով կատարում է հրաման, որն այլևս իմաստ չունի։ Երկրի վրա Իշխանիկը
+հանդիպում է աղվեսի, ով խնդրում է, որ իրեն «ընտելացնեն», և հասկանում է, որ
+ամենակարևորը հաճախ անտեսանելի է աչքի համար։
+
+Աղվեսը բացատրում է, որ ընտելացնելը նշանակում է կապեր ստեղծել․ ընտելացված
+վարդը դառնում է եզակի աշխարհում ողջ վարդերի մեջ միայն այն պատճառով, որ
+ժամանակ է ծախսվել նրա վրա։ Իշխանիկը հասկանում է, որ իր սեփական վարդը,
+որքան էլ սովորական թվա, անփոխարինելի է, քանի որ ինքն այն սիրել և խնամել
+է։ Նախքան իր մոլորակ և իր վարդի մոտ վերադառնալը, Իշխանիկը օդաչուին
+թողնում է մի հանգիստ ճշմարտություն. մարդուն կարևոր է դարձնում այն
+ժամանակը, որը մենք տրամադրում ենք նրան, և աչքը կույր է դրա հանդեպ.
+պետք է նայել սրտով։`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "Where does the pilot first meet the little prince?", hy: "Ո՞ր վայրում է օդաչուն առաջին անգամ հանդիպում Իշխանիկին։" },
+        options: {
+          en: ["In the Sahara desert", "In a big city", "On a ship at sea", "In a quiet forest"],
+          hy: ["Սահարայի անապատում", "Մեծ քաղաքում", "Ծովում՝ նավի վրա", "Հանգիստ անտառում"],
+        },
+        correct: 0,
+        explanation: {
+          en: "The pilot's plane has crash-landed in the desert when the little prince appears.",
+          hy: "Օդաչուի ինքնաթիռը կործանվել է անապատում, երբ հայտնվում է Իշխանիկը։",
+        },
+      },
+      {
+        id: 2, type: "ordering", bloom: "Understand",
+        prompt: { en: "Put these events in the order they happen in the story.", hy: "Դասավորեք այս իրադարձությունները պատմության մեջ տեղի ունեցած հերթականությամբ։" },
+        items: {
+          en: [
+            "The prince leaves his tiny planet and the rose he loves",
+            "He visits several small planets and their odd grown-up residents",
+            "He meets a fox on Earth who teaches him about taming",
+            "He meets the pilot, stranded in the desert",
+          ],
+          hy: [
+            "Իշխանիկը հեռանում է իր փոքրիկ մոլորակից և իր սիրած վարդից",
+            "Նա այցելում է մի քանի փոքր մոլորակներ և դրանց տարօրինակ մեծահասակ բնակիչներին",
+            "Երկրի վրա նա հանդիպում է աղվեսի, ով սովորեցնում է իրեն ընտելացման մասին",
+            "Նա հանդիպում է օդաչուին, ով խրված է անապատում",
+          ],
+        },
+        correctOrder: [0, 1, 3, 2],
+        explanation: {
+          en: "The prince's journey takes him past the planets, then to Earth, where he meets the pilot before he meets the fox.",
+          hy: "Իշխանիկի ճանապարհորդությունը նրան տանում է մոլորակներով, ապա Երկիր, որտեղ նա հանդիպում է օդաչուին նախքան աղվեսին հանդիպելը։",
+        },
+      },
+      {
+        id: 3, type: "matching", bloom: "Analyze",
+        prompt: { en: "Match each character to what matters most to them.", hy: "Յուրաքանչյուր հերոսին համապատասխանեցրեք նրա համար ամենակարևոր բանին։" },
+        left: { en: ["The Businessman", "The King", "The Fox", "The Little Prince"], hy: ["Գործարարը", "Արքան", "Աղվեսը", "Իշխանիկը"] },
+        right: {
+          en: ["Owning and counting the stars", "Being obeyed by someone, anyone", "Being tamed, and having a friend", "Caring for his one rose"],
+          hy: ["Աստղերի տիրապետումն ու հաշվարկը", "Ինչ-որ մեկի կողմից հնազանդվելը", "Ընտելացվելը և ընկեր ունենալը", "Իր մեկ վարդի խնամքը"],
+        },
+        correctMap: { 0: 0, 1: 1, 2: 2, 3: 3 },
+        explanation: {
+          en: "Each grown-up is consumed by one narrow idea, while the prince and the fox understand relationships.",
+          hy: "Յուրաքանչյուր մեծահասակ կլանված է մեկ նեղ գաղափարով, մինչդեռ Իշխանիկն ու աղվեսը հասկանում են հարաբերությունները։",
+        },
+      },
+      {
+        id: 4, type: "fillblank", bloom: "Remember",
+        prompt: { en: 'The fox tells the prince: "What is essential is invisible to the ___."', hy: 'Աղվեսն ասում է Իշխանիկին. «Ամենակարևորը անտեսանելի է ___-ի համար»' },
+        answer: { en: "eye", hy: "աչքի" },
+        altAnswers: { en: ["eyes"], hy: ["աչքերի"] },
+        explanation: {
+          en: 'The full line is "It is only with the heart that one can see rightly."',
+          hy: "Ամբողջական միտքն է. «Միայն սրտով է, որ կարելի է ճիշտ տեսնել»։",
+        },
+      },
+      {
+        id: 5, type: "classification", bloom: "Analyze",
+        prompt: { en: "Sort each character into the right group.", hy: "Դասակարգեք յուրաքանչյուր հերոսին ճիշտ խմբում։" },
+        groupA: { en: "Lost in serious grown-up matters", hy: "Կորած լուրջ մեծահասակների հարցերում" },
+        groupB: { en: "Understands what matters", hy: "Հասկանում է, թե ինչն է կարևոր" },
+        options: [
+          { label: { en: "The Businessman", hy: "Գործարարը" }, group: "A" },
+          { label: { en: "The King", hy: "Արքան" }, group: "A" },
+          { label: { en: "The Fox", hy: "Աղվեսը" }, group: "B" },
+          { label: { en: "The Rose", hy: "Վարդը" }, group: "B" },
+        ],
+        explanation: {
+          en: "The businessman and king are absorbed by status and control; the fox and rose understand care and connection.",
+          hy: "Գործարարն ու արքան կլանված են կարգավիճակով և վերահսկողությամբ, մինչդեռ աղվեսն ու վարդը հասկանում են հոգատարությունն ու կապը։",
+        },
+      },
+      {
+        id: 6, type: "open", bloom: "Evaluate",
+        prompt: { en: "Why do you think the fox wanted the little prince to tame him? Explain in your own words.", hy: "Ինչու՞ եք կարծում, որ աղվեսը ցանկանում էր, որ Իշխանիկն իրեն ընտելացնի։ Բացատրեք ձեր մտքերով։" },
+        keywords: {
+          en: ["friend", "relationship", "special", "unique", "bond", "love", "time", "care", "connect"],
+          hy: ["ընկեր", "հարաբերություն", "առանձնահատուկ", "եզակի", "կապ", "սեր", "ժամանակ", "հոգատարություն", "կապվել"],
+        },
+        explanation: {
+          en: "There's no single right answer — the fox wants a bond that makes the prince unique to him, and him to the prince.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. աղվեսը ցանկանում է կապ, որը կդարձնի Իշխանիկին եզակի իր համար, և ինքն էլ՝ Իշխանիկի համար։",
+        },
+      },
+    ],
+  },
+  {
+    id: "mowgli",
+    title: { en: "Mowgli", hy: "Մաուգլի", ru: "Маугли" },
+    author: "Rudyard Kipling",
+    status: "available",
+    shortSummary: {
+      en: `A man-cub named Mowgli is found alone in the Indian jungle and raised by a
+pack of wolves. Baloo the bear and Bagheera the panther become his teachers
+and friends, showing him the Law of the Jungle. But the tiger Shere Khan,
+who hates humans, wants Mowgli gone — and the boy must decide whether he
+truly belongs among the wolves, or with his own kind.`,
+      hy: `Մարդու ձագ Մաուգլին հայտնաբերվում է Հնդկաստանի ջունգլիներում մենակ և
+մեծանում է գայլերի ընտանիքում։ Բալու արջը և Բագիրա հովազը դառնում են նրա
+ուսուցիչներն ու ընկերները՝ սովորեցնելով նրան Ջունգլիների Օրենքը։ Բայց Շեր
+Խան վագրը, ով ատում է մարդկանց, ուզում է Մաուգլիին հեռացնել ջունգլիներից,
+և տղան պետք է որոշի՝ արդյոք նա իսկապես պատկանում է գայլերին, թե՞ իր իսկ
+տեսակին։`,
+    },
+    extendedSummary: {
+      en: `A man-cub named Mowgli is found alone in the Indian jungle and raised by a
+pack of wolves. Baloo the bear and Bagheera the panther become his teachers
+and friends, showing him the Law of the Jungle. But the tiger Shere Khan,
+who hates humans, wants Mowgli gone — and the boy must decide whether he
+truly belongs among the wolves, or with his own kind.
+
+As Mowgli grows, he learns to speak with the animals and earns their
+respect through courage rather than strength. When Shere Khan finally
+corners him, Mowgli outwits the tiger using fire — the one thing every
+jungle creature fears — and proves himself a leader in his own right.
+Eventually, drawn by curiosity about the human village nearby, Mowgli must
+choose between the only family he's known and the world he was born into.`,
+      hy: `Մարդու ձագ Մաուգլին հայտնաբերվում է Հնդկաստանի ջունգլիներում մենակ և
+մեծանում է գայլերի ընտանիքում։ Բալու արջը և Բագիրա հովազը դառնում են նրա
+ուսուցիչներն ու ընկերները՝ սովորեցնելով նրան Ջունգլիների Օրենքը։ Բայց Շեր
+Խան վագրը, ով ատում է մարդկանց, ուզում է Մաուգլիին հեռացնել ջունգլիներից,
+և տղան պետք է որոշի՝ արդյոք նա իսկապես պատկանում է գայլերին, թե՞ իր իսկ
+տեսակին։
+
+Երբ Մաուգլին մեծանում է, նա սովորում է խոսել կենդանիների հետ և վաստակում
+նրանց հարգանքը՝ ոչ թե ուժով, այլ խիզախությամբ։ Երբ Շեր Խանը վերջապես
+գտնում է նրան, Մաուգլին խորամանկությամբ հաղթում է վագրին՝ օգտագործելով
+կրակը, որից վախենում է ջունգլիների ամեն մի արարած, և ապացուցում է, որ
+ինքն է առաջնորդը։ Ի վերջո, հետաքրքրվելով մոտակա մարդկային գյուղով,
+Մաուգլին պետք է ընտրություն կատարի իր միակ ընտանիքի և իր ծննդյան
+աշխարհի միջև։`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "Who raises Mowgli after he is found alone in the jungle?", hy: "Ո՞վ է մեծացնում Մաուգլիին, երբ նրան գտնում են մենակ ջունգլիներում։" },
+        options: {
+          en: ["A pack of wolves", "A family of monkeys", "A herd of elephants", "A group of hunters"],
+          hy: ["Գայլերի ընտանիք", "Կապիկների ընտանիք", "Փղերի նախիրը", "Որսորդների խումբ"],
+        },
+        correct: 0,
+        explanation: {
+          en: "A wolf pack adopts Mowgli as one of their own cubs.",
+          hy: "Գայլերի նախիրն ընդունում է Մաուգլիին որպես իրենց սեփական ձագերից մեկը։",
+        },
+      },
+      {
+        id: 2, type: "matching", bloom: "Analyze",
+        prompt: { en: "Match each character to their role in Mowgli's life.", hy: "Յուրաքանչյուր հերոսին համապատասխանեցրեք Մաուգլիի կյանքում ունեցած դերին։" },
+        left: { en: ["Baloo", "Bagheera", "Shere Khan", "Mowgli"], hy: ["Բալուն", "Բագիրան", "Շեր Խանը", "Մաուգլին"] },
+        right: {
+          en: ["Teaches him the Law of the Jungle", "Watches over him as a quiet guide", "Wants him gone from the jungle", "Must choose where he belongs"],
+          hy: ["Սովորեցնում է նրան Ջունգլիների Օրենքը", "Հսկում է նրան որպես հանգիստ ուղեկից", "Ուզում է նրան հեռացնել ջունգլիներից", "Պետք է որոշի՝ որտեղ է պատկանում"],
+        },
+        correctMap: { 0: 0, 1: 1, 2: 2, 3: 3 },
+        explanation: {
+          en: "Baloo teaches the rules, Bagheera protects quietly, Shere Khan is the threat, and Mowgli faces the central choice.",
+          hy: "Բալուն սովորեցնում է կանոնները, Բագիրան լուռ պաշտպանում է, Շեր Խանը սպառնալիքն է, իսկ Մաուգլին կանգնած է հիմնական ընտրության առաջ։",
+        },
+      },
+      {
+        id: 3, type: "fillblank", bloom: "Remember",
+        prompt: { en: "Every creature in the jungle fears one thing above all: ___.", hy: "Ջունգլիների յուրաքանչյուր արարած ամենից շատ վախենում է ___-ից:" },
+        answer: { en: "fire", hy: "կրակ" },
+        altAnswers: { en: [], hy: ["կրակից"] },
+        explanation: {
+          en: "Mowgli uses fire, which he calls the 'red flower,' to defeat Shere Khan.",
+          hy: "Մաուգլին օգտագործում է կրակը, որը նա անվանում է «կարմիր ծաղիկ», Շեր Խանին հաղթելու համար։",
+        },
+      },
+      {
+        id: 4, type: "classification", bloom: "Analyze",
+        prompt: { en: "Sort each character into the right group.", hy: "Դասակարգեք յուրաքանչյուր հերոսին ճիշտ խմբում։" },
+        groupA: { en: "Mowgli's jungle family", hy: "Մաուգլիի ջունգլիների ընտանիքը" },
+        groupB: { en: "Threats to Mowgli", hy: "Սպառնալիքներ Մաուգլիի համար" },
+        options: [
+          { label: { en: "Baloo", hy: "Բալուն" }, group: "A" },
+          { label: { en: "Bagheera", hy: "Բագիրան" }, group: "A" },
+          { label: { en: "The wolf pack", hy: "Գայլերի նախիրը" }, group: "A" },
+          { label: { en: "Shere Khan", hy: "Շեր Խանը" }, group: "B" },
+        ],
+        explanation: {
+          en: "Baloo, Bagheera, and the wolf pack raise and protect Mowgli, while Shere Khan is his one real enemy.",
+          hy: "Բալուն, Բագիրան և գայլերի նախիրը մեծացնում ու պաշտպանում են Մաուգլիին, մինչդեռ Շեր Խանը նրա միակ իրական թշնամին է։",
+        },
+      },
+      {
+        id: 5, type: "open", bloom: "Evaluate",
+        prompt: { en: "Do you think Mowgli belongs more with the wolves or with humans? Explain your thinking.", hy: "Ըստ ձեզ՝ Մաուգլին ավելի շատ պատկանում է գայլերի՞ն, թե՞ մարդկանց։ Բացատրեք ձեր մտածելակերպը։" },
+        keywords: {
+          en: ["family", "belong", "choice", "jungle", "human", "home"],
+          hy: ["ընտանիք", "պատկանել", "ընտրություն", "ջունգլի", "մարդ", "տուն"],
+        },
+        explanation: {
+          en: "There's no single right answer — Mowgli is shaped by both worlds, and the story leaves the choice open.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. Մաուգլին ձևավորված է երկու աշխարհներով էլ, և պատմությունը թողնում է ընտրությունը բաց։",
+        },
+      },
+    ],
+  },
+  {
+    id: "pollyanna",
+    title: { en: "Pollyanna", hy: "Փոլիաննա", ru: "Поллианна" },
+    author: "Eleanor H. Porter",
+    status: "available",
+    shortSummary: {
+      en: `After her parents die, young Pollyanna goes to live with her strict Aunt
+Polly in a small New England town. Rather than feel sorry for herself,
+Pollyanna plays the "glad game" her father taught her — finding something
+to be glad about in every situation, no matter how hard. Her relentless
+cheerfulness slowly begins to change the people around her, including her
+stern aunt.`,
+      hy: `Ծնողների մահից հետո փոքրիկ Փոլիաննան գնում է ապրելու իր խիստ մորաքրոջ՝
+Փոլիի մոտ՝ Նոր Անգլիայի փոքրիկ քաղաքում։ Փոխանակ իր վրա խղճալու,
+Փոլիաննան խաղում է իր հոր սովորեցրած «ուրախ խաղը»՝ ամեն իրավիճակում
+գտնելով ինչ-որ բան, որով կարելի է ուրախանալ, որքան էլ դժվար լինի։ Նրա
+անդադար լավատեսությունը աստիճանաբար փոխում է իր շուրջը գտնվող
+մարդկանց, այդ թվում՝ իր խիստ մորաքրոջը։`,
+    },
+    extendedSummary: {
+      en: `After her parents die, young Pollyanna goes to live with her strict Aunt
+Polly in a small New England town. Rather than feel sorry for herself,
+Pollyanna plays the "glad game" her father taught her — finding something
+to be glad about in every situation, no matter how hard. Her relentless
+cheerfulness slowly begins to change the people around her, including her
+stern aunt.
+
+When Pollyanna is badly injured and can no longer walk, the entire town —
+moved by all the kindness she has shown them — comes together to lift her
+spirits, playing the glad game right back at her. Even in her darkest
+moment, the town's collective gratitude helps Pollyanna hold onto hope,
+and Aunt Polly finally learns to open her heart the way her niece always
+has.`,
+      hy: `Ծնողների մահից հետո փոքրիկ Փոլիաննան գնում է ապրելու իր խիստ մորաքրոջ՝
+Փոլիի մոտ՝ Նոր Անգլիայի փոքրիկ քաղաքում։ Փոխանակ իր վրա խղճալու,
+Փոլիաննան խաղում է իր հոր սովորեցրած «ուրախ խաղը»՝ ամեն իրավիճակում
+գտնելով ինչ-որ բան, որով կարելի է ուրախանալ, որքան էլ դժվար լինի։ Նրա
+անդադար լավատեսությունը աստիճանաբար փոխում է իր շուրջը գտնվող
+մարդկանց, այդ թվում՝ իր խիստ մորաքրոջը։
+
+Երբ Փոլիաննան ծանր վնասվածք է ստանում և այլևս չի կարողանում քայլել,
+ամբողջ քաղաքը, ոգեշնչված նրա ցուցաբերած բարությունից, միավորվում է՝
+բարձրացնելու նրա տրամադրությունը՝ նույն «ուրախ խաղը» խաղալով նրա հետ։
+Նույնիսկ իր ամենադժվար պահին քաղաքի հավաքական երախտագիտությունն օգնում
+է Փոլիաննային պահպանել հույսը, և Փոլի մորաքույրը վերջապես սովորում է
+բացել իր սիրտը այնպես, ինչպես միշտ արել է իր զարմուհին։`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "What game did Pollyanna's father teach her?", hy: "Ի՞նչ խաղ էր Փոլիաննայի հայրը սովորեցրել նրան։" },
+        options: {
+          en: ["The glad game", "The quiet game", "The counting game", "The hiding game"],
+          hy: ["Ուրախ խաղը", "Լուռ խաղը", "Հաշվելու խաղը", "Թաքնվելու խաղը"],
+        },
+        correct: 0,
+        explanation: {
+          en: "The glad game is about finding something to be glad about, even in hard situations.",
+          hy: "Ուրախ խաղը ամեն դժվար իրավիճակում ինչ-որ բանով ուրախանալու համար է։",
+        },
+      },
+      {
+        id: 2, type: "fillblank", bloom: "Understand",
+        prompt: { en: "In the glad game, Pollyanna tries to find something to be ___ about in every situation.", hy: "Ուրախ խաղում Փոլիաննան փորձում է ամեն իրավիճակում գտնել մի բան, որով կարող է ___:" },
+        answer: { en: "glad", hy: "ուրախանալ" },
+        altAnswers: { en: ["happy"], hy: [] },
+        explanation: {
+          en: "The whole game is built around finding a reason to feel glad, however small.",
+          hy: "Ամբողջ խաղը կառուցված է ուրախանալու թեկուզ փոքր պատճառ գտնելու շուրջ։",
+        },
+      },
+      {
+        id: 3, type: "ordering", bloom: "Understand",
+        prompt: { en: "Put these events in the order they happen in the story.", hy: "Դասավորեք այս իրադարձությունները պատմության մեջ տեղի ունեցած հերթականությամբ։" },
+        items: {
+          en: [
+            "Pollyanna's parents pass away",
+            "She moves in with Aunt Polly",
+            "She teaches the glad game to the town",
+            "She is injured and stops walking",
+            "The town lifts her spirits in return",
+          ],
+          hy: [
+            "Փոլիաննայի ծնողները մահանում են",
+            "Նա տեղափոխվում է ապրելու Փոլի մորաքրոջ մոտ",
+            "Նա սովորեցնում է քաղաքին ուրախ խաղը",
+            "Նա վնասվածք է ստանում և դադարում է քայլել",
+            "Քաղաքը փոխարենը բարձրացնում է նրա տրամադրությունը",
+          ],
+        },
+        correctOrder: [0, 1, 2, 3, 4],
+        explanation: {
+          en: "Pollyanna spreads the glad game first — which is why the town is ready to return the favor after her accident.",
+          hy: "Փոլիաննան նախ տարածում է ուրախ խաղը, ինչի պատճառով էլ քաղաքը պատրաստ է վերադարձնել բարիքը նրա վթարից հետո։",
+        },
+      },
+      {
+        id: 4, type: "classification", bloom: "Analyze",
+        prompt: { en: "Sort each character into the right group.", hy: "Դասակարգեք յուրաքանչյուր հերոսին ճիշտ խմբում։" },
+        groupA: { en: "Slow to show kindness at first", hy: "Սկզբում դանդաղ են ցուցաբերում բարություն" },
+        groupB: { en: "Already warm and caring", hy: "Արդեն ջերմ ու հոգատար են" },
+        options: [
+          { label: { en: "Aunt Polly", hy: "Փոլի մորաքույրը" }, group: "A" },
+          { label: { en: "A grumpy neighbor", hy: "Դժգոհ հարևանը" }, group: "A" },
+          { label: { en: "Pollyanna", hy: "Փոլիաննան" }, group: "B" },
+          { label: { en: "Nancy the maid", hy: "Նենսի ծառայուհին" }, group: "B" },
+        ],
+        explanation: {
+          en: "Aunt Polly and the neighbor need Pollyanna's influence to soften, while Pollyanna and Nancy are warm from the start.",
+          hy: "Փոլի մորաքույրն ու հարևանը մեղմանալու համար կարիք ունեն Փոլիաննայի ազդեցության, մինչդեռ Փոլիաննան և Նենսին սկզբից ջերմ են։",
+        },
+      },
+      {
+        id: 5, type: "open", bloom: "Evaluate",
+        prompt: { en: "Do you think the glad game is a healthy way to deal with hard times, or does it ignore real problems? Explain.", hy: "Ըստ ձեզ՝ ուրախ խաղը դժվարությունների հետ գործ ունենալու առողջ միջո՞ց է, թե՞ անտեսում է իրական խնդիրները։ Բացատրեք։" },
+        keywords: {
+          en: ["honest", "real", "feelings", "cope", "positive", "ignore", "healthy"],
+          hy: ["ազնիվ", "իրական", "զգացումներ", "հաղթահարել", "դրական", "անտեսել", "առողջ"],
+        },
+        explanation: {
+          en: "There's no single right answer — the story shows both the comfort and the limits of relentless positivity.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. պատմությունը ցույց է տալիս ինչպես մշտական դրականության մխիթարությունը, այնպես էլ սահմանները։",
+        },
+      },
+    ],
+  },
+  {
+    id: "harry-potter",
+    title: { en: "Harry Potter", hy: "Հարրի Փոթեր", ru: "Гарри Поттер" },
+    author: "J.K. Rowling",
+    status: "available",
+    shortSummary: {
+      en: `An orphaned boy who has always felt out of place discovers, on his
+eleventh birthday, that he is actually a wizard — and that he has been
+invited to attend a famous school of magic. There he makes his first real
+friends, learns spells and potions, and starts to uncover the truth about
+his parents and the powerful dark wizard who once threatened them.`,
+      hy: `Որբ մի տղա, ով միշտ իրեն օտար է զգացել, իր տասնմեկերորդ ծննդյան օրը
+հայտնաբերում է, որ իրականում կախարդ է, և որ իրեն հրավիրել են հայտնի
+կախարդական դպրոց։ Այնտեղ նա ձեռք է բերում իր առաջին իրական ընկերներին,
+սովորում է հմայություններ ու թույներ պատրաստել, և սկսում է բացահայտել
+ճշմարտությունը իր ծնողների և այն հզոր մութ կախարդի մասին, ով ժամանակին
+սպառնացել էր նրանց։`,
+    },
+    extendedSummary: {
+      en: `An orphaned boy who has always felt out of place discovers, on his
+eleventh birthday, that he is actually a wizard — and that he has been
+invited to attend a famous school of magic. There he makes his first real
+friends, learns spells and potions, and starts to uncover the truth about
+his parents and the powerful dark wizard who once threatened them.
+
+As his first year at the school unfolds, the boy and his two closest
+friends begin to notice that something dangerous is hidden within the
+castle walls. Following a trail of clues, they realize the mystery is
+connected to the same dark wizard from his past — and that facing it will
+take more courage, loyalty, and quick thinking than any lesson could
+teach.`,
+      hy: `Որբ մի տղա, ով միշտ իրեն օտար է զգացել, իր տասնմեկերորդ ծննդյան օրը
+հայտնաբերում է, որ իրականում կախարդ է, և որ իրեն հրավիրել են հայտնի
+կախարդական դպրոց։ Այնտեղ նա ձեռք է բերում իր առաջին իրական ընկերներին,
+սովորում է հմայություններ ու թույներ պատրաստել, և սկսում է բացահայտել
+ճշմարտությունը իր ծնողների և այն հզոր մութ կախարդի մասին, ով ժամանակին
+սպառնացել էր նրանց։
+
+Դպրոցում իր առաջին տարվա ընթացքում տղան և իր երկու մտերիմ ընկերները
+սկսում են նկատել, որ ամրոցի պատերի ներսում ինչ-որ վտանգավոր բան է
+թաքնված։ Հետևելով հետքերին՝ նրանք հասկանում են, որ առեղծվածը կապված է
+հենց այն մութ կախարդի հետ, ով ժամանակին սպառնացել էր նրան, և որ դրան
+դիմակայելը կպահանջի ավելի շատ խիզախություն, նվիրվածություն և արագ
+մտածողություն, քան որևէ դասի ընթացքում սովորածը։`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "What does the boy discover on his eleventh birthday?", hy: "Ի՞նչ է հայտնաբերում տղան իր տասնմեկերորդ ծննդյան օրը։" },
+        options: {
+          en: ["That he is a wizard", "That he has a twin brother", "That he has won a contest", "That he is moving to a new country"],
+          hy: ["Որ ինքը կախարդ է", "Որ իր մոտ երկվորյակ եղբայր կա", "Որ ինքը մրցույթ է շահել", "Որ ինքը տեղափոխվում է նոր երկիր"],
+        },
+        correct: 0,
+        explanation: {
+          en: "He learns he's a wizard and is invited to attend a school of magic.",
+          hy: "Նա իմանում է, որ կախարդ է, և հրավիրվում է հայտնի կախարդական դպրոց։",
+        },
+      },
+      {
+        id: 2, type: "matching", bloom: "Analyze",
+        prompt: { en: "Match each character or place to its role in the story.", hy: "Յուրաքանչյուր հերոսին կամ վայրին համապատասխանեցրեք պատմության մեջ ունեցած դերին։" },
+        left: { en: ["The boy", "His two closest friends", "The school", "The dark wizard"], hy: ["Տղան", "Իր երկու մտերիմ ընկերները", "Դպրոցը", "Մութ կախարդը"] },
+        right: {
+          en: ["Discovers he is a wizard", "Help him uncover the mystery", "Where he learns magic", "The danger from his past"],
+          hy: ["Հայտնաբերում է, որ կախարդ է", "Օգնում են բացահայտել առեղծվածը", "Որտեղ նա սովորում է կախարդություն", "Վտանգը իր անցյալից"],
+        },
+        correctMap: { 0: 0, 1: 1, 2: 2, 3: 3 },
+        explanation: {
+          en: "Each element plays a distinct part in the mystery the boy and his friends uncover.",
+          hy: "Յուրաքանչյուր տարր առանձնահատուկ դեր ունի առեղծվածում, որը տղան և իր ընկերները բացահայտում են։",
+        },
+      },
+      {
+        id: 3, type: "fillblank", bloom: "Remember",
+        prompt: { en: "The boy realizes facing the danger will take courage, loyalty, and quick ___.", hy: "Տղան հասկանում է, որ վտանգին դիմակայելը կպահանջի խիզախություն, նվիրվածություն և արագ ___:" },
+        answer: { en: "thinking", hy: "մտածողություն" },
+        altAnswers: { en: [], hy: [] },
+        explanation: {
+          en: "Solving the mystery takes more than magic lessons — it takes quick thinking under pressure.",
+          hy: "Առեղծվածը լուծելը պահանջում է ավելին, քան կախարդության դասերը. պահանջում է արագ մտածողություն ճնշման տակ։",
+        },
+      },
+      {
+        id: 4, type: "classification", bloom: "Understand",
+        prompt: { en: "Sort each character into the right group.", hy: "Դասակարգեք յուրաքանչյուր հերոսին ճիշտ խմբում։" },
+        groupA: { en: "Discovering magic for the first time", hy: "Առաջին անգամ հայտնաբերում է կախարդությունը" },
+        groupB: { en: "Already part of the magical world", hy: "Արդեն կախարդական աշխարհի մասն է" },
+        options: [
+          { label: { en: "The boy", hy: "Տղան" }, group: "A" },
+          { label: { en: "People in his non-magical hometown", hy: "Մարդիկ իր ոչ-կախարդական հայրենի քաղաքում" }, group: "A" },
+          { label: { en: "A friend raised in a magical family", hy: "Ընկեր, ով մեծացել է կախարդական ընտանիքում" }, group: "B" },
+          { label: { en: "The dark wizard", hy: "Մութ կախարդը" }, group: "B" },
+        ],
+        explanation: {
+          en: "The boy and his hometown are new to magic, while his friend and the dark wizard already belong to that world.",
+          hy: "Տղան և իր հայրենի քաղաքը նոր են կախարդության մեջ, մինչդեռ իր ընկերը և մութ կախարդն արդեն պատկանում են այդ աշխարհին։",
+        },
+      },
+      {
+        id: 5, type: "open", bloom: "Evaluate",
+        prompt: { en: "Why do you think friendship matters so much when facing something dangerous?", hy: "Ինչու՞ եք կարծում, որ ընկերությունը այդքան կարևոր է վտանգավոր բանի դեմ կանգնելիս։" },
+        keywords: {
+          en: ["friend", "trust", "help", "together", "brave", "support"],
+          hy: ["ընկեր", "վստահություն", "օգնել", "միասին", "խիզախ", "աջակցություն"],
+        },
+        explanation: {
+          en: "There's no single right answer — the story suggests that trust and teamwork make courage possible.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. պատմությունն առաջարկում է, որ վստահությունն ու թիմային աշխատանքը հնարավոր են դարձնում խիզախությունը։",
+        },
+      },
+    ],
+  },
+  {
+    id: "neznaika",
+    title: { en: "Neznaika's Adventures", hy: "Չգիտեմիկի արկածները", ru: "Приключения Незнайки и его друзей" },
+    author: "Nikolai Nosov",
+    status: "available",
+    shortSummary: {
+      en: `In a tiny town where everyone is the size of a cucumber, a cheerful,
+boastful boy named Neznaika (which means "Know-Nothing") is always getting
+himself and his friends into trouble by pretending to know things he
+doesn't. When his mistakes cause real problems for the town, Neznaika has
+to learn the difference between confidence and actual knowledge.`,
+      hy: `Փոքրիկ քաղաքում, որտեղ բոլորը վարունգի չափ են, ուրախ ու պարծենկոտ մի
+տղա՝ Չգիտեմիկը (անունը նշանակում է «ոչինչ չգիտեմ»), միշտ իրեն ու իր
+ընկերներին խնդիրների մեջ է գցում՝ ձևացնելով, թե գիտի բաներ, որոնք
+իրականում չգիտի։ Երբ նրա սխալները քաղաքի համար իրական խնդիրներ են
+ստեղծում, Չգիտեմիկը պետք է սովորի տարբերել վստահությունը իրական
+գիտելիքից։`,
+      ru: `В крошечном городе, где все жители размером с огурец, весёлый и
+хвастливый мальчик по имени Незнайка постоянно втягивает себя и друзей в
+неприятности, притворяясь, что знает то, чего на самом деле не знает.
+Когда его ошибки создают городу настоящие проблемы, Незнайке приходится
+учиться отличать уверенность от настоящих знаний.`,
+    },
+    extendedSummary: {
+      en: `In a tiny town where everyone is the size of a cucumber, a cheerful,
+boastful boy named Neznaika (which means "Know-Nothing") is always getting
+himself and his friends into trouble by pretending to know things he
+doesn't. When his mistakes cause real problems for the town, Neznaika has
+to learn the difference between confidence and actual knowledge.
+
+Neznaika's adventures take him from a wild ride in a homemade hot-air
+balloon to a much bigger journey to the Moon, where he sees a strange
+society built entirely around money and greed. Along the way, his friends
+— patient inventors, doctors, and musicians — keep helping him out of
+trouble, even as he slowly realizes that being clever takes more than
+just talking big.`,
+      hy: `Փոքրիկ քաղաքում, որտեղ բոլորը վարունգի չափ են, ուրախ ու պարծենկոտ մի
+տղա՝ Չգիտեմիկը (անունը նշանակում է «ոչինչ չգիտեմ»), միշտ իրեն ու իր
+ընկերներին խնդիրների մեջ է գցում՝ ձևացնելով, թե գիտի բաներ, որոնք
+իրականում չգիտի։ Երբ նրա սխալները քաղաքի համար իրական խնդիրներ են
+ստեղծում, Չգիտեմիկը պետք է սովորի տարբերել վստահությունը իրական
+գիտելիքից։
+
+Չգիտեմիկի արկածները նրան տանում են ինքնաշեն օդապարիկով վայրի թռիչքից
+մինչև շատ ավելի մեծ ճանապարհորդություն դեպի Լուսին, որտեղ նա տեսնում է
+տարօրինակ մի հասարակություն, որը ամբողջովին կառուցված է փողի և
+ագահության վրա։ Ճանապարհին նրա ընկերները՝ համբերատար գյուտարարներ,
+բժիշկներ և երաժիշտներ, շարունակում են օգնել նրան դժվարություններից դուրս
+գալ, մինչդեռ նա աստիճանաբար հասկանում է, որ խելացի լինելը ավելին է
+պահանջում, քան միայն մեծ խոսելը։`,
+      ru: `В крошечном городе, где все жители размером с огурец, весёлый и
+хвастливый мальчик по имени Незнайка постоянно втягивает себя и друзей в
+неприятности, притворяясь, что знает то, чего на самом деле не знает.
+Когда его ошибки создают городу настоящие проблемы, Незнайке приходится
+учиться отличать уверенность от настоящих знаний.
+
+Приключения Незнайки ведут его от дикого полёта на самодельном воздушном
+шаре до гораздо большего путешествия на Луну, где он видит странное
+общество, построенное целиком на деньгах и жадности. По пути его друзья
+— терпеливые изобретатели, врачи и музыканты — продолжают выручать его
+из беды, пока он постепенно понимает, что быть умным — это больше, чем
+просто много говорить.`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "What does the name 'Neznaika' mean?", hy: "Ի՞նչ է նշանակում «Չգիտեմիկ» անունը։", ru: "Что означает имя «Незнайка»?" },
+        options: {
+          en: ["Know-nothing", "Wise one", "Fast runner", "Little giant"],
+          hy: ["Ոչինչ չգիտեմ", "Իմաստուն", "Արագ վազորդ", "Փոքրիկ հսկա"],
+          ru: ["Тот, кто ничего не знает", "Мудрец", "Быстрый бегун", "Маленький великан"],
+        },
+        correct: 0,
+        explanation: {
+          en: "Neznaika's name comes from his habit of claiming to know things he doesn't.",
+          hy: "Չգիտեմիկի անունը գալիս է նրանից, որ նա սովորություն ունի հավակնելու, թե գիտի բաներ, որոնք չգիտի։",
+          ru: "Имя Незнайки происходит от его привычки утверждать, что он знает то, чего не знает.",
+        },
+      },
+      {
+        id: 2, type: "fillblank", bloom: "Understand",
+        prompt: { en: "Neznaika and his friends are all the size of a ___.", hy: "Չգիտեմիկը և իր ընկերները բոլորն էլ ունեն ___-ի չափ։", ru: "Незнайка и его друзья все размером с ___." },
+        answer: { en: "cucumber", hy: "վարունգի", ru: "огурец" },
+        altAnswers: { en: [], hy: [], ru: [] },
+        explanation: {
+          en: "The whole town is inhabited by tiny people no bigger than a cucumber.",
+          hy: "Ամբողջ քաղաքը բնակեցված է վարունգի չափ փոքրիկ մարդկանցով։",
+          ru: "Весь город населён крошечными человечками ростом не больше огурца.",
+        },
+      },
+      {
+        id: 3, type: "classification", bloom: "Analyze",
+        prompt: { en: "Sort each character into the right group.", hy: "Դասակարգեք յուրաքանչյուր հերոսին ճիշտ խմբում։", ru: "Распределите каждого персонажа по нужной группе." },
+        groupA: { en: "Careful and skilled", hy: "Զգույշ ու հմուտ", ru: "Осторожные и умелые" },
+        groupB: { en: "Boastful and careless", hy: "Պարծենկոտ ու անփույթ", ru: "Хвастливые и беспечные" },
+        options: [
+          { label: { en: "Neznaika", hy: "Չգիտեմիկը", ru: "Незнайка" }, group: "B" },
+          { label: { en: "Znaika the inventor", hy: "Գիտեմիկը՝ գյուտարարը", ru: "Знайка-изобретатель" }, group: "A" },
+          { label: { en: "The town's doctor", hy: "Քաղաքի բժիշկը", ru: "Городской доктор" }, group: "A" },
+          { label: { en: "Guslya the musician", hy: "Գուսլյան՝ երաժիշտը", ru: "Гусля-музыкант" }, group: "A" },
+        ],
+        explanation: {
+          en: "Znaika, the doctor, and the musician approach things carefully, while Neznaika often acts before thinking.",
+          hy: "Գիտեմիկը, բժիշկը և երաժիշտը գործում են զգուշությամբ, մինչդեռ Չգիտեմիկը հաճախ գործում է առանց մտածելու։",
+          ru: "Знайка, доктор и музыкант действуют осторожно, а Незнайка часто действует, не подумав.",
+        },
+      },
+      {
+        id: 4, type: "open", bloom: "Evaluate",
+        prompt: { en: "Do you think Neznaika's confidence is a good thing or a bad thing? Explain.", hy: "Ըստ ձեզ՝ Չգիտեմիկի ինքնավստահությունը լա՞վ բան է, թե՞ վատ։ Բացատրեք։", ru: "Как вы думаете, уверенность Незнайки — это хорошо или плохо? Объясните." },
+        keywords: {
+          en: ["confidence", "honest", "careful", "brag", "learn", "mistake"],
+          hy: ["վստահություն", "ազնիվ", "զգույշ", "պարծենալ", "սովորել", "սխալ"],
+          ru: ["уверенность", "честный", "осторожный", "хвастаться", "учиться", "ошибка"],
+        },
+        explanation: {
+          en: "There's no single right answer — the story shows both the fun and the danger of overconfidence.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. պատմությունը ցույց է տալիս ինչպես չափազանց ինքնավստահության զվարճալի, այնպես էլ վտանգավոր կողմերը։",
+          ru: "Однозначного ответа нет — история показывает и весёлую, и опасную сторону излишней самоуверенности.",
+        },
+      },
+    ],
+  },
+  {
+    id: "emerald-city",
+    title: { en: "The Wizard of the Emerald City", hy: "Զմրուխտե քաղաքի կախարդը", ru: "Волшебник Изумрудного города" },
+    author: "Alexander Volkov",
+    status: "available",
+    shortSummary: {
+      en: `A girl named Ellie and her little dog are swept away by a cyclone to a
+magical land, where a falling house accidentally defeats a wicked witch.
+To find a way home, Ellie sets off down a road of yellow bricks toward
+the Emerald City, where a mysterious wizard is said to grant wishes —
+joined by a scarecrow who wants a brain, a tin woodman who wants a heart,
+and a cowardly lion who wants courage.`,
+      hy: `Էլլի անունով աղջիկը և իր փոքրիկ շունը պտտահողմով տարվում են կախարդական
+երկիր, որտեղ ընկնող տունը պատահաբար հաղթում է չար կախարդուհուն։ Տուն
+վերադառնալու ճանապարհ գտնելու համար Էլլին ուղևորվում է դեպի Զմրուխտե
+քաղաքը՝ դեղին աղյուսների ճանապարհով, որտեղ, ինչպես ասում են, առեղծվածային
+մի կախարդ ցանկություններ է կատարում. նրան միանում են ուղեղ ցանկացող
+խրտվիլակը, սիրտ ցանկացող թիթեղյա փայտահատը և քաջություն ցանկացող վախկոտ
+առյուծը։`,
+      ru: `Девочку Элли и её маленькую собачку ураган уносит в волшебную страну,
+где упавший дом случайно побеждает злую волшебницу. Чтобы найти дорогу
+домой, Элли отправляется по дороге из жёлтого кирпича к Изумрудному
+городу, где, как говорят, таинственный волшебник исполняет желания — к
+ней присоединяются пугало, желающее получить мозги, железный дровосек,
+желающий получить сердце, и трусливый лев, желающий обрести храбрость.`,
+    },
+    extendedSummary: {
+      en: `A girl named Ellie and her little dog are swept away by a cyclone to a
+magical land, where a falling house accidentally defeats a wicked witch.
+To find a way home, Ellie sets off down a road of yellow bricks toward
+the Emerald City, where a mysterious wizard is said to grant wishes —
+joined by a scarecrow who wants a brain, a tin woodman who wants a heart,
+and a cowardly lion who wants courage.
+
+Along the way, the friends face a wicked witch who controls flying
+monkeys and tries to stop them from reaching the city. When they finally
+meet the Wizard, they discover his power is not what it seems — and that
+each of them already had what they were searching for all along, inside
+themselves.`,
+      hy: `Էլլի անունով աղջիկը և իր փոքրիկ շունը պտտահողմով տարվում են կախարդական
+երկիր, որտեղ ընկնող տունը պատահաբար հաղթում է չար կախարդուհուն։ Տուն
+վերադառնալու ճանապարհ գտնելու համար Էլլին ուղևորվում է դեպի Զմրուխտե
+քաղաքը՝ դեղին աղյուսների ճանապարհով, որտեղ, ինչպես ասում են, առեղծվածային
+մի կախարդ ցանկություններ է կատարում. նրան միանում են ուղեղ ցանկացող
+խրտվիլակը, սիրտ ցանկացող թիթեղյա փայտահատը և քաջություն ցանկացող վախկոտ
+առյուծը։
+
+Ճանապարհին ընկերները հանդիպում են մեկ այլ չար կախարդուհու, ով հրամայում է
+թռչող կապիկների և փորձում կանգնեցնել նրանց՝ քաղաք հասնելուց առաջ։ Երբ
+նրանք վերջապես հանդիպում են Կախարդին, հայտնաբերում են, որ նրա ուժը այն
+չէ, ինչ թվում էր, և որ նրանցից յուրաքանչյուրն արդեն ուներ այն, ինչ
+փնտրում էր՝ իր ներսում։`,
+      ru: `Девочку Элли и её маленькую собачку ураган уносит в волшебную страну,
+где упавший дом случайно побеждает злую волшебницу. Чтобы найти дорогу
+домой, Элли отправляется по дороге из жёлтого кирпича к Изумрудному
+городу, где, как говорят, таинственный волшебник исполняет желания — к
+ней присоединяются пугало, желающее получить мозги, железный дровосек,
+желающий получить сердце, и трусливый лев, желающий обрести храбрость.
+
+По пути друзья сталкиваются со злой волшебницей, повелевающей летучими
+обезьянами, которая пытается помешать им добраться до города. Когда они
+наконец встречают Волшебника, они узнают, что его сила — не то, чем
+кажется, и что у каждого из них уже было то, что они искали, — внутри
+них самих.`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "What does Ellie follow to reach the Emerald City?", hy: "Ինչի՞ն է հետևում Էլլին Զմրուխտե քաղաք հասնելու համար։", ru: "За чем следует Элли, чтобы добраться до Изумрудного города?" },
+        options: {
+          en: ["A road of yellow bricks", "A river of gold", "A trail of flowers", "A line of stars"],
+          hy: ["Դեղին աղյուսների ճանապարհին", "Ոսկե գետին", "Ծաղիկների արահետին", "Աստղերի շարքին"],
+          ru: ["За дорогой из жёлтого кирпича", "За золотой рекой", "За тропинкой из цветов", "За рядом звёзд"],
+        },
+        correct: 0,
+        explanation: {
+          en: "The road of yellow bricks leads all the way to the Emerald City.",
+          hy: "Դեղին աղյուսների ճանապարհը տանում է ուղիղ դեպի Զմրուխտե քաղաքը։",
+          ru: "Дорога из жёлтого кирпича ведёт прямо к Изумрудному городу.",
+        },
+      },
+      {
+        id: 2, type: "matching", bloom: "Analyze",
+        prompt: { en: "Match each character to what they want.", hy: "Յուրաքանչյուր հերոսին համապատասխանեցրեք նրա ցանկությանը։", ru: "Сопоставьте каждого персонажа с его желанием." },
+        left: { en: ["Scarecrow", "Tin Woodman", "Cowardly Lion", "Ellie"], hy: ["Խրտվիլակը", "Թիթեղյա փայտահատը", "Վախկոտ առյուծը", "Էլլին"], ru: ["Пугало", "Железный дровосек", "Трусливый лев", "Элли"] },
+        right: {
+          en: ["Wants a brain", "Wants a heart", "Wants courage", "Wants to go home"],
+          hy: ["Ուզում է ուղեղ", "Ուզում է սիրտ", "Ուզում է քաջություն", "Ուզում է տուն վերադառնալ"],
+          ru: ["Хочет мозги", "Хочет сердце", "Хочет храбрость", "Хочет вернуться домой"],
+        },
+        correctMap: { 0: 0, 1: 1, 2: 2, 3: 3 },
+        explanation: {
+          en: "Each companion is searching for exactly the quality they feel they lack.",
+          hy: "Յուրաքանչյուր ուղեկից փնտրում է հենց այն հատկանիշը, որի պակասը զգում է։",
+          ru: "Каждый спутник ищет именно то качество, которого, как ему кажется, ему не хватает.",
+        },
+      },
+      {
+        id: 3, type: "fillblank", bloom: "Understand",
+        prompt: { en: "Each companion discovers that what they were searching for was inside them all ___.", hy: "Յուրաքանչյուրը հասկանում է, որ արդեն ուներ այն, ինչ փնտրում էր, իր ___ում։", ru: "Каждый спутник обнаруживает, что искомое было у него ___ всё это время." },
+        answer: { en: "along", hy: "ներսում", ru: "внутри" },
+        altAnswers: { en: [], hy: [], ru: [] },
+        explanation: {
+          en: "The story's twist is that the brain, heart, courage, and way home were never really missing.",
+          hy: "Պատմության շրջադարձն այն է, որ ուղեղը, սիրտը, քաջությունը և տուն վերադառնալու ուղին իրականում երբեք բացակայած չեն եղել։",
+          ru: "Поворот истории в том, что мозги, сердце, храбрость и дорога домой на самом деле никогда и не пропадали.",
+        },
+      },
+      {
+        id: 4, type: "open", bloom: "Evaluate",
+        prompt: { en: "Which companion's wish do you relate to most, and why?", hy: "Ո՞ր ուղեկցի ցանկությանն եք առավել նմանվում, և ինչու։", ru: "Чьё желание из спутников вам ближе всего и почему?" },
+        keywords: {
+          en: ["brain", "heart", "courage", "home", "relate", "wish"],
+          hy: ["ուղեղ", "սիրտ", "քաջություն", "տուն", "նմանվել", "ցանկություն"],
+          ru: ["мозги", "сердце", "храбрость", "дом", "близко", "желание"],
+        },
+        explanation: {
+          en: "There's no single right answer — each wish reflects something most people want at some point.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. յուրաքանչյուր ցանկություն արտացոլում է մի բան, որը մարդկանց մեծ մասը ինչ-որ պահի ցանկանում է։",
+          ru: "Однозначного ответа нет — каждое желание отражает то, чего в какой-то момент хочет почти каждый.",
+        },
+      },
+    ],
+  },
+  {
+    id: "karlsson",
+    title: { en: "Karlsson-on-the-Roof", hy: "Կառլսոնը՝ տանիքի բնակիչը", ru: "Малыш и Карлсон" },
+    author: "Astrid Lindgren",
+    status: "available",
+    shortSummary: {
+      en: `A lonely boy nicknamed Kid gets an unexpected friend: Karlsson, a small,
+plump, self-important man who lives in a hidden house on the roof and
+flies using a propeller strapped to his back. Karlsson calls himself "the
+world's best" at everything, and constantly pulls Kid into mischief and
+wild pranks around the apartment building.`,
+      hy: `Փոքրիկ մականունով միայնակ տղան անսպասելի ընկեր է ձեռք բերում.
+Կառլսոնին՝ մի փոքրիկ, գիրուկ և կարևորը ինքն իրեն համարող մարդուն, ով
+ապրում է տանիքի վրայի թաքնված տնակում և թռչում է մեջքին կապած
+պտուտակի միջոցով։ Կառլսոնն ինքն իրեն անվանում է «աշխարհի լավագույնը»
+ամեն ինչում և անընդհատ Փոքրիկին ներքաշում է չարաճճիությունների ու վայրի
+կատակների մեջ շենքի շուրջ։`,
+      ru: `Одинокий мальчик по прозвищу Малыш неожиданно обретает друга: Карлсона
+— маленького, толстенького и очень уверенного в себе человечка, который
+живёт в спрятанном домике на крыше и летает с помощью пропеллера за
+спиной. Карлсон называет себя лучшим во всём на свете и постоянно
+втягивает Малыша в шалости и озорные проделки по всему дому.`,
+    },
+    extendedSummary: {
+      en: `A lonely boy nicknamed Kid gets an unexpected friend: Karlsson, a small,
+plump, self-important man who lives in a hidden house on the roof and
+flies using a propeller strapped to his back. Karlsson calls himself "the
+world's best" at everything, and constantly pulls Kid into mischief and
+wild pranks around the apartment building.
+
+Karlsson's pranks often get Kid into trouble with his parents, since no
+one else ever sees Karlsson or believes he's real. But underneath the
+boasting and mischief, Karlsson's friendship gives Kid something he was
+missing — someone who always wants to play, and who makes even ordinary
+days feel like an adventure.`,
+      hy: `Փոքրիկ մականունով միայնակ տղան անսպասելի ընկեր է ձեռք բերում.
+Կառլսոնին՝ մի փոքրիկ, գիրուկ և կարևորը ինքն իրեն համարող մարդուն, ով
+ապրում է տանիքի վրայի թաքնված տնակում և թռչում է մեջքին կապած
+պտուտակի միջոցով։ Կառլսոնն ինքն իրեն անվանում է «աշխարհի լավագույնը»
+ամեն ինչում և անընդհատ Փոքրիկին ներքաշում է չարաճճիությունների ու վայրի
+կատակների մեջ շենքի շուրջ։
+
+Կառլսոնի կատակները հաճախ Փոքրիկին խնդիրների մեջ են գցում ծնողների հետ,
+քանի որ ոչ ոք երբեք չի տեսնում Կառլսոնին կամ չի հավատում, որ նա իրական
+է։ Բայց պարծենկոտության ու չարաճճիությունների տակ Կառլսոնի ընկերությունը
+Փոքրիկին տալիս է մի բան, որը նրան պակասում էր՝ մեկը, ով միշտ ուզում է
+խաղալ, և ով նույնիսկ սովորական օրերը դարձնում է արկածով լի։`,
+      ru: `Одинокий мальчик по прозвищу Малыш неожиданно обретает друга: Карлсона
+— маленького, толстенького и очень уверенного в себе человечка, который
+живёт в спрятанном домике на крыше и летает с помощью пропеллера за
+спиной. Карлсон называет себя лучшим во всём на свете и постоянно
+втягивает Малыша в шалости и озорные проделки по всему дому.
+
+Проделки Карлсона часто создают Малышу проблемы с родителями, ведь никто
+больше никогда не видит Карлсона и не верит, что он настоящий. Но за
+хвастовством и шалостями дружба с Карлсоном даёт Малышу то, чего ему не
+хватало, — того, кто всегда хочет играть и делает даже обычные дни
+похожими на приключение.`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "How does Karlsson fly?", hy: "Ինչպե՞ս է Կառլսոնը թռչում։", ru: "Как летает Карлсон?" },
+        options: {
+          en: ["With a propeller on his back", "On a broomstick", "With magic wings", "In a hot-air balloon"],
+          hy: ["Մեջքին ամրացված պտուտակով", "Ավելով", "Կախարդական թևերով", "Օդապարիկով"],
+          ru: ["С помощью пропеллера за спиной", "На метле", "С волшебными крыльями", "На воздушном шаре"],
+        },
+        correct: 0,
+        explanation: {
+          en: "Karlsson has a small propeller strapped to his back that lets him fly wherever he likes.",
+          hy: "Կառլսոնի մեջքին ամրացված է փոքրիկ պտուտակ, որն իրեն թույլ է տալիս թռչել ցանկացած տեղ։",
+          ru: "У Карлсона за спиной прикреплён небольшой пропеллер, который позволяет ему летать куда угодно.",
+        },
+      },
+      {
+        id: 2, type: "fillblank", bloom: "Remember",
+        prompt: { en: "Karlsson often says he is a man in the prime of his ___.", hy: "Կառլսոնը հաճախ ասում է, որ ինքը կյանքի ծաղկման ___ում գտնվող տղամարդ է։", ru: "Карлсон часто говорит, что он мужчина в самом расцвете ___." },
+        answer: { en: "life", hy: "շրջան", ru: "сил" },
+        altAnswers: { en: [], hy: [], ru: [] },
+        explanation: {
+          en: "It's one of Karlsson's favorite ways to describe himself.",
+          hy: "Սա Կառլսոնի սիրելի ինքնանկարագրություններից մեկն է։",
+          ru: "Это одно из любимых самоописаний Карлсона.",
+        },
+      },
+      {
+        id: 3, type: "classification", bloom: "Analyze",
+        prompt: { en: "Sort each character into the right group.", hy: "Դասակարգեք յուրաքանչյուր հերոսին ճիշտ խմբում։", ru: "Распределите каждого персонажа по нужной группе." },
+        groupA: { en: "Believes Karlsson is real", hy: "Հավատում է, որ Կառլսոնն իրական է", ru: "Верит, что Карлсон настоящий" },
+        groupB: { en: "Never sees or believes in Karlsson", hy: "Երբեք չի տեսնում Կառլսոնին կամ չի հավատում նրան", ru: "Никогда не видит Карлсона и не верит в него" },
+        options: [
+          { label: { en: "Kid", hy: "Փոքրիկը", ru: "Малыш" }, group: "A" },
+          { label: { en: "Karlsson himself", hy: "Ինքը՝ Կառլսոնը", ru: "Сам Карлсон" }, group: "A" },
+          { label: { en: "Kid's parents", hy: "Փոքրիկի ծնողները", ru: "Родители Малыша" }, group: "B" },
+          { label: { en: "Other grown-ups", hy: "Այլ մեծահասակներ", ru: "Другие взрослые" }, group: "B" },
+        ],
+        explanation: {
+          en: "Kid and Karlsson both know Karlsson is real, but the grown-ups never see any proof of it.",
+          hy: "Փոքրիկն ու Կառլսոնն էլ գիտեն, որ Կառլսոնն իրական է, բայց մեծահասակները երբեք դրա ապացույցը չեն տեսնում։",
+          ru: "И Малыш, и сам Карлсон знают, что он настоящий, но взрослые никогда не видят тому доказательств.",
+        },
+      },
+      {
+        id: 4, type: "open", bloom: "Evaluate",
+        prompt: { en: "Why do you think Kid needed a friend like Karlsson?", hy: "Ինչու՞ եք կարծում, որ Փոքրիկին անհրաժեշտ էր Կառլսոնի նման ընկեր։", ru: "Как вы думаете, зачем Малышу нужен был такой друг, как Карлсон?" },
+        keywords: {
+          en: ["lonely", "friend", "play", "imagination", "fun", "adventure"],
+          hy: ["միայնակ", "ընկեր", "խաղալ", "երևակայություն", "զվարճալի", "արկած"],
+          ru: ["одинокий", "друг", "играть", "воображение", "весело", "приключение"],
+        },
+        explanation: {
+          en: "There's no single right answer — the story suggests Kid needed both fun and companionship.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. պատմությունն առաջարկում է, որ Փոքրիկին անհրաժեշտ էին և՛ զվարճություն, և՛ ընկերակցություն։",
+          ru: "Однозначного ответа нет — история намекает, что Малышу не хватало и веселья, и дружеского общения.",
+        },
+      },
+    ],
+  },
+  {
+    id: "prostokvashino",
+    title: { en: "Holidays in Prostokvashino", hy: "Արձակուրդներ Պրոստոկվաշինոյում", ru: "Каникулы в Простоквашино" },
+    author: "Eduard Uspensky",
+    status: "available",
+    shortSummary: {
+      en: `A resourceful boy named Uncle Fyodor (nicknamed for how grown-up he acts)
+leaves the city with a talking cat named Matroskin to live in a quiet
+countryside house in the village of Prostokvashino. Together with a shy
+dog named Sharik, they build a happy, unusual little household — solving
+problems his own way, since he acts far more sensibly than most
+grown-ups.`,
+      hy: `Հնարամիտ մի տղա՝ մականունով Ֆյոդոր Հորեղբայր (անվանված է իր
+մեծահասակի պես պահվածքի համար), քաղաքից հեռանում է խոսող Մատրոսկին
+կատվի հետ՝ ապրելու համար հանգիստ գյուղական տանը՝ Պրոստոկվաշինո գյուղում։
+Ամաչկոտ Շարիկ շան հետ միասին նրանք կառուցում են երջանիկ ու անսովոր
+փոքրիկ տնտեսություն՝ խնդիրները լուծելով իր ձևով, քանի որ նա գործում է
+շատ ավելի իմաստուն, քան մեծամասնության մեծահասակները։`,
+      ru: `Находчивый мальчик по прозвищу дядя Фёдор (прозванный так за то, что
+ведёт себя совсем по-взрослому) уезжает из города вместе с говорящим
+котом Матроскиным жить в тихий деревенский дом в селе Простоквашино.
+Вместе со стеснительным псом Шариком они создают счастливое и необычное
+маленькое хозяйство, решая проблемы по-своему, ведь дядя Фёдор поступает
+куда рассудительнее многих взрослых.`,
+    },
+    extendedSummary: {
+      en: `A resourceful boy named Uncle Fyodor (nicknamed for how grown-up he acts)
+leaves the city with a talking cat named Matroskin to live in a quiet
+countryside house in the village of Prostokvashino. Together with a shy
+dog named Sharik, they build a happy, unusual little household — solving
+problems his own way, since he acts far more sensibly than most
+grown-ups.
+
+As the trio settles in, they raise a cow, deal with a mischievous local
+postman, and slowly turn their ramshackle house into a real home.
+Meanwhile, Uncle Fyodor's worried parents search for him back in the
+city, not realizing their son is doing just fine — better, in some ways,
+than when he was under their constant watch.`,
+      hy: `Հնարամիտ մի տղա՝ մականունով Ֆյոդոր Հորեղբայր (անվանված է իր
+մեծահասակի պես պահվածքի համար), քաղաքից հեռանում է խոսող Մատրոսկին
+կատվի հետ՝ ապրելու համար հանգիստ գյուղական տանը՝ Պրոստոկվաշինո գյուղում։
+Ամաչկոտ Շարիկ շան հետ միասին նրանք կառուցում են երջանիկ ու անսովոր
+փոքրիկ տնտեսություն՝ խնդիրները լուծելով իր ձևով, քանի որ նա գործում է
+շատ ավելի իմաստուն, քան մեծամասնության մեծահասակները։
+
+Երբ եռյակը հաստատվում է, նրանք մեծացնում են կով, գործ ունենում չարաճճի
+փոստատարի հետ և աստիճանաբար իրենց քանդված տունը վերածում իրական
+օջախի։ Մինչդեռ Ֆյոդոր Հորեղբոր անհանգստացած ծնողները փնտրում են նրան
+քաղաքում՝ չգիտակցելով, որ իրենց տղան լավ է անում, նույնիսկ, մի կերպ,
+ավելի լավ, քան երբ նա գտնվում էր իրենց մշտական հսկողության տակ։`,
+      ru: `Находчивый мальчик по прозвищу дядя Фёдор (прозванный так за то, что
+ведёт себя совсем по-взрослому) уезжает из города вместе с говорящим
+котом Матроскиным жить в тихий деревенский дом в селе Простоквашино.
+Вместе со стеснительным псом Шариком они создают счастливое и необычное
+маленькое хозяйство, решая проблемы по-своему, ведь дядя Фёдор поступает
+куда рассудительнее многих взрослых.
+
+Пока троица обустраивается, они заводят корову, разбираются с проказами
+местного почтальона и постепенно превращают свой ветхий дом в настоящий
+уютный дом. Тем временем встревоженные родители дяди Фёдора ищут его в
+городе, не понимая, что их сын прекрасно справляется — в чём-то даже
+лучше, чем когда был под их постоянным присмотром.`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "Who does Uncle Fyodor move to the countryside with?", hy: "Ո՞ւմ հետ է Ֆյոդոր Հորեղբայրը տեղափոխվում գյուղ։", ru: "С кем дядя Фёдор переезжает в деревню?" },
+        options: {
+          en: ["A talking cat", "His grandmother", "A group of friends", "A teacher"],
+          hy: ["Խոսող կատվի հետ", "Տատիկի հետ", "Ընկերների խմբի հետ", "Ուսուցչի հետ"],
+          ru: ["С говорящим котом", "С бабушкой", "С группой друзей", "С учителем"],
+        },
+        correct: 0,
+        explanation: {
+          en: "Uncle Fyodor moves with Matroskin, a cat who can talk.",
+          hy: "Ֆյոդոր Հորեղբայրը տեղափոխվում է Մատրոսկին կատվի հետ, ով կարող է խոսել։",
+          ru: "Дядя Фёдор переезжает вместе с Матроскиным — котом, который умеет говорить.",
+        },
+      },
+      {
+        id: 2, type: "fillblank", bloom: "Remember",
+        prompt: { en: "The cat's name is ___.", hy: "Կատվի անունը ___ է։", ru: "Кота зовут ___." },
+        answer: { en: "Matroskin", hy: "Մատրոսկին", ru: "Матроскин" },
+        altAnswers: { en: [], hy: [], ru: [] },
+        explanation: {
+          en: "Matroskin is the clever, practical cat who moves to Prostokvashino with Uncle Fyodor.",
+          hy: "Մատրոսկինը խելացի ու գործնական կատուն է, ով Ֆյոդոր Հորեղբոր հետ տեղափոխվում է Պրոստոկվաշինո։",
+          ru: "Матроскин — умный и практичный кот, который переезжает в Простоквашино вместе с дядей Фёдором.",
+        },
+      },
+      {
+        id: 3, type: "classification", bloom: "Analyze",
+        prompt: { en: "Sort each character into the right group.", hy: "Դասակարգեք յուրաքանչյուր հերոսին ճիշտ խմբում։", ru: "Распределите каждого персонажа по нужной группе." },
+        groupA: { en: "Lives in Prostokvashino", hy: "Ապրում է Պրոստոկվաշինոյում", ru: "Живёт в Простоквашино" },
+        groupB: { en: "Worried, back in the city", hy: "Անհանգստացած է, մնացել է քաղաքում", ru: "Волнуется, остался в городе" },
+        options: [
+          { label: { en: "Uncle Fyodor", hy: "Ֆյոդոր Հորեղբայրը", ru: "Дядя Фёдор" }, group: "A" },
+          { label: { en: "Matroskin the cat", hy: "Մատրոսկին կատուն", ru: "Кот Матроскин" }, group: "A" },
+          { label: { en: "Sharik the dog", hy: "Շարիկ շունը", ru: "Пёс Шарик" }, group: "A" },
+          { label: { en: "Uncle Fyodor's parents", hy: "Ֆյոդոր Հորեղբոր ծնողները", ru: "Родители дяди Фёдора" }, group: "B" },
+        ],
+        explanation: {
+          en: "The new countryside household is made up of Uncle Fyodor, Matroskin, and Sharik, while his parents stay behind, searching for him.",
+          hy: "Նոր գյուղական տնտեսությունը կազմված է Ֆյոդոր Հորեղբորից, Մատրոսկինից և Շարիկից, մինչդեռ ծնողները մնում են քաղաքում՝ փնտրելով նրան։",
+          ru: "Новое деревенское хозяйство составляют дядя Фёдор, Матроскин и Шарик, а его родители остаются в городе и ищут его.",
+        },
+      },
+      {
+        id: 4, type: "open", bloom: "Evaluate",
+        prompt: { en: "Why do you think Uncle Fyodor manages so well on his own?", hy: "Ինչու՞ եք կարծում, որ Ֆյոդոր Հորեղբայրն այդքան լավ է հաղթահարում ինքնուրույն։", ru: "Как вы думаете, почему дядя Фёдор так хорошо справляется самостоятельно?" },
+        keywords: {
+          en: ["responsible", "capable", "independent", "calm", "sensible", "care"],
+          hy: ["պատասխանատու", "ունակ", "ինքնուրույն", "հանգիստ", "իմաստուն", "հոգատարություն"],
+          ru: ["ответственный", "способный", "самостоятельный", "спокойный", "рассудительный", "забота"],
+        },
+        explanation: {
+          en: "There's no single right answer — the story suggests he's simply more responsible and calm than most children his age.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. պատմությունն ակնարկում է, որ նա պարզապես ավելի պատասխանատու ու հանգիստ է, քան իր տարիքի մյուս երեխաները։",
+          ru: "Однозначного ответа нет — история намекает, что он просто более ответственный и спокойный, чем большинство детей его возраста.",
+        },
+      },
+    ],
+  },
+  {
+    id: "buratino",
+    title: { en: "The Golden Key, or The Adventures of Buratino", hy: "Ոսկե բանալին, կամ Բուրատինոյի արկածները", ru: "Золотой ключик, или Приключения Буратино" },
+    author: "Alexey Tolstoy",
+    status: "available",
+    shortSummary: {
+      en: `An old woodcarver named Papa Carlo carves a wooden puppet named
+Buratino out of a talking log, and the puppet immediately springs to
+life — mischievous, curious, and always in a hurry. Instead of going to
+school like Papa Carlo hopes, Buratino sells his schoolbook for a ticket
+to a puppet theatre and stumbles into a bigger adventure than he
+expected.`,
+      hy: `Ծեր փայտագործ Կառլո Հայրիկը խոսող փայտի կտորից փորագրում է Բուրատինո
+անունով փայտե տիկնիկ, և տիկնիկն անմիջապես կենդանանում է՝ չարաճճի,
+հետաքրքրասեր ու միշտ շտապող։ Փոխանակ դպրոց գնալու, ինչպես Կառլո Հայրիկն
+է ցանկանում, Բուրատինոն վաճառում է իր դասագիրքը՝ տիկնիկային թատրոնի
+տոմսի դիմաց, և հայտնվում է շատ ավելի մեծ արկածի մեջ, քան սպասում էր։`,
+      ru: `Старый резчик по дереву папа Карло вырезает из говорящего полена
+деревянного человечка по имени Буратино, и куклёнок тут же оживает —
+озорной, любопытный и вечно спешащий. Вместо того чтобы пойти в школу,
+как надеется папа Карло, Буратино продаёт свою азбуку ради билета в
+кукольный театр и попадает в приключение куда большее, чем ожидал.`,
+    },
+    extendedSummary: {
+      en: `An old woodcarver named Papa Carlo carves a wooden puppet named
+Buratino out of a talking log, and the puppet immediately springs to
+life — mischievous, curious, and always in a hurry. Instead of going to
+school like Papa Carlo hopes, Buratino sells his schoolbook for a ticket
+to a puppet theatre and stumbles into a bigger adventure than he
+expected.
+
+Buratino discovers a secret golden key that is said to unlock a hidden
+door behind a painted fireplace, and a band of tricksters try to steal
+his few coins by promising to grow them into a money tree. With the help
+of new friends, Buratino learns to be more careful — and finally finds
+what the golden key was hiding all along.`,
+      hy: `Ծեր փայտագործ Կառլո Հայրիկը խոսող փայտի կտորից փորագրում է Բուրատինո
+անունով փայտե տիկնիկ, և տիկնիկն անմիջապես կենդանանում է՝ չարաճճի,
+հետաքրքրասեր ու միշտ շտապող։ Փոխանակ դպրոց գնալու, ինչպես Կառլո Հայրիկն
+է ցանկանում, Բուրատինոն վաճառում է իր դասագիրքը՝ տիկնիկային թատրոնի
+տոմսի դիմաց, և հայտնվում է շատ ավելի մեծ արկածի մեջ, քան սպասում էր։
+
+Բուրատինոն հայտնաբերում է գաղտնի ոսկե բանալի, որը, ասում են, բացում է
+թաքնված դուռ նկարված վառարանի հետևում, և խաբեբաների մի խումբ փորձում է
+գողանալ նրա մի քանի մետաղադրամները՝ խոստանալով դրանք վերածել փողի
+ծառի։ Նոր ընկերների օգնությամբ Բուրատինոն սովորում է ավելի զգույշ լինել
+և վերջապես գտնում է, թե ինչ էր թաքցնում ոսկե բանալին։`,
+      ru: `Старый резчик по дереву папа Карло вырезает из говорящего полена
+деревянного человечка по имени Буратино, и куклёнок тут же оживает —
+озорной, любопытный и вечно спешащий. Вместо того чтобы пойти в школу,
+как надеется папа Карло, Буратино продаёт свою азбуку ради билета в
+кукольный театр и попадает в приключение куда большее, чем ожидал.
+
+Буратино находит потайной золотой ключик, который, как говорят, открывает
+скрытую дверь за нарисованным очагом, а шайка обманщиков пытается украсть
+его несколько монет, обещая вырастить из них денежное дерево. С помощью
+новых друзей Буратино учится быть осторожнее и наконец находит то, что
+всё это время скрывал золотой ключик.`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "What is Buratino carved from?", hy: "Ինչի՞ց է փորագրված Բուրատինոն։", ru: "Из чего вырезан Буратино?" },
+        options: {
+          en: ["A talking log", "A block of clay", "A piece of metal", "A bundle of straw"],
+          hy: ["Խոսող փայտից", "Կավի կտորից", "Մետաղի կտորից", "Ծղոտի խրձից"],
+          ru: ["Из говорящего полена", "Из куска глины", "Из куска металла", "Из связки соломы"],
+        },
+        correct: 0,
+        explanation: {
+          en: "Papa Carlo carves Buratino from a log that surprises him by talking.",
+          hy: "Կառլո Հայրիկը Բուրատինոյին փորագրում է մի փայտից, որը զարմացնում է իրեն՝ խոսելով։",
+          ru: "Папа Карло вырезает Буратино из полена, которое удивляет его тем, что умеет говорить.",
+        },
+      },
+      {
+        id: 2, type: "fillblank", bloom: "Remember",
+        prompt: { en: "Buratino sells his schoolbook to buy a ticket to the ___ theatre.", hy: "Բուրատինոն վաճառում է իր դասագիրքը՝ ___ թատրոնի տոմս գնելու համար։", ru: "Буратино продаёт свою азбуку, чтобы купить билет в ___ театр." },
+        answer: { en: "puppet", hy: "տիկնիկային", ru: "кукольный" },
+        altAnswers: { en: [], hy: [], ru: [] },
+        explanation: {
+          en: "Buratino's curiosity about the puppet theatre gets his whole adventure started.",
+          hy: "Բուրատինոյի հետաքրքրասիրությունը տիկնիկային թատրոնի հանդեպ սկիզբ է դնում նրա ամբողջ արկածին։",
+          ru: "Любопытство Буратино к кукольному театру и запускает всё его приключение.",
+        },
+      },
+      {
+        id: 3, type: "matching", bloom: "Analyze",
+        prompt: { en: "Match each character or item to its role in the story.", hy: "Յուրաքանչյուր հերոսին կամ իրին համապատասխանեցրեք պատմության մեջ ունեցած դերին։", ru: "Сопоставьте каждого персонажа или предмет с его ролью в истории." },
+        left: { en: ["Papa Carlo", "Buratino", "The tricksters", "The golden key"], hy: ["Կառլո Հայրիկը", "Բուրատինոն", "Խաբեբաները", "Ոսկե բանալին"], ru: ["Папа Карло", "Буратино", "Обманщики", "Золотой ключик"] },
+        right: {
+          en: ["Wants Buratino to go to school", "Curious and always in a hurry", "Try to steal his coins", "Opens a hidden door"],
+          hy: ["Ուզում է, որ Բուրատինոն դպրոց գնա", "Հետաքրքրասեր է և միշտ շտապում", "Փորձում են գողանալ նրա մետաղադրամները", "Բացում է թաքնված դուռ"],
+          ru: ["Хочет, чтобы Буратино ходил в школу", "Любопытный и вечно спешит", "Пытаются украсть его монеты", "Открывает потайную дверь"],
+        },
+        correctMap: { 0: 0, 1: 1, 2: 2, 3: 3 },
+        explanation: {
+          en: "Each character or object plays a distinct part in Buratino's journey.",
+          hy: "Յուրաքանչյուր հերոս կամ առարկա առանձնահատուկ դեր ունի Բուրատինոյի ճանապարհորդության մեջ։",
+          ru: "Каждый персонаж или предмет играет свою особую роль в путешествии Буратино.",
+        },
+      },
+      {
+        id: 4, type: "open", bloom: "Evaluate",
+        prompt: { en: "What lesson do you think Buratino learns from being tricked?", hy: "Ի՞նչ դաս է, ըստ ձեզ, սովորում Բուրատինոն խաբվելուց հետո։", ru: "Какой урок, по-вашему, извлекает Буратино из того, что его обманули?" },
+        keywords: {
+          en: ["careful", "trust", "honest", "learn", "mistake", "wise"],
+          hy: ["զգույշ", "վստահություն", "ազնիվ", "սովորել", "սխալ", "իմաստուն"],
+          ru: ["осторожный", "доверие", "честный", "учиться", "ошибка", "мудрый"],
+        },
+        explanation: {
+          en: "There's no single right answer — the story shows that being tricked can teach caution and better judgment.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. պատմությունը ցույց է տալիս, որ խաբվելը կարող է սովորեցնել զգուշություն ու ավելի լավ դատողություն։",
+          ru: "Однозначного ответа нет — история показывает, что обман может научить осторожности и лучшему суждению.",
+        },
+      },
+    ],
+  },
+  {
+    id: "crooked-mirrors",
+    title: { en: "The Kingdom of Crooked Mirrors", hy: "Կորացած հայելիների թագավորությունը", ru: "Королевство кривых зеркал" },
+    author: "Vitaly Gubarev",
+    status: "available",
+    shortSummary: {
+      en: `A girl named Olya, who often makes excuses and avoids the truth, steps
+through a magic mirror into a strange kingdom where everything is
+reversed. There she meets her own mirror-twin, Yalo, and together they
+discover a kingdom ruled by a cruel boy-king, where flattery and lies are
+rewarded and honesty is dangerous.`,
+      hy: `Օլյա անունով աղջիկը, ով հաճախ պատրվակներ է հորինում և խուսափում
+ճշմարտությունից, կախարդական հայելիով անցնում է տարօրինակ մի
+թագավորություն, որտեղ ամեն ինչ հակադարձված է։ Այնտեղ նա հանդիպում է իր
+հայելային երկվորյակին՝ Յալոյին, և միասին նրանք հայտնաբերում են
+թագավորություն, որը ղեկավարում է դաժան մի տղա-թագավոր, որտեղ
+շողոքորթությունն ու ստերը պարգևատրվում են, իսկ ազնվությունը վտանգավոր
+է։`,
+      ru: `Девочка Оля, которая часто оправдывается и избегает правды, проходит
+сквозь волшебное зеркало в странное королевство, где всё наоборот. Там
+она встречает свою зеркальную двойняшку Яло, и вместе они обнаруживают
+королевство, которым правит жестокий мальчик-король, где лесть и ложь
+вознаграждаются, а честность опасна.`,
+    },
+    extendedSummary: {
+      en: `A girl named Olya, who often makes excuses and avoids the truth, steps
+through a magic mirror into a strange kingdom where everything is
+reversed. There she meets her own mirror-twin, Yalo, and together they
+discover a kingdom ruled by a cruel boy-king, where flattery and lies are
+rewarded and honesty is dangerous.
+
+Olya and Yalo must work together — and tell the truth, even when it's
+frightening — to help a group of oppressed children and stand up to the
+unfair rules of the kingdom. By the end of their journey, Olya finally
+understands why honesty matters, even when a comfortable lie would be so
+much easier.`,
+      hy: `Օլյա անունով աղջիկը, ով հաճախ պատրվակներ է հորինում և խուսափում
+ճշմարտությունից, կախարդական հայելիով անցնում է տարօրինակ մի
+թագավորություն, որտեղ ամեն ինչ հակադարձված է։ Այնտեղ նա հանդիպում է իր
+հայելային երկվորյակին՝ Յալոյին, և միասին նրանք հայտնաբերում են
+թագավորություն, որը ղեկավարում է դաժան մի տղա-թագավոր, որտեղ
+շողոքորթությունն ու ստերը պարգևատրվում են, իսկ ազնվությունը վտանգավոր
+է։
+
+Օլյան ու Յալոն պետք է աշխատեն միասին և ասեն ճշմարտությունը, նույնիսկ երբ
+դա վախեցնող է, որպեսզի օգնեն ճնշված երեխաների խմբին և կանգնեն
+թագավորության անարդար կանոնների դեմ։ Իրենց ճանապարհորդության վերջում
+Օլյան վերջապես հասկանում է, թե ինչու է ազնվությունը կարևոր, նույնիսկ երբ
+հարմարավետ ստելը շատ ավելի հեշտ կլիներ։`,
+      ru: `Девочка Оля, которая часто оправдывается и избегает правды, проходит
+сквозь волшебное зеркало в странное королевство, где всё наоборот. Там
+она встречает свою зеркальную двойняшку Яло, и вместе они обнаруживают
+королевство, которым правит жестокий мальчик-король, где лесть и ложь
+вознаграждаются, а честность опасна.
+
+Оле и Яло приходится работать вместе — и говорить правду, даже когда это
+страшно, — чтобы помочь группе угнетённых детей и противостоять
+несправедливым правилам королевства. К концу своего путешествия Оля
+наконец понимает, почему честность важна, даже когда удобная ложь была
+бы намного легче.`,
+    },
+    questions: [
+      {
+        id: 1, type: "mc", bloom: "Remember",
+        prompt: { en: "How does Olya enter the kingdom of crooked mirrors?", hy: "Ինչպե՞ս է Օլյան մտնում կորացած հայելիների թագավորություն։", ru: "Как Оля попадает в королевство кривых зеркал?" },
+        options: {
+          en: ["Through a magic mirror", "Down a rabbit hole", "Through a wardrobe", "On a flying carpet"],
+          hy: ["Կախարդական հայելիով", "Ճագարի բներով", "Զգեստապահարանով", "Թռչող գորգով"],
+          ru: ["Через волшебное зеркало", "Через кроличью нору", "Через шкаф", "На летающем ковре"],
+        },
+        correct: 0,
+        explanation: {
+          en: "Olya steps through an old magic mirror, which is how she enters the reversed kingdom.",
+          hy: "Օլյան անցնում է հին կախարդական հայելիով, և հենց այդպես է մտնում հակադարձված թագավորություն։",
+          ru: "Оля проходит сквозь старое волшебное зеркало — именно так она попадает в перевёрнутое королевство.",
+        },
+      },
+      {
+        id: 2, type: "fillblank", bloom: "Remember",
+        prompt: { en: "Olya's mirror-twin in the kingdom is named ___.", hy: "Օլյայի հայելային երկվորյակի անունը թագավորությունում ___ է։", ru: "Зеркальную двойняшку Оли в королевстве зовут ___." },
+        answer: { en: "Yalo", hy: "Յալո", ru: "Яло" },
+        altAnswers: { en: [], hy: [], ru: [] },
+        explanation: {
+          en: "Yalo is Olya's own name spelled backward, and also her mirror-twin's name.",
+          hy: "Յալոն Օլյայի անունն է՝ հակառակ ուղղությամբ գրված, և միևնույն ժամանակ՝ նրա հայելային երկվորյակի անունը։",
+          ru: "Яло — это имя Оли, прочитанное наоборот, и одновременно имя её зеркальной двойняшки.",
+        },
+      },
+      {
+        id: 3, type: "classification", bloom: "Analyze",
+        prompt: { en: "Sort each behavior into the right group.", hy: "Դասակարգեք յուրաքանչյուր վարքագիծը ճիշտ խմբում։", ru: "Распределите каждое поведение по нужной группе." },
+        groupA: { en: "Rewarded in the kingdom", hy: "Պարգևատրվում է թագավորությունում", ru: "Вознаграждается в королевстве" },
+        groupB: { en: "Punished or dangerous in the kingdom", hy: "Պատժվում է կամ վտանգավոր է թագավորությունում", ru: "Наказывается или опасно в королевстве" },
+        options: [
+          { label: { en: "Flattery", hy: "Շողոքորթությունը", ru: "Лесть" }, group: "A" },
+          { label: { en: "Lies", hy: "Ստերը", ru: "Ложь" }, group: "A" },
+          { label: { en: "Honesty", hy: "Ազնվությունը", ru: "Честность" }, group: "B" },
+          { label: { en: "Telling the truth", hy: "Ճշմարտություն ասելը", ru: "Говорить правду" }, group: "B" },
+        ],
+        explanation: {
+          en: "The kingdom's reversed rules mean flattery and lies are praised, while telling the truth is risky.",
+          hy: "Թագավորության հակադարձված կանոնները նշանակում են, որ շողոքորթություններն ու ստերը գովաբանվում են, մինչդեռ ճշմարտություն ասելը վտանգավոր է։",
+          ru: "Перевёрнутые правила королевства означают, что лесть и ложь восхваляются, а говорить правду рискованно.",
+        },
+      },
+      {
+        id: 4, type: "open", bloom: "Evaluate",
+        prompt: { en: "Why do you think Olya needed to see her own flaws reflected in a mirror world to change?", hy: "Ինչու՞ եք կարծում, որ Օլյային անհրաժեշտ էր տեսնել իր թերությունները հայելային աշխարհում արտացոլված, որպեսզի փոխվի։", ru: "Как вы думаете, почему Оле нужно было увидеть свои недостатки отражёнными в зеркальном мире, чтобы измениться?" },
+        keywords: {
+          en: ["honest", "reflect", "mirror", "truth", "change", "learn"],
+          hy: ["ազնիվ", "արտացոլում", "հայելի", "ճշմարտություն", "փոփոխվել", "սովորել"],
+          ru: ["честный", "отражение", "зеркало", "правда", "измениться", "учиться"],
+        },
+        explanation: {
+          en: "There's no single right answer — seeing a problem reflected back can make it easier to recognize in yourself.",
+          hy: "Միանշանակ ճիշտ պատասխան չկա. խնդիրը արտացոլված տեսնելը կարող է հեշտացնել այն ինքդ քո մեջ նկատելը։",
+          ru: "Однозначного ответа нет — увидеть проблему отражённой со стороны иногда помогает легче распознать её в себе.",
+        },
+      },
+    ],
+  },
+];
+
+const READING_MODES = [
+  { id: "short", labelKey: "modeShort", purpose: { en: "A quick introduction to the story.", hy: "Պատմության արագ ներածություն։" }, points: 5, badge: "Bronze", badgeClass: "bk-bg-bronze", icon: BookOpen },
+  { id: "extended", labelKey: "modeExtended", purpose: { en: "A deeper telling, for better understanding.", hy: "Ավելի խորը պատմում՝ ավելի լավ հասկանալու համար։" }, points: 5, badge: "Silver", badgeClass: "bk-bg-silver", icon: Sparkles },
+  { id: "physical", labelKey: "modePhysical", purpose: { en: "Read the real book, then confirm here.", hy: "Կարդա իրական գիրքը, ապա հաստատիր այստեղ։" }, points: 5, badge: "Gold", badgeClass: "bk-bg-gold", icon: Trophy },
+];
+
+const RECOMMENDATIONS = [
+  { title: { en: "Charlotte's Web", hy: "Շառլոթի ցանցը", ru: "Паутина Шарлотты" }, author: "E.B. White" },
+  { title: { en: "The Wind in the Willows", hy: "Քամին ուռիների մեջ", ru: "Ветер в ивах" }, author: "Kenneth Grahame" },
+  { title: { en: "Alice's Adventures in Wonderland", hy: "Ալիսի արկածները հրաշքների աշխարհում", ru: "Алиса в Стране чудес" }, author: "Lewis Carroll" },
+];
+
+const REWARD_GOAL = 20;
+
+/* Book cover art.
+   Mowgli (The Jungle Book, 1894) and Pollyanna (1913) are public domain in the
+   US, so their real first-edition cover art is used, sourced from Wikimedia
+   Commons. The Little Prince (copyrighted in the US until 2039) and Harry
+   Potter (fully in copyright) use original stylized art in the app's own
+   visual language instead of the real cover art. */
+const COVERS = {
+  "little-prince": { type: "art", art: "planet" },
+  mowgli: { type: "image", url: "https://commons.wikimedia.org/wiki/Special:FilePath/JunglebookCover.jpg" },
+  pollyanna: { type: "image", url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pollyanna_(Eleanor_Porter_book)_first_edition_cover.jpg" },
+  "harry-potter": { type: "art", art: "castle" },
+  neznaika: { type: "art", art: "hat" },
+  "emerald-city": { type: "art", art: "emerald" },
+  karlsson: { type: "art", art: "propeller" },
+  prostokvashino: { type: "art", art: "cottage" },
+  buratino: { type: "art", art: "key" },
+  "crooked-mirrors": { type: "art", art: "mirror" },
+};
+
+function BookCover({ bookId, className = "" }) {
+  const cover = COVERS[bookId];
+  if (cover?.type === "image") {
+    return (
+      <img
+        src={cover.url}
+        alt=""
+        className={`object-cover ${className}`}
+        loading="lazy"
+      />
+    );
+  }
+  const art = cover?.art;
+  if (art === "planet") {
+    return (
+      <svg viewBox="0 0 200 200" className={className}>
+        <defs>
+          <radialGradient id="pp-sky" cx="50%" cy="30%" r="80%">
+            <stop offset="0%" stopColor="#3A4A75" />
+            <stop offset="100%" stopColor="#141A28" />
+          </radialGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#pp-sky)" />
+        {[...Array(18)].map((_, i) => (
+          <circle key={i} cx={(i * 47) % 200} cy={(i * 71) % 140} r={i % 3 === 0 ? 1.6 : 0.9} fill="#F3E3B8" opacity={0.4 + (i % 4) * 0.15} />
+        ))}
+        <circle cx="100" cy="150" r="34" fill="#E3A94F" />
+        <rect x="96" y="94" width="8" height="30" rx="4" fill="#6B9080" />
+        <circle cx="100" cy="88" r="7" fill="#D8697A" />
+      </svg>
+    );
+  }
+  if (art === "castle") {
+    return (
+      <svg viewBox="0 0 200 200" className={className}>
+        <defs>
+          <linearGradient id="pp-castle" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#2F4066" />
+            <stop offset="100%" stopColor="#141A28" />
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#pp-castle)" />
+        <circle cx="150" cy="40" r="14" fill="#F3E3B8" opacity="0.85" />
+        <path d="M40 170 V110 L55 95 V110 H70 V90 L85 75 V110 H100 V70 L115 55 V110 H130 V95 L145 110 V170 Z" fill="#0F1420" opacity="0.9" />
+        <rect x="40" y="170" width="105" height="10" fill="#0F1420" />
+      </svg>
+    );
+  }
+  if (art === "hat") {
+    return (
+      <svg viewBox="0 0 200 200" className={className}>
+        <defs>
+          <linearGradient id="pp-hat-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#E3A94F" />
+            <stop offset="100%" stopColor="#B4772F" />
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#pp-hat-bg)" />
+        <ellipse cx="100" cy="120" rx="70" ry="16" fill="#1B2436" />
+        <path d="M65 120 Q65 65 100 65 Q135 65 135 120 Z" fill="#D8697A" />
+        <circle cx="100" cy="60" r="9" fill="#F3ECDD" />
+        {[...Array(10)].map((_, i) => (
+          <circle key={i} cx={40 + (i * 13) % 130} cy={150 + (i % 3) * 12} r="3" fill="#F3ECDD" opacity="0.6" />
+        ))}
+      </svg>
+    );
+  }
+  if (art === "emerald") {
+    return (
+      <svg viewBox="0 0 200 200" className={className}>
+        <defs>
+          <linearGradient id="pp-em-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#1B2436" />
+            <stop offset="100%" stopColor="#0F1420" />
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#pp-em-bg)" />
+        <path d="M20 150 Q100 110 180 150" stroke="#E3A94F" strokeWidth="6" fill="none" opacity="0.8" />
+        <polygon points="100,45 130,75 118,120 82,120 70,75" fill="#4E9E7A" stroke="#7FCBA4" strokeWidth="3" />
+      </svg>
+    );
+  }
+  if (art === "propeller") {
+    return (
+      <svg viewBox="0 0 200 200" className={className}>
+        <defs>
+          <linearGradient id="pp-roof-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#3A4A75" />
+            <stop offset="100%" stopColor="#141A28" />
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#pp-roof-bg)" />
+        <polygon points="30,140 100,90 170,140" fill="#B4772F" />
+        <rect x="45" y="140" width="110" height="35" fill="#D8697A" opacity="0.85" />
+        <circle cx="100" cy="70" r="6" fill="#F3ECDD" />
+        <ellipse cx="100" cy="70" rx="26" ry="5" fill="#F3E3B8" opacity="0.8" />
+        <ellipse cx="100" cy="70" rx="5" ry="26" fill="#F3E3B8" opacity="0.6" />
+      </svg>
+    );
+  }
+  if (art === "cottage") {
+    return (
+      <svg viewBox="0 0 200 200" className={className}>
+        <defs>
+          <linearGradient id="pp-cot-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#6B9080" />
+            <stop offset="100%" stopColor="#3A4A66" />
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#pp-cot-bg)" />
+        <polygon points="60,120 100,85 140,120" fill="#B4772F" />
+        <rect x="70" y="120" width="60" height="45" fill="#F3ECDD" opacity="0.9" />
+        <rect x="93" y="135" width="14" height="30" fill="#7A5C7E" />
+        <circle cx="150" cy="60" r="12" fill="#F3E3B8" opacity="0.8" />
+      </svg>
+    );
+  }
+  if (art === "key") {
+    return (
+      <svg viewBox="0 0 200 200" className={className}>
+        <defs>
+          <linearGradient id="pp-key-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#2F4066" />
+            <stop offset="100%" stopColor="#141A28" />
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#pp-key-bg)" />
+        <circle cx="80" cy="80" r="22" fill="none" stroke="#E3A94F" strokeWidth="8" />
+        <rect x="95" y="95" width="10" height="55" fill="#E3A94F" />
+        <rect x="95" y="130" width="24" height="9" fill="#E3A94F" />
+        <rect x="95" y="115" width="18" height="9" fill="#E3A94F" />
+      </svg>
+    );
+  }
+  if (art === "mirror") {
+    return (
+      <svg viewBox="0 0 200 200" className={className}>
+        <defs>
+          <linearGradient id="pp-mir-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#7A5C7E" />
+            <stop offset="100%" stopColor="#1B2436" />
+          </linearGradient>
+        </defs>
+        <rect width="200" height="200" fill="url(#pp-mir-bg)" />
+        <ellipse cx="100" cy="100" rx="45" ry="60" fill="#D8E3F0" opacity="0.25" />
+        <ellipse cx="100" cy="100" rx="45" ry="60" fill="none" stroke="#F3E3B8" strokeWidth="6" />
+        <path d="M70 70 Q100 100 70 130" stroke="#F3ECDD" strokeWidth="3" fill="none" opacity="0.7" />
+      </svg>
+    );
+  }
+  return null;
+}
+
+function getModeScore(history, bookId, mode) {
+  const entries = history.filter((h) => h.bookId === bookId && h.mode === mode);
+  if (entries.length === 0) return null;
+  return entries[entries.length - 1].score;
+}
+
+function BookStatusGrid({ history, lang }) {
+  const modes = ["short", "extended", "physical"];
+  return (
+    <div className="flex flex-col gap-2">
+      {BOOKS.map((b) => (
+        <div key={b.id} className="flex items-center gap-3 border bk-border rounded-lg px-3 py-2.5">
+          <div className="w-8 h-10 rounded overflow-hidden shrink-0 bk-bg-night">
+            <BookCover bookId={b.id} className="w-full h-full" />
+          </div>
+          <span className="text-sm flex-1 min-w-0 truncate">{t(b.title, lang)}</span>
+          <div className="flex gap-1.5 shrink-0">
+            {modes.map((m) => {
+              const score = getModeScore(history, b.id, m);
+              const cls = score === null ? "bg-[#EDE6D3] bk-slate" : m === "physical" ? "bk-bg-gold text-white" : m === "extended" ? "bk-bg-silver text-white" : "bk-bg-bronze text-white";
+              return (
+                <span key={m} className={`bk-mono text-[9px] px-2 py-1 rounded-full ${cls}`} title={t(UI[MODE_LABELS[m]], lang)}>
+                  {score === null ? "—" : `${score}%`}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ============================== MOCK CHILD DATA ============================== */
+const CHILDREN = [
+  {
+    id: "ani", name: "Ani", age: 8, nickname: "ani_star",
+    xp: 45,
+    rewardCount: 6,
+    history: [
+      { date: "Jun 03, 2026", bookId: "little-prince", mode: "short", score: 60 },
+      { date: "Jun 10, 2026", bookId: "little-prince", mode: "extended", score: 72 },
+      { date: "Jun 22, 2026", bookId: "little-prince", mode: "physical", score: 91 },
+      { date: "Jul 01, 2026", bookId: "mowgli", mode: "short", score: 65 },
+      { date: "Jul 09, 2026", bookId: "mowgli", mode: "physical", score: 94 },
+      { date: "Jul 18, 2026", bookId: "pollyanna", mode: "short", score: 70 },
+      { date: "Jul 28, 2026", bookId: "pollyanna", mode: "extended", score: 83 },
+      { date: "Aug 01, 2026", bookId: "harry-potter", mode: "short", score: 88 },
+    ],
+    bloom: { Remember: 90, Understand: 75, Analyze: 80, Evaluate: 70 },
+    insight: {
+      en: "Ani demonstrates strong recall of key events and characters. More practice is recommended in explaining why characters make the choices they do.",
+      hy: "Անին ցուցաբերում է իրադարձությունների և հերոսների լավ հիշողություն։ Առաջարկվում է ավելի շատ պարապել բացատրելու, թե ինչու են հերոսներն այս կամ այն ընտրությունը կատարում։",
+    },
+  },
+  {
+    id: "levon", name: "Levon", age: 10, nickname: "levon_reads",
+    xp: 15,
+    rewardCount: 1,
+    history: [
+      { date: "Jul 15, 2026", bookId: "little-prince", mode: "short", score: 50 },
+      { date: "Jul 22, 2026", bookId: "little-prince", mode: "extended", score: 58 },
+      { date: "Jul 30, 2026", bookId: "mowgli", mode: "short", score: 62 },
+    ],
+    bloom: { Remember: 60, Understand: 40, Analyze: 45, Evaluate: 30 },
+    insight: {
+      en: "Levon is just getting started. Trying the Extended Summary or Physical Book mode next could help build a fuller picture before the next assessment.",
+      hy: "Լևոնը նոր է սկսել։ Հաջորդը Ընդլայնված ամփոփումը կամ Տպագիր գիրք ձևաչափը փորձելը կարող է օգնել ամբողջական պատկերացում կազմել հաջորդ առաջադրանքից առաջ։",
+    },
+  },
+];
+
+const MODE_LABELS = { short: "modeShort", extended: "modeExtended", physical: "modePhysical" };
+const MODE_BADGE = { short: "Bronze", extended: "Silver", physical: "Gold" };
+
+function bookTitleById(id, lang) {
+  const b = BOOKS.find((x) => x.id === id);
+  return b ? t(b.title, lang) : id;
+}
+
+function computeBadgeTally(history) {
+  const tally = { Bronze: 0, Silver: 0, Gold: 0 };
+  history.forEach((h) => { tally[MODE_BADGE[h.mode]] += 1; });
+  return tally;
+}
+
+function computeBooksCompleted(history) {
+  return new Set(history.map((h) => h.bookId)).size;
+}
+
+/* ============================== HELPERS ============================== */
+function StarField({ count = 40 }) {
+  const stars = Array.from({ length: count }, (_, i) => {
+    const seed = (i * 97) % 100;
+    return {
+      top: `${(i * 37) % 100}%`,
+      left: `${(i * 61 + seed) % 100}%`,
+      size: 1 + (i % 3),
+      opacity: 0.3 + ((i * 13) % 50) / 100,
+    };
+  });
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {stars.map((s, i) => (
+        <div key={i} className="bk-star-dot" style={{ top: s.top, left: s.left, width: s.size, height: s.size, opacity: s.opacity }} />
+      ))}
+    </div>
+  );
+}
+
+function BadgeDot({ badge, size = 10 }) {
+  const cls = badge === "Gold" ? "bk-bg-gold" : badge === "Silver" ? "bk-bg-silver" : "bk-bg-bronze";
+  return <span className={`inline-block rounded-full ${cls}`} style={{ width: size, height: size }} />;
+}
+
+function ProgressPath({ steps, currentIndex }) {
+  return (
+    <div className="flex items-center w-full max-w-xl mx-auto mb-8">
+      {steps.map((label, i) => (
+        <div key={label} className="flex items-center flex-1 last:flex-none">
+          <div className="flex flex-col items-center gap-1.5">
+            <div
+              className="bk-node flex items-center justify-center"
+              style={{
+                background: i <= currentIndex ? "#1B2436" : "#EDE6D3",
+                border: i === currentIndex ? "2px solid #E3A94F" : "none",
+              }}
+            />
+            <span className="bk-mono text-[10px] bk-slate whitespace-nowrap">{label}</span>
+          </div>
+          {i < steps.length - 1 && <div className="bk-node-line mx-2 mb-4" />}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RewardBar({ count, lang, compact = false }) {
+  const pct = Math.min(100, Math.round((count / REWARD_GOAL) * 100));
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-1.5">
+        <span className={`flex items-center gap-1.5 ${compact ? "text-xs" : "text-sm"} font-medium`}>
+          <Gift size={compact ? 13 : 15} className="bk-gold" /> {t(UI.rewardHeading, lang)}
+        </span>
+        <span className="bk-mono text-[10px] bk-slate">{count}/{REWARD_GOAL}</span>
+      </div>
+      <div className="w-full h-2 bg-[#EDE6D3] rounded-full overflow-hidden mb-1">
+        <div className="h-full bk-bg-gold" style={{ width: `${pct}%` }} />
+      </div>
+      {!compact && <p className="bk-slate text-xs mt-1.5">{t(UI.rewardExplain, lang)}</p>}
+    </div>
+  );
+}
+
+function TopNav({ role, setRole, onReset, lang, setLang }) {
+  const tabs = [
+    { id: "select", labelKey: "navHome" },
+    { id: "child", labelKey: "navChild" },
+    { id: "parent", labelKey: "navParent" },
+    { id: "admin", labelKey: "navAdmin" },
+  ];
+  return (
+    <div className="w-full bk-bg-night px-6 py-3 flex items-center justify-between">
+      <div className="flex items-center gap-2 bk-cream-text">
+        <Rocket size={18} className="bk-gold" />
+        <span className="bk-display text-lg tracking-tight">Bookalyzer</span>
+        <span className="bk-mono text-[10px] bk-cream-slate ml-2 hidden sm:inline">MVP DEMO</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <div className="bk-lang-toggle">
+          <button className={lang === "en" ? "active" : ""} onClick={() => setLang("en")}>EN</button>
+          <button className={lang === "hy" ? "active" : ""} onClick={() => setLang("hy")}>ՀԱՅ</button>
+          <button className={lang === "ru" ? "active" : ""} onClick={() => setLang("ru")}>РУ</button>
+        </div>
+        <div className="flex items-center gap-1">
+          {tabs.map((tb) => (
+            <button
+              key={tb.id}
+              onClick={() => setRole(tb.id)}
+              className={`bk-tab px-3 py-1.5 rounded-full transition-colors ${
+                role === tb.id ? "bk-bg-gold" : "bk-cream-slate hover:text-white"
+              }`}
+              style={role === tb.id ? { color: "#1B2436" } : {}}
+            >
+              {t(UI[tb.labelKey], lang)}
+            </button>
+          ))}
+          <button onClick={onReset} className="bk-tab px-3 py-1.5 rounded-full bk-cream-slate hover:text-white flex items-center gap-1">
+            <LogOut size={12} /> {t(UI.navReset, lang)}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================== LANDING ============================== */
+function RoleSelect({ setRole, lang }) {
+  const cards = [
+    { id: "child", titleKey: "cardChildTitle", descKey: "cardChildDesc", icon: Rocket },
+    { id: "parent", titleKey: "cardParentTitle", descKey: "cardParentDesc", icon: Users },
+    { id: "admin", titleKey: "cardAdminTitle", descKey: "cardAdminDesc", icon: BarChart3 },
+  ];
+  return (
+    <div className="relative bk-bg-night min-h-[560px] flex flex-col items-center justify-center px-6 py-16 overflow-hidden">
+      <StarField count={60} />
+      <div className="relative text-center mb-12">
+        <p className="bk-mono text-xs bk-gold mb-3 tracking-widest">{t(UI.landingEyebrow, lang)}</p>
+        <h1 className="bk-display bk-cream-text text-4xl sm:text-5xl font-semibold mb-3">Bookalyzer</h1>
+        <p className="bk-cream-slate max-w-md mx-auto">{t(UI.landingTagline, lang)}</p>
+      </div>
+      <div className="relative grid sm:grid-cols-3 gap-4 max-w-3xl w-full">
+        {cards.map((c) => (
+          <button
+            key={c.id}
+            onClick={() => setRole(c.id)}
+            className="bk-bg-cream rounded-2xl p-6 text-left hover:-translate-y-1 transition-transform bk-card"
+          >
+            <c.icon size={22} className="bk-gold mb-4" />
+            <div className="bk-display text-lg mb-1">{t(UI[c.titleKey], lang)}</div>
+            <div className="bk-slate text-sm">{t(UI[c.descKey], lang)}</div>
+            <div className="flex items-center gap-1 text-xs bk-mono mt-4 bk-ink">
+              {t(UI.enter, lang)} <ArrowRight size={12} />
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ============================== CHILD FLOW ============================== */
+function ChildApp({ lang }) {
+  const [screen, setScreen] = useState("login");
+  const [nickname, setNickname] = useState("");
+  const [pin, setPin] = useState("");
+  const [selectedBookId, setSelectedBookId] = useState("little-prince");
+  const [selectedMode, setSelectedMode] = useState(null);
+  const [physicalConfirmed, setPhysicalConfirmed] = useState(false);
+  const [qIndex, setQIndex] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [search, setSearch] = useState("");
+
+  const activeChild = CHILDREN[0]; // demo: child is logged in as Ani
+
+  const steps = [t(UI.stepLibrary, lang), t(UI.stepMode, lang), t(UI.stepRead, lang), t(UI.stepAssess, lang), t(UI.stepResults, lang)];
+  const stepIndex = { login: 0, library: 0, modeSelect: 1, read: 2, assessment: 3, results: 4, profile: 0 }[screen] ?? 0;
+
+  const selectedBook = BOOKS.find((b) => b.id === selectedBookId) || BOOKS[0];
+
+  const resetJourney = () => {
+    setSelectedMode(null); setPhysicalConfirmed(false); setQIndex(0); setAnswers({});
+  };
+
+  const filteredBooks = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return BOOKS;
+    return BOOKS.filter((b) => t(b.title, lang).toLowerCase().includes(q) || b.author.toLowerCase().includes(q));
+  }, [search, lang]);
+
+  if (screen === "login") {
+    return (
+      <div className="relative bk-bg-night min-h-[560px] flex items-center justify-center px-6 py-16 overflow-hidden">
+        <StarField count={50} />
+        <div className="relative bk-bg-cream rounded-2xl p-8 w-full max-w-sm bk-card">
+          <Rocket className="bk-gold mb-4" size={26} />
+          <h2 className="bk-display text-2xl mb-1">{t(UI.loginHeading, lang)}</h2>
+          <p className="bk-slate text-sm mb-6">{t(UI.loginSub, lang)}</p>
+          <label className="bk-mono text-[10px] bk-slate">{t(UI.nicknameLabel, lang)}</label>
+          <input
+            value={nickname} onChange={(e) => setNickname(e.target.value)}
+            placeholder="ani_star" className="w-full border bk-border rounded-lg px-3 py-2 mt-1 mb-4 outline-none"
+          />
+          <label className="bk-mono text-[10px] bk-slate">{t(UI.pinLabel, lang)}</label>
+          <input
+            value={pin} onChange={(e) => setPin(e.target.value)} type="password" maxLength={4}
+            placeholder="••••" className="w-full border bk-border rounded-lg px-3 py-2 mt-1 mb-6 outline-none"
+          />
+          <button onClick={() => setScreen("library")} className="w-full bk-btn-primary rounded-lg py-2.5 font-medium">
+            {t(UI.startReading, lang)}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (screen === "profile") {
+    return (
+      <ChildProfileScreen
+        child={activeChild} lang={lang}
+        onBack={() => setScreen("library")}
+      />
+    );
+  }
+
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10 relative">
+      <button
+        onClick={() => setScreen("profile")}
+        className="bk-avatar-btn absolute top-6 right-6"
+        title={t(UI.profileHeading, lang)}
+      >
+        <User size={16} className="bk-gold" />
+      </button>
+
+      {screen !== "login" && <ProgressPath steps={steps} currentIndex={stepIndex} />}
+
+      {screen === "library" && (
+        <div className="max-w-3xl mx-auto">
+          <h2 className="bk-display text-2xl mb-1">{t(UI.libraryHeading, lang)}</h2>
+          <p className="bk-slate text-sm mb-4">{t(UI.librarySub, lang)}</p>
+
+          <div className="bg-white rounded-2xl p-6 bk-card mb-8">
+            <div className="grid grid-cols-4 gap-3 mb-5">
+              {[
+                [computeBooksCompleted(activeChild.history), t(UI.booksCompleted, lang)],
+                [activeChild.history.length, t(UI.attempts, lang)],
+                [`${activeChild.history[activeChild.history.length - 1]?.score ?? 0}%`, t(UI.lastScore, lang)],
+                [activeChild.xp, t(UI.xp, lang)],
+              ].map(([val, label], i) => (
+                <div key={i} className="text-center">
+                  <div className="bk-display text-xl bk-gold">{val}</div>
+                  <div className="bk-mono text-[8px] bk-slate mt-1">{label.toUpperCase ? label.toUpperCase() : label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-6 mb-5 pb-5 border-b bk-border">
+              {(() => {
+                const badges = computeBadgeTally(activeChild.history);
+                return [["Gold", "bk-bg-gold"], ["Silver", "bk-bg-silver"], ["Bronze", "bk-bg-bronze"]].map(([name, cls]) => (
+                  <div key={name} className="flex items-center gap-2">
+                    <span className={`inline-flex items-center justify-center rounded-full ${cls}`} style={{ width: 22, height: 22 }}>
+                      <Medal size={11} className="text-white" />
+                    </span>
+                    <span className="bk-display text-base">{badges[name]}</span>
+                  </div>
+                ));
+              })()}
+            </div>
+
+            <div className="mb-5 pb-5 border-b bk-border">
+              <RewardBar count={activeChild.rewardCount} lang={lang} compact />
+            </div>
+
+            <div className="mb-5">
+              <div className="bk-mono text-[10px] bk-slate mb-2 uppercase">{t(UI.libraryHeading, lang)}</div>
+              <BookStatusGrid history={activeChild.history} lang={lang} />
+            </div>
+
+            <div>
+              <div className="bk-mono text-[10px] bk-slate mb-2 uppercase">{t(UI.myHistory, lang)}</div>
+              <div className="flex flex-col divide-y bk-border">
+                {activeChild.history.map((h, i) => (
+                  <div key={i} className="flex items-center justify-between py-2 text-sm gap-2">
+                    <span className="bk-slate text-xs w-20 shrink-0">{h.date}</span>
+                    <span className="flex-1">{bookTitleById(h.bookId, lang)}</span>
+                    <span className="bk-mono text-[10px] bk-slate">{t(UI[MODE_LABELS[h.mode]], lang)}</span>
+                    <span className="bk-mono">{h.score}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mb-6 max-w-sm">
+            <Search size={15} className="bk-slate absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              value={search} onChange={(e) => setSearch(e.target.value)}
+              placeholder={t(UI.searchPlaceholder, lang)}
+              className="w-full border bk-border rounded-lg pl-9 pr-3 py-2 text-sm outline-none bg-white"
+            />
+          </div>
+
+          {filteredBooks.length === 0 ? (
+            <p className="bk-slate text-sm mb-8">{t(UI.noResults, lang)}</p>
+          ) : (
+            <div className="grid sm:grid-cols-3 gap-4 mb-10">
+              {filteredBooks.map((b) => (
+                <div key={b.id} className={`rounded-2xl p-5 bk-card ${b.status === "available" ? "bk-bg-night" : "bg-white border bk-border"}`}>
+                  <div className={`h-36 rounded-lg mb-4 overflow-hidden ${b.status === "available" ? "" : "bg-[#EDE6D3] flex items-center justify-center"}`}>
+                    {b.status === "available" ? (
+                      <BookCover bookId={b.id} className="w-full h-full" />
+                    ) : (
+                      <BookOpen size={26} className="bk-slate" />
+                    )}
+                  </div>
+                  <div className={`bk-display text-lg mb-1 ${b.status === "available" ? "bk-cream-text" : ""}`}>{t(b.title, lang)}</div>
+                  <div className={`text-xs mb-4 ${b.status === "available" ? "bk-cream-slate" : "bk-slate"}`}>{b.author}</div>
+                  {b.status === "available" ? (
+                    <button onClick={() => { setSelectedBookId(b.id); setScreen("modeSelect"); }} className="w-full bk-btn-primary rounded-lg py-2 text-sm font-medium">
+                      {t(UI.openBook, lang)}
+                    </button>
+                  ) : (
+                    <div className="w-full text-center bk-mono text-[10px] bk-slate py-2 border bk-border rounded-lg">{t(UI.comingSoon, lang)}</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <Sparkles size={15} className="bk-gold" />
+              <h3 className="bk-display text-lg">{t(UI.recommendedHeading, lang)}</h3>
+            </div>
+            <p className="bk-slate text-xs mb-4">{t(UI.recommendedSub, lang)}</p>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {RECOMMENDATIONS.map((r, i) => (
+                <div key={i} className="rounded-2xl p-5 bg-white border bk-border">
+                  <div className="h-20 rounded-lg mb-4 flex items-center justify-center bg-[#EDE6D3]">
+                    <BookOpen size={22} className="bk-slate" />
+                  </div>
+                  <div className="bk-display text-base mb-1">{t(r.title, lang)}</div>
+                  <div className="bk-slate text-xs mb-4">{r.author}</div>
+                  <div className="w-full text-center bk-mono text-[9px] bk-slate py-2 border bk-border rounded-lg">{t(UI.notOnPlatform, lang)}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {screen === "modeSelect" && (
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-16 rounded-md overflow-hidden shrink-0 bk-bg-night bk-card">
+              <BookCover bookId={selectedBook.id} className="w-full h-full" />
+            </div>
+            <div>
+              <h2 className="bk-display text-2xl mb-1">{t(UI.modeHeading, lang)}</h2>
+              <p className="bk-slate text-sm">{t(selectedBook.title, lang)} — {t(UI.modeSub, lang)}</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {READING_MODES.map((m) => (
+              <button
+                key={m.id}
+                onClick={() => { setSelectedMode(m.id); setScreen("read"); }}
+                className="text-left bg-white rounded-2xl p-5 bk-card hover:-translate-y-1 transition-transform"
+              >
+                <div className={`w-9 h-9 rounded-full flex items-center justify-center mb-4 ${m.badgeClass}`}>
+                  <m.icon size={16} className="text-white" />
+                </div>
+                <div className="bk-display text-lg mb-1">{t(UI[m.labelKey], lang)}</div>
+                <div className="bk-slate text-sm mb-4">{t(m.purpose, lang)}</div>
+                <div className="flex items-center justify-between bk-mono text-[10px] bk-slate">
+                  <span>+{m.points} XP</span>
+                  <span className="flex items-center gap-1"><BadgeDot badge={m.badge} /> {m.badge}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {screen === "read" && (
+        <div className="max-w-xl mx-auto bg-white rounded-2xl p-8 bk-card">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-16 rounded-md overflow-hidden shrink-0 bk-bg-night bk-card">
+              <BookCover bookId={selectedBook.id} className="w-full h-full" />
+            </div>
+            <div>
+              <div className="bk-mono text-[10px] bk-gold mb-1">{t(UI[READING_MODES.find((m) => m.id === selectedMode)?.labelKey], lang).toUpperCase()}</div>
+              <h2 className="bk-display text-2xl">{t(selectedBook.title, lang)}</h2>
+            </div>
+          </div>
+          {selectedMode === "physical" ? (
+            <div>
+              <p className="bk-slate text-sm mb-6 leading-relaxed">{t(UI.physicalInstructions, lang)}</p>
+              <label className="flex items-center gap-3 mb-6 cursor-pointer">
+                <input type="checkbox" checked={physicalConfirmed} onChange={(e) => setPhysicalConfirmed(e.target.checked)} className="w-4 h-4" />
+                <span className="text-sm">{t(UI.physicalConfirm, lang)}</span>
+              </label>
+            </div>
+          ) : (
+            <p className="bk-slate text-sm mb-6 leading-relaxed whitespace-pre-line">
+              {selectedMode === "short" ? t(selectedBook.shortSummary, lang) : t(selectedBook.extendedSummary, lang)}
+            </p>
+          )}
+          <button
+            disabled={selectedMode === "physical" && !physicalConfirmed}
+            onClick={() => setScreen("assessment")}
+            className="bk-btn-dark rounded-lg px-5 py-2.5 text-sm font-medium disabled:opacity-30"
+          >
+            {t(UI.startAssessment, lang)}
+          </button>
+        </div>
+      )}
+
+      {screen === "assessment" && (
+        <AssessmentScreen
+          book={selectedBook} lang={lang}
+          qIndex={qIndex} setQIndex={setQIndex}
+          answers={answers} setAnswers={setAnswers}
+          onSubmit={() => setScreen("results")}
+        />
+      )}
+
+      {screen === "results" && (
+        <ResultsScreen
+          book={selectedBook} lang={lang}
+          answers={answers} selectedMode={selectedMode}
+          onDone={() => { resetJourney(); setScreen("library"); }}
+        />
+      )}
+    </div>
+  );
+}
+
+function AssessmentScreen({ book, lang, qIndex, setQIndex, answers, setAnswers, onSubmit }) {
+  const QUESTIONS = book.questions;
+  const q = QUESTIONS[qIndex];
+  const setAnswer = (val) => setAnswers((a) => ({ ...a, [q.id]: val }));
+  const answer = answers[q.id];
+
+  return (
+    <div className="max-w-xl mx-auto bg-white rounded-2xl p-8 bk-card">
+      <div className="flex items-center justify-between mb-1">
+        <span className="bk-mono text-[10px] bk-gold">{t(UI.questionLabel, lang)} {qIndex + 1} / {QUESTIONS.length}</span>
+        <span className="bk-mono text-[10px] bk-slate">{t(UI.bloomLabel, lang)}: {q.bloom.toUpperCase()}</span>
+      </div>
+      <div className="w-full h-1 bg-[#EDE6D3] rounded-full mb-6 overflow-hidden">
+        <div className="h-full bk-bg-gold" style={{ width: `${((qIndex + 1) / QUESTIONS.length) * 100}%` }} />
+      </div>
+
+      <h3 className="bk-display text-xl mb-6 leading-snug">{t(q.prompt, lang)}</h3>
+
+      {q.type === "mc" && (
+        <div className="flex flex-col gap-2">
+          {t(q.options, lang).map((opt, i) => (
+            <button
+              key={i} onClick={() => setAnswer(i)}
+              className={`text-left px-4 py-2.5 rounded-lg border text-sm ${answer === i ? "bk-bg-night bk-cream-text border-transparent" : "bk-border hover:bg-[#FBF7EF]"}`}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {q.type === "ordering" && (
+        <OrderingInput items={t(q.items, lang)} value={answer || q.items.en.map((_, i) => i)} onChange={setAnswer} />
+      )}
+
+      {q.type === "matching" && (
+        <MatchingInput left={t(q.left, lang)} right={t(q.right, lang)} value={answer || {}} onChange={setAnswer} lang={lang} />
+      )}
+
+      {q.type === "fillblank" && (
+        <input
+          value={answer || ""} onChange={(e) => setAnswer(e.target.value)}
+          placeholder={t(UI.typeAnswer, lang)} className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm"
+        />
+      )}
+
+      {q.type === "classification" && (
+        <ClassificationInput q={q} lang={lang} value={answer || {}} onChange={setAnswer} />
+      )}
+
+      {q.type === "open" && (
+        <textarea
+          value={answer || ""} onChange={(e) => setAnswer(e.target.value)}
+          rows={4} placeholder={t(UI.writeAnswer, lang)} className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm"
+        />
+      )}
+
+      <div className="flex items-center justify-between mt-8">
+        <button
+          disabled={qIndex === 0} onClick={() => setQIndex((i) => i - 1)}
+          className="flex items-center gap-1 bk-btn-outline rounded-lg px-4 py-2 text-sm disabled:opacity-20"
+        >
+          <ArrowLeft size={14} /> {t(UI.previous, lang)}
+        </button>
+        {qIndex < QUESTIONS.length - 1 ? (
+          <button onClick={() => setQIndex((i) => i + 1)} className="flex items-center gap-1 bk-btn-dark rounded-lg px-4 py-2 text-sm">
+            {t(UI.next, lang)} <ArrowRight size={14} />
+          </button>
+        ) : (
+          <button onClick={onSubmit} className="flex items-center gap-1 bk-btn-primary rounded-lg px-5 py-2 text-sm font-medium">
+            {t(UI.submitAssessment, lang)} <Check size={14} />
+          </button>
+        )}
+      </div>
+      <p className="bk-mono text-[9px] bk-slate mt-4">{t(UI.autosaveNote, lang)}</p>
+    </div>
+  );
+}
+
+function OrderingInput({ items, value, onChange }) {
+  const move = (idx, dir) => {
+    const next = [...value];
+    const target = idx + dir;
+    if (target < 0 || target >= next.length) return;
+    [next[idx], next[target]] = [next[target], next[idx]];
+    onChange(next);
+  };
+  return (
+    <div className="flex flex-col gap-2">
+      {value.map((itemIdx, pos) => (
+        <div key={itemIdx} className="flex items-center gap-2 border bk-border rounded-lg px-3 py-2 text-sm">
+          <span className="bk-mono text-[10px] bk-slate w-4">{pos + 1}</span>
+          <span className="flex-1">{items[itemIdx]}</span>
+          <button onClick={() => move(pos, -1)} className="bk-slate hover:bk-ink px-1">↑</button>
+          <button onClick={() => move(pos, 1)} className="bk-slate hover:bk-ink px-1">↓</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function MatchingInput({ left, right, value, onChange, lang }) {
+  return (
+    <div className="flex flex-col gap-2">
+      {left.map((l, i) => (
+        <div key={i} className="flex items-center gap-3">
+          <span className="text-sm w-40 shrink-0">{l}</span>
+          <select
+            value={value[i] ?? ""}
+            onChange={(e) => onChange({ ...value, [i]: Number(e.target.value) })}
+            className="flex-1 border bk-border rounded-lg px-2 py-1.5 text-sm outline-none"
+          >
+            <option value="" disabled>{t(UI.chooseMatch, lang)}</option>
+            {right.map((r, j) => (
+              <option key={j} value={j}>{r}</option>
+            ))}
+          </select>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ClassificationInput({ q, lang, value, onChange }) {
+  return (
+    <div className="flex flex-col gap-2">
+      {q.options.map((opt, i) => (
+        <div key={i} className="flex items-center justify-between border bk-border rounded-lg px-3 py-2">
+          <span className="text-sm">{t(opt.label, lang)}</span>
+          <div className="flex gap-1.5">
+            {["A", "B"].map((g) => (
+              <button
+                key={g} onClick={() => onChange({ ...value, [i]: g })}
+                className={`bk-mono text-[10px] px-2.5 py-1 rounded-full border ${value[i] === g ? "bk-bg-night bk-cream-text border-transparent" : "bk-border"}`}
+              >
+                {g === "A" ? t(q.groupA, lang) : t(q.groupB, lang)}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ---------- grading ---------- */
+function gradeQuestion(q, answer, lang) {
+  if (answer === undefined) return 0;
+  if (q.type === "mc") return answer === q.correct ? 1 : 0;
+  if (q.type === "fillblank") {
+    const norm = (s) => (s || "").trim().toLowerCase();
+    const correctAnswer = norm(t(q.answer, lang));
+    const alts = (q.altAnswers && q.altAnswers[lang]) || [];
+    return norm(answer) === correctAnswer || alts.some((a) => norm(answer) === norm(a)) ? 1 : 0;
+  }
+  if (q.type === "ordering") {
+    const correctCount = answer.filter((v, i) => v === q.correctOrder[i]).length;
+    return correctCount / q.correctOrder.length;
+  }
+  if (q.type === "matching") {
+    const total = q.left.en.length;
+    let correct = 0;
+    for (let i = 0; i < total; i++) if (answer[i] === q.correctMap[i]) correct++;
+    return correct / total;
+  }
+  if (q.type === "classification") {
+    const total = q.options.length;
+    let correct = 0;
+    q.options.forEach((opt, i) => { if (answer[i] === opt.group) correct++; });
+    return correct / total;
+  }
+  if (q.type === "open") {
+    const text = (answer || "").toLowerCase();
+    const keywords = (q.keywords && q.keywords[lang]) || [];
+    return keywords.some((k) => text.includes(k.toLowerCase())) ? 1 : 0;
+  }
+  return 0;
+}
+
+function ResultsScreen({ book, lang, answers, selectedMode, onDone }) {
+  const QUESTIONS = book.questions;
+  const scores = QUESTIONS.map((q) => gradeQuestion(q, answers[q.id], lang));
+  const overall = Math.round((scores.reduce((a, b) => a + b, 0) / QUESTIONS.length) * 100);
+  const mode = READING_MODES.find((m) => m.id === selectedMode);
+
+  return (
+    <div className="max-w-xl mx-auto">
+      <div className="bk-bg-night rounded-2xl p-8 text-center bk-card mb-6 relative overflow-hidden">
+        <StarField count={25} />
+        <div className="relative">
+          <div className={`w-14 h-14 rounded-full mx-auto flex items-center justify-center mb-4 ${mode.badgeClass}`}>
+            <Trophy size={22} className="text-white" />
+          </div>
+          <div className="bk-mono text-[10px] bk-gold mb-2">{mode.badge.toUpperCase()} {t(UI.badgeEarned, lang)}</div>
+          <h2 className="bk-display bk-cream-text text-3xl mb-1">{overall}%</h2>
+          <p className="bk-cream-slate text-sm">{t(UI.overallScore, lang)} · +{mode.points} {t(UI.xpEarned, lang)}</p>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        {QUESTIONS.map((q, i) => {
+          const s = scores[i];
+          const correct = s === 1;
+          return (
+            <div key={q.id} className="bg-white rounded-xl p-4 bk-card">
+              <div className="flex items-start gap-3">
+                <div className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${correct ? "bk-bg-sage" : s > 0 ? "bk-bg-gold" : "bg-[#E7B0B7]"}`}>
+                  {correct ? <Check size={13} className="text-white" /> : <X size={13} className="text-white" />}
+                </div>
+                <div className="flex-1">
+                  <div className="text-sm font-medium mb-1">{t(q.prompt, lang)}</div>
+                  <div className="bk-mono text-[10px] bk-slate mb-1">
+                    {s === 1 ? t(UI.correct, lang) : s > 0 ? `${t(UI.partialCredit, lang)} (${Math.round(s * 100)}%)` : t(UI.notQuite, lang)} · {q.bloom}
+                  </div>
+                  <div className="bk-slate text-xs">{t(q.explanation, lang)}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <button onClick={onDone} className="w-full bk-btn-dark rounded-lg py-2.5 text-sm font-medium mt-6">
+        {t(UI.backToLibrary, lang)}
+      </button>
+    </div>
+  );
+}
+
+/* ============================== CHILD PROFILE ============================== */
+function ChildProfileScreen({ child, lang, onBack }) {
+  const badges = computeBadgeTally(child.history);
+  const booksCompleted = computeBooksCompleted(child.history);
+  const attempts = child.history.length;
+  const lastScore = child.history[child.history.length - 1]?.score ?? 0;
+
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      <div className="max-w-2xl mx-auto">
+        <button onClick={onBack} className="flex items-center gap-1 bk-slate text-sm mb-6 hover:bk-ink">
+          <ArrowLeft size={14} /> {t(UI.backToLibrary, lang)}
+        </button>
+
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-12 h-12 rounded-full bk-bg-night flex items-center justify-center">
+            <User size={20} className="bk-gold" />
+          </div>
+          <div>
+            <h2 className="bk-display text-2xl">{child.name}</h2>
+            <div className="bk-mono text-[10px] bk-slate">@{child.nickname}</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-4 gap-3 mb-6">
+          {[
+            [t(UI.booksCompleted, lang), booksCompleted],
+            [t(UI.attempts, lang), attempts],
+            [`${lastScore}%`, t(UI.lastScore, lang)],
+            [child.xp, t(UI.xp, lang)],
+          ].map(([val, label], i) => (
+            <div key={i} className="bg-white rounded-xl p-4 bk-card text-center">
+              <div className="bk-display text-2xl bk-gold">{val}</div>
+              <div className="bk-mono text-[8px] bk-slate mt-1">{label.toUpperCase ? label.toUpperCase() : label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <Award size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.myBadges, lang)}</div>
+          </div>
+          <div className="flex items-center gap-6">
+            {[["Gold", "bk-bg-gold"], ["Silver", "bk-bg-silver"], ["Bronze", "bk-bg-bronze"]].map(([name, cls]) => (
+              <div key={name} className="flex items-center gap-2">
+                <span className={`inline-flex items-center justify-center rounded-full ${cls}`} style={{ width: 26, height: 26 }}>
+                  <Medal size={13} className="text-white" />
+                </span>
+                <span className="bk-display text-lg">{badges[name]}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <RewardBar count={child.rewardCount} lang={lang} />
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <BookOpen size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.libraryHeading, lang)}</div>
+          </div>
+          <BookStatusGrid history={child.history} lang={lang} />
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card">
+          <div className="flex items-center gap-2 mb-4">
+            <Clock size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.myHistory, lang)}</div>
+          </div>
+          <div className="flex flex-col divide-y bk-border">
+            {child.history.map((h, i) => (
+              <div key={i} className="flex items-center justify-between py-2.5 text-sm gap-2">
+                <span className="bk-slate text-xs w-24 shrink-0">{h.date}</span>
+                <span className="flex-1">{bookTitleById(h.bookId, lang)}</span>
+                <span className="bk-mono text-[10px] bk-slate">{t(UI[MODE_LABELS[h.mode]], lang)}</span>
+                <span className="bk-mono">{h.score}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================== PARENT FLOW ============================== */
+function ParentApp({ lang }) {
+  const [screen, setScreen] = useState("dashboard");
+  const [childId, setChildId] = useState(null);
+  const [detailBookId, setDetailBookId] = useState(null);
+  const child = CHILDREN.find((c) => c.id === childId);
+
+  if (screen === "bookDetail" && child && detailBookId) {
+    return (
+      <BookDetailScreen
+        child={child} bookId={detailBookId} lang={lang}
+        onBack={() => setScreen("detail")}
+      />
+    );
+  }
+
+  if (screen === "detail" && child) {
+    return (
+      <ChildDetail
+        child={child} lang={lang}
+        onBack={() => setScreen("dashboard")}
+        onViewBook={(bookId) => { setDetailBookId(bookId); setScreen("bookDetail"); }}
+      />
+    );
+  }
+
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="bk-display text-2xl mb-1">{t(UI.parentHeading, lang)}</h2>
+        <p className="bk-slate text-sm mb-6">{t(UI.parentSub, lang)}</p>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {CHILDREN.map((c) => {
+            const lastScore = c.history[c.history.length - 1]?.score ?? 0;
+            const booksCompleted = computeBooksCompleted(c.history);
+            return (
+              <button
+                key={c.id}
+                onClick={() => { setChildId(c.id); setScreen("detail"); }}
+                className="text-left bg-white rounded-2xl p-5 bk-card hover:-translate-y-1 transition-transform"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bk-bg-night flex items-center justify-center">
+                    <User size={16} className="bk-gold" />
+                  </div>
+                  <div>
+                    <div className="bk-display text-lg leading-tight">{c.name}</div>
+                    <div className="bk-mono text-[10px] bk-slate">AGE {c.age} · @{c.nickname}</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-center mb-4">
+                  <div>
+                    <div className="bk-display text-lg">{booksCompleted}</div>
+                    <div className="bk-mono text-[9px] bk-slate">{t(UI.booksLabel, lang)}</div>
+                  </div>
+                  <div>
+                    <div className="bk-display text-lg">{lastScore}%</div>
+                    <div className="bk-mono text-[9px] bk-slate">{t(UI.lastScoreLabel, lang)}</div>
+                  </div>
+                  <div>
+                    <div className="bk-display text-lg bk-gold">{c.xp}</div>
+                    <div className="bk-mono text-[9px] bk-slate">{t(UI.xpLabelShort, lang)}</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1.5 bk-mono text-[9px] bk-slate">
+                  <Gift size={11} className="bk-gold" /> {c.rewardCount}/{REWARD_GOAL} {t(UI.rewardMini, lang)}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ChildDetail({ child, lang, onBack, onViewBook }) {
+  const bloomEntries = Object.entries(child.bloom);
+  const timelineData = child.history.map((h) => ({ date: h.date.slice(0, 6), score: h.score }));
+  const booksCompleted = computeBooksCompleted(child.history);
+  const attempts = child.history.length;
+  const lastScore = child.history[child.history.length - 1]?.score ?? 0;
+
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      <div className="max-w-3xl mx-auto">
+        <button onClick={onBack} className="flex items-center gap-1 bk-slate text-sm mb-6 hover:bk-ink">
+          <ArrowLeft size={14} /> {t(UI.backDash, lang)}
+        </button>
+
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-12 h-12 rounded-full bk-bg-night flex items-center justify-center">
+            <User size={20} className="bk-gold" />
+          </div>
+          <div>
+            <h2 className="bk-display text-2xl">{child.name}</h2>
+            <div className="bk-mono text-[10px] bk-slate">AGE {child.age} · @{child.nickname}</div>
+          </div>
+        </div>
+
+        <div className="grid sm:grid-cols-4 gap-3 mb-6">
+          {[
+            [t(UI.booksCompleted, lang), booksCompleted],
+            [t(UI.attempts, lang), attempts],
+            [t(UI.lastScore, lang), `${lastScore}%`],
+            [t(UI.xpEarned, lang), child.xp],
+          ].map(([label, val]) => (
+            <div key={label} className="bg-white rounded-xl p-4 bk-card text-center">
+              <div className="bk-display text-2xl">{val}</div>
+              <div className="bk-mono text-[9px] bk-slate mt-1">{label.toUpperCase()}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <RewardBar count={child.rewardCount} lang={lang} />
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <TrendingUp size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.overallProgress, lang)}</div>
+          </div>
+          <div style={{ width: "100%", height: 220 }}>
+            <ResponsiveContainer>
+              <LineChart data={timelineData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#EDE6D3" />
+                <XAxis dataKey="date" tick={{ fontSize: 10, fill: "#5B6B7C" }} />
+                <YAxis domain={[0, 100]} tick={{ fontSize: 10, fill: "#5B6B7C" }} />
+                <Tooltip />
+                <Line type="monotone" dataKey="score" stroke="#E3A94F" strokeWidth={2.5} dot={{ r: 3 }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <BarChart3 size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.bloomBreakdown, lang)}</div>
+          </div>
+          <div className="flex flex-col gap-3">
+            {bloomEntries.map(([level, pct]) => (
+              <div key={level}>
+                <div className="flex justify-between text-xs mb-1">
+                  <span>{level}</span>
+                  <span className="bk-mono bk-slate">{pct}%</span>
+                </div>
+                <div className="w-full h-2 bg-[#EDE6D3] rounded-full overflow-hidden">
+                  <div className="h-full bk-bg-gold" style={{ width: `${pct}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <div className="flex items-center gap-2 mb-3">
+            <Sparkles size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.insight, lang)}</div>
+          </div>
+          <p className="bk-slate text-sm leading-relaxed">{t(child.insight, lang)}</p>
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card">
+          <div className="flex items-center gap-2 mb-4">
+            <Clock size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.readingHistory, lang)}</div>
+          </div>
+          <div className="flex flex-col divide-y bk-border">
+            {child.history.map((h, i) => (
+              <button
+                key={i}
+                onClick={() => onViewBook(h.bookId)}
+                className="flex items-center justify-between py-2.5 text-sm gap-2 hover:bg-[#FBF7EF] rounded-lg px-2 -mx-2 transition-colors text-left"
+              >
+                <span className="bk-slate text-xs w-24 shrink-0">{h.date}</span>
+                <span className="flex-1">{bookTitleById(h.bookId, lang)}</span>
+                <span className="bk-mono text-[10px] bk-slate">{t(UI[MODE_LABELS[h.mode]], lang)}</span>
+                <span className="bk-mono">{h.score}%</span>
+                <ChevronRight size={14} className="bk-slate shrink-0" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BookDetailScreen({ child, bookId, lang, onBack }) {
+  const bookTitle = bookTitleById(bookId, lang);
+  const modes = ["short", "extended", "physical"];
+  const chartData = modes.map((m) => {
+    const attemptsForMode = child.history.filter((h) => h.bookId === bookId && h.mode === m);
+    const avg = attemptsForMode.length
+      ? Math.round(attemptsForMode.reduce((a, h) => a + h.score, 0) / attemptsForMode.length)
+      : 0;
+    return { mode: t(UI[MODE_LABELS[m]], lang), score: avg, attempted: attemptsForMode.length > 0 };
+  });
+  const bookHistory = child.history.filter((h) => h.bookId === bookId);
+
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      <div className="max-w-2xl mx-auto">
+        <button onClick={onBack} className="flex items-center gap-1 bk-slate text-sm mb-6 hover:bk-ink">
+          <ArrowLeft size={14} /> {t(UI.bookDetailBack, lang)}
+        </button>
+
+        <h2 className="bk-display text-2xl mb-1">{bookTitle}</h2>
+        <p className="bk-slate text-sm mb-6">{child.name}</p>
+
+        <div className="bg-white rounded-2xl p-6 bk-card mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <BarChart3 size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.byModeHeading, lang)}</div>
+          </div>
+          <div style={{ width: "100%", height: 220 }}>
+            <ResponsiveContainer>
+              <BarChart data={chartData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#EDE6D3" />
+                <XAxis dataKey="mode" tick={{ fontSize: 11, fill: "#5B6B7C" }} />
+                <YAxis domain={[0, 100]} tick={{ fontSize: 10, fill: "#5B6B7C" }} />
+                <Tooltip />
+                <Bar dataKey="score" radius={[6, 6, 0, 0]} fill="#E3A94F" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="grid grid-cols-3 gap-2 mt-4">
+            {chartData.map((d, i) => (
+              <div key={i} className="text-center">
+                <div className="bk-mono text-[9px] bk-slate">{d.mode.toUpperCase()}</div>
+                <div className="text-xs mt-0.5">{d.attempted ? `${d.score}%` : t(UI.noAttempt, lang)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl p-6 bk-card">
+          <div className="flex items-center gap-2 mb-4">
+            <Clock size={16} className="bk-gold" />
+            <div className="bk-display text-lg">{t(UI.readingHistory, lang)}</div>
+          </div>
+          <div className="flex flex-col divide-y bk-border">
+            {bookHistory.map((h, i) => (
+              <div key={i} className="flex items-center justify-between py-2.5 text-sm gap-2">
+                <span className="bk-slate text-xs w-24 shrink-0">{h.date}</span>
+                <span className="flex-1">{t(UI[MODE_LABELS[h.mode]], lang)}</span>
+                <span className="bk-mono">{h.score}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================== ADMIN FLOW (English only for MVP demo) ============================== */
+const WIZARD_STEPS = ["Create Book", "Upload Cover", "Short Summary", "Extended Summary", "Bloom Assessment", "Review", "Publish"];
+
+function AdminApp() {
+  const [screen, setScreen] = useState("list");
+  const [books, setBooks] = useState(BOOKS.map((b) => ({ id: b.id, title: b.title.en, author: b.author, status: b.status })));
+  const [wizardStep, setWizardStep] = useState(0);
+  const [draft, setDraft] = useState({ title: "", author: "", cover: "", short: "", extended: "", questions: [] });
+  const [qDraft, setQDraft] = useState({ prompt: "", type: "mc", bloom: "Remember" });
+
+  const resetWizard = () => {
+    setWizardStep(0);
+    setDraft({ title: "", author: "", cover: "", short: "", extended: "", questions: [] });
+  };
+
+  const publish = () => {
+    setBooks((bs) => [...bs, { id: draft.title.toLowerCase().replace(/\s+/g, "-") || "new-book", title: draft.title || "Untitled Book", author: draft.author || "Unknown", status: "available" }]);
+    setWizardStep(wizardStep + 1);
+  };
+
+  if (screen === "wizard") {
+    return (
+      <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+        <div className="max-w-xl mx-auto">
+          <button onClick={() => { setScreen("list"); resetWizard(); }} className="flex items-center gap-1 bk-slate text-sm mb-6 hover:bk-ink">
+            <ArrowLeft size={14} /> Cancel
+          </button>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            {WIZARD_STEPS.map((s, i) => (
+              <span key={s} className={`bk-mono text-[9px] px-2 py-1 rounded-full ${i === wizardStep ? "bk-bg-night bk-cream-text" : i < wizardStep ? "bk-bg-sage text-white" : "bg-[#EDE6D3] bk-slate"}`}>
+                {i + 1}. {s}
+              </span>
+            ))}
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 bk-card">
+            {wizardStep === 0 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Create Book</h3>
+                <label className="bk-mono text-[10px] bk-slate">TITLE</label>
+                <input value={draft.title} onChange={(e) => setDraft({ ...draft, title: e.target.value })} placeholder="e.g. The Jungle Book" className="w-full border bk-border rounded-lg px-3 py-2 mt-1 mb-4 outline-none text-sm" />
+                <label className="bk-mono text-[10px] bk-slate">AUTHOR</label>
+                <input value={draft.author} onChange={(e) => setDraft({ ...draft, author: e.target.value })} placeholder="e.g. Rudyard Kipling" className="w-full border bk-border rounded-lg px-3 py-2 mt-1 outline-none text-sm" />
+              </div>
+            )}
+
+            {wizardStep === 1 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Upload Cover</h3>
+                <div className="border-2 border-dashed bk-border rounded-xl p-8 text-center mb-4">
+                  <Upload size={20} className="bk-slate mx-auto mb-2" />
+                  <p className="bk-slate text-sm">Drop a cover image, or type a filename to simulate an upload.</p>
+                </div>
+                <input value={draft.cover} onChange={(e) => setDraft({ ...draft, cover: e.target.value })} placeholder="cover-final.png" className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm" />
+              </div>
+            )}
+
+            {wizardStep === 2 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Upload Short Summary</h3>
+                <textarea value={draft.short} onChange={(e) => setDraft({ ...draft, short: e.target.value })} rows={5} placeholder="Paste or write the short summary (English + Armenian)..." className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm" />
+              </div>
+            )}
+
+            {wizardStep === 3 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Upload Extended Summary</h3>
+                <textarea value={draft.extended} onChange={(e) => setDraft({ ...draft, extended: e.target.value })} rows={5} placeholder="Paste or write the extended summary (English + Armenian)..." className="w-full border bk-border rounded-lg px-3 py-2 outline-none text-sm" />
+              </div>
+            )}
+
+            {wizardStep === 4 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Bloom Assessment</h3>
+                <div className="flex flex-col gap-2 mb-4">
+                  {draft.questions.length === 0 && <p className="bk-slate text-sm">No questions added yet.</p>}
+                  {draft.questions.map((q, i) => (
+                    <div key={i} className="flex items-center justify-between border bk-border rounded-lg px-3 py-2 text-sm">
+                      <span>{q.prompt || "(untitled question)"}</span>
+                      <span className="bk-mono text-[9px] bk-slate">{q.type.toUpperCase()} · {q.bloom.toUpperCase()}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t bk-border pt-4">
+                  <input value={qDraft.prompt} onChange={(e) => setQDraft({ ...qDraft, prompt: e.target.value })} placeholder="Question text" className="w-full border bk-border rounded-lg px-3 py-2 mb-2 outline-none text-sm" />
+                  <div className="flex gap-2 mb-3">
+                    <select value={qDraft.type} onChange={(e) => setQDraft({ ...qDraft, type: e.target.value })} className="flex-1 border bk-border rounded-lg px-2 py-1.5 text-sm outline-none">
+                      {["mc", "ordering", "matching", "classification", "ranking", "crossword", "fillblank", "open"].map((tp) => <option key={tp} value={tp}>{tp}</option>)}
+                    </select>
+                    <select value={qDraft.bloom} onChange={(e) => setQDraft({ ...qDraft, bloom: e.target.value })} className="flex-1 border bk-border rounded-lg px-2 py-1.5 text-sm outline-none">
+                      {["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"].map((b) => <option key={b} value={b}>{b}</option>)}
+                    </select>
+                  </div>
+                  <button
+                    onClick={() => { if (qDraft.prompt) { setDraft({ ...draft, questions: [...draft.questions, qDraft] }); setQDraft({ prompt: "", type: "mc", bloom: "Remember" }); } }}
+                    className="flex items-center gap-1 bk-btn-outline rounded-lg px-3 py-1.5 text-sm"
+                  >
+                    <PlusCircle size={14} /> Add question
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {wizardStep === 5 && (
+              <div>
+                <h3 className="bk-display text-xl mb-4">Review</h3>
+                <div className="flex flex-col gap-2 text-sm">
+                  <div><span className="bk-mono text-[10px] bk-slate">TITLE</span><br />{draft.title || "—"}</div>
+                  <div><span className="bk-mono text-[10px] bk-slate">AUTHOR</span><br />{draft.author || "—"}</div>
+                  <div><span className="bk-mono text-[10px] bk-slate">COVER</span><br />{draft.cover || "—"}</div>
+                  <div><span className="bk-mono text-[10px] bk-slate">QUESTIONS</span><br />{draft.questions.length} added</div>
+                </div>
+                <p className="bk-slate text-xs mt-4">Once published, the curated assessment is frozen. To fix an error later, unpublish and republish.</p>
+              </div>
+            )}
+
+            {wizardStep === 6 && (
+              <div className="text-center py-6">
+                <div className="w-14 h-14 rounded-full bk-bg-sage mx-auto flex items-center justify-center mb-4">
+                  <Check size={22} className="text-white" />
+                </div>
+                <h3 className="bk-display text-xl mb-2">Published</h3>
+                <p className="bk-slate text-sm mb-6">{draft.title || "The book"} is now live in the library.</p>
+                <button onClick={() => { setScreen("list"); resetWizard(); }} className="bk-btn-dark rounded-lg px-5 py-2.5 text-sm font-medium">
+                  Back to book list
+                </button>
+              </div>
+            )}
+
+            {wizardStep < 6 && (
+              <div className="flex items-center justify-between mt-8">
+                <button disabled={wizardStep === 0} onClick={() => setWizardStep((s) => s - 1)} className="flex items-center gap-1 bk-btn-outline rounded-lg px-4 py-2 text-sm disabled:opacity-20">
+                  <ArrowLeft size={14} /> Back
+                </button>
+                {wizardStep === 5 ? (
+                  <button onClick={publish} className="flex items-center gap-1 bk-btn-primary rounded-lg px-5 py-2 text-sm font-medium">
+                    Publish book <Check size={14} />
+                  </button>
+                ) : (
+                  <button onClick={() => setWizardStep((s) => s + 1)} className="flex items-center gap-1 bk-btn-dark rounded-lg px-4 py-2 text-sm">
+                    Next <ArrowRight size={14} />
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bk-bg-cream min-h-[560px] px-6 py-10">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex items-center justify-between mb-1">
+          <h2 className="bk-display text-2xl">Book Management</h2>
+          <button onClick={() => setScreen("wizard")} className="flex items-center gap-1.5 bk-btn-primary rounded-lg px-4 py-2 text-sm font-medium">
+            <PlusCircle size={15} /> Add new book
+          </button>
+        </div>
+        <p className="bk-slate text-sm mb-6">Books can be added without any code changes. Bloom tagging is required per question.</p>
+
+        <div className="bg-white rounded-2xl bk-card overflow-hidden">
+          <div className="grid grid-cols-[1fr_auto_auto] gap-4 px-5 py-3 bk-mono text-[9px] bk-slate border-b bk-border">
+            <span>TITLE</span><span>STATUS</span><span></span>
+          </div>
+          {books.map((b) => (
+            <div key={b.id} className="grid grid-cols-[1fr_auto_auto] gap-4 px-5 py-4 items-center border-b bk-border last:border-0">
+              <div>
+                <div className="text-sm font-medium">{b.title}</div>
+                <div className="bk-slate text-xs">{b.author}</div>
+              </div>
+              <span className={`bk-mono text-[9px] px-2 py-1 rounded-full ${b.status === "available" ? "bk-bg-sage text-white" : "bg-[#EDE6D3] bk-slate"}`}>
+                {b.status === "available" ? "PUBLISHED" : "COMING SOON"}
+              </span>
+              <span className="bk-mono text-[9px] bk-slate flex items-center gap-1">
+                {b.status === "available" && <Lock size={11} />} {b.status === "available" ? "LOCKED" : "—"}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================== APP ROOT ============================== */
+export default function BookalyzerDemo() {
+  const [role, setRole] = useState("select");
+  const [resetKey, setResetKey] = useState(0);
+  const [lang, setLang] = useState("en");
+
+  return (
+    <div className="bk-root w-full min-h-screen" key={resetKey}>
+      <GlobalStyle />
+      <TopNav role={role} setRole={setRole} onReset={() => { setResetKey((k) => k + 1); setRole("select"); }} lang={lang} setLang={setLang} />
+      {role === "select" && <RoleSelect setRole={setRole} lang={lang} />}
+      {role === "child" && <ChildApp key={`child-${resetKey}`} lang={lang} />}
+      {role === "parent" && <ParentApp key={`parent-${resetKey}`} lang={lang} />}
+      {role === "admin" && <AdminApp key={`admin-${resetKey}`} />}
+    </div>
+  );
+}

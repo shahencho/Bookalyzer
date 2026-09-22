@@ -1,0 +1,43 @@
+{
+  "book_slug": "buratino",
+  "language": "en",
+  "title": "The Golden Key, or The Adventures of Buratino",
+  "author": "Alexey Tolstoy",
+  "genre": "Fantasy",
+  "short_summary": "An old woodcarver named Papa Carlo carves a wooden puppet named Buratino out of a talking log, and the puppet immediately springs to life — mischievous, curious, and always in a hurry. Instead of going to school like Papa Carlo hopes, Buratino sells his schoolbook for a ticket to a puppet theatre and stumbles into a bigger adventure than he expected.",
+  "extended_summary": "An old woodcarver named Papa Carlo carves a wooden puppet named Buratino out of a talking log, and the puppet immediately springs to life — mischievous, curious, and always in a hurry. Instead of going to school like Papa Carlo hopes, Buratino sells his schoolbook for a ticket to a puppet theatre and stumbles into a bigger adventure than he expected.\n\nBuratino discovers a secret golden key that is said to unlock a hidden door behind a painted fireplace, and a band of tricksters try to steal his few coins by promising to grow them into a money tree. With the help of new friends, Buratino learns to be more careful — and finally finds what the golden key was hiding all along.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is Buratino carved from?",
+      "content": { "options": ["A talking log", "A block of clay", "A piece of metal", "A bundle of straw"], "correct": 0 },
+      "explanation": "Papa Carlo carves Buratino from a log that surprises him by talking."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Buratino sells his schoolbook to buy a ticket to the ___ theatre.",
+      "content": { "answer": "puppet", "altAnswers": [] },
+      "explanation": "Buratino's curiosity about the puppet theatre gets his whole adventure started."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character or item to its role in the story.",
+      "content": {
+        "left": ["Papa Carlo", "Buratino", "The tricksters", "The golden key"],
+        "right": ["Wants Buratino to go to school", "Curious and always in a hurry", "Try to steal his coins", "Opens a hidden door"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character or object plays a distinct part in Buratino's journey."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "What lesson do you think Buratino learns from being tricked?",
+      "content": { "keywords": ["careful", "trust", "honest", "learn", "mistake", "wise"] },
+      "explanation": "There's no single right answer — the story shows that being tricked can teach caution and better judgment."
+    }
+  ]
+}

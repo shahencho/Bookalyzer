@@ -1,0 +1,49 @@
+{
+  "book_slug": "karlsson",
+  "language": "en",
+  "title": "Karlsson-on-the-Roof",
+  "author": "Astrid Lindgren",
+  "genre": "Family Story",
+  "copyright_status": "active copyright",
+  "short_summary": "A lonely boy nicknamed Kid gets an unexpected friend: Karlsson, a small, plump, self-important man who lives in a hidden house on the roof and flies using a propeller strapped to his back. Karlsson calls himself \"the world's best\" at everything, and constantly pulls Kid into mischief and wild pranks around the apartment building.",
+  "extended_summary": "A lonely boy nicknamed Kid gets an unexpected friend: Karlsson, a small, plump, self-important man who lives in a hidden house on the roof and flies using a propeller strapped to his back. Karlsson calls himself \"the world's best\" at everything, and constantly pulls Kid into mischief and wild pranks around the apartment building.\n\nKarlsson's pranks often get Kid into trouble with his parents, since no one else ever sees Karlsson or believes he's real. But underneath the boasting and mischief, Karlsson's friendship gives Kid something he was missing — someone who always wants to play, and who makes even ordinary days feel like an adventure.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "How does Karlsson fly?",
+      "content": { "options": ["With a propeller on his back", "On a broomstick", "With magic wings", "In a hot-air balloon"], "correct": 0 },
+      "explanation": "Karlsson has a small propeller strapped to his back that lets him fly wherever he likes."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Karlsson often says he is a man in the prime of his ___.",
+      "content": { "answer": "life", "altAnswers": [] },
+      "explanation": "It's one of Karlsson's favorite ways to describe himself."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Believes Karlsson is real",
+        "groupB": "Never sees or believes in Karlsson",
+        "options": [
+          { "label": "Kid", "group": "A" },
+          { "label": "Karlsson himself", "group": "A" },
+          { "label": "Kid's parents", "group": "B" },
+          { "label": "Other grown-ups", "group": "B" }
+        ]
+      },
+      "explanation": "Kid and Karlsson both know Karlsson is real, but the grown-ups never see any proof of it."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think Kid needed a friend like Karlsson?",
+      "content": { "keywords": ["lonely", "friend", "play", "imagination", "fun", "adventure"] },
+      "explanation": "There's no single right answer — the story suggests Kid needed both fun and companionship."
+    }
+  ]
+}

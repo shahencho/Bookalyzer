@@ -1,0 +1,64 @@
+{
+  "book_slug": "pollyanna",
+  "language": "en",
+  "title": "Pollyanna",
+  "author": "Eleanor H. Porter",
+  "genre": "Family Story",
+  "short_summary": "After her parents die, young Pollyanna goes to live with her strict Aunt Polly in a small New England town. Rather than feel sorry for herself, Pollyanna plays the \"glad game\" her father taught her — finding something to be glad about in every situation, no matter how hard. Her relentless cheerfulness slowly begins to change the people around her, including her stern aunt.",
+  "extended_summary": "After her parents die, young Pollyanna goes to live with her strict Aunt Polly in a small New England town. Rather than feel sorry for herself, Pollyanna plays the \"glad game\" her father taught her — finding something to be glad about in every situation, no matter how hard. Her relentless cheerfulness slowly begins to change the people around her, including her stern aunt.\n\nWhen Pollyanna is badly injured and can no longer walk, the entire town — moved by all the kindness she has shown them — comes together to lift her spirits, playing the glad game right back at her. Even in her darkest moment, the town's collective gratitude helps Pollyanna hold onto hope, and Aunt Polly finally learns to open her heart the way her niece always has.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What game did Pollyanna's father teach her?",
+      "content": { "options": ["The glad game", "The quiet game", "The counting game", "The hiding game"], "correct": 0 },
+      "explanation": "The glad game is about finding something to be glad about, even in hard situations."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "In the glad game, Pollyanna tries to find something to be ___ about in every situation.",
+      "content": { "answer": "glad", "altAnswers": ["happy"] },
+      "explanation": "The whole game is built around finding a reason to feel glad, however small."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events in the order they happen in the story.",
+      "content": {
+        "items": [
+          "Pollyanna's parents pass away",
+          "She moves in with Aunt Polly",
+          "She teaches the glad game to the town",
+          "She is injured and stops walking",
+          "The town lifts her spirits in return"
+        ],
+        "correctOrder": [0, 1, 2, 3, 4]
+      },
+      "explanation": "Pollyanna spreads the glad game first — which is why the town is ready to return the favor after her accident."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Slow to show kindness at first",
+        "groupB": "Already warm and caring",
+        "options": [
+          { "label": "Aunt Polly", "group": "A" },
+          { "label": "A grumpy neighbor", "group": "A" },
+          { "label": "Pollyanna", "group": "B" },
+          { "label": "Nancy the maid", "group": "B" }
+        ]
+      },
+      "explanation": "Aunt Polly and the neighbor need Pollyanna's influence to soften, while Pollyanna and Nancy are warm from the start."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think the glad game is a healthy way to deal with hard times, or does it ignore real problems? Explain.",
+      "content": { "keywords": ["honest", "real", "feelings", "cope", "positive", "ignore", "healthy"] },
+      "explanation": "There's no single right answer — the story shows both the comfort and the limits of relentless positivity."
+    }
+  ]
+}

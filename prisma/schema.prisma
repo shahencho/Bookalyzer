@@ -1,0 +1,235 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Language {
+  hy
+  ru
+  en
+}
+
+enum BookStatus {
+  LIVE
+  NOT_LIVE
+}
+
+enum QuestionType {
+  MC
+  ORDERING
+  MATCHING
+  FILLBLANK
+  CLASSIFICATION
+  OPEN
+  RANKING
+  CROSSWORD
+}
+
+enum BloomLevel {
+  REMEMBER
+  UNDERSTAND
+  APPLY
+  ANALYZE
+  EVALUATE
+  CREATE
+}
+
+enum ReadingMode {
+  SHORT
+  EXTENDED
+  PHYSICAL
+}
+
+enum BadgeTier {
+  BRONZE
+  SILVER
+  GOLD
+}
+
+enum SessionStatus {
+  IN_PROGRESS
+  COMPLETED
+  ABANDONED
+}
+
+// ---------- CORE ----------
+
+model BookGroup {
+  id              Int      @id @default(autoincrement())
+  slug            String   @unique
+  title           String
+  author          String
+  genre           String
+  copyrightStatus String   @default("public domain")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  books Book[]
+
+  @@map("book_groups")
+}
+
+model Book {
+  id              Int        @id @default(autoincrement())
+  bookGroupId     Int
+  language        Language
+  title           String
+  author          String
+  shortSummary    String     @db.Text
+  extendedSummary String     @db.Text
+  status          BookStatus @default(LIVE)
+  coverImageId    Int?
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  bookGroup           BookGroup            @relation(fields: [bookGroupId], references: [id])
+  coverImage          CoverImage?          @relation(fields: [coverImageId], references: [id])
+  questions           Question[]
+  assessmentSessions  AssessmentSession[]
+  badges              Badge[]
+
+  @@unique([bookGroupId, language])
+  @@map("books")
+}
+
+model Question {
+  id           Int        @id @default(autoincrement())
+  bookId       Int
+  type         QuestionType
+  bloomLevel   BloomLevel
+  prompt       String     @db.Text
+  content      Json
+  explanation  String     @db.Text
+  archivedAt   DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  book              Book               @relation(fields: [bookId], references: [id])
+  questionAttempts  QuestionAttempt[]
+
+  @@index([bookId, archivedAt])
+  @@map("questions")
+}
+
+model AssessmentSession {
+  id              Int           @id @default(autoincrement())
+  childId         Int
+  bookId          Int
+  readingMode     ReadingMode
+  overallScore    Float?
+  xpEarned        Int?
+  badgeEarned     BadgeTier?
+  durationSeconds Int?
+  status          SessionStatus @default(IN_PROGRESS)
+  startedAt       DateTime      @default(now())
+  completedAt     DateTime?
+
+  child             Child              @relation(fields: [childId], references: [id])
+  book              Book               @relation(fields: [bookId], references: [id])
+  questionAttempts  QuestionAttempt[]
+
+  @@index([childId, bookId, status])
+  @@map("assessment_sessions")
+}
+
+model QuestionAttempt {
+  id          Int      @id @default(autoincrement())
+  sessionId   Int
+  questionId  Int
+  answerGiven Json?
+  score       Float?
+  createdAt   DateTime @default(now())
+
+  session   AssessmentSession @relation(fields: [sessionId], references: [id])
+  question  Question          @relation(fields: [questionId], references: [id])
+
+  @@map("question_attempts")
+}
+
+// ---------- NEAR-TERM ----------
+
+model Parent {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  children Child[]
+
+  @@map("parents")
+}
+
+model Child {
+  id                Int      @id @default(autoincrement())
+  parentId          Int
+  name              String
+  nickname          String   @unique
+  pinHash           String
+  age               Int
+  preferredLanguage Language @default(en)
+  xp                Int      @default(0)
+  createdAt         DateTime @default(now())
+
+  parent             Parent              @relation(fields: [parentId], references: [id])
+  assessmentSessions AssessmentSession[]
+  badges             Badge[]
+  loginAttempts      LoginAttempt[]
+
+  @@map("children")
+}
+
+model CoverImage {
+  id                Int      @id @default(autoincrement())
+  storagePath       String
+  uploadedByAdminId Int?
+  createdAt         DateTime @default(now())
+
+  uploadedByAdmin AdminUser? @relation(fields: [uploadedByAdminId], references: [id])
+  books           Book[]
+
+  @@map("cover_images")
+}
+
+model Badge {
+  id        Int       @id @default(autoincrement())
+  childId   Int
+  bookId    Int
+  badgeTier BadgeTier
+  earnedAt  DateTime  @default(now())
+
+  child Child @relation(fields: [childId], references: [id])
+  book  Book  @relation(fields: [bookId], references: [id])
+
+  @@unique([childId, bookId, badgeTier])
+  @@map("badges")
+}
+
+model AdminUser {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+
+  uploadedCovers CoverImage[]
+
+  @@map("admin_users")
+}
+
+// Simple lockout tracking for child nickname+PIN login (10 fails / 15 min lock).
+model LoginAttempt {
+  id         Int      @id @default(autoincrement())
+  childId    Int
+  succeeded  Boolean
+  attemptedAt DateTime @default(now())
+
+  child Child @relation(fields: [childId], references: [id])
+
+  @@index([childId, attemptedAt])
+  @@map("login_attempts")
+}

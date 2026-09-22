@@ -1,0 +1,60 @@
+{
+  "book_slug": "pippi-longstocking",
+  "language": "en",
+  "title": "Pippi Longstocking",
+  "author": "Astrid Lindgren",
+  "genre": "Adventure",
+  "copyright_status": "active copyright",
+  "short_summary": "Pippi Longstocking is a fiercely independent nine-year-old who lives alone at Villa Villekulla — no parents, just her pet monkey Mr. Nilsson and her horse, which she can lift over her head. Impossibly strong and entirely unbothered by grown-up rules, Pippi fills her days with wild games alongside her neighbors and best friends, Tommy and Annika.",
+  "extended_summary": "Pippi Longstocking is a fiercely independent nine-year-old who lives alone at Villa Villekulla — no parents, just her pet monkey Mr. Nilsson and her horse, which she can lift over her head. Impossibly strong and entirely unbothered by grown-up rules, Pippi fills her days with wild games alongside her neighbors and best friends, Tommy and Annika.\n\nPippi's father is a sea captain who she believes has become king of a faraway island, and she has a suitcase full of gold coins to live on. She refuses to go to school, outsmarts burglars and policemen who try to interfere with her life, and turns everyday chores into games — all while showing surprising kindness underneath her wild, rule-breaking exterior.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who does Pippi live with at Villa Villekulla?",
+      "content": { "options": ["No grown-ups — just her monkey and her horse", "Her mother and father", "Her grandmother", "A teacher"], "correct": 0 },
+      "explanation": "Pippi lives entirely on her own, with only her pet monkey Mr. Nilsson and her horse for company."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Pippi is famous for being incredibly ___.",
+      "content": { "answer": "strong", "altAnswers": [] },
+      "explanation": "Pippi's superhuman strength lets her lift her own horse over her head."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character or detail to what it means for Pippi.",
+      "content": {
+        "left": ["Tommy and Annika", "Mr. Nilsson", "Pippi's father", "The suitcase of gold coins"],
+        "right": ["Pippi's neighbors and best friends", "Pippi's pet monkey", "A sea captain, believed to be a king now", "What Pippi lives on instead of working"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "These details together explain how Pippi can live so freely, without needing any grown-up's permission."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each behavior into the right group.",
+      "content": {
+        "groupA": "Unusual for a child",
+        "groupB": "Ordinary for a child",
+        "options": [
+          { "label": "Lifting a horse over her head", "group": "A" },
+          { "label": "Living completely without adult supervision", "group": "A" },
+          { "label": "Playing games with her best friends", "group": "B" },
+          { "label": "Going on small adventures with friends after school", "group": "B" }
+        ]
+      },
+      "explanation": "Part of what makes Pippi so fun is that ordinary childhood moments happen right alongside her extraordinary independence and strength."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think it would be fun or difficult to live like Pippi, with no grown-ups telling you what to do? Explain.",
+      "content": { "keywords": ["free", "fun", "difficult", "responsibility", "alone", "rules"] },
+      "explanation": "There's no single right answer — Pippi's freedom looks fun, but it also means handling everything, including danger, entirely on her own."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+.bk-root { font-family: 'Inter', sans-serif; color: #24303F; }
+.bk-display { font-family: 'Fraunces', serif; }
+.bk-mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: .02em; }
+
+.bk-bg-night { background: radial-gradient(ellipse at 50% -10%, #2F4066 0%, #1B2436 55%, #10151F 100%); }
+.bk-bg-cream { background: #FBF7EF; }
+.bk-bg-card { background: #FFFFFF; }
+
+.bk-ink { color: #24303F; }
+.bk-slate { color: #5B6B7C; }
+.bk-cream-text { color: #F3ECDD; }
+.bk-cream-slate { color: #A9B3C8; }
+
+.bk-gold { color: #E3A94F; } .bk-bg-gold { background: #E3A94F; }
+.bk-rose { color: #D8697A; } .bk-bg-rose { background: #D8697A; }
+.bk-sage { color: #6B9080; } .bk-bg-sage { background: #6B9080; }
+.bk-silver { color: #9AA5B1; } .bk-bg-silver { background: #9AA5B1; }
+.bk-bronze { color: #B4772F; } .bk-bg-bronze { background: #B4772F; }
+
+.bk-border { border-color: #E7DFCC; }
+.bk-border-night { border-color: #3A4A6B; }
+
+.bk-btn-primary { background: #E3A94F; color: #1B2436; }
+.bk-btn-primary:hover { background: #D69A3E; }
+.bk-btn-dark { background: #1B2436; color: #F3ECDD; }
+.bk-btn-dark:hover { background: #252F45; }
+.bk-btn-outline { border: 1.5px solid #24303F; color: #24303F; background: transparent; }
+.bk-btn-outline:hover { background: #24303F; color: #fff; }
+
+.bk-star-dot { position: absolute; border-radius: 9999px; background: #F3E3B8; }
+
+.bk-card { box-shadow: 0 1px 2px rgba(27,36,54,.06), 0 8px 24px rgba(27,36,54,.05); }
+.bk-tab { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+
+.bk-node { width: 14px; height: 14px; border-radius: 9999px; }
+.bk-node-line { height: 1.5px; background: #D9CFB4; flex: 1; }
+
+.bk-avatar-btn { width: 34px; height: 34px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; background: #2F4066; border: 1.5px solid #E3A94F; cursor: pointer; }
+.bk-lang-toggle { display: flex; border: 1px solid #3A4A6B; border-radius: 9999px; overflow: hidden; }
+.bk-lang-toggle button { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .06em; padding: 5px 9px; background: transparent; color: #A9B3C8; }
+.bk-lang-toggle button.active { background: #E3A94F; color: #1B2436; }

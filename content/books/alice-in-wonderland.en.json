@@ -1,0 +1,59 @@
+{
+  "book_slug": "alice-in-wonderland",
+  "language": "en",
+  "title": "Alice's Adventures in Wonderland",
+  "author": "Lewis Carroll",
+  "genre": "Fantasy",
+  "short_summary": "A bored girl named Alice follows a talking White Rabbit down a rabbit hole into a strange underground world called Wonderland. There she grows and shrinks after eating and drinking odd things, meets a grinning Cheshire Cat who can vanish at will, and joins a mad tea party hosted by the Hatter and the March Hare.",
+  "extended_summary": "A bored girl named Alice follows a talking White Rabbit down a rabbit hole into a strange underground world called Wonderland. There she grows and shrinks after eating and drinking odd things, meets a grinning Cheshire Cat who can vanish at will, and joins a mad tea party hosted by the Hatter and the March Hare.\n\nAlice's journey eventually brings her before the fierce Queen of Hearts, who threatens to behead anyone who displeases her over the smallest things. During a chaotic trial in the Queen's court, the nonsense of Wonderland reaches its peak — until Alice suddenly wakes up back home, realizing the whole adventure was a dream.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "How does Alice first get to Wonderland?",
+      "content": { "options": ["She falls down a rabbit hole", "She walks through a mirror", "She sails on a ship", "She climbs a tree"], "correct": 0 },
+      "explanation": "Alice follows the White Rabbit and falls down a long rabbit hole into Wonderland."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "A bottle labeled \"Drink Me\" makes Alice ___.",
+      "content": { "answer": "shrink", "altAnswers": ["smaller"] },
+      "explanation": "Alice keeps changing size throughout the story by eating and drinking strange things."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to what makes them memorable.",
+      "content": {
+        "left": ["The Mad Hatter", "The Cheshire Cat", "The Queen of Hearts", "The White Rabbit"],
+        "right": ["Hosts an endless, nonsensical tea party", "Can disappear, leaving only his grin behind", "Constantly shouts \"Off with their heads!\"", "Is always worried about being late"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character embodies a different kind of nonsense that makes Wonderland so strange."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Threatens or frightens Alice",
+        "groupB": "Helps or guides Alice",
+        "options": [
+          { "label": "The Queen of Hearts", "group": "A" },
+          { "label": "The card soldiers", "group": "A" },
+          { "label": "The White Rabbit", "group": "B" },
+          { "label": "The Cheshire Cat", "group": "B" }
+        ]
+      },
+      "explanation": "The Queen and her soldiers are dangerous, while the Rabbit and the Cat, odd as they are, point Alice in new directions."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think Alice stays fairly calm even though Wonderland keeps changing the rules around her?",
+      "content": { "keywords": ["curious", "brave", "calm", "adapt", "confused", "imagination"] },
+      "explanation": "There's no single right answer — Alice's curiosity and adaptability help her keep going even when nothing makes sense."
+    }
+  ]
+}

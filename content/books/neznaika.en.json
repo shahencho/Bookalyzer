@@ -1,0 +1,49 @@
+{
+  "book_slug": "neznaika",
+  "language": "en",
+  "title": "Neznaika's Adventures",
+  "author": "Nikolai Nosov",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "In a tiny town where everyone is the size of a cucumber, a cheerful, boastful boy named Neznaika (which means \"Know-Nothing\") is always getting himself and his friends into trouble by pretending to know things he doesn't. When his mistakes cause real problems for the town, Neznaika has to learn the difference between confidence and actual knowledge.",
+  "extended_summary": "In a tiny town where everyone is the size of a cucumber, a cheerful, boastful boy named Neznaika (which means \"Know-Nothing\") is always getting himself and his friends into trouble by pretending to know things he doesn't. When his mistakes cause real problems for the town, Neznaika has to learn the difference between confidence and actual knowledge.\n\nNeznaika's adventures take him from a wild ride in a homemade hot-air balloon to a much bigger journey to the Moon, where he sees a strange society built entirely around money and greed. Along the way, his friends — patient inventors, doctors, and musicians — keep helping him out of trouble, even as he slowly realizes that being clever takes more than just talking big.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does the name 'Neznaika' mean?",
+      "content": { "options": ["Know-nothing", "Wise one", "Fast runner", "Little giant"], "correct": 0 },
+      "explanation": "Neznaika's name comes from his habit of claiming to know things he doesn't."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "Neznaika and his friends are all the size of a ___.",
+      "content": { "answer": "cucumber", "altAnswers": [] },
+      "explanation": "The whole town is inhabited by tiny people no bigger than a cucumber."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Careful and skilled",
+        "groupB": "Boastful and careless",
+        "options": [
+          { "label": "Neznaika", "group": "B" },
+          { "label": "Znaika the inventor", "group": "A" },
+          { "label": "The town's doctor", "group": "A" },
+          { "label": "Guslya the musician", "group": "A" }
+        ]
+      },
+      "explanation": "Znaika, the doctor, and the musician approach things carefully, while Neznaika often acts before thinking."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Neznaika's confidence is a good thing or a bad thing? Explain.",
+      "content": { "keywords": ["confidence", "honest", "careful", "brag", "learn", "mistake"] },
+      "explanation": "There's no single right answer — the story shows both the fun and the danger of overconfidence."
+    }
+  ]
+}

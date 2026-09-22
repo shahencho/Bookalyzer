@@ -1,0 +1,60 @@
+{
+  "book_slug": "harry-potter",
+  "language": "en",
+  "title": "Harry Potter",
+  "author": "J.K. Rowling",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "An orphaned boy who has always felt out of place discovers, on his eleventh birthday, that he is actually a wizard — and that he has been invited to attend a famous school of magic. There he makes his first real friends, learns spells and potions, and starts to uncover the truth about his parents and the powerful dark wizard who once threatened them.",
+  "extended_summary": "An orphaned boy who has always felt out of place discovers, on his eleventh birthday, that he is actually a wizard — and that he has been invited to attend a famous school of magic. There he makes his first real friends, learns spells and potions, and starts to uncover the truth about his parents and the powerful dark wizard who once threatened them.\n\nAs his first year at the school unfolds, the boy and his two closest friends begin to notice that something dangerous is hidden within the castle walls. Following a trail of clues, they realize the mystery is connected to the same dark wizard from his past — and that facing it will take more courage, loyalty, and quick thinking than any lesson could teach.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does the boy discover on his eleventh birthday?",
+      "content": { "options": ["That he is a wizard", "That he has a twin brother", "That he has won a contest", "That he is moving to a new country"], "correct": 0 },
+      "explanation": "He learns he's a wizard and is invited to attend a school of magic."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character or place to its role in the story.",
+      "content": {
+        "left": ["The boy", "His two closest friends", "The school", "The dark wizard"],
+        "right": ["Discovers he is a wizard", "Help him uncover the mystery", "Where he learns magic", "The danger from his past"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each element plays a distinct part in the mystery the boy and his friends uncover."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The boy realizes facing the danger will take courage, loyalty, and quick ___.",
+      "content": { "answer": "thinking", "altAnswers": [] },
+      "explanation": "Solving the mystery takes more than magic lessons — it takes quick thinking under pressure."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Discovering magic for the first time",
+        "groupB": "Already part of the magical world",
+        "options": [
+          { "label": "The boy", "group": "A" },
+          { "label": "People in his non-magical hometown", "group": "A" },
+          { "label": "A friend raised in a magical family", "group": "B" },
+          { "label": "The dark wizard", "group": "B" }
+        ]
+      },
+      "explanation": "The boy and his hometown are new to magic, while his friend and the dark wizard already belong to that world."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think friendship matters so much when facing something dangerous?",
+      "content": { "keywords": ["friend", "trust", "help", "together", "brave", "support"] },
+      "explanation": "There's no single right answer — the story suggests that trust and teamwork make courage possible."
+    }
+  ]
+}

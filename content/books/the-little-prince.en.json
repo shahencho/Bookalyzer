@@ -1,0 +1,151 @@
+{
+  "book_slug": "the-little-prince",
+  "language": "en",
+  "title": "The Little Prince",
+  "author": "Antoine de Saint-Exupéry",
+  "genre": "Fable",
+  "short_summary": "A pilot crash-lands in the Sahara desert and meets a curious little boy who says he has come from a tiny planet far away. The boy, a prince, tells the pilot about the single rose he left behind, and about the strange grown-ups he visited on his journey — a king with no subjects, a businessman who counts stars he cannot own, a lamplighter obeying an order that no longer makes sense. On Earth, the prince meets a fox who asks to be tamed, and learns that what matters most is often invisible to the eye.",
+  "extended_summary": "A pilot crash-lands in the Sahara desert and meets a curious little boy who says he has come from a tiny planet far away. The boy, a prince, tells the pilot about the single rose he left behind, and about the strange grown-ups he visited on his journey — a king with no subjects, a businessman who counts stars he cannot own, a lamplighter obeying an order that no longer makes sense. On Earth, the prince meets a fox who asks to be tamed, and learns that what matters most is often invisible to the eye.\n\nThe fox explains that taming means creating ties — that a tamed rose becomes unlike any other rose in the world, simply because time was spent on it. The prince realizes his own rose, ordinary as she seemed, is irreplaceable because he loved and cared for her. Before returning to his planet and his rose, the prince leaves the pilot with a quiet truth: it is the time we give to someone that makes them matter, and the eye is blind to that — you have to look with the heart.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where does the pilot first meet the little prince?",
+      "content": { "options": ["In the Sahara desert", "In a big city", "On a ship at sea", "In a quiet forest"], "correct": 0 },
+      "explanation": "The pilot's plane has crash-landed in the desert when the little prince appears."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events in the order they happen in the story.",
+      "content": {
+        "items": [
+          "The prince leaves his tiny planet and the rose he loves",
+          "He visits several small planets and their odd grown-up residents",
+          "He meets a fox on Earth who teaches him about taming",
+          "He meets the pilot, stranded in the desert"
+        ],
+        "correctOrder": [0, 1, 3, 2]
+      },
+      "explanation": "The prince's journey takes him past the planets, then to Earth, where he meets the pilot before he meets the fox."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to what matters most to them.",
+      "content": {
+        "left": ["The Businessman", "The King", "The Fox", "The Little Prince"],
+        "right": ["Owning and counting the stars", "Being obeyed by someone, anyone", "Being tamed, and having a friend", "Caring for his one rose"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each grown-up is consumed by one narrow idea, while the prince and the fox understand relationships."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The fox tells the prince: \"What is essential is invisible to the ___.\"",
+      "content": { "answer": "eye", "altAnswers": ["eyes"] },
+      "explanation": "The full line is \"It is only with the heart that one can see rightly.\""
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Lost in serious grown-up matters",
+        "groupB": "Understands what matters",
+        "options": [
+          { "label": "The Businessman", "group": "A" },
+          { "label": "The King", "group": "A" },
+          { "label": "The Fox", "group": "B" },
+          { "label": "The Rose", "group": "B" }
+        ]
+      },
+      "explanation": "The businessman and king are absorbed by status and control; the fox and rose understand care and connection."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think the fox wanted the little prince to tame him? Explain in your own words.",
+      "content": { "keywords": ["friend", "relationship", "special", "unique", "bond", "love", "time", "care", "connect"] },
+      "explanation": "There's no single right answer — the fox wants a bond that makes the prince unique to him, and him to the prince."
+    },
+    {
+      "type": "ranking",
+      "bloom_level": "Evaluate",
+      "prompt": "Rank these grown-ups from least to most understanding of what really matters, as the little prince came to see them.",
+      "content": {
+        "items": ["The Fox", "The Businessman", "The Lamplighter", "The King"],
+        "correctOrder": [1, 3, 2, 0]
+      },
+      "explanation": "The businessman is the most absurd, obsessed with counting stars he cannot even use. The king wants obedience for its own sake, but is a little more reasonable. The lamplighter, though following a pointless order, is the only grown-up the prince could imagine as a friend, since he thinks of something beyond himself. The fox understands best of all, having taught the prince about taming."
+    },
+    {
+      "type": "crossword",
+      "bloom_level": "Remember",
+      "prompt": "Fill in the crossword using details from the story.",
+      "content": {
+        "gridSize": { "rows": 6, "cols": 6 },
+        "words": [
+          { "answer": "ROSE", "clue": "The flower the little prince loved and cared for on his own planet", "row": 2, "col": 1, "direction": "across" },
+          { "answer": "FOX", "clue": "The animal on Earth who asks the prince to tame it", "row": 1, "col": 2, "direction": "down" },
+          { "answer": "STAR", "clue": "What the businessman spends his life counting", "row": 0, "col": 5, "direction": "down" }
+        ]
+      },
+      "explanation": "ROSE, FOX, and STAR are all central to the prince's journey and what he learns along the way."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If the little prince met a grown-up today who cared only about counting how many followers they had online, who would that remind him of most?",
+      "content": {
+        "options": [
+          "The businessman, who cares only about numbers he can never really use",
+          "The lamplighter, doing a job that still means something to him",
+          "The fox, who wants a real relationship",
+          "The pilot, trying to fix something broken"
+        ],
+        "correct": 0
+      },
+      "explanation": "The businessman's obsession with counting stars he cannot use, name, or enjoy mirrors caring about numbers for their own sake rather than what actually matters."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each detail into where it belongs in the story.",
+      "content": {
+        "groupA": "On the little prince's own planet",
+        "groupB": "On Earth",
+        "options": [
+          { "label": "The rose he loves and waters", "group": "A" },
+          { "label": "Three small volcanoes he cleans out", "group": "A" },
+          { "label": "The fox who asks to be tamed", "group": "B" },
+          { "label": "The desert where the pilot's plane crash-lands", "group": "B" }
+        ]
+      },
+      "explanation": "The prince's planet holds his rose and his volcanoes; Earth is where he meets the fox and the pilot."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Why was the little prince so worried about the baobab seeds on his planet?",
+      "content": {
+        "options": [
+          "If left too long, the baobabs would grow huge and could split his tiny planet apart",
+          "The baobabs would attract dangerous animals",
+          "The baobabs would block the view of the sunsets he loved",
+          "The baobabs would poison his rose"
+        ],
+        "correct": 0
+      },
+      "explanation": "Because his planet is so small, the prince has to pull up baobab seedlings every day or their roots would eventually tear the tiny planet apart."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine the little prince visits one more planet before reaching Earth. Describe the grown-up who lives there and the one strange thing they are obsessed with.",
+      "content": { "keywords": ["planet", "grown-up", "obsessed", "imagine", "invent", "idea", "strange"] },
+      "explanation": "There's no single right answer — this invites the child to invent a new character in the spirit of the businessman, king, or lamplighter."
+    }
+  ]
+}

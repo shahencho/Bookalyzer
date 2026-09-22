@@ -1,0 +1,44 @@
+{
+  "book_slug": "emerald-city",
+  "language": "en",
+  "title": "The Wizard of the Emerald City",
+  "author": "Alexander Volkov",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "A girl named Ellie and her little dog are swept away by a cyclone to a magical land, where a falling house accidentally defeats a wicked witch. To find a way home, Ellie sets off down a road of yellow bricks toward the Emerald City, where a mysterious wizard is said to grant wishes — joined by a scarecrow who wants a brain, a tin woodman who wants a heart, and a cowardly lion who wants courage.",
+  "extended_summary": "A girl named Ellie and her little dog are swept away by a cyclone to a magical land, where a falling house accidentally defeats a wicked witch. To find a way home, Ellie sets off down a road of yellow bricks toward the Emerald City, where a mysterious wizard is said to grant wishes — joined by a scarecrow who wants a brain, a tin woodman who wants a heart, and a cowardly lion who wants courage.\n\nAlong the way, the friends face a wicked witch who controls flying monkeys and tries to stop them from reaching the city. When they finally meet the Wizard, they discover his power is not what it seems — and that each of them already had what they were searching for all along, inside themselves.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does Ellie follow to reach the Emerald City?",
+      "content": { "options": ["A road of yellow bricks", "A river of gold", "A trail of flowers", "A line of stars"], "correct": 0 },
+      "explanation": "The road of yellow bricks leads all the way to the Emerald City."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to what they want.",
+      "content": {
+        "left": ["Scarecrow", "Tin Woodman", "Cowardly Lion", "Ellie"],
+        "right": ["Wants a brain", "Wants a heart", "Wants courage", "Wants to go home"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each companion is searching for exactly the quality they feel they lack."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "Each companion discovers that what they were searching for was inside them all ___.",
+      "content": { "answer": "along", "altAnswers": [] },
+      "explanation": "The story's twist is that the brain, heart, courage, and way home were never really missing."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Which companion's wish do you relate to most, and why?",
+      "content": { "keywords": ["brain", "heart", "courage", "home", "relate", "wish"] },
+      "explanation": "There's no single right answer — each wish reflects something most people want at some point."
+    }
+  ]
+}

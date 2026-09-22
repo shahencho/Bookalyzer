@@ -1,0 +1,60 @@
+{
+  "book_slug": "emil-of-lonneberga",
+  "language": "en",
+  "title": "Emil of Lönneberga",
+  "author": "Astrid Lindgren",
+  "genre": "Family Story",
+  "copyright_status": "active copyright",
+  "short_summary": "Emil is a mischievous but good-hearted farm boy in the Swedish village of Lönneberga. Every time he gets into one of his scrapes — and there are many — his father locks him in the tool shed to think about what he's done. Emil doesn't mind much, since it gives him time to carve little wooden men out of blocks of wood.",
+  "extended_summary": "Emil is a mischievous but good-hearted farm boy in the Swedish village of Lönneberga. Every time he gets into one of his scrapes — and there are many — his father locks him in the tool shed to think about what he's done. Emil doesn't mind much, since it gives him time to carve little wooden men out of blocks of wood.\n\nEmil's mishaps range from getting his head stuck in a soup tureen at a fair to accidentally \"selling\" his own father at an auction while play-acting. But when a snowstorm threatens the life of Alfred, the farmhand Emil loves like family, Emil risks everything to drag him through the storm to a doctor — proving that underneath all the trouble, he has one of the kindest hearts in the village.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where does Emil's father send him every time he gets into trouble?",
+      "content": { "options": ["The tool shed", "His bedroom", "The barn", "The neighbor's house"], "correct": 0 },
+      "explanation": "Emil is locked in the tool shed to think about his mischief — though he mostly just carves wood there."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "While locked in the shed, Emil passes the time carving little wooden ___.",
+      "content": { "answer": "men", "altAnswers": ["figures"] },
+      "explanation": "By the end of the stories, Emil has carved a whole shelf full of little wooden men."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in Emil's life.",
+      "content": {
+        "left": ["Emil", "Ida", "Alfred", "Emil's mother"],
+        "right": ["Constantly gets into well-meaning mischief", "Emil's little sister, who tags along", "The farmhand Emil loves like family", "Tries to keep the household calm despite the chaos"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each person plays a distinct part in Emil's noisy, warm-hearted farm household."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each event into the right group.",
+      "content": {
+        "groupA": "One of Emil's mischievous mishaps",
+        "groupB": "A moment showing Emil's good heart",
+        "options": [
+          { "label": "Getting his head stuck in a soup tureen", "group": "A" },
+          { "label": "Accidentally \"selling\" his father at an auction", "group": "A" },
+          { "label": "Risking his own safety to save Alfred in a snowstorm", "group": "B" },
+          { "label": "Sharing what he has with people who have less", "group": "B" }
+        ]
+      },
+      "explanation": "Emil's stories mix comic trouble with real moments of courage and generosity."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Even though Emil causes so much trouble, why do you think the people of Lönneberga still care about him?",
+      "content": { "keywords": ["kind", "brave", "mischief", "heart", "help", "forgive"] },
+      "explanation": "There's no single right answer — Emil's mischief never comes from meanness, and he's shown real bravery and generosity when it counts."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "book_slug": "crooked-mirrors",
+  "language": "en",
+  "title": "The Kingdom of Crooked Mirrors",
+  "author": "Vitaly Gubarev",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "A girl named Olya, who often makes excuses and avoids the truth, steps through a magic mirror into a strange kingdom where everything is reversed. There she meets her own mirror-twin, Yalo, and together they discover a kingdom ruled by a cruel boy-king, where flattery and lies are rewarded and honesty is dangerous.",
+  "extended_summary": "A girl named Olya, who often makes excuses and avoids the truth, steps through a magic mirror into a strange kingdom where everything is reversed. There she meets her own mirror-twin, Yalo, and together they discover a kingdom ruled by a cruel boy-king, where flattery and lies are rewarded and honesty is dangerous.\n\nOlya and Yalo must work together — and tell the truth, even when it's frightening — to help a group of oppressed children and stand up to the unfair rules of the kingdom. By the end of their journey, Olya finally understands why honesty matters, even when a comfortable lie would be so much easier.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "How does Olya enter the kingdom of crooked mirrors?",
+      "content": { "options": ["Through a magic mirror", "Down a rabbit hole", "Through a wardrobe", "On a flying carpet"], "correct": 0 },
+      "explanation": "Olya steps through an old magic mirror, which is how she enters the reversed kingdom."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Olya's mirror-twin in the kingdom is named ___.",
+      "content": { "answer": "Yalo", "altAnswers": [] },
+      "explanation": "Yalo is Olya's own name spelled backward, and also her mirror-twin's name."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each behavior into the right group.",
+      "content": {
+        "groupA": "Rewarded in the kingdom",
+        "groupB": "Punished or dangerous in the kingdom",
+        "options": [
+          { "label": "Flattery", "group": "A" },
+          { "label": "Lies", "group": "A" },
+          { "label": "Honesty", "group": "B" },
+          { "label": "Telling the truth", "group": "B" }
+        ]
+      },
+      "explanation": "The kingdom's reversed rules mean flattery and lies are praised, while telling the truth is risky."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think Olya needed to see her own flaws reflected in a mirror world to change?",
+      "content": { "keywords": ["honest", "reflect", "mirror", "truth", "change", "learn"] },
+      "explanation": "There's no single right answer — seeing a problem reflected back can make it easier to recognize in yourself."
+    }
+  ]
+}

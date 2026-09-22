@@ -1,0 +1,60 @@
+{
+  "book_slug": "winnie-the-pooh",
+  "language": "en",
+  "title": "Winnie-the-Pooh",
+  "author": "A.A. Milne",
+  "genre": "Family Story",
+  "copyright_status": "adaptation-rights edge case",
+  "short_summary": "In the Hundred Acre Wood, a gentle, honey-loving bear named Winnie-the-Pooh spends his days with his friends: worried little Piglet, gloomy Eeyore, wise (but often wrong) Owl, and busy, organizing Rabbit. Their adventures are small and simple — but always end up more complicated than anyone expected.",
+  "extended_summary": "In the Hundred Acre Wood, a gentle, honey-loving bear named Winnie-the-Pooh spends his days with his friends: worried little Piglet, gloomy Eeyore, wise (but often wrong) Owl, and busy, organizing Rabbit. Their adventures are small and simple — but always end up more complicated than anyone expected.\n\nPooh gets stuck trying to leave Rabbit's house after eating too much honey, the friends set off on an \"expedition\" to find the North Pole without really knowing what it is, and everyone pitches in to find Eeyore's missing tail. Through it all, Christopher Robin, the boy who owns all these toys come to life, is always nearby to help sort things out.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does Pooh get stuck in after eating too much honey?",
+      "content": { "options": ["Rabbit's front door", "A hollow tree", "A bee hive", "A honey jar"], "correct": 0 },
+      "explanation": "Pooh eats so much at Rabbit's house that he gets stuck halfway out of the front door on his way home."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Pooh's best friend, a small and often worried animal, is simply called ___.",
+      "content": { "answer": "Piglet", "altAnswers": [] },
+      "explanation": "Piglet is Pooh's closest friend, even though he is often nervous about their adventures."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their personality.",
+      "content": {
+        "left": ["Eeyore", "Owl", "Rabbit", "Kanga"],
+        "right": ["Gloomy and always expects the worst", "Acts wise but often gets things wrong", "Organizes everyone and likes being in charge", "A caring and protective mother"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each friend in the Hundred Acre Wood has a distinct personality that shapes how they handle their small adventures."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "An animal living in the Hundred Acre Wood",
+        "groupB": "A human boy",
+        "options": [
+          { "label": "Pooh", "group": "A" },
+          { "label": "Piglet", "group": "A" },
+          { "label": "Eeyore", "group": "A" },
+          { "label": "Christopher Robin", "group": "B" }
+        ]
+      },
+      "explanation": "Christopher Robin is the human boy whose toys come to life as his animal friends in the Wood."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think Christopher Robin's friends keep going on adventures together even when things often go wrong?",
+      "content": { "keywords": ["friend", "together", "adventure", "help", "silly", "brave"] },
+      "explanation": "There's no single right answer — the friends seem to enjoy being together and helping each other more than getting things exactly right."
+    }
+  ]
+}
