@@ -5,28 +5,28 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Users } from "lucide-react";
 
-// No parent-login-specific strings exist in the source translations (the
-// reference demo had no parent/admin login screens at all), so this page
-// stays English-only rather than guessing translations.
-export default function ParentLoginPage() {
+// English-only, matching /parent/login (no parent-flow strings exist in the
+// source translations — the reference demo never had these screens).
+export default function ParentSignupPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("parent@bookalyzer.test");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  async function handleLogin() {
+  async function handleSignup() {
     setLoading(true);
     setError(null);
-    const res = await fetch("/api/auth/parent/login", {
+    const res = await fetch("/api/auth/parent/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ name, email, password }),
     });
     setLoading(false);
     if (!res.ok) {
       const body = await res.json().catch(() => ({}));
-      setError(body.error ?? "Login failed");
+      setError(body.error ?? "Signup failed");
       return;
     }
     router.push("/parent/dashboard");
@@ -36,12 +36,19 @@ export default function ParentLoginPage() {
     <div className="bk-bg-cream min-h-[560px] flex items-center justify-center px-6 py-16">
       <div className="bg-white rounded-2xl p-8 w-full max-w-sm bk-card">
         <Users className="bk-gold mb-4" size={26} />
-        <h2 className="bk-display text-2xl mb-1">Parent login</h2>
-        <p className="bk-slate text-sm mb-6">See how your children are reading.</p>
+        <h2 className="bk-display text-2xl mb-1">Create parent account</h2>
+        <p className="bk-slate text-sm mb-6">Track how your children are reading.</p>
+        <label className="bk-mono text-[10px] bk-slate">NAME</label>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="w-full border bk-border rounded-lg px-3 py-2 mt-1 mb-4 outline-none"
+        />
         <label className="bk-mono text-[10px] bk-slate">EMAIL</label>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          type="email"
           className="w-full border bk-border rounded-lg px-3 py-2 mt-1 mb-4 outline-none"
         />
         <label className="bk-mono text-[10px] bk-slate">PASSWORD</label>
@@ -54,15 +61,15 @@ export default function ParentLoginPage() {
         {error && <p className="text-xs text-red-600 mb-4">{error}</p>}
         <button
           disabled={loading}
-          onClick={handleLogin}
+          onClick={handleSignup}
           className="w-full bk-btn-primary rounded-lg py-2.5 font-medium mt-4 disabled:opacity-50"
         >
-          {loading ? "Logging in..." : "Log in"}
+          {loading ? "Creating account..." : "Create account"}
         </button>
         <p className="text-xs bk-slate mt-4 text-center">
-          Don&apos;t have an account?{" "}
-          <Link href="/parent/signup" className="underline">
-            Sign up
+          Already have an account?{" "}
+          <Link href="/parent/login" className="underline">
+            Log in
           </Link>
         </p>
       </div>
