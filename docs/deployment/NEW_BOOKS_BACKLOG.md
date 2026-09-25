@@ -27,31 +27,31 @@ imported locally) → `imported-local` → `deployed`.
 
 | ID | Title (original) | Slug | Author | Language(s) | Genre | Copyright | Confidence | Status |
 |---|---|---|---|---|---|---|---|---|
-| ARM-001 | Պոչատ աղվեսը | fox-without-a-tail | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | High | imported-local |
-| ARM-002 | Շունն ու կատուն | the-dog-and-the-cat | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | High | imported-local |
+| ARM-001 | Պոչատ աղվեսը | fox-without-a-tail | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | High | deployed |
+| ARM-002 | Շունն ու կատուն | the-dog-and-the-cat | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | High | deployed |
 | ARM-003 | Գնդլիկ Բոխը | gndlik-bokh | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | **Low** — title doesn't match a Tumanyan story I can confidently source; may be a variant spelling/title. Verify against source. | held-back |
-| ARM-004 | The Gruffalo | the-gruffalo | Julia Donaldson | en/hy/ru | Fantasy | active copyright | High | imported-local |
-| ARM-005 | The Very Hungry Caterpillar | the-very-hungry-caterpillar | Eric Carle | en/hy/ru | Fantasy | active copyright | High | imported-local |
+| ARM-004 | The Gruffalo | the-gruffalo | Julia Donaldson | en/hy/ru | Fantasy | active copyright | High | deployed |
+| ARM-005 | The Very Hungry Caterpillar | the-very-hungry-caterpillar | Eric Carle | en/hy/ru | Fantasy | active copyright | High | deployed |
 
 ## Grade 1 (age 5-6)
 
 | ID | Title (original) | Slug | Author | Language(s) | Genre | Copyright | Confidence | Status |
 |---|---|---|---|---|---|---|---|---|
-| ARM-006 | Քաջ Նազար | brave-nazar | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | High | imported-local |
-| ARM-007 | Անահիտ | anahit | Ղազարոս Աղայան | en/hy/ru | Classic Literature | public domain | Medium | imported-local |
-| ARM-008 | Երջանիկ իշխանը | the-happy-prince | Oscar Wilde | en/hy/ru | Classic Literature | public domain | High | imported-local |
-| ARM-009 | Pinocchio | pinocchio | Carlo Collodi | en/hy/ru | Fantasy | public domain | High | imported-local |
-| ARM-010 | The Wonderful Adventures of Nils | nils-wonderful-adventures | Selma Lagerlöf | en/hy/ru | Adventure | public domain | Medium-High | imported-local |
+| ARM-006 | Քաջ Նազար | brave-nazar | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | High | deployed |
+| ARM-007 | Անահիտ | anahit | Ղազարոս Աղայան | en/hy/ru | Classic Literature | public domain | Medium | deployed |
+| ARM-008 | Երջանիկ իշխանը | the-happy-prince | Oscar Wilde | en/hy/ru | Classic Literature | public domain | High | deployed |
+| ARM-009 | Pinocchio | pinocchio | Carlo Collodi | en/hy/ru | Fantasy | public domain | High | deployed |
+| ARM-010 | The Wonderful Adventures of Nils | nils-wonderful-adventures | Selma Lagerlöf | en/hy/ru | Adventure | public domain | Medium-High | deployed |
 
 ## Grade 2 (age 6-7)
 
 | ID | Title (original) | Slug | Author | Language(s) | Genre | Copyright | Confidence | Status |
 |---|---|---|---|---|---|---|---|---|
-| ARM-011 | Գիքորը | gikor | Հովհաննես Թումանյան | en/hy/ru | Classic Literature | public domain | High | imported-local |
+| ARM-011 | Գիքորը | gikor | Հովհաննես Թումանյան | en/hy/ru | Classic Literature | public domain | High | deployed |
 | ARM-012 | Սուտասանը | the-liar-tumanyan | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | Medium | held-back |
-| ARM-013 | Արջն ու աղվեսը | the-bear-and-the-fox | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | High | imported-local |
-| ARM-014 | Օզ երկրի կախարդը | wizard-of-oz | L. Frank Baum | en/hy/ru | Fantasy | public domain | High | imported-local |
-| ARM-015 | Peter Pan | peter-pan | J. M. Barrie | en/hy/ru | Fantasy | public domain | High | imported-local |
+| ARM-013 | Արջն ու աղվեսը | the-bear-and-the-fox | Հովհաննես Թումանյան | en/hy/ru | Fable | public domain | High | deployed |
+| ARM-014 | Օզ երկրի կախարդը | wizard-of-oz | L. Frank Baum | en/hy/ru | Fantasy | public domain | High | deployed |
+| ARM-015 | Peter Pan | peter-pan | J. M. Barrie | en/hy/ru | Fantasy | public domain | High | deployed |
 
 ## Grade 3 (age 7-8)
 
@@ -60,9 +60,9 @@ imported locally) → `imported-local` → `deployed`.
 | ARM-016 | Օպերայի բակում | operas-courtyard | Արմեն Գրիգորյան | en/hy/ru | Family Story | active copyright | **Low** — contemporary Armenian title, no reliable source available to me. | held-back |
 | ARM-017 | Կոմիտաս․ ժողովրդի հոգին | komitas-soul-of-the-people | Նունե Թորոսյան | en/hy/ru | Classic Literature | active copyright | **Low** — I know Komitas (the composer) generally, not this specific book's text/structure. | held-back |
 | ARM-018 | Երազներն իրականանում են․ Իլոն Մասք | dreams-come-true-elon-musk | — | en/hy/ru | Classic Literature | active copyright | **Low** — general Elon Musk biographical facts are known to me, but not this specific book's framing/content for kids. | held-back |
-| ARM-019 | Երջանիկ իշխանը և ուրիշ հեքիաթներ | happy-prince-and-other-tales | Oscar Wilde | en/hy/ru | Classic Literature | public domain | High | imported-local |
-| ARM-020 | Միո, իմ Միո | mio-my-mio | Astrid Lindgren | en/hy/ru | Fantasy | active copyright | Medium-High | imported-local |
-| ARM-021 | The Railway Children | the-railway-children | E. Nesbit | en/hy/ru | Family Story | public domain | High | imported-local |
+| ARM-019 | Երջանիկ իշխանը և ուրիշ հեքիաթներ | happy-prince-and-other-tales | Oscar Wilde | en/hy/ru | Classic Literature | public domain | High | deployed |
+| ARM-020 | Միո, իմ Միո | mio-my-mio | Astrid Lindgren | en/hy/ru | Fantasy | active copyright | Medium-High | deployed |
+| ARM-021 | The Railway Children | the-railway-children | E. Nesbit | en/hy/ru | Family Story | public domain | High | deployed |
 
 ## Grade 4 (age 8-9)
 
@@ -70,10 +70,10 @@ imported locally) → `imported-local` → `deployed`.
 |---|---|---|---|---|---|---|---|---|
 | ARM-022 | Բյուրեղապակե մարդը | the-crystal-glass-man | Էլֆիք Զոհրաբյան | en/hy/ru | Fantasy | active copyright | **Low** — contemporary Armenian title, no reliable source available to me. | held-back |
 | ARM-023 | Կախարդին գումարած ագռավ | wizard-plus-raven | Երազիկ Գրիգորյան | en/hy/ru | Fantasy | active copyright | **Low** — contemporary Armenian title, no reliable source available to me. | held-back |
-| ARM-024 | Charlie and the Great Glass Elevator | charlie-and-the-great-glass-elevator | Roald Dahl | en/hy/ru | Fantasy | active copyright | High | imported-local |
-| ARM-025 | Coraline | coraline | Neil Gaiman | en/hy/ru | Fantasy | active copyright | High | imported-local |
-| ARM-026 | Heidi | heidi | Johanna Spyri | en/hy/ru | Family Story | public domain | High | imported-local |
-| ARM-027 | The Adventures of Tom Sawyer | tom-sawyer | Mark Twain | en/hy/ru | Adventure | public domain | High | imported-local |
+| ARM-024 | Charlie and the Great Glass Elevator | charlie-and-the-great-glass-elevator | Roald Dahl | en/hy/ru | Fantasy | active copyright | High | deployed |
+| ARM-025 | Coraline | coraline | Neil Gaiman | en/hy/ru | Fantasy | active copyright | High | deployed |
+| ARM-026 | Heidi | heidi | Johanna Spyri | en/hy/ru | Family Story | public domain | High | deployed |
+| ARM-027 | The Adventures of Tom Sawyer | tom-sawyer | Mark Twain | en/hy/ru | Adventure | public domain | High | deployed |
 
 ## Grade 5 (age 9-10)
 
@@ -82,45 +82,50 @@ imported locally) → `imported-local` → `deployed`.
 | ARM-028 | Ագաթա Օդլի․ Խորհրդավոր բանալին | agatha-odli-mysterious-key | Լինա Ջոնս | en/hy/ru | Adventure | active copyright | **Low** — appears to be a localized/regional children's mystery series; no reliable source available to me. | held-back |
 | ARM-029 | 3Ա-ի ինքնամոռաց արշավանքը | 3a-class-expedition | Մհեր Իսրայելյան | en/hy/ru | Adventure | active copyright | **Low** — contemporary Armenian title, no reliable source available to me. | held-back |
 | ARM-030 | Սևանի ափին | on-the-shore-of-sevan | Վախթանգ Անանյան | en/hy/ru | Adventure | public domain (author d. 1980; treat as active copyright to be safe — verify) | Medium | held-back |
-| ARM-031 | Treasure Island | treasure-island | Robert Louis Stevenson | en/hy/ru | Adventure | public domain | High | imported-local |
-| ARM-032 | White Fang | white-fang | Jack London | en/hy/ru | Adventure | public domain | High | imported-local |
-| ARM-033 | Ballet Shoes | ballet-shoes | Noel Streatfeild | en/hy/ru | Family Story | active copyright | Medium | imported-local |
-| ARM-034 | Emil and the Detectives | emil-and-the-detectives | Erich Kästner | en/hy/ru | Adventure | active copyright | High | imported-local |
+| ARM-031 | Treasure Island | treasure-island | Robert Louis Stevenson | en/hy/ru | Adventure | public domain | High | deployed |
+| ARM-032 | White Fang | white-fang | Jack London | en/hy/ru | Adventure | public domain | High | deployed |
+| ARM-033 | Ballet Shoes | ballet-shoes | Noel Streatfeild | en/hy/ru | Family Story | active copyright | Medium | deployed |
+| ARM-034 | Emil and the Detectives | emil-and-the-detectives | Erich Kästner | en/hy/ru | Adventure | active copyright | High | deployed |
 
 ## Grade 6 (age 10-11)
 
 | ID | Title (original) | Slug | Author | Language(s) | Genre | Copyright | Confidence | Status |
 |---|---|---|---|---|---|---|---|---|
 | ARM-035 | Վիշապաքարի գաղտնիքը | secret-of-the-dragon-rock | Արտավազդ Եղիազարյան | en/hy/ru | Adventure | active copyright | **Low** — contemporary Armenian title, no reliable source available to me. | held-back |
-| ARM-036 | Կարպատյան դղյակը | carpathian-castle | Ժյուլ Վեռն (Jules Verne) | en/hy/ru | Adventure | public domain | Medium-High | imported-local |
-| ARM-037 | Twenty Thousand Leagues Under the Sea | twenty-thousand-leagues | Jules Verne | en/hy/ru | Adventure | public domain | High | imported-local |
-| ARM-038 | The Hobbit | the-hobbit | J. R. R. Tolkien | en/hy/ru | Fantasy | active copyright | High | imported-local |
-| ARM-039 | The Adventures of Sherlock Holmes | sherlock-holmes-adventures | Arthur Conan Doyle | en/hy/ru | Adventure | public domain (mostly) | High | imported-local |
+| ARM-036 | Կարպատյան դղյակը | carpathian-castle | Ժյուլ Վեռն (Jules Verne) | en/hy/ru | Adventure | public domain | Medium-High | deployed |
+| ARM-037 | Twenty Thousand Leagues Under the Sea | twenty-thousand-leagues | Jules Verne | en/hy/ru | Adventure | public domain | High | deployed |
+| ARM-038 | The Hobbit | the-hobbit | J. R. R. Tolkien | en/hy/ru | Fantasy | active copyright | High | deployed |
+| ARM-039 | The Adventures of Sherlock Holmes | sherlock-holmes-adventures | Arthur Conan Doyle | en/hy/ru | Adventure | public domain (mostly) | High | deployed |
 
 ## Grade 7 (age 11-12)
 
 | ID | Title (original) | Slug | Author | Language(s) | Genre | Copyright | Confidence | Status |
 |---|---|---|---|---|---|---|---|---|
-| ARM-040 | Սասունցի Դավիթ | david-of-sassoun | Հայկական էպոս | en/hy/ru | Classic Literature | public domain | High | imported-local |
-| ARM-041 | Վարդանանք | vardanank | Դերենիկ Դեմիրճյան | en/hy/ru | Classic Literature | active copyright (author d. 1972) | Medium-High | imported-local |
-| ARM-042 | Anne of Green Gables | anne-of-green-gables | L. M. Montgomery | en/hy/ru | Family Story | public domain | High | imported-local |
-| ARM-043 | A Little Princess | a-little-princess | Frances Hodgson Burnett | en/hy/ru | Family Story | public domain | High | imported-local |
-| ARM-044 | The Graveyard Book | the-graveyard-book | Neil Gaiman | en/hy/ru | Fantasy | active copyright | High | imported-local |
+| ARM-040 | Սասունցի Դավիթ | david-of-sassoun | Հայկական էպոս | en/hy/ru | Classic Literature | public domain | High | deployed |
+| ARM-041 | Վարդանանք | vardanank | Դերենիկ Դեմիրճյան | en/hy/ru | Classic Literature | active copyright (author d. 1972) | Medium-High | deployed |
+| ARM-042 | Anne of Green Gables | anne-of-green-gables | L. M. Montgomery | en/hy/ru | Family Story | public domain | High | deployed |
+| ARM-043 | A Little Princess | a-little-princess | Frances Hodgson Burnett | en/hy/ru | Family Story | public domain | High | deployed |
+| ARM-044 | The Graveyard Book | the-graveyard-book | Neil Gaiman | en/hy/ru | Fantasy | active copyright | High | deployed |
 
 ## Grade 8 (age 12-13)
 
 | ID | Title (original) | Slug | Author | Language(s) | Genre | Copyright | Confidence | Status |
 |---|---|---|---|---|---|---|---|---|
-| ARM-045 | Խենթը | the-madman-raffi | Րաֆֆի | en/hy/ru | Classic Literature | public domain | Medium — themes are historical/political (Armenian national liberation movement); summary written to be age-appropriate, not graphic. | imported-local |
-| ARM-046 | Սպիտակ ձին | the-white-horse-bakunts | Ակսել Բակունց | en/hy/ru | Classic Literature | public domain | Medium | imported-local |
+| ARM-045 | Խենթը | the-madman-raffi | Րաֆֆի | en/hy/ru | Classic Literature | public domain | Medium — themes are historical/political (Armenian national liberation movement); summary written to be age-appropriate, not graphic. | deployed |
+| ARM-046 | Սպիտակ ձին | the-white-horse-bakunts | Ակսել Բակունց | en/hy/ru | Classic Literature | public domain | Medium | deployed |
 | ARM-047 | Ավելորդը | the-superfluous-one | Դերենիկ Դեմիրճյան | en/hy/ru | Classic Literature | active copyright | **Low** — I know the author's major works but not this specific title in detail. | held-back |
-| ARM-048 | Anne Frank: The Diary of a Young Girl | anne-frank-diary | Anne Frank | en/hy/ru | Classic Literature | active copyright | High — Holocaust subject matter; summary/questions written respectfully and age-appropriately, no graphic content. | imported-local |
-| ARM-049 | Skellig | skellig | David Almond | en/hy/ru | Fantasy | active copyright | Medium | imported-local |
-| ARM-050 | The Owl Service | the-owl-service | Alan Garner | en/hy/ru | Fantasy | active copyright | Medium-Low | imported-local |
+| ARM-048 | Anne Frank: The Diary of a Young Girl | anne-frank-diary | Anne Frank | en/hy/ru | Classic Literature | active copyright | High — Holocaust subject matter; summary/questions written respectfully and age-appropriately, no graphic content. | deployed |
+| ARM-049 | Skellig | skellig | David Almond | en/hy/ru | Fantasy | active copyright | Medium | deployed |
+| ARM-050 | The Owl Service | the-owl-service | Alan Garner | en/hy/ru | Fantasy | active copyright | Medium-Low | deployed |
 
 ## 2026-09-25: first deploy round
 
-The 38 non-Low-confidence books are being committed, pushed, and deployed to production now.
+The 38 non-Low-confidence books were committed (`1d43f01`), pushed, and deployed to
+production. Verified live: `https://bookalyzer.duckdns.org/api/health` returns
+`{"status":"ok"}`, and `content/books/*.json` on the droplet counts exactly 159 files
+(45 pre-existing + 114 new = 38 books × 3 languages) — confirming none of the 12
+held-back books reached production.
+
 The 12 `held-back` books above (10 Low-confidence + `on-the-shore-of-sevan` and
 `the-liar-tumanyan`, per the user's explicit call to also hold those two back) are
 intentionally **not committed to git** — their JSON files still exist locally under
