@@ -1,0 +1,112 @@
+{
+  "book_slug": "sherlock-holmes-adventures",
+  "language": "en",
+  "title": "The Adventures of Sherlock Holmes",
+  "author": "Arthur Conan Doyle",
+  "genre": "Adventure",
+  "copyright_status": "public domain",
+  "short_summary": "In a set of famous cases narrated by his loyal friend Dr. Watson, the brilliant detective Sherlock Holmes uses sharp observation and logical deduction to solve mysteries that baffle everyone else, from a scheming 'Red-Headed League' set up to lure a shopkeeper away from his post, to a deadly secret hidden inside a country manor's walls.",
+  "extended_summary": "At 221B Baker Street, the detective Sherlock Holmes and his friend Dr. John Watson take on some of the strangest cases in London. In 'A Scandal in Bohemia,' Holmes is hired by a king to recover a compromising photograph, only to be outwitted by the clever Irene Adler, the one person who ever gets the better of him. In 'The Red-Headed League,' a red-haired shopkeeper named Jabez Wilson is paid to copy an encyclopedia for a mysterious society that suddenly vanishes without explanation, and Holmes quickly deduces that the strange job was never about red hair at all, but a clever distraction for a crime being carried out nearby.\n\nIn 'The Adventure of the Speckled Band,' Holmes and Watson investigate the terrifying death of Helen Stoner's twin sister inside a locked room at a decaying country estate ruled by her cruel stepfather, Dr. Grimesby Roylott. Piecing together clues about a strange whistle, a bell-rope, and a ventilator that shouldn't exist, Holmes uncovers a deadly and cunning method of murder that only his powers of observation could ever have caught. Across these cases and more, Holmes proves again and again that the truth is always hidden in plain sight for anyone patient and clever enough to see it.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who narrates the stories of Sherlock Holmes's adventures?",
+      "content": { "options": ["Dr. John Watson", "Inspector Lestrade", "Irene Adler", "Jabez Wilson"], "correct": 0 },
+      "explanation": "Dr. Watson, Holmes's loyal friend and roommate at 221B Baker Street, narrates the stories of his adventures."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Sherlock Holmes solves his cases mainly through careful observation and logical ___.",
+      "content": { "answer": "deduction", "altAnswers": [] },
+      "explanation": "Holmes's famous method is deduction: drawing precise conclusions from small details that others overlook."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What is the real purpose behind 'The Red-Headed League' scheme in that story?",
+      "content": { "options": ["To lure shopkeeper Jabez Wilson away from his shop so criminals could dig a tunnel nearby", "To genuinely pay red-haired men to copy an encyclopedia", "To recruit Wilson into a secret society", "To test Holmes's detective skills for fun"], "correct": 0 },
+      "explanation": "The bizarre 'Red-Headed League' job turns out to be a clever distraction, keeping Wilson away from his shop while criminals tunnel toward a nearby bank."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to the case they belong to.",
+      "content": {
+        "left": ["Irene Adler", "Jabez Wilson", "Helen Stoner", "Dr. Grimesby Roylott"],
+        "right": ["Clever woman who outwits Holmes in 'A Scandal in Bohemia'", "Red-haired shopkeeper lured away by a strange job offer", "Young woman investigating her sister's mysterious death", "Cruel stepfather at the center of 'The Speckled Band'"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each of these characters is central to a different one of Holmes's famous cases."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each detail into the right group.",
+      "content": {
+        "groupA": "An example of Holmes's careful observation and deduction",
+        "groupB": "A detail that turns out to be a deliberate trick or distraction",
+        "options": [
+          { "label": "Noticing small clues about a client's appearance to deduce their profession", "group": "A" },
+          { "label": "The strange, sudden disappearance of the 'Red-Headed League'", "group": "B" },
+          { "label": "Piecing together the true purpose of a mysterious ventilator and bell-rope", "group": "A" },
+          { "label": "An oddly generous, too-good-to-be-true job offer", "group": "B" }
+        ]
+      },
+      "explanation": "Holmes's genius lies in noticing exactly which details are genuine clues and which are meant to mislead."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events from 'The Red-Headed League' in the order they happen.",
+      "content": {
+        "items": ["Jabez Wilson is hired for the strange, well-paid job of the 'Red-Headed League'", "The League suddenly and mysteriously vanishes, leaving Wilson confused", "Holmes deduces the job was a distraction for a nearby crime", "The criminals' tunnel plan is stopped before it can succeed"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The case unfolds from a strange offer to its sudden end, and finally to Holmes uncovering the real scheme behind it."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What does the 'speckled band' actually turn out to be in that story?",
+      "content": { "options": ["A trained, deadly snake used as a murder weapon", "A gang of gypsies who live near the estate", "A poisonous gas leaking through the walls", "A ghost haunting the manor"], "correct": 0 },
+      "explanation": "The 'speckled band' turns out to be a swamp adder, a venomous snake trained by Dr. Roylott to slip through a ventilator and a fake bell-rope to kill."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Sherlock Holmes's loyal friend, roommate, and the narrator of his cases is Dr. John ___.",
+      "content": { "answer": "Watson", "altAnswers": [] },
+      "explanation": "Dr. Watson lives with Holmes at 221B Baker Street and records the details of his most famous cases."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If you wanted to investigate a mystery the way Holmes does, what would be the most important first step?",
+      "content": { "options": ["Carefully observe every small detail before jumping to conclusions", "Guess the most exciting explanation right away", "Ignore anything that seems unimportant", "Ask a stranger to solve it for you"], "correct": 0 },
+      "explanation": "Holmes's method always starts with patient, careful observation: the small details others overlook are usually the key to the mystery."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "Why is Irene Adler such a notable character in Holmes's adventures?",
+      "content": { "options": ["She is the rare person clever enough to outwit Holmes himself", "She is the only client Holmes ever refuses to help", "She turns out to be a disguised police officer", "She solves the mystery before Holmes even arrives"], "correct": 0 },
+      "explanation": "Irene Adler earns lasting respect from Holmes because she outsmarts him, a feat almost no other character in the stories manages."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Sherlock Holmes's way of solving mysteries through careful observation is more effective than relying on luck or guessing? Why?",
+      "content": { "keywords": ["observation", "deduction", "logic", "evidence", "careful", "guess"] },
+      "explanation": "There's no single right answer, but the stories consistently show that patient attention to small details succeeds where guesswork fails."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Invent your own small mystery clue, like Holmes might notice — something ordinary that actually reveals an important secret. Explain what it is and what it reveals.",
+      "content": { "keywords": ["clue", "mystery", "observe", "reveal", "invent", "detective"] },
+      "explanation": "This is a creative question — a good Holmes-style clue is something small and ordinary that, once noticed carefully, reveals something important."
+    }
+  ]
+}

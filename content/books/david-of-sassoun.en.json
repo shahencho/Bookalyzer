@@ -1,0 +1,135 @@
+{
+  "book_slug": "david-of-sassoun",
+  "language": "en",
+  "title": "David of Sassoun",
+  "author": "Armenian oral epic tradition",
+  "genre": "Classic Literature",
+  "copyright_status": "public domain",
+  "short_summary": "David of Sassoun is the great Armenian folk epic about a boy raised in the mountain land of Sassoun who grows into its fiercest defender. Wielding his father's sword, Lightning, and riding his fire-colored horse Kurkik Jalali, David stands up to the powerful Caliph of Baghdad's army, which has long forced Sassoun to pay a heavy tribute. In a final duel with the invading commander Msra Melik, David's courage frees his homeland for good.",
+  "extended_summary": "David of Sassoun is the third branch of a much longer Armenian epic passed down for centuries by storytellers before it was written down. The full epic follows several generations of heroes: the twin founders Sanasar and Baghdasar, who build the fortress of Sassoun; their son Mher the Elder; and finally David, the boy who grows up an orphan, underestimated by nearly everyone around him because he seems clumsy and simple. As David grows, his true strength emerges, and he inherits his father's sword, Lightning (Tur Kaputkin), along with the loyal horse Kurkik Jalali, who can sense danger before David does.\n\nWhen the Caliph of Baghdad sends his commander Msra Melik to collect the unfair tribute that has burdened Sassoun for years, David refuses to let his people be bullied any longer. He challenges Msra Melik to single combat rather than allow a war that would cost countless lives. Through clever strength, patience, and belief in the justice of his cause, David defeats Msra Melik and ends the tribute forever, becoming the beloved hero-protector of Sassoun and a lasting symbol of Armenian resilience.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is the name of David's sword, inherited from his father?",
+      "content": { "options": ["Lightning (Tur Kaputkin)", "Thunderbolt", "The Iron Fang", "Stormbringer"], "correct": 0 },
+      "explanation": "David's sword is called Lightning, or Tur Kaputkin, and it once belonged to his father."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is the name of David's fire-colored horse?",
+      "content": { "options": ["Kurkik Jalali", "Rakhsh", "Bucephalus", "Shadowfax"], "correct": 0 },
+      "explanation": "Kurkik Jalali is David's loyal, fire-colored horse, known for sensing danger."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does Sassoun have to send tribute to the Caliph of Baghdad before David steps in?",
+      "content": { "options": ["Earlier generations agreed to pay it to avoid war, and it became an unjust burden", "Sassoun lost a trade dispute", "The tribute was a voluntary gift of friendship", "Sassoun owed money for building its fortress"], "correct": 0 },
+      "explanation": "The tribute began generations earlier as a way to avoid conflict, but over time it became an unfair burden that David refuses to keep paying."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "David defeats the invading commander ___ in single combat.",
+      "content": { "answer": "Msra Melik", "altAnswers": ["Melik", "Msro Melik"] },
+      "explanation": "Msra Melik is the commander sent by the Caliph of Baghdad whom David defeats in single combat."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does David choose to fight Msra Melik one-on-one instead of leading Sassoun's whole army into battle?",
+      "content": { "options": ["To spare his people from a costly war", "Because Sassoun had no army left", "Because Msra Melik demanded it as a game", "Because David wanted personal glory"], "correct": 0 },
+      "explanation": "David chooses single combat to settle the conflict directly and spare his people the losses of a full-scale war."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of David's story in the order they happen.",
+      "content": {
+        "items": ["David grows up in Sassoun, often underestimated by those around him", "He receives his father's sword, Lightning, and his horse, Kurkik Jalali", "The Caliph of Baghdad sends Msra Melik to collect tribute from Sassoun", "David defeats Msra Melik in single combat and ends the tribute"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "David's growth and the arrival of his father's weapon come before he is ready to face the invading commander."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each figure from the epic to their role in the story.",
+      "content": {
+        "left": ["David", "Msra Melik", "Kurkik Jalali", "Sanasar and Baghdasar"],
+        "right": ["The hero who defends Sassoun and ends the unjust tribute", "The commander sent by the Caliph of Baghdad to collect tribute", "David's fire-colored horse, sensitive to danger", "The twin founders of the Sassoun fortress in an earlier generation"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "The epic spans several generations, but David's own branch centers on his fight with Msra Melik, aided by his horse Kurkik Jalali."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each detail into the right group.",
+      "content": {
+        "groupA": "Belongs to David's own story",
+        "groupB": "Belongs to an earlier generation of the epic",
+        "options": [
+          { "label": "Defeating Msra Melik in single combat", "group": "A" },
+          { "label": "Founding the fortress of Sassoun", "group": "B" },
+          { "label": "Riding Kurkik Jalali into battle", "group": "A" },
+          { "label": "Sanasar and Baghdasar building their new home", "group": "B" }
+        ]
+      },
+      "explanation": "The epic follows multiple generations of heroes; David's branch focuses on ending the tribute, while the fortress's founding belongs to the earlier generation of Sanasar and Baghdasar."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think David is remembered as a hero even though people underestimated him when he was young?",
+      "content": { "keywords": ["underestimated", "courage", "grow", "strength", "justice", "patience", "prove"] },
+      "explanation": "There's no single right answer — David's story shows that real strength and courage can be hidden until the right moment calls for them."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Which empire does Msra Melik's army represent in the story?",
+      "content": { "options": ["The Caliph of Baghdad", "The Roman Empire", "The Mongol Horde", "The Byzantine Empire"], "correct": 0 },
+      "explanation": "Msra Melik is sent by the Caliph of Baghdad, whose forces have long demanded tribute from Sassoun."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each trait into the right group for David's character.",
+      "content": {
+        "groupA": "Shown by David in the epic",
+        "groupB": "Not really part of David's character",
+        "options": [
+          { "label": "Protecting his homeland from injustice", "group": "A" },
+          { "label": "Seeking peace before resorting to a fight", "group": "A" },
+          { "label": "Wanting to rule over other lands", "group": "B" },
+          { "label": "Bragging about his strength to frighten villagers", "group": "B" }
+        ]
+      },
+      "explanation": "David is remembered as a defender of his homeland, not a conqueror — his strength serves justice, not domination."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you are a storyteller passing David's tale to the next generation, as this epic was passed down for centuries. What one lesson would you want listeners to remember most?",
+      "content": { "keywords": ["courage", "justice", "homeland", "peace", "strength", "protect", "fairness"] },
+      "explanation": "There's no single right answer — this epic was shared for generations because of the values it carries, like courage in defense of one's home and community."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "Which quality of David's is most important to how he wins his final duel?",
+      "content": { "options": ["His belief in the justice of his cause combined with real strength", "Pure luck", "Trickery and deceit", "Having a much larger army"], "correct": 0 },
+      "explanation": "David's victory comes from both his physical strength and his conviction that he is fighting for a just cause, not from luck or trickery."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "After David defeats Msra Melik, Sassoun no longer has to pay ___ to the Caliph of Baghdad.",
+      "content": { "answer": "tribute", "altAnswers": ["the tribute"] },
+      "explanation": "David's victory ends the unjust tribute that had burdened Sassoun for generations."
+    }
+  ]
+}

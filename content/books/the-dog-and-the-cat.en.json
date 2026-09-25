@@ -1,0 +1,109 @@
+{
+  "book_slug": "the-dog-and-the-cat",
+  "language": "en",
+  "title": "The Dog and the Cat",
+  "author": "Hovhannes Tumanyan",
+  "genre": "Fable",
+  "copyright_status": "public domain",
+  "short_summary": "A poor old couple are given a magic ring by a grateful snake king, and it brings them wealth — until a jealous neighbor steals it. Their loyal dog and cat set out together to get it back, but a moment of carelessness on the way home turns their friendship into the rivalry dogs and cats still have today.",
+  "extended_summary": "Once a poor old man and woman save a small snake from danger. In gratitude, the snake's father, the king of the snakes, gives them a magic ring that grants wishes and makes them rich and happy. The couple's loyal dog and cat live comfortably with them, until an envious neighbor sneaks in one night and steals the ring while everyone sleeps. Without it, the old couple falls back into poverty.\n\nDetermined to help their masters, the dog and cat set off together to find the thief's house across a big river. The clever cat catches a mouse and forces it to sneak inside and bring the ring back out. On the way home, the dog carries the cat with the ring in her mouth on his back as he swims across the river. Partway across, the dog asks the cat a question; when she opens her mouth to answer, the ring falls into the water and is swallowed by a passing fish. The two manage to catch that very fish, cut it open, and recover the ring at last.\n\nBut right before reaching home, the cat, eager to be praised first, runs ahead alone and hands the ring to the old couple herself, without waiting for the dog, who arrives soaking wet and left out of the celebration. Feeling betrayed after all his hard work swimming and searching, the dog never forgives the cat's trick. That, the story says, is why dogs still chase cats whenever they see them.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who gives the poor old couple the magic ring?",
+      "content": { "options": ["The grateful king of the snakes", "A traveling merchant", "A fairy in the forest", "The village elder"], "correct": 0 },
+      "explanation": "After the couple saves a small snake, its father, the king of the snakes, rewards their kindness with a magic ring."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What happens to the old couple after the ring is stolen?",
+      "content": { "options": ["They become poor again", "They become richer than before", "They move to a new village", "They get a second magic ring"], "correct": 0 },
+      "explanation": "The ring is the source of their good fortune, so losing it sends the couple straight back into poverty."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "How does the ring get stolen from the old couple?",
+      "content": { "options": ["An envious neighbor sneaks in and takes it while they sleep", "The dog loses it while playing outside", "A crow flies off with it", "The old man trades it away by accident"], "correct": 0 },
+      "explanation": "A neighbor, jealous of the couple's sudden wealth, creeps in at night and steals the ring."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "How does the cat manage to get the ring out of the thief's house?",
+      "content": { "options": ["She catches a mouse and sends it to sneak the ring out", "She scares the thief away herself", "She trades the dog for the ring", "She waits for the thief to drop it outside"], "correct": 0 },
+      "explanation": "The cat cleverly uses a mouse, small enough to slip inside unnoticed, to retrieve the ring for her."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": { "items": ["The old couple saves a small snake", "The snake king rewards them with a magic ring", "An envious neighbor steals the ring", "The dog and cat set off to get it back", "The mouse sneaks the ring out for the cat", "The ring falls into the river and is swallowed by a fish"], "correctOrder": [0, 1, 2, 3, 4, 5] },
+      "explanation": "The story unfolds from an act of kindness, through good fortune and theft, to the dog and cat's rescue mission."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why does the ring fall into the river on the way home?",
+      "content": { "options": ["The dog asks the cat a question and she opens her mouth to answer", "The cat drops it on purpose to hide it from the dog", "A strong wind blows it out of her paws", "The fish jumps up and grabs it directly from her mouth"], "correct": 0 },
+      "explanation": "The cat is carrying the ring in her mouth, so the moment she opens it to speak, the ring slips out and falls into the water."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The dog and cat finally get the ring back by catching a ___ and cutting it open.",
+      "content": { "answer": "fish", "altAnswers": [] },
+      "explanation": "The fish that swallowed the ring is caught, and the ring is found safely inside it."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in the story.",
+      "content": {
+        "left": ["The old couple", "The snake king", "The envious neighbor", "The dog"],
+        "right": ["Are rewarded with a magic ring for their kindness", "Gives the ring out of gratitude", "Steals the ring while everyone sleeps", "Swims across the river carrying the cat"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character's action moves the story from an act of kindness to theft to the rescue by the loyal pets."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think the dog feels so betrayed at the end of the story?",
+      "content": { "keywords": ["ran ahead", "alone", "credit", "unfair", "left out", "trust"] },
+      "explanation": "The dog worked just as hard as the cat, swimming and searching, but the cat took all the credit for herself by rushing ahead."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each action into the right group.",
+      "content": {
+        "groupA": "Something the dog does",
+        "groupB": "Something the cat does",
+        "options": [
+          { "label": "Swims across the river carrying the cat", "group": "A" },
+          { "label": "Catches the mouse to steal back the ring", "group": "B" },
+          { "label": "Arrives late, soaking wet, missing the praise", "group": "A" },
+          { "label": "Runs ahead to deliver the ring first", "group": "B" }
+        ]
+      },
+      "explanation": "The dog does the heavy, exhausting work of swimming, while the cat handles the clever parts — and then claims the glory."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What does this old fable explain, according to tradition?",
+      "content": { "options": ["Why dogs and cats do not get along", "Why snakes are dangerous", "Why rivers are hard to cross", "Why rings bring bad luck"], "correct": 0 },
+      "explanation": "The story is told as a folk explanation for why dogs chase cats to this day."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you were the cat, would you have run ahead alone? What would you do differently?",
+      "content": { "keywords": ["wait", "together", "share", "fair", "sorry", "credit"] },
+      "explanation": "There's no single right answer — the story invites you to think about fairness and sharing credit with a friend who helped you."
+    }
+  ]
+}

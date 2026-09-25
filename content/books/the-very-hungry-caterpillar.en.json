@@ -1,0 +1,109 @@
+{
+  "book_slug": "the-very-hungry-caterpillar",
+  "language": "en",
+  "title": "The Very Hungry Caterpillar",
+  "author": "Eric Carle",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "A tiny caterpillar hatches from an egg one Sunday morning and spends the next week eating his way through more and more food, day by day, until a giant feast of junk food gives him a stomachache. After a rest inside a cocoon, he transforms into a beautiful butterfly.",
+  "extended_summary": "One Sunday, in the light of the moon, a tiny egg lies on a leaf. On Sunday morning, the warm sun comes up and a tiny, very hungry caterpillar hatches out. He starts looking for food right away, and over the next several days eats through more fruit each day — one apple on Monday, two pears on Tuesday, three plums on Wednesday, four strawberries on Thursday, and five oranges on Friday — but he is still hungry.\n\nOn Saturday, the caterpillar eats through a huge pile of tempting but unhealthy food: chocolate cake, ice cream, a pickle, cheese, salami, a lollipop, cherry pie, sausage, a cupcake, and a slice of watermelon, and afterward he has a terrible stomachache. The next day, on Sunday, he eats through one nice green leaf, and after that he feels much better.\n\nNow big and fat, the caterpillar builds himself a small house called a cocoon and stays inside it for more than two weeks. When he finally nibbles a hole and pushes his way out, he is no longer a caterpillar at all — he has become a beautiful butterfly, ready to fly out into the world.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "When does the tiny egg hatch into a caterpillar?",
+      "content": { "options": ["On Sunday morning, in the warm sun", "On Monday night, under the moon", "On Friday afternoon, in the rain", "On Saturday, after the big feast"], "correct": 0 },
+      "explanation": "The egg lies on a leaf through the night, and the caterpillar hatches out as the warm sun rises on Sunday morning."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "How many pears does the caterpillar eat on Tuesday?",
+      "content": { "options": ["Two", "One", "Three", "Four"], "correct": 0 },
+      "explanation": "Each day the caterpillar eats one more piece of fruit than the day before, so on Tuesday he eats two pears."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the caterpillar's meals in the order he eats them through the week.",
+      "content": { "items": ["One apple on Monday", "Two pears on Tuesday", "Three plums on Wednesday", "Four strawberries on Thursday", "Five oranges on Friday", "A huge feast of junk food on Saturday"], "correctOrder": [0, 1, 2, 3, 4, 5] },
+      "explanation": "The caterpillar eats one more piece of fruit each day, building up to the huge Saturday feast."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What happens to the caterpillar after he eats all the rich food on Saturday?",
+      "content": { "options": ["He gets a stomachache", "He falls asleep for a week", "He grows a new leg", "He turns green"], "correct": 0 },
+      "explanation": "After eating so much rich, sugary food in one day, the caterpillar ends up with a bad stomachache."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "What does the caterpillar eat on Sunday to start feeling better?",
+      "content": { "options": ["One nice green leaf", "A slice of watermelon", "Another huge feast", "Nothing at all"], "correct": 0 },
+      "explanation": "After his stomachache, the caterpillar eats a simple green leaf, and it helps him feel much better."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each food into the right group.",
+      "content": {
+        "groupA": "Healthy fruit the caterpillar eats during the week",
+        "groupB": "Rich treats the caterpillar eats on Saturday",
+        "options": [
+          { "label": "One apple", "group": "A" },
+          { "label": "A slice of chocolate cake", "group": "B" },
+          { "label": "Three plums", "group": "A" },
+          { "label": "A lollipop", "group": "B" }
+        ]
+      },
+      "explanation": "The fruit builds up gradually through the week, while the sweets and rich snacks all appear in the single Saturday feast."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "After more than two weeks inside his cocoon, the caterpillar becomes a beautiful ___.",
+      "content": { "answer": "butterfly", "altAnswers": [] },
+      "explanation": "The caterpillar's time resting inside the cocoon ends with his transformation into a butterfly."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why do you think the caterpillar gets a stomachache after Saturday's feast?",
+      "content": { "options": ["He eats far too much rich, sugary food all at once", "He eats food that is too cold", "He forgets to chew his food", "He eats food that has gone bad"], "correct": 0 },
+      "explanation": "The sudden jump from fruit to a huge pile of cakes, sweets, and salty snacks all in one day is simply too much for his stomach."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Understand",
+      "prompt": "Match each day to what the caterpillar eats.",
+      "content": {
+        "left": ["Monday", "Wednesday", "Friday", "The Sunday after his stomachache"],
+        "right": ["One apple", "Three plums", "Five oranges", "One nice green leaf"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "The caterpillar's food changes each day, from one apple on Monday up to five oranges on Friday, before he returns to a simple leaf."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think the caterpillar needed to rest inside a cocoon before becoming a butterfly?",
+      "content": { "keywords": ["rest", "change", "grow", "transform", "quiet", "time"] },
+      "explanation": "There's no single right answer — big changes like turning into a butterfly take quiet time and rest to happen."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What is this story mainly about?",
+      "content": { "options": ["Growth and transformation, shown through a caterpillar eating and changing into a butterfly", "A caterpillar who is afraid of butterflies", "A caterpillar who eats only healthy food", "A race between a caterpillar and other bugs"], "correct": 0 },
+      "explanation": "The caterpillar's eating and growing each day leads up to his transformation, which is the heart of the story."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you were the very hungry caterpillar, what other five foods would you want to eat during the week?",
+      "content": { "keywords": ["food", "eat", "list", "hungry", "imagine"] },
+      "explanation": "There's no single right answer — the point is to imagine your own week of foods, the way the caterpillar has his."
+    }
+  ]
+}

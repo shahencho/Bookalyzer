@@ -1,0 +1,135 @@
+{
+  "book_slug": "white-fang",
+  "language": "en",
+  "title": "White Fang",
+  "author": "Jack London",
+  "genre": "Adventure",
+  "copyright_status": "public domain",
+  "short_summary": "White Fang, part wolf and part dog, grows up in the harsh Yukon wilderness, first among Native Americans and later under the cruel ownership of a man named Beauty Smith, who forces him to fight other dogs. Rescued by a kinder owner, Weedon Scott, White Fang slowly learns to trust again and becomes a loyal, gentle companion.",
+  "extended_summary": "Born in the frozen wild to a wolf father and a part-dog mother, White Fang spends his earliest years learning the harsh law of the wilderness, where only the strongest survive. When he's taken in by a Native American camp, he learns to live alongside humans for the first time, though never quite trusting them. His life takes a darker turn when he's sold to Beauty Smith, a cruel man who deliberately makes him vicious and forces him into brutal dogfights for money.\n\nJust when White Fang has been beaten into something closer to a wild animal than ever, he's bought and rescued by Weedon Scott, who is the first person to ever show him patient kindness. Slowly, carefully, White Fang lets his guard down and learns that not every hand is raised against him. He follows Scott all the way to a gentle life on a California ranch, where the once-feral wolf-dog ultimately proves his loyalty by saving the family from an escaped, dangerous convict.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is White Fang's parentage?",
+      "content": { "options": ["Part wolf and part dog", "Fully wolf with no dog blood", "Fully dog with no wolf blood", "Part wolf and part fox"], "correct": 0 },
+      "explanation": "White Fang is born to a wolf father and a mother who is part dog, making him a wolf-dog hybrid."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who is the cruel owner who forces White Fang into dogfights?",
+      "content": { "options": ["Beauty Smith", "Weedon Scott", "Grey Beaver", "Judge Scott"], "correct": 0 },
+      "explanation": "Beauty Smith buys White Fang and deliberately makes him vicious so he can profit from forcing him to fight other dogs."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "White Fang is finally rescued from the fighting pits by a kind man named Weedon ___.",
+      "content": { "answer": "Scott", "altAnswers": ["Scott (Weedon Scott)"] },
+      "explanation": "Weedon Scott buys White Fang and begins the slow process of earning his trust with patience and kindness."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does White Fang struggle to trust humans even after living among Native Americans?",
+      "content": { "options": ["His whole life has taught him that the wilderness rewards suspicion and self-reliance", "He was born completely blind and cannot recognize people", "He was raised entirely apart from any animals or people", "He simply prefers being alone to any kind of company"], "correct": 0 },
+      "explanation": "White Fang's harsh upbringing in the wild, where survival depends on wariness and strength, makes trust something he has to learn slowly, not something that comes naturally."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their relationship with White Fang.",
+      "content": {
+        "left": ["Beauty Smith", "Weedon Scott", "Grey Beaver", "The escaped convict"],
+        "right": ["Cruel owner who forces him to fight for money", "Kind owner who earns his trust and loyalty", "Native American who first takes him in as a sled dog", "Threat that White Fang ultimately fights off to protect the family"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each person in White Fang's life shapes him differently, from cruelty that hardens him to kindness that finally lets him soften."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these stages of White Fang's life in the order they happen.",
+      "content": {
+        "items": ["White Fang is born in the wild and learns to survive", "He lives among Native Americans as a working sled dog", "Beauty Smith buys him and forces him into vicious dogfights", "Weedon Scott rescues him and slowly earns his trust"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "White Fang's story moves through distinct stages, from wild survival to human companionship, cruelty, and finally genuine trust."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each moment into the right group.",
+      "content": {
+        "groupA": "A moment of cruelty that hardens White Fang",
+        "groupB": "A moment of kindness that helps him trust again",
+        "options": [
+          { "label": "Beauty Smith deliberately provoking him to make him vicious", "group": "A" },
+          { "label": "Being forced into brutal dogfights for money", "group": "A" },
+          { "label": "Weedon Scott patiently offering him food and gentle words", "group": "B" },
+          { "label": "Being welcomed into a gentle life on the California ranch", "group": "B" }
+        ]
+      },
+      "explanation": "White Fang's character is shaped by a clear contrast between the cruelty that makes him dangerous and the patient kindness that eventually tames him."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What finally convinces White Fang that Weedon Scott can be trusted?",
+      "content": { "options": ["Scott's patient, repeated kindness despite White Fang's wariness", "A single moment where Scott commands him to obey", "Scott defeating White Fang in a fight", "White Fang being too weak and tired to resist any longer"], "correct": 0 },
+      "explanation": "It's Scott's consistent patience and gentleness over time, not force or a single dramatic event, that slowly wins White Fang's trust."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "At the end of the story, White Fang saves the Scott family from an escaped ___.",
+      "content": { "answer": "convict", "altAnswers": ["prisoner", "escaped criminal"] },
+      "explanation": "White Fang proves his transformation and loyalty by fighting off a dangerous escaped convict who threatens the family."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think White Fang would have become gentle and loyal if he had never met Weedon Scott? Why or why not?",
+      "content": { "keywords": ["kindness", "trust", "cruelty", "wild", "change", "patience"] },
+      "explanation": "There's no single right answer — the novel suggests that White Fang's nature could go either way depending on how he is treated, making Scott's patient kindness essential to the outcome."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What does White Fang's life ultimately suggest about the balance between nature and environment?",
+      "content": { "options": ["How an animal is treated can shape its behavior as much as its wild instincts", "Wild animals can never truly change no matter how they are treated", "Only training through fear can control a wild animal", "Environment has no real effect on an animal's character"], "correct": 0 },
+      "explanation": "White Fang's journey from wild survival to vicious fighter to gentle companion shows how deeply treatment and environment can shape character alongside instinct."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each setting into the right group.",
+      "content": {
+        "groupA": "A place associated with cruelty or hardship for White Fang",
+        "groupB": "A place associated with safety or trust for White Fang",
+        "options": [
+          { "label": "The dogfighting pits under Beauty Smith", "group": "A" },
+          { "label": "The harsh frozen wilderness where he first learns to survive", "group": "A" },
+          { "label": "The California ranch with the Scott family", "group": "B" },
+          { "label": "Weedon Scott's patient care after the rescue", "group": "B" }
+        ]
+      },
+      "explanation": "White Fang's environments shift dramatically across the story, from harsh survival and cruelty to the safety and warmth he finds with the Scotts."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine White Fang could tell his own story in his own words for a single day on the California ranch. What might he notice or feel that a human wouldn't?",
+      "content": { "keywords": ["instinct", "loyalty", "family", "wild", "trust", "protect"] },
+      "explanation": "There's no single correct answer — this invites readers to imagine the story from White Fang's animal perspective, drawing on his wild instincts and his hard-won trust."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What is the central message of White Fang's transformation over the course of the story?",
+      "content": { "options": ["Patience and kindness can reach even a creature shaped by cruelty", "Wild animals are always too dangerous to be trusted", "Strength is the only thing that matters in survival", "Loyalty can never be earned, only born into an animal"], "correct": 0 },
+      "explanation": "White Fang's arc from wild survival through cruelty to loyal companionship shows that gentle, patient treatment can transform even a creature hardened by a harsh life."
+    }
+  ]
+}

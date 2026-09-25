@@ -1,0 +1,103 @@
+{
+  "book_slug": "the-owl-service",
+  "language": "en",
+  "title": "The Owl Service",
+  "author": "Alan Garner",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "In a remote Welsh valley, three teenagers - Alison, her stepbrother Roger, and Gwyn, the son of the family's housekeeper - find an old dinner service in the attic decorated with a strange pattern that can be seen as either owls or flowers. Once the plates are found, a very old Welsh legend seems to begin repeating itself through the three teens' own lives, mixing supernatural mystery with the very real tensions of class, jealousy, and first love between them.",
+  "extended_summary": "Alison, Roger, and Gwyn are brought together one summer in a house in a Welsh valley, though not as equals: Alison and Roger come from a comfortable English family, while Gwyn is Welsh and the son of Nancy, the family's housekeeper, a difference in background that quietly shapes how the three treat one another. When Alison discovers an old, dust-covered dinner service in the attic, its plates decorated with a pattern that seems to shift between owls and flowers depending on how you look at it, strange and unsettling things begin to happen around the house and valley. Gwyn, who grew up hearing the local legends, recognizes echoes of an old Welsh story - found in the Mabinogion - about a woman magically made from flowers, who was turned into an owl after being caught in a deadly love triangle. As scratching noises, owl shapes, and unexplained tensions grow around the three teenagers, it becomes clear that the old legend is not simply being remembered, but is somehow trying to play itself out again through them, with the jealousy, desire, and rivalry between Alison, Roger, and Gwyn eerily mirroring the ancient tale. The novel is intentionally mysterious and open to interpretation, and it uses its supernatural plot to explore very grounded, real issues: class division between Welsh and English characters, the pain of being looked down on, and the way old patterns - in families, in communities, in legends - can repeat themselves unless someone finds a way to break them.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What do the three teenagers find in the attic that sets the story's strange events in motion?",
+      "content": { "options": ["An old dinner service with a pattern that can be seen as owls or flowers", "A locked diary", "A family portrait", "A set of old maps"], "correct": 0 },
+      "explanation": "Alison discovers a dust-covered dinner service whose plates are decorated with a pattern that shifts between owl and flower shapes, and strange events begin soon after."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where is the novel set?",
+      "content": { "options": ["A busy English city", "A remote valley in Wales", "A ship at sea", "A school in Scotland"], "correct": 1 },
+      "explanation": "The story takes place in a remote Welsh valley, where an old local legend is deeply tied to the landscape."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What difference in background exists between the three teenagers?",
+      "content": { "options": ["They are all cousins from the same wealthy family", "Alison and Roger come from a comfortable English family, while Gwyn is Welsh and the son of the family's housekeeper", "They are all local Welsh villagers", "Gwyn is much older than the other two"], "correct": 1 },
+      "explanation": "A quiet but important class and cultural divide exists between English, comfortably-off Alison and Roger and Gwyn, who is Welsh and whose mother works for the family as housekeeper."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What old Welsh story does Gwyn recognize echoes of once the plates are found?",
+      "content": { "options": ["A tale from the Mabinogion about a woman magically made from flowers who is turned into an owl after a deadly love triangle", "A story about a dragon guarding treasure", "A legend about a ghost ship", "A fairy tale about a lost prince"], "correct": 0 },
+      "explanation": "Gwyn, who grew up with local legends, recognizes the pattern and the strange events as connected to an old story from the Mabinogion about Blodeuwedd, a woman made from flowers who became an owl."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "How does the ancient legend seem to relate to the three teenagers' own relationships?",
+      "content": { "options": ["It has no connection to them at all", "The jealousy, desire, and rivalry between them eerily seem to mirror the old story, as if it is trying to repeat itself through them", "It only affects the adults in the story, not the teenagers", "It is simply a story Gwyn tells to entertain the others"], "correct": 1 },
+      "explanation": "The novel suggests that the emotional tensions among Alison, Roger, and Gwyn begin to mirror the ancient love-triangle legend, as though the pattern is trying to play out again through them."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Besides the supernatural mystery, what very real-world tension does the novel explore through Gwyn's relationship with Alison and Roger?",
+      "content": { "options": ["A rivalry between two different schools", "Class and cultural division between Welsh and English characters", "A dispute over money owed between families", "Competition in a sporting event"], "correct": 1 },
+      "explanation": "Gwyn's position as the housekeeper's son, and Alison and Roger's more comfortable status, brings out real tensions of class and being looked down on, alongside the supernatural plot."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What does the novel seem to suggest about old patterns, such as the ancient legend, repeating themselves?",
+      "content": { "options": ["Old patterns can only repeat if people actively choose to reenact them for fun", "Old patterns - in families, communities, or legends - can repeat themselves unless someone finds a way to break them", "Old legends have no real influence on the present", "Only supernatural beings are affected by old patterns, never ordinary people"], "correct": 1 },
+      "explanation": "A central idea of the novel is that inherited tensions and old stories can keep repeating across generations unless someone recognizes the pattern and chooses to act differently."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of the story in the order they occur.",
+      "content": { "items": ["Alison, Roger, and Gwyn spend the summer together in the Welsh valley house", "Alison finds the old dinner service in the attic", "Gwyn recognizes echoes of the old Welsh legend of Blodeuwedd", "Tensions of jealousy and rivalry grow among the three teenagers, mirroring the legend"], "correctOrder": [0, 1, 2, 3] },
+      "explanation": "The story builds from the teenagers being brought together, through the discovery of the plates, to Gwyn's recognition of the legend, and finally to the rising tensions that echo it."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Understand",
+      "prompt": "Match each character or element to its role in the story.",
+      "content": { "left": ["Alison", "Roger", "Gwyn", "The owl/flower dinner service"], "right": ["An English girl from a comfortably-off family who finds the old plates", "Alison's stepbrother, also from the English side of the family", "A Welsh boy, the housekeeper's son, who recognizes the old legend", "The strange object that seems to trigger the legend's return"], "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 } },
+      "explanation": "These characters and the mysterious plates are the central pieces around which the novel's blend of legend and real tension is built."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The old Welsh legend Gwyn recognizes involves a woman magically made from flowers who is later turned into an ___.",
+      "content": { "answer": "owl", "altAnswers": ["Owl"] },
+      "explanation": "The legend tells of a woman created from flowers who is transformed into an owl after being caught in a deadly love triangle, which is echoed in the plates' pattern and the novel's title."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each element below into whether it is part of the novel's supernatural mystery, or part of its real-world social tension.",
+      "content": { "groupA": "Supernatural mystery", "groupB": "Real-world social tension", "options": [ { "label": "The owl-and-flower pattern shifting on the plates", "group": "A" }, { "label": "Strange scratching noises and owl shapes appearing around the valley", "group": "A" }, { "label": "Gwyn being treated differently because his mother is the family's housekeeper", "group": "B" }, { "label": "The class divide between the English and Welsh characters", "group": "B" } ] },
+      "explanation": "Garner weaves together an eerie supernatural plot with grounded social tensions of class and belonging, and the novel keeps both threads active throughout."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why might Alan Garner have chosen to blend an ancient Welsh legend with a modern story about three teenagers, rather than simply retelling the legend on its own?",
+      "content": { "keywords": ["legend", "repeat", "class", "tension", "modern", "myth"] },
+      "explanation": "Blending the ancient legend with a contemporary setting lets Garner show how old patterns of jealousy, class division, and rivalry can persist across generations, making the myth feel urgently relevant."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you are Gwyn, noticing that the old legend seems to be repeating itself through you and your friends. Write two or three sentences about what you might do to try to break the pattern.",
+      "content": { "keywords": ["break the pattern", "choice", "legend", "friendship", "courage", "change"] },
+      "explanation": "This prompt invites students to think about the novel's theme of resisting inherited, repeating patterns by imagining an active choice Gwyn could make."
+    }
+  ]
+}

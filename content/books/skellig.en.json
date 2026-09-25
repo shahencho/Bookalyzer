@@ -1,0 +1,103 @@
+{
+  "book_slug": "skellig",
+  "language": "en",
+  "title": "Skellig",
+  "author": "David Almond",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "When Michael's family moves into a run-down old house, his newborn baby sister is dangerously ill and the household is full of worry. Exploring the crumbling garage out back, Michael discovers a strange, weak, dust-covered being who calls himself Skellig. With his new friend Mina, a homeschooled girl fascinated by nature and poetry, Michael begins to care for Skellig - and slowly realizes that his sister's fragile health and Skellig's mysterious recovery may be connected in ways he cannot fully explain.",
+  "extended_summary": "Michael is anxious and unsettled: his family has just moved into an old, neglected house, and his baby sister was born with a serious heart problem that keeps her in and out of the hospital. Looking for somewhere to be alone with his worries, Michael wanders into the family's falling-down garage and finds a strange, weak figure hidden among the dust, dead flies, and old junk - a being who introduces himself only as Skellig. Skellig is oddly human but also not: pale, stiff-jointed, hungry for strange food like Chinese takeout and aspirin, and, Michael slowly notices, possessing what seem to be wing-like shoulder blades beneath his coat. Michael meets Mina, a bright, unconventional neighbor who is homeschooled by her mother, loves the poetry of William Blake, and is endlessly curious about birds, owls, and the natural world. Drawn together by curiosity and quiet loyalty, Michael and Mina begin secretly bringing Skellig food and helping him regain his strength, moving him to a safer hiding place as the old garage is torn down. As Skellig slowly grows stronger, Michael's baby sister's health takes a turn for the better, and the novel leaves open, without ever fully explaining, whether Skellig is an angel, an owl-like spirit, an unusual old man, or something that defies easy definition. At its heart, the story is about wonder, healing, friendship, and the courage to believe in things that cannot be neatly explained.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where does Michael first discover Skellig?",
+      "content": { "options": ["In the attic of his new house", "In the family's crumbling, run-down garage", "At his school", "In a nearby forest"], "correct": 1 },
+      "explanation": "Michael finds Skellig hidden among the dust and old junk in the family's falling-down garage."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Why is Michael's family under so much stress at the start of the story?",
+      "content": { "options": ["They have just lost their house completely", "His newborn baby sister has a serious heart problem", "His parents are getting divorced", "They have no money for food"], "correct": 1 },
+      "explanation": "Michael's baby sister was born with a serious heart condition, and much of the family's worry centers on her fragile health."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Who is Mina, and what makes her different from other children Michael knows?",
+      "content": { "options": ["A teacher at Michael's school", "A homeschooled neighbor who loves William Blake's poetry and the natural world, especially birds", "A doctor who treats his sister", "A cousin visiting from another country"], "correct": 1 },
+      "explanation": "Mina is homeschooled by her mother, has an unconventional way of seeing the world, and is deeply interested in poetry, nature, and birds - especially owls."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What unusual physical detail does Michael notice about Skellig?",
+      "content": { "options": ["He has unusually large hands", "He seems to have wing-like shapes beneath his shoulder blades", "He cannot speak at all", "He glows in the dark"], "correct": 1 },
+      "explanation": "As Michael gets to know Skellig, he notices what appear to be wing-like shoulder blades, hinting that Skellig may be something more than an ordinary man."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "How do Michael and Mina help Skellig over the course of the story?",
+      "content": { "options": ["They call the police to report him", "They secretly bring him food and eventually move him to a safer hiding place", "They ignore him completely", "They try to sell him to a museum"], "correct": 1 },
+      "explanation": "Michael and Mina quietly care for Skellig, bringing him food such as Chinese takeout and aspirin, and later relocating him when the old garage is torn down."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What connection does the novel suggest, without ever fully explaining it, between Skellig and Michael's baby sister?",
+      "content": { "options": ["Skellig is secretly the baby's doctor", "As Skellig slowly grows stronger, the baby's health seems to improve as well", "The baby is afraid of Skellig", "Skellig causes the baby's illness"], "correct": 1 },
+      "explanation": "The novel hints at a mysterious link between Skellig's healing and the baby's improving health, without spelling out exactly how or why."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "Why does the novel leave Skellig's true nature unexplained, rather than clearly stating whether he is an angel, a bird-spirit, or an old man?",
+      "content": { "options": ["The author forgot to explain it", "Leaving it open invites wonder and lets readers form their own sense of the story's mystery and meaning", "It is a mistake in the plot", "Skellig explains it fully in the final chapter"], "correct": 1 },
+      "explanation": "The novel's ambiguity is intentional - it keeps a sense of wonder and mystery alive, encouraging readers to sit with questions rather than receive a tidy answer."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of the story in the order they happen.",
+      "content": { "items": ["Michael's family moves into the old house and his baby sister is born ill", "Michael discovers Skellig hidden in the garage", "Michael and Mina secretly care for Skellig and move him to safety", "Skellig grows stronger as the baby's health improves"], "correctOrder": [0, 1, 2, 3] },
+      "explanation": "The story unfolds from the family's anxious beginning, through Michael's discovery, the children's quiet care for Skellig, and finally to the parallel recoveries."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Understand",
+      "prompt": "Match each character to their role in the story.",
+      "content": { "left": ["Michael", "Mina", "Skellig", "The baby sister"], "right": ["The boy who discovers a mysterious being in his garage", "A homeschooled neighbor who loves Blake's poetry and birds", "A weak, mysterious being with wing-like shoulder blades", "Michael's newborn sister, born with a serious heart problem"], "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 } },
+      "explanation": "These four characters are at the center of the novel's blend of everyday family worry and quiet, wondrous mystery."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Michael discovers Skellig hiding in the family's old, crumbling ___.",
+      "content": { "answer": "garage", "altAnswers": ["Garage"] },
+      "explanation": "Skellig is first found hidden among the dust and clutter of the family's falling-down garage."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each detail below into whether it points toward Skellig being ordinary, or points toward him being something mysterious and otherworldly.",
+      "content": { "groupA": "Suggests Skellig is ordinary", "groupB": "Suggests Skellig is mysterious/otherworldly", "options": [ { "label": "He eats takeout food and aspirin", "group": "A" }, { "label": "He is stiff-jointed and can barely move at first", "group": "A" }, { "label": "He seems to have wing-like shapes under his coat", "group": "B" }, { "label": "His recovery seems mysteriously connected to the baby's health", "group": "B" } ] },
+      "explanation": "Almond deliberately blends ordinary, human details with strange, otherworldly hints, which is part of what makes Skellig's true nature so uncertain."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Skellig is meant to be understood as an angel, a bird-like spirit, an unusual old man, or something else entirely? Explain your thinking using details from the story.",
+      "content": { "keywords": ["wings", "mystery", "healing", "ambiguous", "angel", "owl"] },
+      "explanation": "This open question invites students to engage with the novel's central ambiguity and support their own interpretation with textual evidence."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you found a strange, weak creature hidden in your own garage or shed. Write two or three sentences about what you would do first.",
+      "content": { "keywords": ["curiosity", "care", "secret", "help", "discover", "kindness"] },
+      "explanation": "This creative prompt lets students imagine stepping into Michael's shoes and reflecting on curiosity, caution, and compassion."
+    }
+  ]
+}

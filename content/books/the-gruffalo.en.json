@@ -1,0 +1,109 @@
+{
+  "book_slug": "the-gruffalo",
+  "language": "en",
+  "title": "The Gruffalo",
+  "author": "Julia Donaldson",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "A clever little mouse takes a walk through the deep, dark wood and invents a terrifying make-believe monster called the Gruffalo to scare off a fox, an owl, and a snake who all want to eat him. But when the mouse actually meets a real Gruffalo, he has to think fast to escape becoming its lunch.",
+  "extended_summary": "As a small mouse strolls through the deep dark wood, a hungry fox invites him back to his den for tea — really planning to eat him. The mouse quickly invents an excuse: he's meeting a fearsome Gruffalo, and describes the monster in scary detail (knobbly knees, turned-out toes, a poisonous wart on the end of its nose). Frightened, the fox runs off. The same trick works on an owl and then a snake, each of whom also backs away rather than risk meeting the terrible Gruffalo the mouse claims to be waiting for.\n\nPleased with himself, the mouse walks on, laughing at the idea that a Gruffalo doesn't really exist at all. Then, around a corner, he comes face to face with an actual Gruffalo, matching his invented description exactly, who is delighted to have found a mouse to eat for lunch. Thinking fast, the mouse claims that he himself is the scariest creature in the wood, and offers to prove it by taking the Gruffalo for a walk through the forest. As they walk, the fox, owl, and snake each see the mouse next to the Gruffalo and flee in terror — not realizing they're actually scared of the Gruffalo behind him. Convinced that everyone truly fears the little mouse, the Gruffalo turns and runs away himself, leaving the clever mouse to enjoy his walk home in peace, snacking on a nut under a tree.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does the mouse invent to scare away the fox, owl, and snake?",
+      "content": { "options": ["A terrifying monster called the Gruffalo", "A pack of hungry wolves", "A giant with a club", "A storm that never ends"], "correct": 0 },
+      "explanation": "The mouse invents an imaginary monster, the Gruffalo, and describes him in scary detail to frighten off each creature he meets."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does the mouse first invent the story of the Gruffalo?",
+      "content": { "options": ["To avoid being eaten by the fox", "To make new friends in the wood", "To find his way back home", "To win a bet with an owl"], "correct": 0 },
+      "explanation": "The fox invites the mouse to his den planning to eat him, so the mouse makes up the Gruffalo to scare him off."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is on the end of the Gruffalo's nose, according to the mouse's description?",
+      "content": { "options": ["A poisonous wart", "A shiny jewel", "A long whisker", "A drop of honey"], "correct": 0 },
+      "explanation": "The mouse describes the imaginary Gruffalo with a poisonous wart on the end of his nose, among other scary features."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": { "items": ["The mouse meets the fox and invents the Gruffalo", "The fox runs away", "The mouse meets the owl and invents the Gruffalo again", "The owl flies away", "The mouse meets the snake and invents the Gruffalo again", "The mouse meets a real Gruffalo"], "correctOrder": [0, 1, 2, 3, 4, 5] },
+      "explanation": "The same trick works three times on three different creatures before the mouse is met with a surprise of his own."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why is the mouse surprised when he meets a real Gruffalo?",
+      "content": { "options": ["He believed the Gruffalo was only something he made up", "He expected the Gruffalo to be friendly", "He thought Gruffalos lived far away", "He had forgotten what he said it looked like"], "correct": 0 },
+      "explanation": "The mouse invented the Gruffalo as a lie, so he never expects to actually run into one in the wood."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "How does the mouse trick the real Gruffalo into being afraid of him?",
+      "content": { "options": ["He claims he is the scariest creature in the wood and offers to prove it on a walk", "He challenges the Gruffalo to a race", "He hides inside a hollow log", "He asks the fox, owl, and snake to fight the Gruffalo for him"], "correct": 0 },
+      "explanation": "The mouse cleverly bluffs again, this time convincing the real Gruffalo that everyone is afraid of the mouse, not the other way around."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why do the fox, owl, and snake really run away when they see the mouse walking with the Gruffalo?",
+      "content": { "options": ["They are actually afraid of the Gruffalo, not the mouse", "They are afraid the mouse will tell on them", "They think the mouse has become a monster too", "They are late for their own dinner"], "correct": 0 },
+      "explanation": "The Gruffalo doesn't realize the other animals are fleeing from him, which convinces him that the mouse must be even scarier."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each creature to what happens when the mouse meets them.",
+      "content": {
+        "left": ["The fox", "The owl", "The snake", "The real Gruffalo"],
+        "right": ["Invites the mouse to his den, but flees at the mention of the Gruffalo", "Invites the mouse to his treetop house, then flies off", "Invites the mouse for dinner, then slithers away", "Believes the mouse is the scariest creature after seeing the others flee"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each creature reacts to the mention or sight of the Gruffalo in its own way, but all end up fleeing."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each item into the right group.",
+      "content": {
+        "groupA": "Creatures who want to eat the mouse",
+        "groupB": "Made-up parts of the Gruffalo's description",
+        "options": [
+          { "label": "The fox", "group": "A" },
+          { "label": "Terrible tusks and terrible claws", "group": "B" },
+          { "label": "The owl", "group": "A" },
+          { "label": "Knobbly knees and turned-out toes", "group": "B" }
+        ]
+      },
+      "explanation": "The predators in the wood are real, while the frightening details of the Gruffalo start out as pure invention."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The mouse says the Gruffalo's favorite food is ___ pie.",
+      "content": { "answer": "mouse", "altAnswers": ["mice"] },
+      "explanation": "To scare off each animal, the mouse claims that mouse pie is the invented Gruffalo's favorite meal — a joke that becomes ironic later."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think the mouse was clever, lucky, or both when he escaped the real Gruffalo? Why?",
+      "content": { "keywords": ["clever", "quick thinking", "lucky", "brave", "trick"] },
+      "explanation": "There's no single right answer — the mouse's quick thinking clearly helps, but a little luck plays a part too."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine a new creature the mouse could invent to scare away a different animal in the wood. Describe what it looks like.",
+      "content": { "keywords": ["scary", "teeth", "claws", "eyes", "invented"] },
+      "explanation": "There's no single right answer — the point is to invent scary, imaginative details the way the mouse does with the Gruffalo."
+    }
+  ]
+}

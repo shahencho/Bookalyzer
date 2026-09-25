@@ -1,0 +1,128 @@
+{
+  "book_slug": "wizard-of-oz",
+  "language": "en",
+  "title": "The Wonderful Wizard of Oz",
+  "author": "L. Frank Baum",
+  "genre": "Fantasy",
+  "copyright_status": "public domain",
+  "short_summary": "A Kansas farm girl named Dorothy and her little dog Toto are swept away by a tornado to the magical land of Oz. To find her way home, Dorothy follows a road of yellow bricks toward the Emerald City, gathering three unusual friends along the way: a Scarecrow who wants a brain, a Tin Woodman who wants a heart, and a Cowardly Lion who wants courage.",
+  "extended_summary": "After the tornado drops Dorothy's house right on top of the Wicked Witch of the East, the grateful Munchkins and the Good Witch of the North send Dorothy off wearing the dead witch's magical silver shoes, telling her the Wizard of Oz might be able to help her get home. On her journey down the yellow brick road, Dorothy meets a Scarecrow who longs for a brain, a Tin Woodman who longs for a heart, and a Cowardly Lion who longs for courage, and all three join her, hoping the Wizard can grant their wishes too.\n\nWhen they finally reach the Emerald City, the mysterious Wizard agrees to help only if they first defeat the Wicked Witch of the West. After a difficult journey and a clever victory over the witch, they return to discover that the Wizard is not a powerful sorcerer at all, but an ordinary man using tricks and illusions. Even so, he helps the Scarecrow, Tin Woodman, and Lion see that they already had brains, heart, and courage all along, and Dorothy finally learns that her silver shoes had the power to take her home the whole time.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What carries Dorothy from Kansas to the land of Oz?",
+      "content": { "options": ["A tornado", "A hot air balloon", "A magic train", "A river flood"], "correct": 0 },
+      "explanation": "A powerful tornado picks up Dorothy's house and sets it down in the strange land of Oz."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Dorothy travels to the Emerald City along a road made of ___ bricks.",
+      "content": { "answer": "yellow", "altAnswers": [] },
+      "explanation": "The yellow brick road leads Dorothy and her friends all the way to the Wizard."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does the Scarecrow want to meet the Wizard?",
+      "content": { "options": ["He wants a brain, because he believes he isn't smart", "He wants new straw for his body", "He wants to learn how to fly", "He wants a bigger hat"], "correct": 0 },
+      "explanation": "The Scarecrow feels he lacks intelligence and hopes the Wizard can give him a brain."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the correct group.",
+      "content": {
+        "groupA": "Friends who join Dorothy on her journey",
+        "groupB": "Dangers Dorothy and her friends must face",
+        "options": [
+          { "label": "The Scarecrow", "group": "A" },
+          { "label": "The Tin Woodman", "group": "A" },
+          { "label": "The Wicked Witch of the West", "group": "B" },
+          { "label": "Her flying monkeys", "group": "B" }
+        ]
+      },
+      "explanation": "Dorothy's journey is shaped both by the loyal friends who join her and the dangers she must overcome."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of Dorothy's journey in the order they happen.",
+      "content": {
+        "items": ["A tornado carries Dorothy's house to the land of Oz", "Dorothy meets the Scarecrow, Tin Woodman, and Lion on the road to the Emerald City", "The group defeats the Wicked Witch of the West", "Dorothy discovers the truth about the Wizard and finds her way home"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Dorothy's adventure moves steadily from the tornado to her eventual return home."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "Which of these actions best shows real courage, the kind the Cowardly Lion learns he already has?",
+      "content": { "options": ["Facing a danger even while feeling afraid", "Never feeling scared of anything at all", "Avoiding every difficult situation", "Letting someone else handle all the danger"], "correct": 0 },
+      "explanation": "By the end of the story, the Lion realizes true courage means acting bravely despite fear, not the absence of fear."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think the Wizard was wrong to pretend to have magical powers? Why or why not?",
+      "content": { "keywords": ["honest", "trick", "help", "deceive", "kind", "fair"] },
+      "explanation": "There's no single right answer — the Wizard's tricks are dishonest, but he ultimately helps his friends see strengths they already had."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each companion to what they discover about themselves by the story's end.",
+      "content": {
+        "left": ["The Scarecrow", "The Tin Woodman", "The Cowardly Lion", "Dorothy"],
+        "right": ["He had clever ideas all along", "He had always cared deeply for his friends", "He had been brave in dangerous moments all along", "Her shoes had the power to take her home the whole time"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character's journey teaches them that what they were searching for was inside them all along."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Dorothy's little dog, who travels with her to Oz, is named ___.",
+      "content": { "answer": "Toto", "altAnswers": [] },
+      "explanation": "Toto stays loyally by Dorothy's side throughout her entire adventure in Oz."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each statement into whether it is true or false about the story.",
+      "content": {
+        "groupA": "True about the story",
+        "groupB": "False about the story",
+        "options": [
+          { "label": "Dorothy's silver shoes have the power to take her home", "group": "A" },
+          { "label": "The Wizard turns out to be an ordinary man using tricks", "group": "A" },
+          { "label": "The Wizard is secretly the most powerful sorcerer in Oz", "group": "B" },
+          { "label": "The Scarecrow, Tin Woodman, and Lion never help Dorothy at all", "group": "B" }
+        ]
+      },
+      "explanation": "The Wizard's power turns out to be an illusion, while Dorothy's friends help her at every turn."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine one new creature or challenge Dorothy and her friends might meet on the road to the Emerald City. Describe what happens.",
+      "content": { "keywords": ["Oz", "road", "adventure", "creature", "brave", "help"] },
+      "explanation": "Answers will vary — this invites readers to imagine their own addition to Dorothy's magical journey."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What is the deeper message behind the Scarecrow, Tin Woodman, and Lion each getting what they wished for?",
+      "content": { "options": ["The qualities they wanted were inside them all along, waiting to be recognized", "Only a powerful wizard can give someone a brain, heart, or courage", "Wishing for something is enough to make it real", "None of the three friends ever truly changes"], "correct": 0 },
+      "explanation": "The story's central lesson is that these three friends already had what they wanted — they just needed to realize it."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What must Dorothy and her friends do before the Wizard agrees to help them?",
+      "content": { "options": ["Defeat the Wicked Witch of the West", "Build him a new palace", "Bring him a bag of emeralds", "Learn to fly on their own"], "correct": 0 },
+      "explanation": "The Wizard sets defeating the Wicked Witch of the West as the price for his help."
+    }
+  ]
+}

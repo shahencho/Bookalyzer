@@ -1,0 +1,128 @@
+{
+  "book_slug": "the-graveyard-book",
+  "language": "en",
+  "title": "The Graveyard Book",
+  "author": "Neil Gaiman",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "A toddler survives the murder of his family by a mysterious man named Jack and wanders into a nearby graveyard, where the ghosts who live there decide to raise him as one of their own. Renamed Nobody \"Bod\" Owens and protected by his enigmatic guardian Silas, Bod grows up learning ghostly skills like Fading and exploring the world both inside and beyond the graveyard's gates. As he grows older, Bod must eventually face the secret society of assassins responsible for his family's death.",
+  "extended_summary": "After a man named Jack murders his family in the night, a baby boy toddles out of his house and into a nearby graveyard, unknowingly saving his own life. The ghosts who live there, along with the mysterious guardian Silas, decide to take the child in, naming him Nobody Owens — Bod, for short — and granting him the Freedom of the Graveyard, which lets him see in the dark and interact with the dead. As Bod grows up surrounded by ghosts instead of living children, he learns unusual skills like Fading (becoming hard to notice) and Dreamwalking, while Silas quietly protects him from the dangerous world beyond the graveyard walls, including the man Jack, who is still searching for the child he failed to kill.\n\nOver the years, Bod has adventures both within the graveyard and in the town beyond it, forming friendships with a living girl named Scarlett and learning more about his own unusual upbringing and the ghostly community that raised him. As he approaches adulthood, Bod finally learns the truth about his family's murder and the secret order of assassins called the Jacks of All Trades that Jack belongs to. Bod must summon everything the graveyard has taught him to confront this danger and protect the people, living and dead, that he loves — before ultimately growing up and leaving the graveyard to make his own way in the world of the living.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who murders Bod's family at the start of the story?",
+      "content": { "options": ["A man named Jack", "A ghost from the graveyard", "Silas", "Scarlett's father"], "correct": 0 },
+      "explanation": "A mysterious man named Jack kills Bod's family, but the baby escapes into the graveyard and survives."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What name do the graveyard's ghosts give the baby they decide to raise?",
+      "content": { "options": ["Nobody \"Bod\" Owens", "Jack Owens", "Silas Owens", "Charlie Owens"], "correct": 0 },
+      "explanation": "The ghosts name him Nobody Owens, calling him Bod for short."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What special ability does the Freedom of the Graveyard give Bod?",
+      "content": { "options": ["The ability to see in the dark and interact with the dead", "The ability to fly", "The ability to turn invisible permanently", "The ability to speak every human language"], "correct": 0 },
+      "explanation": "The Freedom of the Graveyard allows Bod to see in the dark and interact with the ghostly residents as he grows up among them."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Bod's mysterious guardian, who is neither fully living nor a ghost, is named ___.",
+      "content": { "answer": "Silas", "altAnswers": [] },
+      "explanation": "Silas is Bod's enigmatic guardian, who protects him and brings him supplies from the world beyond the graveyard."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What is Fading, one of the ghostly skills Bod learns?",
+      "content": { "options": ["The ability to become hard for people to notice", "The ability to disappear completely and never return", "The ability to change into an animal", "The ability to control the weather"], "correct": 0 },
+      "explanation": "Fading is a skill Bod learns from the graveyard's ghosts that makes him difficult for people to notice."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of Bod's story in the order they happen.",
+      "content": {
+        "items": ["Jack murders Bod's family, but the baby escapes into the graveyard", "The graveyard's ghosts decide to raise Bod as one of their own", "Bod grows up learning ghostly skills like Fading and Dreamwalking", "Bod confronts the secret society of assassins behind his family's murder"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Bod's arrival in the graveyard comes first, followed by his unusual upbringing, and finally his confrontation with the danger from his past."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in the story.",
+      "content": {
+        "left": ["Bod (Nobody Owens)", "Silas", "Scarlett", "Jack"],
+        "right": ["The boy raised by ghosts in the graveyard", "Bod's mysterious guardian, neither living nor a ghost", "A living girl who becomes Bod's friend", "The assassin who killed Bod's family and still hunts him"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each of these characters plays a distinct role in Bod's unusual upbringing and eventual confrontation with danger."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each detail into the right group.",
+      "content": {
+        "groupA": "Part of Bod's life inside the graveyard",
+        "groupB": "Part of Bod's life connected to the world beyond the graveyard",
+        "options": [
+          { "label": "Learning Fading and Dreamwalking from the ghosts", "group": "A" },
+          { "label": "Befriending Scarlett, a living girl from town", "group": "B" },
+          { "label": "Being granted the Freedom of the Graveyard", "group": "A" },
+          { "label": "Facing the secret society of assassins called the Jacks of All Trades", "group": "B" }
+        ]
+      },
+      "explanation": "Bod's story moves between the safety of the graveyard and the dangers and connections waiting for him in the living world."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think ghosts make good guardians for a growing child like Bod? What might be some benefits and some drawbacks of his unusual upbringing?",
+      "content": { "keywords": ["protection", "unusual", "growth", "danger", "safety", "isolated", "guardian"] },
+      "explanation": "There's no single right answer — the graveyard keeps Bod safe in many ways but also isolates him from the living world in others."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is the name of the secret society of assassins that Jack belongs to?",
+      "content": { "options": ["The Jacks of All Trades", "The Grey Council", "The Silent Order", "The Night Watchers"], "correct": 0 },
+      "explanation": "Jack is part of a secret order of assassins called the Jacks of All Trades, revealed later in the story."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Protects or helps Bod",
+        "groupB": "Threatens or endangers Bod",
+        "options": [
+          { "label": "Silas", "group": "A" },
+          { "label": "The ghosts of the graveyard", "group": "A" },
+          { "label": "Jack", "group": "B" },
+          { "label": "The Jacks of All Trades", "group": "B" }
+        ]
+      },
+      "explanation": "Bod is protected by the graveyard's ghostly community and his guardian Silas, while the man Jack and his secret order represent the ongoing danger in his life."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you grew up learning skills from ghosts the way Bod does, what is one skill you would most want to learn, and how would you use it?",
+      "content": { "keywords": ["skill", "ghost", "imagine", "learn", "power", "graveyard"] },
+      "explanation": "There's no single right answer — this invites you to imagine your own version of Bod's unusual, ghost-guided education."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "At the end of the story, Bod eventually grows up and leaves the ___ to live among the living.",
+      "content": { "answer": "graveyard", "altAnswers": ["the graveyard"] },
+      "explanation": "As Bod reaches adulthood, he leaves the graveyard that raised him to find his own place in the world of the living."
+    }
+  ]
+}

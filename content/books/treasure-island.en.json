@@ -1,0 +1,135 @@
+{
+  "book_slug": "treasure-island",
+  "language": "en",
+  "title": "Treasure Island",
+  "author": "Robert Louis Stevenson",
+  "genre": "Adventure",
+  "copyright_status": "public domain",
+  "short_summary": "Young Jim Hawkins finds a treasure map among the belongings of a mysterious sailor who dies at his family's inn. Jim sails off with Squire Trelawney and Dr. Livesey aboard the Hispaniola to find the buried gold of the fearsome Captain Flint, only to discover that the ship's cook, Long John Silver, is secretly leading a crew of mutinous pirates.",
+  "extended_summary": "When an old seafarer takes a room at the Admiral Benbow inn and later dies leaving behind a mysterious sea chest, young Jim Hawkins discovers a map showing the location of Captain Flint's legendary buried treasure. Jim brings the map to Squire Trelawney and Dr. Livesey, who outfit a ship, the Hispaniola, and set sail for the island — unaware that most of the crew they've hired are former pirates planning a mutiny, led by the ship's one-legged cook, the cunning and charming Long John Silver.\n\nOnce the mutiny breaks into the open, Jim finds himself caught between loyalty to his honest companions and his strange, complicated respect for Silver. Through overheard plots, a captured stockade, a wild journey across the island, and a final standoff for the buried gold, Jim's courage and quick thinking prove just as important as any adult's sword or pistol. In the end the treasure is found, the mutiny is broken, and Jim sails home changed by an adventure he'll never forget — while Silver slips away to a fate no one can quite predict.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where does Jim Hawkins live at the start of the story?",
+      "content": { "options": ["The Admiral Benbow inn, run by his family", "A large manor house owned by Squire Trelawney", "A sailor's boarding house in Bristol", "A small cottage on Treasure Island itself"], "correct": 0 },
+      "explanation": "Jim's family runs the Admiral Benbow inn, where the old sailor Billy Bones comes to stay."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does Jim find among the dead sailor's belongings that starts the whole adventure?",
+      "content": { "options": ["A map showing the location of Captain Flint's treasure", "A letter from Long John Silver", "A chest full of gold coins", "A key to a locked room at the inn"], "correct": 0 },
+      "explanation": "Jim discovers the treasure map hidden in the sailor's sea chest, setting the entire voyage in motion."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The ship that sails to find the treasure is called the ___.",
+      "content": { "answer": "Hispaniola", "altAnswers": ["The Hispaniola"] },
+      "explanation": "Squire Trelawney outfits the Hispaniola for the voyage to the island."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why is Long John Silver such a dangerous figure aboard the Hispaniola?",
+      "content": { "options": ["He secretly leads a mutinous crew of pirates while appearing friendly and trustworthy", "He is openly hostile to everyone from the start", "He refuses to work and causes the ship to sink", "He is too old and weak to be a real threat"], "correct": 0 },
+      "explanation": "Silver's charm and apparent loyalty hide the fact that he is secretly organizing a mutiny among the crew."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in the story.",
+      "content": {
+        "left": ["Jim Hawkins", "Long John Silver", "Squire Trelawney", "Dr. Livesey"],
+        "right": ["Young boy who finds the treasure map", "One-legged cook secretly leading the mutiny", "Wealthy man who funds and outfits the voyage", "Level-headed doctor who helps defend the stockade"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character brings something different to the voyage, from Jim's curiosity to Silver's cunning to Trelawney's resources and Livesey's steady judgment."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these key events of the story in the order they happen.",
+      "content": {
+        "items": ["Jim finds the treasure map in the dead sailor's chest", "The Hispaniola sets sail for the island", "Jim overhears Silver's plan for mutiny from inside an apple barrel", "The treasure is found and the surviving crew sails home"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The story moves from the map's discovery, through the voyage and the uncovering of the mutiny, to the final search for treasure."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group based on their loyalty.",
+      "content": {
+        "groupA": "Loyal to Squire Trelawney's expedition",
+        "groupB": "Part of the mutinous pirate crew",
+        "options": [
+          { "label": "Dr. Livesey", "group": "A" },
+          { "label": "Captain Smollett", "group": "A" },
+          { "label": "Long John Silver", "group": "B" },
+          { "label": "Israel Hands", "group": "B" }
+        ]
+      },
+      "explanation": "The crew of the Hispaniola splits between those loyal to the official expedition and the pirates secretly plotting mutiny under Silver."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "How does Jim first learn about the crew's plan to mutiny?",
+      "content": { "options": ["He overhears Silver and other sailors talking while hiding in an apple barrel", "Squire Trelawney tells him directly", "He reads about it in a letter", "Long John Silver confesses it to him openly"], "correct": 0 },
+      "explanation": "Jim hides inside an apple barrel on deck and overhears Silver discussing the mutiny plans with the other pirates."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Long John Silver is missing one ___, which is why the other sailors call him by his nickname.",
+      "content": { "answer": "leg", "altAnswers": ["leg (uses a crutch)"] },
+      "explanation": "Silver lost a leg earlier in his sailing career and gets around using a crutch."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Jim was right to trust and even feel sympathy for Long John Silver at times, even knowing he was a pirate? Why or why not?",
+      "content": { "keywords": ["trust", "loyalty", "pirate", "complicated", "danger", "kindness"] },
+      "explanation": "There's no single right answer — Silver is one of literature's most complicated villains, both genuinely dangerous and oddly likable, which makes Jim's feelings toward him difficult to untangle."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What happens to Long John Silver at the end of the story?",
+      "content": { "options": ["He slips away with some of the treasure and escapes a formal punishment", "He is captured and hanged for his crimes", "He becomes captain of the Hispaniola", "He returns the treasure and becomes an honest sailor"], "correct": 0 },
+      "explanation": "True to his slippery character, Silver manages to escape with some gold rather than facing justice for the mutiny."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each event into the right group.",
+      "content": {
+        "groupA": "Happens before the mutiny is discovered",
+        "groupB": "Happens after the mutiny breaks into the open",
+        "options": [
+          { "label": "Jim finds the treasure map at the inn", "group": "A" },
+          { "label": "The Hispaniola sets sail for the island", "group": "A" },
+          { "label": "The loyal crew retreats to the stockade for safety", "group": "B" },
+          { "label": "Jim and his allies make a final stand for the treasure", "group": "B" }
+        ]
+      },
+      "explanation": "The story turns sharply once the mutiny is exposed, shifting from a hopeful voyage to a fight for survival."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine Jim Hawkins writes one more letter years later, describing what happened to him after returning from Treasure Island. What might he say about how the adventure changed him?",
+      "content": { "keywords": ["treasure", "adventure", "courage", "change", "sailor", "home"] },
+      "explanation": "There's no single correct answer — this invites readers to imagine how such a dangerous, formative adventure might shape Jim's later life."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What quality helps Jim survive and succeed even though he is just a boy among dangerous adults?",
+      "content": { "options": ["His courage and quick thinking in difficult moments", "His skill with a sword, which surpasses every pirate's", "His large size and physical strength", "His refusal to ever take any risks"], "correct": 0 },
+      "explanation": "Jim repeatedly proves that bravery and quick decisions, not size or strength, are what allow him to make a real difference."
+    }
+  ]
+}

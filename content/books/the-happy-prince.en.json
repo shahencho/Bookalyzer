@@ -1,0 +1,119 @@
+{
+  "book_slug": "the-happy-prince",
+  "language": "en",
+  "title": "The Happy Prince",
+  "author": "Oscar Wilde",
+  "genre": "Classic Literature",
+  "copyright_status": "public domain",
+  "short_summary": "High above the city stands a statue of the Happy Prince, covered in gold leaf with sapphires for eyes and a ruby on his sword. A little swallow, resting on the statue on his way to Egypt, discovers the prince can see the poverty and suffering hidden in the streets below — and the statue asks the swallow to help him give away his beauty, piece by piece, to those who need it most.",
+  "extended_summary": "The golden statue of the Happy Prince once lived a life of comfort and never saw sadness, but now, standing high above the city, he can see everything: a struggling seamstress, a poor playwright, a match-selling girl, and countless others suffering in the cold. A swallow, delayed on his journey south, agrees to carry the ruby from the prince's sword and the sapphires from his eyes to those in the greatest need, staying by the prince's side long after he should have left for warmer lands.\n\nAs winter closes in, the swallow keeps helping the prince give away the gold leaf covering his body, leaf by leaf, until the once-glittering statue turns dull and grey — and the little swallow, having stayed too long in the cold out of love and loyalty, finally dies at the prince's feet. The prince's lead heart cracks in grief. The town officials, no longer impressed by the shabby statue, melt it down, but the broken heart won't melt, so it's thrown away with the dead swallow. In the story's final lines, an angel carries both the swallow and the prince's heart up to heaven, declaring them the two most precious things in the whole city.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is the Happy Prince's statue covered in?",
+      "content": { "options": ["Gold leaf, with a sapphire for each eye and a ruby on his sword", "Silver paint and pearl buttons", "Bronze with emerald eyes", "Marble with a crown of diamonds"], "correct": 0 },
+      "explanation": "The statue is covered in fine gold leaf, with sapphires for eyes and a large ruby set in the hilt of his sword."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The little bird who helps the prince is a ___.",
+      "content": { "answer": "swallow", "altAnswers": [] },
+      "explanation": "A swallow, delayed on his journey to Egypt, rests on the statue and ends up staying to help the prince."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does the Happy Prince want to give away his jewels and gold?",
+      "content": { "options": ["Because from his high statue he can finally see the poverty and suffering he never noticed while alive", "Because the town officials ordered him to", "Because he wants to become a plain, unnoticed statue", "Because the swallow convinces him it's more fashionable"], "correct": 0 },
+      "explanation": "As a living prince he was shielded from sadness; only as a statue looking over the whole city does he finally see how much suffering there is."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each person into whether the swallow helps them, or whether they later melt down the statue.",
+      "content": {
+        "groupA": "Helped by gifts from the prince",
+        "groupB": "Involved in melting the statue down",
+        "options": [
+          { "label": "The poor seamstress with a sick child", "group": "A" },
+          { "label": "The struggling young playwright", "group": "A" },
+          { "label": "The town councillors", "group": "B" },
+          { "label": "The mayor who no longer finds the statue beautiful", "group": "B" }
+        ]
+      },
+      "explanation": "The people the swallow helps are the ones suffering in the city, while the officials are the ones who later decide the shabby statue is worthless."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of the story in the correct order.",
+      "content": {
+        "items": ["The swallow rests on the Happy Prince's statue instead of continuing to Egypt", "The swallow carries the ruby and sapphires to people who need help", "The swallow stays through the cold winter, giving away the gold leaf piece by piece", "The swallow dies at the prince's feet, and his lead heart cracks with grief"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The swallow's small delay turns into a whole winter of sacrifice, ending in the story's sorrowful climax."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to what they receive or do in the story.",
+      "content": {
+        "left": ["The seamstress", "The playwright", "The match-selling girl", "The town councillors"],
+        "right": ["Receives a ruby to help her sick child", "Receives a sapphire to help him finish his play", "Receives the prince's last sapphire so she won't be punished at home", "Decide to melt down the statue once it looks shabby"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each gift the prince gives away helps someone in real need, while the councillors only value the statue while it looks beautiful."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why does the swallow stay in the cold city instead of flying to Egypt as planned?",
+      "content": { "options": ["He grows to care about the prince and the people they're helping together", "He forgets which direction Egypt is in", "The town officials trap him there", "He is too tired to fly at all"], "correct": 0 },
+      "explanation": "The swallow's loyalty and growing affection for the prince keep him there long after it's safe for him to stay."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think the swallow made the right choice by staying instead of flying south to safety? Why or why not?",
+      "content": { "keywords": ["sacrifice", "kind", "loyal", "safe", "cold", "help", "choice"] },
+      "explanation": "There's no single right answer — the story asks readers to weigh the swallow's kindness and loyalty against the danger of staying in the cold."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The Happy Prince was written by the author ___.",
+      "content": { "answer": "Oscar Wilde", "altAnswers": ["Wilde"] },
+      "explanation": "Oscar Wilde wrote The Happy Prince, first published in 1888."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you were the Happy Prince and could give away just one more gift, who in your own town would you help, and why?",
+      "content": { "keywords": ["help", "give", "kind", "share", "need", "care"] },
+      "explanation": "There's no single right answer — the story invites readers to think about kindness and generosity in their own lives."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What does the ending of the story suggest is truly valuable?",
+      "content": { "options": ["A kind, generous heart matters more than gold or jewels", "Gold and jewels are the most precious things of all", "Statues should always look beautiful, no matter what", "Birds should never delay their journeys for others"], "correct": 0 },
+      "explanation": "The angel declares the swallow and the prince's broken heart the city's most precious things — not the gold or jewels the statue once wore."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "What most likely would have happened if the swallow had flown straight to Egypt at the start?",
+      "content": { "options": ["The struggling people the prince cared about would not have received his help", "The prince's statue would have stayed golden forever", "The town would have melted the statue down sooner", "Nothing in the story would have changed at all"], "correct": 0 },
+      "explanation": "It's the swallow's willingness to stay and carry the prince's gifts that lets the suffering people in the city actually get helped."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "By the end of winter, the once-golden statue looks ___ because all its gold leaf has been given away.",
+      "content": { "answer": "dull", "altAnswers": ["grey", "gray", "shabby"] },
+      "explanation": "Piece by piece, the swallow strips away the gold leaf to help others, leaving the statue plain and grey."
+    }
+  ]
+}

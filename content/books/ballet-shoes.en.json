@@ -1,0 +1,135 @@
+{
+  "book_slug": "ballet-shoes",
+  "language": "en",
+  "title": "Ballet Shoes",
+  "author": "Noel Streatfeild",
+  "genre": "Family Story",
+  "copyright_status": "active copyright",
+  "short_summary": "Three unrelated orphan girls — Pauline, Petrova, and Posy Fossil — are all brought home as babies by an eccentric fossil-collector known as Great-Uncle Matthew. Raised by his great-niece Sylvia and their devoted nurse, the three sisters attend a school for dancing and acting, each discovering a very different talent, and vow together to get the family name into the history books.",
+  "extended_summary": "Great-Uncle Matthew, an adventurous fossil collector nicknamed GUM, has a habit of bringing home unusual souvenirs from his travels — but his strangest finds are three baby girls, each rescued under different circumstances and given the same last name, Fossil, so they can grow up as sisters. When GUM sets off on another long expedition and doesn't come back for years, it falls to his great-niece Sylvia and their loyal nurse to raise Pauline, Petrova, and Posy on a shrinking budget.\n\nTo help make ends meet, the girls enroll at the Children's Academy of Dancing and Stage Training, where their different personalities and talents quickly become clear. Pauline loves acting and dreams of the stage, Posy is a natural, driven dancer, and Petrova would rather be tinkering with engines and airplanes than performing at all. As money grows tighter and each girl works toward her own kind of success, the three sisters lean on each other and their unusual family to keep their shared promise: that the name Fossil will one day be found in a history book, because they made it happen themselves.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is the shared last name given to all three girls?",
+      "content": { "options": ["Fossil", "Streatfeild", "Matthew", "Sylvia"], "correct": 0 },
+      "explanation": "The three unrelated girls are all given the surname Fossil, tying them together as sisters even though none of them are related by blood."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who is the man who brings all three girls home as babies?",
+      "content": { "options": ["Great-Uncle Matthew, nicknamed GUM", "Their biological father", "A wealthy stage producer", "Their nurse's husband"], "correct": 0 },
+      "explanation": "Great-Uncle Matthew, an eccentric fossil collector known as GUM, brings each girl home from his travels and raises them as one family."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The girls attend the Children's Academy of Dancing and ___ Training.",
+      "content": { "answer": "Stage", "altAnswers": ["stage"] },
+      "explanation": "The sisters enroll at the Children's Academy of Dancing and Stage Training to help earn money and develop their talents."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why do the Fossil sisters enroll at the dancing and acting academy in the first place?",
+      "content": { "options": ["To help earn money for the family as their budget shrinks", "Because GUM ordered them to become famous actresses", "Because Sylvia herself wants to become a dancer", "Because it was the only school willing to accept them"], "correct": 0 },
+      "explanation": "With money growing tight while GUM is away, the academy offers the girls a way to contribute financially while training in performance."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each Fossil sister to her true passion.",
+      "content": {
+        "left": ["Pauline", "Petrova", "Posy", "Sylvia"],
+        "right": ["Loves acting and dreams of the stage", "Prefers engines and airplanes to performing", "A natural, driven dancer", "Raises the girls with the family's devoted nurse"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each member of the household has her own distinct passion, from Pauline's love of acting to Petrova's fascination with machines."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of the story in the order they happen.",
+      "content": {
+        "items": ["GUM brings the three baby girls home and gives them the name Fossil", "GUM leaves on a long expedition and doesn't return for years", "The girls enroll at the Children's Academy of Dancing and Stage Training", "Each sister works toward her own kind of success to help the family"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The story moves from the girls' unusual arrival, through GUM's long absence, to their training and growth at the academy."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each interest into the right group.",
+      "content": {
+        "groupA": "A performing-arts talent among the Fossil sisters",
+        "groupB": "A non-performing interest among the Fossil sisters",
+        "options": [
+          { "label": "Pauline's love of acting on stage", "group": "A" },
+          { "label": "Posy's natural gift for ballet", "group": "A" },
+          { "label": "Petrova's fascination with engines", "group": "B" },
+          { "label": "Petrova's interest in flying airplanes", "group": "B" }
+        ]
+      },
+      "explanation": "While Pauline and Posy thrive in performance, Petrova's real interests point toward machines and flight rather than the stage."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why is Petrova's situation different from her sisters' at the academy?",
+      "content": { "options": ["She trains there but her real passion lies elsewhere, in engines and machines", "She refuses to attend the academy at all", "She is a better dancer than Posy but hides it", "She wants to become an actress instead of a dancer"], "correct": 0 },
+      "explanation": "Unlike Pauline and Posy, who genuinely love performing, Petrova attends the academy out of necessity while her heart is really in engineering and flight."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The three sisters make a shared vow to get the family name into the ___ books.",
+      "content": { "answer": "history", "altAnswers": ["history"] },
+      "explanation": "The girls promise each other that the Fossil name will one day appear in a history book because of what they accomplish."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think it's fair that Petrova has to train in dance and acting even though her real passion is engines and flying? Why or why not?",
+      "content": { "keywords": ["talent", "family", "money", "passion", "duty", "choice"] },
+      "explanation": "There's no single right answer — the story raises a real tension between family necessity and following one's own individual passion."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Who helps raise the three Fossil girls while GUM is away on his long expedition?",
+      "content": { "options": ["His great-niece Sylvia and their devoted nurse", "A wealthy stranger who adopts them", "GUM's business partner", "The headmistress of the academy"], "correct": 0 },
+      "explanation": "Sylvia and the family's loyal nurse take on the responsibility of raising the girls during GUM's long absence."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each detail into the right group.",
+      "content": {
+        "groupA": "True of Pauline",
+        "groupB": "True of Posy",
+        "options": [
+          { "label": "Dreams of a career on the stage as an actress", "group": "A" },
+          { "label": "Loves the world of theater and performing lines", "group": "A" },
+          { "label": "Shows natural, driven talent for ballet", "group": "B" },
+          { "label": "Is completely devoted to dance above all else", "group": "B" }
+        ]
+      },
+      "explanation": "Pauline and Posy both thrive at the academy, but their talents point in different directions — one toward acting, one toward dance."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine one of the Fossil sisters writes a letter to GUM years later, describing how she finally got the family name into a history book. Which sister do you imagine writing it, and what would she say?",
+      "content": { "keywords": ["Fossil", "history", "achievement", "family", "talent", "promise"] },
+      "explanation": "There's no single correct answer — this invites readers to imagine how each sister's very different talent might eventually fulfill the sisters' shared promise."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What does the story suggest is the true bond holding the Fossil sisters together, since they aren't related by blood?",
+      "content": { "options": ["Shared upbringing, loyalty, and a common promise to each other", "Being forced to attend the same school", "Having identical talents and interests", "Sharing the exact same last name by legal accident"], "correct": 0 },
+      "explanation": "Despite having no blood relation, the sisters are bound by the family that raised them together and the promise they made to support one another."
+    }
+  ]
+}

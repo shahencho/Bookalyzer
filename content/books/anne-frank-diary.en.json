@@ -1,0 +1,103 @@
+{
+  "book_slug": "anne-frank-diary",
+  "language": "en",
+  "title": "Anne Frank: The Diary of a Young Girl",
+  "author": "Anne Frank",
+  "genre": "Classic Literature",
+  "copyright_status": "active copyright",
+  "short_summary": "Anne Frank was a Jewish girl who, with her family, went into hiding in Amsterdam in 1942 to escape Nazi persecution during World War II. For over two years she kept a diary - addressed to an imaginary friend she called 'Kitty' - recording daily life in the cramped hiding place, her hopes, fears, and growth as a young writer. The family was eventually discovered, and Anne died in a concentration camp in early 1945, but her diary survived and became one of the most widely read personal accounts of the Holocaust.",
+  "extended_summary": "In July 1942, thirteen-year-old Anne Frank went into hiding with her parents Otto and Edith, her older sister Margot, and later four more people, in a set of hidden rooms above her father's former office building in Amsterdam, known afterward as the Secret Annex. As Jewish people, the Franks were in grave danger under the Nazi occupation of the Netherlands, and a small group of brave helpers risked their own safety to bring the group food, news, and supplies for more than two years. In her diary, which she had received as a birthday gift shortly before going into hiding, Anne wrote openly and vividly about the small realities of hiding - close quarters, boredom, arguments, and fear of being discovered - as well as her inner life: her relationships with her family, her budding feelings for Peter, one of the other people in hiding, and her dreams of becoming a writer after the war. In August 1944, the hiding place was discovered and everyone in it was arrested and deported to concentration camps. Anne and her sister Margot died at the Bergen-Belsen camp in early 1945, only weeks before the war in Europe ended; their father Otto was the only one of the eight to survive. After the war, Otto Frank published Anne's diary, fulfilling her own wish to become a writer and to have her wartime experiences remembered. Today the diary stands as one of the most important personal records of the Holocaust, valued for its honesty, its portrait of courage and hope amid terrible danger, and the vivid voice of a talented young writer.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Why did Anne Frank and her family go into hiding in 1942?",
+      "content": { "options": ["To escape a natural disaster", "Because they were Jewish and in danger under Nazi persecution during the German occupation", "To find better job opportunities", "To be closer to relatives abroad"], "correct": 1 },
+      "explanation": "The Frank family, who were Jewish, went into hiding because Jewish people faced grave danger, including deportation, under the Nazi occupation of the Netherlands."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What name did Anne use to address her diary, as if writing to a friend?",
+      "content": { "options": ["Kitty", "Margot", "Peter", "Miep"], "correct": 0 },
+      "explanation": "Anne addressed her diary entries to an imagined friend she called 'Kitty,' giving her writing an intimate, conversational tone."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Where did Anne and her family hide?",
+      "content": { "options": ["In a forest cabin", "In hidden rooms above her father's former office building in Amsterdam, later called the Secret Annex", "On a ship bound for another country", "In a relative's countryside farmhouse"], "correct": 1 },
+      "explanation": "The family hid in a concealed set of rooms above Otto Frank's business premises in Amsterdam, a space that became known as the Secret Annex."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "How did the people in hiding manage to survive for over two years without being seen?",
+      "content": { "options": ["They never left the building and had no outside help at all", "A small group of brave helpers risked their safety to bring them food, news, and supplies", "The Nazi authorities did not search Amsterdam", "They disguised themselves and went outside every day"], "correct": 1 },
+      "explanation": "Loyal helpers, at great personal risk, supported the group throughout their time in hiding by supplying food, news of the outside world, and other necessities."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What ultimately happened to Anne Frank?",
+      "content": { "options": ["She survived the war and emigrated to the United States", "The hiding place was discovered, and Anne died at the Bergen-Belsen concentration camp in early 1945", "She remained in hiding until the war ended safely", "She became a journalist after the war"], "correct": 1 },
+      "explanation": "In August 1944 the Secret Annex was discovered; Anne and her family were deported, and Anne died at Bergen-Belsen in early 1945, shortly before the war in Europe ended."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why is Anne's diary considered such an important historical document today?",
+      "content": { "options": ["It is the only surviving record from World War II", "It gives an honest, personal, first-hand account of daily life and feelings during the Holocaust from a young person's perspective", "It was written by a famous adult author", "It focuses only on political events, not personal experience"], "correct": 1 },
+      "explanation": "The diary's power comes from its honest, personal voice - a real teenager's daily thoughts, fears, and hopes - which brings history to life in a way few other records can."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "Which theme is most central to how the diary is remembered, alongside its record of danger and loss?",
+      "content": { "options": ["Adventure and exploration", "Hope, courage, and the strength of the human spirit even in the darkest circumstances", "Competition between rival families", "Mystery and detective work"], "correct": 1 },
+      "explanation": "Despite the fear and hardship of hiding, Anne's diary is remembered above all for the hope, humor, and courage she expressed, which is why it continues to resonate with readers."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of Anne Frank's story in the order they happened.",
+      "content": { "items": ["Anne receives a diary as a birthday gift", "The Frank family goes into hiding in the Secret Annex", "Helpers supply the group with food and news for over two years", "The hiding place is discovered and the group is deported"], "correctOrder": [0, 1, 2, 3] },
+      "explanation": "This sequence traces the real timeline from Anne receiving her diary just before going into hiding, through more than two years in the Annex, to the group's eventual discovery."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Remember",
+      "prompt": "Match each person to their role in Anne Frank's story.",
+      "content": { "left": ["Otto Frank", "Margot Frank", "Peter", "The helpers (such as Miep Gies)"], "right": ["Anne's father, and the only member of the hiding group to survive the war", "Anne's older sister, who also hid in the Secret Annex", "A young person in hiding for whom Anne develops feelings", "Brave people who risked their safety to support the group in hiding"], "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 } },
+      "explanation": "These figures each played a distinct and important role in Anne's account of her years in hiding."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Anne and her family hid in a set of rooms in Amsterdam that became known as the Secret ___.",
+      "content": { "answer": "Annex", "altAnswers": ["annex"] },
+      "explanation": "The hidden rooms above Otto Frank's former office building became known as the Secret Annex, the setting for most of the diary."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each detail below into whether it reflects daily life in hiding, or the eventual danger the family faced.",
+      "content": { "groupA": "Daily life in hiding", "groupB": "The danger the family faced", "options": [ { "label": "Staying quiet during the day so workers below would not hear them", "group": "A" }, { "label": "Sharing cramped rooms and limited food with seven other people", "group": "A" }, { "label": "The constant risk of being discovered and arrested", "group": "B" }, { "label": "Deportation to concentration camps after being found", "group": "B" } ] },
+      "explanation": "The diary balances the ordinary, sometimes tedious details of daily life in hiding with the very real danger constantly hanging over the group."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think Anne's diary continues to matter to readers around the world today, more than 80 years later?",
+      "content": { "keywords": ["history", "hope", "honesty", "young voice", "remembrance", "Holocaust"] },
+      "explanation": "Students may point to the diary's honest, personal voice, its historical importance as a record of the Holocaust, and its enduring message of hope and courage."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you could write one diary entry from inside the Secret Annex about a small, hopeful moment in an otherwise difficult day. Describe it in two or three sentences.",
+      "content": { "keywords": ["hope", "hiding", "small moment", "family", "quiet", "gratitude"] },
+      "explanation": "This exercise invites students to reflect on how Anne found small moments of hope and normalcy even under extremely difficult circumstances."
+    }
+  ]
+}

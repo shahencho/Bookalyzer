@@ -1,0 +1,126 @@
+{
+  "book_slug": "tom-sawyer",
+  "language": "en",
+  "title": "The Adventures of Tom Sawyer",
+  "author": "Mark Twain",
+  "genre": "Adventure",
+  "copyright_status": "public domain",
+  "short_summary": "Mischievous Tom Sawyer lives in a small town on the Mississippi River, where he tricks his friends into whitewashing a fence for him and falls for a girl named Becky Thatcher. Late one night, Tom and his friend Huckleberry Finn secretly witness a murder committed by the sinister Injun Joe in the town graveyard. After getting lost in a cave with Becky and surviving a terrifying encounter with Injun Joe, Tom and Huck eventually find a hidden treasure.",
+  "extended_summary": "Tom Sawyer is a clever, mischievous boy growing up in the small Mississippi River town of St. Petersburg, always looking for adventure and always finding ways to avoid chores — most famously by convincing his friends that whitewashing his aunt's fence is such fun that they should pay him for the privilege of doing it. Tom is smitten with a new girl in town, Becky Thatcher, and spends much of the story trying to win her attention and forgiveness after their childish quarrels. One night, while sneaking out with his friend Huckleberry Finn, Tom witnesses something no one was supposed to see: the sinister Injun Joe murdering a man in the town graveyard and framing an innocent man for the crime.\n\nTerrified of what Injun Joe might do if he is discovered as a witness, Tom keeps the secret for a long time, torn between fear and his growing conscience. Later, during a school picnic, Tom and Becky become lost in a vast, twisting cave, and their frightening days trapped underground bring them face-to-face with Injun Joe, who is hiding there himself. After Tom and Becky are rescued, the cave entrance is sealed to trap Injun Joe inside for good, and Tom later returns with Huck to search the cave for hidden treasure they suspect Injun Joe hid there — treasure they ultimately find, bringing the boys unexpected wealth and closing out their adventure.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What trick does Tom play on his friends regarding the fence?",
+      "content": { "options": ["He convinces them whitewashing it is fun, so they pay to do it", "He dares them to jump over it", "He paints it a strange color", "He breaks it and blames someone else"], "correct": 0 },
+      "explanation": "Tom cleverly convinces his friends that whitewashing the fence is a fun privilege, so they end up paying him to do it."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who does Tom develop a crush on?",
+      "content": { "options": ["Becky Thatcher", "Aunt Polly", "Injun Joe's daughter", "A girl from another town"], "correct": 0 },
+      "explanation": "Tom falls for Becky Thatcher, a new girl in town, and spends much of the story trying to win her favor."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What crime do Tom and Huck secretly witness in the graveyard?",
+      "content": { "options": ["A murder committed by Injun Joe", "A theft of treasure", "A grave robbery", "A fistfight"], "correct": 0 },
+      "explanation": "Late one night, Tom and Huck secretly see Injun Joe commit a murder in the graveyard."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where do Tom and Becky get lost?",
+      "content": { "options": ["In a vast underground cave", "In a forest", "On a riverboat", "In an abandoned house"], "correct": 0 },
+      "explanation": "Tom and Becky become lost together in a large, winding underground cave."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does Tom keep the murder a secret for so long?",
+      "content": { "options": ["He is terrified of what Injun Joe might do to him", "He doesn't think anyone will believe him", "He was involved in the crime himself", "He doesn't understand what he saw"], "correct": 0 },
+      "explanation": "Tom is afraid that Injun Joe will hurt him if he finds out Tom witnessed the crime."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Understand",
+      "prompt": "Why do you think Tom struggles between fear and his conscience about the murder he witnessed?",
+      "content": { "keywords": ["fear", "guilt", "secret", "innocent man"] },
+      "explanation": "Tom feels torn between his fear of Injun Joe and his sense that an innocent man should not be blamed for the crime."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Apply",
+      "prompt": "Sort each event as one of Tom's lighthearted escapades or a serious danger he faces.",
+      "content": {
+        "groupA": "Tom's mischievous adventures",
+        "groupB": "Serious dangers Tom faces",
+        "options": [
+          { "label": "Tricking friends into whitewashing the fence", "group": "A" },
+          { "label": "Pursuing Becky's forgiveness", "group": "A" },
+          { "label": "Witnessing Injun Joe's murder", "group": "B" },
+          { "label": "Being trapped in the cave with Injun Joe nearby", "group": "B" }
+        ]
+      },
+      "explanation": "Some of Tom's escapades are lighthearted mischief, while others put him in real danger."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to the description that fits them best.",
+      "content": {
+        "left": ["Tom Sawyer", "Becky Thatcher", "Huckleberry Finn", "Injun Joe"],
+        "right": ["Clever and mischievous hero", "The girl Tom likes", "Tom's loyal friend", "The dangerous villain"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character has a clear, distinct role in the story's plot and conflicts."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Analyze",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": {
+        "items": ["Tom tricks his friends into whitewashing the fence", "Tom witnesses the murder in the graveyard", "Tom and Becky get lost in the cave", "Tom and Becky are rescued", "The cave entrance is sealed", "Tom and Huck find the hidden treasure"],
+        "correctOrder": [0, 1, 2, 3, 4, 5]
+      },
+      "explanation": "The plot follows Tom's mischief, the murder, the cave ordeal, and finally the discovery of treasure."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "How does sealing the cave entrance affect Injun Joe?",
+      "content": { "options": ["It traps him inside for good", "It sets him free", "It helps him find the treasure", "It reunites him with his gang"], "correct": 0 },
+      "explanation": "Sealing the cave entrance traps Injun Joe inside, since no one knows he is hiding there."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Tom was brave for eventually telling the truth about what he saw in the graveyard? Why or why not?",
+      "content": { "keywords": ["courage", "truth", "fear", "justice"] },
+      "explanation": "This question asks readers to consider the courage it takes to tell the truth despite fear of consequences."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What personal quality helps Tom and Becky survive being lost in the cave?",
+      "content": { "options": ["Tom's resourcefulness and determination", "Tom's magical powers", "Help from Injun Joe", "A map they found"], "correct": 0 },
+      "explanation": "Tom's cleverness and determination, not any magical help, are what get him and Becky through the cave ordeal."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine Tom and Huck have one more adventure together after finding the treasure. What might it be?",
+      "content": { "keywords": ["imagination", "adventure", "friendship", "river"] },
+      "explanation": "This invites imaginative extension of Tom and Huck's adventurous friendship."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Tom and Huck secretly witness a murder committed by ___.",
+      "content": { "answer": "Injun Joe", "altAnswers": ["Joe"] },
+      "explanation": "Injun Joe is the sinister man Tom and Huck see commit the murder in the graveyard."
+    }
+  ]
+}

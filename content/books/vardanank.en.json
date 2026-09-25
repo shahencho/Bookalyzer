@@ -1,0 +1,128 @@
+{
+  "book_slug": "vardanank",
+  "language": "en",
+  "title": "Vardanank",
+  "author": "Derenik Demirchyan",
+  "genre": "Classic Literature",
+  "copyright_status": "active copyright",
+  "short_summary": "Vardanank is a historical novel set in 5th-century Armenia, when the Sassanid Persian Empire tries to force the Christian Armenian people to abandon their faith. It follows Vardan Mamikonian, the general chosen to lead Armenia's resistance, as nobles, priests, and ordinary villagers must decide how far they will go to defend what they believe in. The story builds toward the Battle of Avarayr in 451 AD, a clash remembered ever since as a defining stand for Armenian identity.",
+  "extended_summary": "In the 5th century, the powerful Sassanid Persian Empire ruled over Armenia and pressured its people to give up Christianity for the Persian state religion of Zoroastrianism. Derenik Demirchyan's novel Vardanank brings this turning point to life, showing how Armenian nobles, clergy, and common people argued, doubted, and ultimately united behind Vardan Mamikonian, a skilled and thoughtful military leader, to resist losing their faith and their way of life.\n\nThe novel builds toward the Battle of Avarayr in 451 AD, where Vardan's outnumbered Armenian forces faced the much larger Persian army. Though Vardan himself died in the battle and the Armenians did not win outright on the battlefield that day, their fierce resistance made such an impression that Persia eventually allowed Armenians to keep practicing Christianity. Because of this, Avarayr and Vardan Mamikonian are remembered not as a defeat but as one of the most important moments in Armenian history — a story about standing firm for one's beliefs even when the odds are against you.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who leads the Armenian resistance in Vardanank?",
+      "content": { "options": ["Vardan Mamikonian", "Msra Melik", "Tigran the Great", "Mher the Elder"], "correct": 0 },
+      "explanation": "Vardan Mamikonian is the Armenian general chosen to lead the resistance against Persian pressure."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What is the Sassanid Persian Empire trying to force the Armenian people to do?",
+      "content": { "options": ["Abandon Christianity for Zoroastrianism", "Pay higher taxes only", "Stop farming their land", "Move to a different country"], "correct": 0 },
+      "explanation": "The central conflict of the novel is Persia's attempt to make Christian Armenians adopt Zoroastrianism, the Persian state religion."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The novel builds toward the Battle of ___ in 451 AD.",
+      "content": { "answer": "Avarayr", "altAnswers": ["Avarayr Battle"] },
+      "explanation": "The Battle of Avarayr, fought in 451 AD, is the climactic historical event the novel leads up to."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What happens to Vardan Mamikonian in the Battle of Avarayr?",
+      "content": { "options": ["He dies in battle, but Armenian resistance still shapes the outcome", "He wins a total military victory and lives to old age", "He surrenders without a fight", "He retreats and is never heard from again"], "correct": 0 },
+      "explanation": "Vardan is killed during the Battle of Avarayr, yet the fierce resistance of his forces has a lasting historical impact."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why is Avarayr remembered as an important victory for Armenian identity, even though the Armenians did not win the battle itself?",
+      "content": { "options": ["Their resistance was so strong that Persia eventually allowed Armenians to keep their Christian faith", "Persia was defeated completely and left Armenia forever that same year", "The battle was actually a minor skirmish with no consequences", "Armenia gained new territory as a direct result of the battle"], "correct": 0 },
+      "explanation": "Although the Armenians did not win outright at Avarayr, their determined stand convinced Persia not to force religious conversion, making it a lasting symbol of resilience."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of the novel's story in order.",
+      "content": {
+        "items": ["Persia pressures Armenia to abandon Christianity for Zoroastrianism", "Armenian nobles, clergy, and villagers debate how to respond", "Vardan Mamikonian is chosen to lead Armenia's resistance", "The Armenian and Persian armies clash at the Battle of Avarayr"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The pressure to convert comes first, followed by internal debate, Vardan's leadership, and finally the battle itself."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each figure or group to their role in the story.",
+      "content": {
+        "left": ["Vardan Mamikonian", "The Sassanid Persian Empire", "Armenian nobles and clergy", "Ordinary Armenian villagers"],
+        "right": ["The general who leads Armenia's military resistance", "The empire pressuring Armenia to abandon Christianity", "Groups who debate how far to go in resisting Persian demands", "The people whose everyday faith and way of life are at stake"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "The novel shows the crisis affecting every level of Armenian society, from military leadership to daily village life."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each statement into the right group.",
+      "content": {
+        "groupA": "True about the Battle of Avarayr and its outcome",
+        "groupB": "Not true about the Battle of Avarayr and its outcome",
+        "options": [
+          { "label": "Vardan Mamikonian was killed during the battle", "group": "A" },
+          { "label": "Armenia was allowed to keep practicing Christianity afterward", "group": "A" },
+          { "label": "Armenia won a total, uncontested victory on the battlefield that day", "group": "B" },
+          { "label": "The battle is remembered only as a total defeat with no lasting meaning", "group": "B" }
+        ]
+      },
+      "explanation": "Avarayr was militarily costly and Vardan died, but the resistance ultimately preserved Armenian Christianity and became a symbol of national identity."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think a battle that wasn't a clear military win is still remembered as one of the most important moments in Armenian history?",
+      "content": { "keywords": ["identity", "faith", "resistance", "sacrifice", "courage", "meaning", "remembered"] },
+      "explanation": "There's no single right answer — Avarayr shows that a nation's memory can value standing firm for its beliefs as much as, or more than, a battlefield win."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "In what century is Vardanank set?",
+      "content": { "options": ["The 5th century AD", "The 12th century AD", "The 1st century BC", "The 18th century AD"], "correct": 0 },
+      "explanation": "The novel is set in 5th-century Armenia, leading up to the Battle of Avarayr in 451 AD."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each concern into the right group as debated by characters in the novel.",
+      "content": {
+        "groupA": "A reason someone might argue for resisting Persia",
+        "groupB": "A reason someone might argue for caution or compromise",
+        "options": [
+          { "label": "Protecting the Christian faith passed down through generations", "group": "A" },
+          { "label": "Fear that resistance could bring even greater harm to families and villages", "group": "B" },
+          { "label": "Standing for Armenian identity and self-rule", "group": "A" },
+          { "label": "Recognizing that Persia's army was far larger and better equipped", "group": "B" }
+        ]
+      },
+      "explanation": "The novel presents real, sympathetic reasoning on multiple sides — this was a genuinely difficult decision for the Armenian people, not an easy or obvious choice."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you could add one scene to the novel showing an ordinary villager's perspective before the Battle of Avarayr, what would that person be thinking or worried about?",
+      "content": { "keywords": ["family", "fear", "faith", "hope", "village", "future", "courage"] },
+      "explanation": "There's no single right answer — imagining an ordinary person's perspective helps show how large historical events touch everyday lives."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Vardanank was written by the Armenian author ___.",
+      "content": { "answer": "Derenik Demirchyan", "altAnswers": ["Demirchyan"] },
+      "explanation": "Derenik Demirchyan wrote the historical novel Vardanank, bringing the events leading to Avarayr to life."
+    }
+  ]
+}

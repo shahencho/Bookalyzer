@@ -1,0 +1,119 @@
+{
+  "book_slug": "coraline",
+  "language": "en",
+  "title": "Coraline",
+  "author": "Neil Gaiman",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "When Coraline Jones explores her family's new flat, she finds a small door that leads to an eerie \"Other\" version of her world, ruled by an Other Mother with black buttons for eyes. At first the Other world seems more exciting than her real life, but Coraline soon realizes the Other Mother wants to trap her there forever by sewing buttons into her own eyes. Armed only with her courage, cleverness, and a strange stone with a hole in it, Coraline must outwit the Other Mother to save her real parents and escape.",
+  "extended_summary": "Coraline Jones has just moved into a new flat with her busy, often-distracted parents, and while exploring the old house she finds a small door that, at night, opens onto a passage leading to an alternate version of her home. There she meets her Other Mother and Other Father, who look almost like her real parents except for the black buttons sewn where their eyes should be. The Other world is full of exciting food, toys, and neighbors who pay attention to her — everything Coraline felt was missing from her real life — and for a while it seems wonderful.\n\nThe charm fades quickly when the Other Mother reveals her true wish: she wants Coraline to stay in the Other world forever, and the price is having buttons sewn over her eyes, just like everyone else there. When Coraline refuses and tries to escape home, she discovers that the Other Mother has trapped her real parents and the ghostly spirits of three other children the Other Mother lured and harmed long ago. Using her wits, a magical stone with a hole in it that helps her see through illusions, and remarkable bravery, Coraline challenges the spider-like Other Mother to a dangerous game, frees the trapped ghosts and her parents, and finally shuts the door between the worlds for good.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does Coraline find that leads to the Other world?",
+      "content": { "options": ["A small door in the flat", "A trapdoor in the garden", "A mirror in the attic", "A tunnel behind the fireplace"], "correct": 0 },
+      "explanation": "Coraline discovers a small door in the flat that, at night, opens into the Other world."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is unusual about the Other Mother's and Other Father's eyes?",
+      "content": { "options": ["They have black buttons instead of eyes", "They have no eyes at all", "Their eyes glow in the dark", "Their eyes are made of glass"], "correct": 0 },
+      "explanation": "Instead of normal eyes, the Other Mother and Other Father have black buttons sewn on."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What object helps Coraline see through the Other Mother's illusions?",
+      "content": { "options": ["A stone with a hole in it", "A magic mirror", "A pair of glasses", "A silver key"], "correct": 0 },
+      "explanation": "The stone with a hole in it lets Coraline see through the Other Mother's illusions and tricks."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does the Other world seem appealing to Coraline at first?",
+      "content": { "options": ["It offers exciting food, toys, and attention she feels she lacks at home", "It is exactly the same as her real home", "It has no rules at all", "Her real parents are there too"], "correct": 0 },
+      "explanation": "At first the Other world offers everything Coraline feels is missing at home — attention, excitement, and fun."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Understand",
+      "prompt": "Why do you think Coraline's real parents being busy and distracted makes the Other world seem tempting to her?",
+      "content": { "keywords": ["attention", "lonely", "exciting", "contrast"] },
+      "explanation": "Coraline's real parents being distracted leaves her feeling overlooked, which makes the attentive Other world feel appealing by contrast."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Apply",
+      "prompt": "Sort each statement by which world it describes.",
+      "content": {
+        "groupA": "True about the real world",
+        "groupB": "True about the Other world",
+        "options": [
+          { "label": "Coraline's parents are often busy and distracted", "group": "A" },
+          { "label": "The Other Mother wants to sew buttons on Coraline's eyes", "group": "B" },
+          { "label": "The flat has ordinary neighbors", "group": "A" },
+          { "label": "Everyone has button eyes", "group": "B" }
+        ]
+      },
+      "explanation": "The real world and the Other world have very different rules and dangers, which the story contrasts throughout."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character or object to its role in the story.",
+      "content": {
+        "left": ["Other Mother", "The stone with a hole", "The three ghost children", "Coraline"],
+        "right": ["Wants to trap Coraline forever", "Helps see through illusions", "Victims the Other Mother lured before", "Uses courage and cleverness to escape"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character or object plays a distinct role in the story's central conflict."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Analyze",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": {
+        "items": ["Coraline finds the small door", "She meets the Other Mother and Other Father", "The Other world seems wonderful at first", "The Other Mother demands buttons for eyes", "Coraline discovers the trapped ghost children", "Coraline defeats the Other Mother and shuts the door"],
+        "correctOrder": [0, 1, 2, 3, 4, 5]
+      },
+      "explanation": "The plot moves from discovery, through the Other world's charm, to danger, and finally to Coraline's escape and victory."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why are the three ghost children important to the story?",
+      "content": { "options": ["They show what happens to children the Other Mother lured and trapped before", "They are Coraline's cousins", "They help the Other Mother trick Coraline", "They live in the real world with Coraline"], "correct": 0 },
+      "explanation": "The ghost children reveal the Other Mother's true, dangerous nature by showing what happened to her past victims."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Coraline was right to go back into the Other world to rescue her parents, even though it was dangerous? Why or why not?",
+      "content": { "keywords": ["bravery", "risk", "family", "choice"] },
+      "explanation": "This question asks the reader to weigh the danger of Coraline's choice against her love for her parents."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What personal quality does Coraline rely on most to defeat the Other Mother?",
+      "content": { "options": ["Her courage and cleverness", "Her magical powers", "Her physical strength", "Her ability to fly"], "correct": 0 },
+      "explanation": "Coraline has no magical powers of her own — she relies entirely on bravery and quick thinking."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine Coraline discovers one more strange door in her new flat after this story ends. Where might it lead?",
+      "content": { "keywords": ["imagination", "door", "world", "adventure"] },
+      "explanation": "This invites imaginative extension of the story's central 'strange door' concept."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The Other Mother wants to sew ___ onto Coraline's eyes.",
+      "content": { "answer": "buttons", "altAnswers": ["black buttons"] },
+      "explanation": "The Other Mother's price for staying in the Other world is having buttons sewn over one's eyes."
+    }
+  ]
+}

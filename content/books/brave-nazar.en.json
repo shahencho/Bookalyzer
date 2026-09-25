@@ -1,0 +1,119 @@
+{
+  "book_slug": "brave-nazar",
+  "language": "en",
+  "title": "Brave Nazar",
+  "author": "Hovhannes Tumanyan",
+  "genre": "Fable",
+  "copyright_status": "public domain",
+  "short_summary": "Nazar is the laziest, most cowardly man in his village — until one lucky swat of his hand kills seven pesky flies at once. When he brags about it, his neighbors mishear him and start calling him a mighty hero who slew seven enemies in a single blow. Too proud (and too scared) to correct them, Nazar lets the rumor grow, and it soon carries him further than he ever imagined.",
+  "extended_summary": "Nazar hates work of any kind and spends his days napping and complaining, until a swarm of flies lands on his forehead while he eats and he swats them all away in one slap — killing seven at once. Delighted with himself, he stitches the words 'Nazar the Brave has slain seven with one blow' onto his belt and struts through the village. The neighbors, who never see the belt up close, assume the seven he slew were seven men, not flies, and soon the whole region is whispering about the fearless warrior in their midst.\n\nWord of the 'hero' reaches the king, who is facing invading armies and begs Nazar to lead his soldiers into battle. Too frightened to refuse and too vain to admit the truth, Nazar is swept toward the battlefield still trembling. Through nothing but dumb luck — enemy soldiers flee at the mere sight of his fearsome reputation, and rival armies end up fighting and defeating each other while Nazar hides in a tree — he returns from every encounter appearing victorious. The more he tries to run from danger, the more glory falls into his lap, until the grateful king makes the cowardly, lazy Nazar ruler of the land — proof that a big enough rumor can turn anyone into a hero, whether they deserve it or not.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does Nazar accidentally kill in one swat while he is eating?",
+      "content": { "options": ["Seven flies", "Seven wolves", "Seven soldiers", "Seven dragons"], "correct": 0 },
+      "explanation": "Nazar swats at the flies bothering him and, by pure chance, kills seven of them with a single slap."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The flies bother Nazar by landing again and again on his ___.",
+      "content": { "answer": "forehead", "altAnswers": [] },
+      "explanation": "The flies keep landing on Nazar's forehead while he tries to nap, which is what finally makes him swat at them."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why do the villagers start believing Nazar is a mighty hero?",
+      "content": { "options": ["They think the 'seven' on his belt means seven fierce men, not seven flies", "They watch him wrestle a bear and win", "They see him single-handedly rebuild the village well", "The king personally tells them Nazar is a hero"], "correct": 0 },
+      "explanation": "Nazar never explains that the seven he killed were flies, so the rumor about seven slain men spreads on its own."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each idea into what Nazar is really like, and what people mistakenly believe about him.",
+      "content": {
+        "groupA": "The real, cowardly Nazar",
+        "groupB": "The legend people believe in",
+        "options": [
+          { "label": "Trembles with fear before the battle", "group": "A" },
+          { "label": "Hides in a tree instead of fighting", "group": "A" },
+          { "label": "Single-handedly defeats seven fierce enemies", "group": "B" },
+          { "label": "Fears nothing on the battlefield", "group": "B" }
+        ]
+      },
+      "explanation": "The whole story plays on the gap between the frightened man Nazar really is and the fearless hero everyone imagines him to be."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of Nazar's rise to fame in the correct order.",
+      "content": {
+        "items": ["Nazar naps and swats away seven flies bothering him", "Nazar stitches a boastful message about his 'kill' onto his belt", "The king hears of the rumored hero and summons Nazar to lead his army", "Nazar is made ruler of the land after his army appears victorious"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "One boastful belt sets off a chain of misunderstandings that carries Nazar all the way to the throne."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character or group to the role they play in the story.",
+      "content": {
+        "left": ["Nazar", "The villagers", "The king", "The enemy soldiers"],
+        "right": ["A lazy, frightened man who is mistaken for a hero", "Spread the rumor after misunderstanding his boast", "Sends Nazar to lead the army against invaders", "Flee in terror at the mere mention of Nazar's name"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Every character's reaction to the rumor is what actually pushes the story forward — not anything Nazar does on purpose."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What actually causes Nazar's army to appear victorious in battle?",
+      "content": { "options": ["Luck and the enemy's own fear and mistakes, not Nazar's bravery", "Nazar's clever battle plans", "Nazar's years of secret warrior training", "A magic sword given to him by the king"], "correct": 0 },
+      "explanation": "Nazar spends every battle hiding or trembling — his 'victories' come from chance, not skill or courage."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Nazar deserved to become the ruler of the land? Why or why not?",
+      "content": { "keywords": ["deserve", "luck", "brave", "coward", "honest", "truth", "reputation"] },
+      "explanation": "There's no single right answer — the story invites readers to weigh luck and reputation against real courage and honesty."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "'Brave Nazar' was written by the Armenian writer ___.",
+      "content": { "answer": "Hovhannes Tumanyan", "altAnswers": ["Tumanyan", "Hovhannes Tumanian"] },
+      "explanation": "Hovhannes Tumanyan wrote this well-loved satirical fable."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you could speak to Nazar after he becomes ruler. What advice would you give him?",
+      "content": { "keywords": ["honest", "truth", "confess", "brave", "kind", "rule", "fair"] },
+      "explanation": "There's no single right answer — think about what Nazar could do differently now that everyone believes he's a hero."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What is this story mainly poking fun at?",
+      "content": { "options": ["People believing rumors without checking if they're true", "The importance of physical strength", "The value of studying hard in school", "The dangers of walking alone in the forest"], "correct": 0 },
+      "explanation": "Tumanyan's fable gently mocks how a rumor can snowball into an unearned reputation when nobody stops to question it."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If Nazar had told the truth about the flies from the very start, what would most likely have happened?",
+      "content": { "options": ["No one would have called him a hero", "He would have become king anyway", "The king would have punished the flies", "The villagers would have started a war"], "correct": 0 },
+      "explanation": "The entire legend only exists because Nazar lets the misunderstanding stand instead of correcting it."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "During the battle, Nazar hides inside a ___ instead of fighting.",
+      "content": { "answer": "tree", "altAnswers": [] },
+      "explanation": "While two enemy forces clash and accidentally defeat each other, Nazar is safely hidden up in a tree."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "book_slug": "anne-of-green-gables",
+  "language": "en",
+  "title": "Anne of Green Gables",
+  "author": "L. M. Montgomery",
+  "genre": "Family Story",
+  "copyright_status": "public domain",
+  "short_summary": "Anne Shirley is an imaginative, red-haired orphan mistakenly sent to elderly siblings Matthew and Marilla Cuthbert, who had actually asked for a boy to help on their farm at Green Gables. Anne's talkative, dreamy nature quickly wins the Cuthberts over, and she grows up in the village of Avonlea on Prince Edward Island, making a best friend in Diana Barry and clashing, then eventually becoming close, with a classmate named Gilbert Blythe. Along the way Anne stumbles through mishaps and triumphs at school as she finds her place in her new home.",
+  "extended_summary": "When Matthew and Marilla Cuthbert decide to adopt an orphan boy to help around their farm at Green Gables, they are startled to find that the orphanage sent them a talkative, fiercely imaginative girl named Anne Shirley instead. Though Marilla first wants to send Anne back, Matthew quietly insists on keeping her, and Anne's big heart and endless chatter soon win both Cuthberts over. Anne throws herself into life in the small town of Avonlea on Prince Edward Island, forming a devoted friendship with Diana Barry, getting into scrapes like dyeing her hair green by accident, and famously breaking a slate over the head of classmate Gilbert Blythe after he teases her about her red hair.\n\nAs the years pass, Anne grows from an awkward, sensitive child into a hardworking, talented young woman, excelling in school and eventually earning a scholarship to college. Her early rivalry with Gilbert slowly softens into mutual respect and warmth. But when Matthew dies and Marilla's eyesight begins to fail, Anne makes the selfless choice to give up her scholarship, staying home at Green Gables to help the aunt and uncle who once took her in — choosing the people and place she has come to love over the wider world waiting for her.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Why are Matthew and Marilla Cuthbert surprised when Anne arrives at Green Gables?",
+      "content": { "options": ["They had asked the orphanage for a boy, not a girl", "They didn't know an orphan was coming at all", "They expected a much younger child", "They thought Anne was a relative, not an orphan"], "correct": 0 },
+      "explanation": "The Cuthberts had requested a boy to help with farm work, so it's a surprise when the orphanage sends Anne instead."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who becomes Anne's best friend in Avonlea?",
+      "content": { "options": ["Diana Barry", "Marilla Cuthbert", "Miss Stacy", "Josie Pye"], "correct": 0 },
+      "explanation": "Diana Barry becomes Anne's devoted best friend soon after Anne arrives in Avonlea."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Anne accidentally dyes her hair ___ instead of the color she wanted.",
+      "content": { "answer": "green", "altAnswers": [] },
+      "explanation": "Anne buys what she believes is hair dye to get rid of her red hair, but it turns her hair green instead."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does Anne break a slate over Gilbert Blythe's head?",
+      "content": { "options": ["He teases her by calling her \"Carrots\" because of her red hair", "He copies her homework without asking", "He laughs at her in front of the whole class for tripping", "He refuses to share his lunch with her"], "correct": 0 },
+      "explanation": "Gilbert teases Anne about her red hair, calling her \"Carrots,\" and a furious Anne breaks her slate over his head in response."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "How does Anne and Gilbert's relationship change over the course of the story?",
+      "content": { "options": ["Early teasing and rivalry slowly grow into mutual respect and warmth", "They are enemies from the start and remain enemies", "They are close friends from their very first meeting", "They never interact again after the slate incident"], "correct": 0 },
+      "explanation": "What begins as childhood teasing and academic rivalry gradually softens into genuine respect and friendship as Anne and Gilbert grow older."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of Anne's story in the order they happen.",
+      "content": {
+        "items": ["Anne is sent to Green Gables by mistake instead of a boy", "Anne befriends Diana Barry and settles into life in Avonlea", "Anne excels in school and wins a scholarship to college", "Anne gives up her scholarship to help Marilla after Matthew's death"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Anne's arrival comes first, followed by her growing roots in Avonlea, her academic success, and finally her selfless choice to stay home."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in Anne's life.",
+      "content": {
+        "left": ["Matthew Cuthbert", "Marilla Cuthbert", "Diana Barry", "Gilbert Blythe"],
+        "right": ["Quietly insists on letting Anne stay at Green Gables", "Raises Anne with a stern but caring hand", "Becomes Anne's loyal best friend", "Starts as Anne's rival and later becomes someone she respects"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each of these characters shapes a different part of Anne's growth, from family life to friendship to rivalry-turned-respect."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each event into the right group.",
+      "content": {
+        "groupA": "A mishap caused by Anne's big imagination or temper",
+        "groupB": "A sign of Anne's growth, talent, or selflessness",
+        "options": [
+          { "label": "Dyeing her hair green by mistake", "group": "A" },
+          { "label": "Breaking a slate over Gilbert's head in anger", "group": "A" },
+          { "label": "Winning a scholarship to college through hard work", "group": "B" },
+          { "label": "Giving up the scholarship to help Marilla at home", "group": "B" }
+        ]
+      },
+      "explanation": "Anne's early mishaps come from her strong feelings and imagination, while her later choices show how much she has matured."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Anne makes the right choice by giving up her scholarship to stay home with Marilla? Why or why not?",
+      "content": { "keywords": ["family", "sacrifice", "loyalty", "scholarship", "choice", "selfless", "home"] },
+      "explanation": "There's no single right answer — Anne's decision shows how much she values the people who raised her, even though it means giving up an opportunity."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "On which island is Avonlea, Anne's new home, located?",
+      "content": { "options": ["Prince Edward Island", "Vancouver Island", "Newfoundland", "Long Island"], "correct": 0 },
+      "explanation": "Avonlea is a small village on Prince Edward Island, off the coast of Canada."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each trait into the right group for Anne's character.",
+      "content": {
+        "groupA": "Part of who Anne is throughout the story",
+        "groupB": "Not really part of Anne's character",
+        "options": [
+          { "label": "A vivid, endless imagination", "group": "A" },
+          { "label": "Deep loyalty to the people she loves", "group": "A" },
+          { "label": "Never caring what happens to others", "group": "B" },
+          { "label": "Avoiding hard work or challenges", "group": "B" }
+        ]
+      },
+      "explanation": "Anne is defined by her imagination and loyalty, not by selfishness or laziness — even her mistakes come from caring too much, not too little."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Anne loves giving dramatic names to ordinary places, like calling a pond \"The Lake of Shining Waters.\" Pick a place near where you live and give it an imaginative new name, then explain why you chose it.",
+      "content": { "keywords": ["imagination", "name", "place", "creative", "describe", "beautiful"] },
+      "explanation": "There's no single right answer — this celebrates the same imaginative spirit that makes Anne such a memorable character."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "After Matthew dies, Anne decides to stay at Green Gables to help ___, whose eyesight is failing.",
+      "content": { "answer": "Marilla", "altAnswers": ["Marilla Cuthbert"] },
+      "explanation": "Anne gives up her scholarship to stay home and support Marilla, who raised her, as her eyesight worsens."
+    }
+  ]
+}

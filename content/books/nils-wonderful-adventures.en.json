@@ -1,0 +1,126 @@
+{
+  "book_slug": "nils-wonderful-adventures",
+  "language": "en",
+  "title": "The Wonderful Adventures of Nils",
+  "author": "Selma Lagerlöf",
+  "genre": "Adventure",
+  "copyright_status": "public domain",
+  "short_summary": "Nils is a boy who enjoys teasing and mistreating the animals on his family's farm, until a tiny gnome punishes his cruelty by shrinking him down to almost nothing. Stuck at that tiny size, Nils grabs onto the family's pet goose just as the goose flies off to join a flock of wild geese heading across Sweden — and an unforgettable journey begins.",
+  "extended_summary": "Nils has always found it funny to trap birds, pull the cat's tail, and make life difficult for every creature on the farm, so when he manages to catch a gnome hiding in the house, he only laughs at the tiny creature instead of showing any mercy. Furious, the gnome shrinks Nils down to his own tiny size as punishment. Before Nils can even panic about what's happened to him, his family's big white gander, Morten, decides to fly off with a flock of wild geese led by the wise old goose Akka, and Nils clings on for dear life, too small now to stop him.\n\nCarried across the forests, lakes, and mountains of Sweden on Morten's back, tiny Nils has to earn his place among the wild geese by being genuinely useful instead of cruel — warning the flock of danger, helping outwit a cunning fox named Smirre who has sworn revenge on the geese, and lending a hand to the many humans and animals they meet along the way. Season by season, Nils's selfishness fades and real courage and kindness take its place, until, having finally proven he's changed for good, the spell breaks and Nils is restored to his normal size — returning home a wiser, kinder boy, with Morten and the wild geese as friends he'll never forget.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What does the gnome do to punish Nils for his cruelty to animals?",
+      "content": { "options": ["Shrinks him down to a tiny size", "Turns him into a goose", "Sends him to live in the forest forever", "Makes him unable to speak"], "correct": 0 },
+      "explanation": "Furious at how Nils treats him and the farm animals, the gnome shrinks Nils down as punishment."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The family's pet goose that Nils grabs onto is named ___.",
+      "content": { "answer": "Morten", "altAnswers": ["Martin"] },
+      "explanation": "Morten the gander decides to fly off with the wild geese, and tiny Nils clings on just in time."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does the gnome punish Nils in the first place?",
+      "content": { "options": ["Nils traps birds, pulls the cat's tail, and treats the farm animals cruelly", "Nils refuses to do his farm chores", "Nils tells a lie about the gnome to his parents", "Nils accidentally breaks one of the gnome's belongings"], "correct": 0 },
+      "explanation": "Nils has a habit of mistreating animals, and it's this cruelty the gnome decides to punish."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each behavior into whether it describes Nils at the start of the story, or Nils by the end of his journey.",
+      "content": {
+        "groupA": "Nils at the start",
+        "groupB": "Nils by the end",
+        "options": [
+          { "label": "Traps birds and pulls the cat's tail for fun", "group": "A" },
+          { "label": "Mocks the tiny gnome instead of showing mercy", "group": "A" },
+          { "label": "Warns the flock of geese about approaching danger", "group": "B" },
+          { "label": "Helps outwit the fox who is hunting the geese", "group": "B" }
+        ]
+      },
+      "explanation": "Nils's journey with the wild geese slowly transforms him from a cruel, careless boy into a genuinely helpful one."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of Nils's journey in the correct order.",
+      "content": {
+        "items": ["Nils mistreats a gnome he catches in his family's house", "The gnome shrinks Nils down to a tiny size as punishment", "Morten the gander flies off with wild geese, and tiny Nils clings on", "Nils proves he has changed and is restored to his normal size"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Nils's cruelty sets off the punishment that leads, eventually, to the journey that changes him for good."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in Nils's journey.",
+      "content": {
+        "left": ["Nils", "Morten the gander", "Akka", "Smirre the fox"],
+        "right": ["A boy shrunk down as punishment for cruelty to animals", "The family's pet goose who flies off with the wild flock", "The wise old leader of the wild geese", "A cunning fox who has sworn revenge on the geese"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character plays a distinct part in the dangers and lessons Nils faces on his journey across Sweden."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What is the main reason the wild geese eventually accept tiny Nils among them?",
+      "content": { "options": ["He proves himself genuinely useful and brave, not just along for the ride", "He promises Akka a reward once he returns to normal size", "He is the same size as the geese, so he fits in naturally", "He tricks the geese into thinking he is one of them"], "correct": 0 },
+      "explanation": "The geese don't accept Nils because of who he was on the farm — they accept him because of how he actually helps them on the journey."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think the gnome's punishment was fair? Why or why not?",
+      "content": { "keywords": ["fair", "punish", "cruel", "learn", "change", "deserve", "animals"] },
+      "explanation": "There's no single right answer — the story invites readers to weigh whether such a harsh punishment was needed for Nils to truly change."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The Wonderful Adventures of Nils was written by the Swedish author ___.",
+      "content": { "answer": "Selma Lagerlöf", "altAnswers": ["Lagerlof", "Lagerlöf"] },
+      "explanation": "Selma Lagerlöf wrote The Wonderful Adventures of Nils, first published in Sweden in 1906-1907."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you were tiny like Nils and had to travel with wild animals, what is one way you could prove yourself useful to them?",
+      "content": { "keywords": ["help", "warn", "brave", "useful", "kind", "careful"] },
+      "explanation": "There's no single right answer — think about the kinds of things Nils does to earn the geese's trust along his journey."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What does Nils's story mainly suggest about how people can change?",
+      "content": { "options": ["Genuine change comes from facing consequences and choosing to act differently, not just from wishing to be different", "People never really change, no matter what happens to them", "Being punished always makes a person kinder right away", "Size and strength matter more than kindness"], "correct": 0 },
+      "explanation": "Nils doesn't become kind simply by being shrunk — he becomes kind through the choices he makes, season after season, on his journey."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If Nils had refused to help the wild geese during their journey, what would most likely have happened?",
+      "content": { "options": ["He likely would not have earned their trust or friendship", "He would have been restored to normal size immediately anyway", "The geese would have shrunk down to his size instead", "Nothing about the journey would have changed at all"], "correct": 0 },
+      "explanation": "It's Nils's willingness to help — not just his small size — that slowly earns him a place among the wild geese."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "The cunning fox who has sworn revenge on the geese is named ___.",
+      "content": { "answer": "Smirre", "altAnswers": [] },
+      "explanation": "Smirre the fox is a recurring danger for the flock, and Nils helps the geese outwit him more than once."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "How does Nils travel across Sweden during most of his journey?",
+      "content": { "options": ["On the back of Morten the gander, flying with the wild geese", "Walking alone through the forests", "Riding in a small wooden cart", "Floating down rivers on a leaf"], "correct": 0 },
+      "explanation": "Tiny Nils rides on Morten's back as the gander flies alongside the wild geese flock across the country."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "book_slug": "carpathian-castle",
+  "language": "en",
+  "title": "The Carpathian Castle",
+  "author": "Jules Verne",
+  "genre": "Adventure",
+  "copyright_status": "public domain",
+  "short_summary": "In a small Transylvanian village near a ruined castle, the townsfolk whisper of ghostly lights and eerie sounds coming from its towers. When young Count Franz de Télek arrives, still haunted by memories of the opera singer Stilla he once loved, he sets out to uncover the truth behind the castle's supposed haunting — and finds not a ghost, but an extraordinary secret.",
+  "extended_summary": "The villagers of Werst avoid the ruined Castle of the Carpathians, convinced it is haunted after strange lights begin glowing from its long-dead chimney and unearthly sounds drift across the valley at night. The castle's reclusive owner, Baron Rodolphe de Gortz, vanished from society years earlier, and no one has dared approach since. Into this uneasy village comes Count Franz de Télek, still grieving the sudden death of the celebrated opera singer La Stilla, whom he once loved — and for whose affection he once rivaled the very same Baron de Gortz.\n\nConvinced the castle holds some connection to his lost love, Franz ventures inside and is captured by Baron de Gortz, who has spent years in isolation with his brilliant engineer, Orfanik. Franz discovers there is no ghost at all: using an early phonograph recording of Stilla's voice and a clever optical projection, the grief-stricken Baron has been replaying an image of the singer's final performance again and again, while his inventions also frighten away any villager who dares to approach. As fire breaks out and the castle finally crumbles, the truth comes fully into the light, Franz is freed, and the strange haunting of the Carpathian Castle is explained not by ghosts, but by science, sorrow, and obsession.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What do the villagers near the ruined castle report seeing and hearing at night?",
+      "content": { "options": ["Strange lights and eerie sounds coming from the castle", "A dragon flying over the mountains", "Wolves howling inside the village", "A river suddenly changing course"], "correct": 0 },
+      "explanation": "Glowing lights and unexplained sounds from the supposedly abandoned castle are what convince the villagers it must be haunted."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The story takes place near a small Transylvanian village called ___.",
+      "content": { "answer": "Werst", "altAnswers": [] },
+      "explanation": "Werst is the village at the foot of the mountain where the ruined Castle of the Carpathians stands."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does Count Franz de Télek feel personally drawn to investigate the castle?",
+      "content": { "options": ["He is still grieving the opera singer Stilla, whom he once loved and who is connected to the castle's owner", "He wants to buy the castle and restore it", "He is a scientist hired to study strange lights", "He is searching for buried treasure"], "correct": 0 },
+      "explanation": "Franz's grief over Stilla and his past rivalry with Baron de Gortz for her affection pull him toward the mystery."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their connection to the mystery.",
+      "content": {
+        "left": ["Count Franz de Télek", "Baron Rodolphe de Gortz", "Orfanik", "La Stilla"],
+        "right": ["Grieving nobleman who once loved the singer Stilla", "Reclusive baron obsessed with preserving Stilla's memory", "Brilliant engineer whose inventions create the 'haunting'", "Celebrated opera singer who died before the story begins"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character's connection to Stilla, living or remembered, drives the mystery at the heart of the castle."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each statement into the right group.",
+      "content": {
+        "groupA": "What the villagers believe is happening",
+        "groupB": "What is actually happening, according to the true explanation",
+        "options": [
+          { "label": "Ghosts haunt the ruined castle", "group": "A" },
+          { "label": "An engineer's inventions create sounds and images that seem supernatural", "group": "B" },
+          { "label": "Something supernatural guards the castle at night", "group": "A" },
+          { "label": "A grieving baron replays a recorded image and voice of a singer he loved", "group": "B" }
+        ]
+      },
+      "explanation": "True to Jules Verne's style, the seemingly supernatural haunting turns out to have a completely scientific, human explanation."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": {
+        "items": ["Villagers begin noticing strange lights and sounds from the ruined castle", "Count Franz de Télek arrives in the village, still grieving Stilla", "Franz enters the castle and is captured by Baron de Gortz", "Fire breaks out and the truth behind the 'haunting' is finally revealed"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The mystery builds from the villagers' fear to Franz's personal investigation and finally to the fiery revelation of the truth."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What is the real explanation behind the 'ghostly' appearance of Stilla that haunts the castle?",
+      "content": { "options": ["A recorded voice and an optical projection created by Orfanik's inventions", "An actual ghost that only the Baron can see", "A twin sister of Stilla living secretly in the castle", "A trick of moonlight on the castle windows"], "correct": 0 },
+      "explanation": "In classic Jules Verne fashion, the 'haunting' turns out to be advanced technology, not the supernatural — an early recording and a projected image."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The brilliant but strange engineer who helps Baron de Gortz create the castle's illusions is named ___.",
+      "content": { "answer": "Orfanik", "altAnswers": [] },
+      "explanation": "Orfanik is the inventive engineer whose devices are responsible for the eerie effects the villagers mistake for ghosts."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If a villager wanted to figure out the truth about the castle instead of just assuming it's haunted, what would be the most sensible first step?",
+      "content": { "options": ["Observe the lights and sounds carefully and look for a physical cause", "Refuse to ever go near the castle again", "Spread more rumors about ghosts to warn others", "Burn the castle down immediately, just in case"], "correct": 0 },
+      "explanation": "As the story shows, careful investigation reveals a real, explainable cause behind the apparent haunting rather than confirming superstition."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "Which character's grief and obsession most directly causes the strange events at the castle?",
+      "content": { "options": ["Baron Rodolphe de Gortz's inability to let go of Stilla's memory", "Orfanik's desire for scientific fame", "Franz's determination to solve the mystery", "The villagers' fear of the unknown"], "correct": 0 },
+      "explanation": "It is the Baron's deep, unresolved grief over Stilla that leads him to recreate her image and voice obsessively, setting the whole mystery in motion."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Baron de Gortz's way of dealing with his grief over Stilla helped him or harmed him? Why?",
+      "content": { "keywords": ["grief", "obsession", "isolation", "memory", "harm", "move on"] },
+      "explanation": "There's no single right answer — the novel suggests that the Baron's refusal to let go of the past, however understandable, ultimately isolates and endangers him."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you were writing a new 'haunted castle' mystery, what real, scientific explanation could you invent to explain ghostly lights and sounds, instead of an actual ghost?",
+      "content": { "keywords": ["invent", "explain", "science", "mystery", "technology", "imagine"] },
+      "explanation": "This is a creative question — like Jules Verne, a strong answer finds a clever, logical explanation for something that seems supernatural at first."
+    }
+  ]
+}

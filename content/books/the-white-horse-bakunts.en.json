@@ -1,0 +1,89 @@
+{
+  "book_slug": "the-white-horse-bakunts",
+  "language": "en",
+  "title": "The White Horse",
+  "author": "Aksel Bakunts",
+  "genre": "Classic Literature",
+  "copyright_status": "public domain",
+  "short_summary": "In a poor Armenian mountain village, a white horse is the pride and quiet joy of a struggling family, a rare beautiful thing in a life of hard work and little comfort. Through simple, lyrical scenes of village life, the story follows what the horse comes to mean to the people who love it, and the sacrifice that hardship eventually demands of them.",
+  "extended_summary": "Bakunts sets his story among the fields, orchards, and stone houses of an Armenian village, where the seasons dictate every part of life and even small pleasures are hard-won. A white horse - unusually striking against the dust and grey stone of the village - belongs to a family that can barely afford to keep it, yet the animal has become something more than livestock to them: a source of pride, a companion in the fields, and a rare touch of beauty in an otherwise plain and difficult existence. As debts, poor harvests, or family need press in, the horse's fate becomes tangled with the family's survival, and they are forced to weigh their attachment to the animal against practical necessity. Told in Bakunts' characteristically spare, nature-focused style, the story lingers on small, vivid details - the horse's white coat against green fields, the sounds and rhythms of village work - to build a quiet, melancholic portrait of rural hardship, love, and loss. Like much of Bakunts' short fiction, it does not moralize; instead it lets the reader feel, through careful observation, how much can be carried in the bond between people, animals, and the land they share.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What animal is at the center of the story?",
+      "content": { "options": ["A white horse", "A black ox", "A grey donkey", "A brown dog"], "correct": 0 },
+      "explanation": "The story centers on a white horse that stands out against the dusty, grey backdrop of the village."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What does the white horse mainly represent to the family that owns it?",
+      "content": { "options": ["A source of income they plan to sell immediately", "A rare source of pride and beauty in a hard life", "A dangerous animal they fear", "A gift from a wealthy relative they resent"], "correct": 1 },
+      "explanation": "Despite the family's poverty, the horse becomes a treasured, almost beloved presence - a bright spot of beauty and pride amid daily hardship."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What kind of setting does Bakunts use to tell this story?",
+      "content": { "options": ["A busy modern city", "A poor Armenian mountain village governed by the rhythm of the seasons", "A royal court", "A seaside resort town"], "correct": 1 },
+      "explanation": "The story is grounded in the fields, orchards, and stone houses of a rural Armenian village, where the seasons shape daily life."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why does the family's bond with the horse eventually come under strain?",
+      "content": { "options": ["The horse becomes aggressive", "Hardship, such as debts or a poor harvest, forces them to weigh the animal's cost against their survival", "The family simply loses interest in animals", "A neighboring village steals the horse"], "correct": 1 },
+      "explanation": "Economic pressure - the realities of rural poverty - forces the family to confront whether they can continue to keep an animal they love but can barely afford."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What best describes the tone Bakunts creates through his spare, detail-focused writing style?",
+      "content": { "options": ["Loud and comic", "Quiet and melancholic", "Fast-paced and suspenseful", "Cheerful and lighthearted throughout"], "correct": 1 },
+      "explanation": "Bakunts builds a gentle, melancholic mood through careful, understated details rather than dramatic action, typical of his lyrical short-story style."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these elements of the story in the order they are described.",
+      "content": { "items": ["The village and its seasonal rhythms are introduced", "The white horse and the family's pride in it are shown", "Hardship (debt or a poor harvest) presses on the family", "The family must weigh keeping the horse against their survival"], "correctOrder": [0, 1, 2, 3] },
+      "explanation": "The story builds from a quiet portrait of village life, to the horse as a source of joy, to the pressure that eventually forces a difficult choice."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each story element to what it represents.",
+      "content": { "left": ["The white horse", "The stone village houses", "The changing seasons", "The family's hardship"], "right": ["Beauty and pride amid a hard life", "The plain, enduring backdrop of rural existence", "The rhythm that governs every part of village life", "The pressure that forces difficult choices"], "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 } },
+      "explanation": "Bakunts uses these concrete details symbolically to build the story's quiet, lyrical portrait of village life."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The horse at the center of the story is described by its striking ___ color.",
+      "content": { "answer": "white", "altAnswers": ["White"] },
+      "explanation": "The horse's white coat stands out vividly against the dusty grey stone and fields of the village, which is why it gives the story its title."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each detail below into whether it reflects the joy the horse brings, or the hardship the family faces.",
+      "content": { "groupA": "Joy and pride the horse brings", "groupB": "Hardship the family faces", "options": [ { "label": "The horse's striking white coat against the fields", "group": "A" }, { "label": "Working together with the horse in the fields", "group": "A" }, { "label": "Mounting debts", "group": "B" }, { "label": "A poor harvest that strains the family's resources", "group": "B" } ] },
+      "explanation": "The story balances moments of quiet beauty and companionship against the real economic pressures rural families like this one faced."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why might a simple animal like a white horse carry so much emotional weight in a story about a poor village family?",
+      "content": { "keywords": ["beauty", "hardship", "pride", "symbol", "loss", "rural life"] },
+      "explanation": "In a life with few comforts, the horse becomes a symbol of beauty, dignity, and hope, which is why losing or risking it feels so significant."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you could add one scene to the story showing a happy day the family shares with the white horse. Describe it in two or three sentences.",
+      "content": { "keywords": ["field", "sunlight", "family", "together", "horse", "village"] },
+      "explanation": "This encourages students to imagine village life in Bakunts' lyrical style and to connect emotionally with the bond between the family and the horse."
+    }
+  ]
+}

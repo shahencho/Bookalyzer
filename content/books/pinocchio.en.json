@@ -1,0 +1,126 @@
+{
+  "book_slug": "pinocchio",
+  "language": "en",
+  "title": "The Adventures of Pinocchio",
+  "author": "Carlo Collodi",
+  "genre": "Fantasy",
+  "copyright_status": "public domain",
+  "short_summary": "A lonely woodcarver named Geppetto carves a wooden puppet out of a strange piece of talking wood and names him Pinocchio. The moment the puppet opens his eyes, he starts running off on adventures instead of going to school — getting tricked, growing an ever-longer nose every time he lies, and slowly learning what it really takes to become a real boy.",
+  "extended_summary": "Geppetto carves Pinocchio hoping for a son to keep him company, but the puppet is mischievous from his very first steps, running away before Geppetto can even finish making his feet. A talking cricket tries to warn Pinocchio to behave and go to school, but Pinocchio won't listen — and soon sells his schoolbook to buy a ticket to a puppet show instead. Along the road he meets a scheming fox and cat who trick him out of his coins by promising they'll grow into a money tree overnight, and every lie he tells makes his wooden nose stretch longer and longer, no matter how much he wishes it would stop.\n\nA kind fairy with turquoise hair rescues Pinocchio more than once and gently tries to guide him toward honesty, but he still can't resist temptation: he follows his careless friend Lampwick to Pleasure Island, where boys who do nothing but play all day are slowly and horribly turned into donkeys. Pinocchio narrowly escapes that fate only to be swallowed, along with his lost father Geppetto, by an enormous sea monster. Deep inside the creature, father and son reunite at last, and Pinocchio bravely helps them both escape. Having finally proven himself brave, truthful, and unselfish — caring for Geppetto instead of running off on his own — Pinocchio wakes up the next morning as a real, living boy, with his wooden puppet body left behind like an old, outgrown coat.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who carves Pinocchio out of a strange piece of wood?",
+      "content": { "options": ["Geppetto, a lonely woodcarver", "A traveling puppet-master", "The Blue Fairy", "Pinocchio's own father, a fisherman"], "correct": 0 },
+      "explanation": "Geppetto carves Pinocchio because he wants a son to keep him company."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Every time Pinocchio tells a lie, his ___ grows longer.",
+      "content": { "answer": "nose", "altAnswers": [] },
+      "explanation": "Pinocchio's wooden nose stretches longer and longer each time he tells a lie."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What does Pinocchio do instead of going to school on his very first day?",
+      "content": { "options": ["He sells his schoolbook to buy a ticket to a puppet show", "He hides in Geppetto's workshop all day", "He runs straight to the fairy's house", "He goes fishing by the sea"], "correct": 0 },
+      "explanation": "Pinocchio is far more interested in the puppet show than in school, so he trades his schoolbook for a ticket."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each character into whether they try to help Pinocchio, or trick him.",
+      "content": {
+        "groupA": "Try to help Pinocchio",
+        "groupB": "Try to trick Pinocchio",
+        "options": [
+          { "label": "The talking cricket", "group": "A" },
+          { "label": "The fairy with turquoise hair", "group": "A" },
+          { "label": "The scheming fox and cat", "group": "B" },
+          { "label": "Pinocchio's careless friend Lampwick", "group": "B" }
+        ]
+      },
+      "explanation": "Pinocchio's journey is full of characters pulling him in opposite directions — some toward honesty, others toward trouble."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of Pinocchio's adventures in the correct order.",
+      "content": {
+        "items": ["Geppetto carves Pinocchio from a strange, talking piece of wood", "Pinocchio sells his schoolbook and is tricked by the fox and the cat", "Pinocchio follows Lampwick to Pleasure Island and narrowly avoids becoming a donkey", "Pinocchio and Geppetto are swallowed by an enormous sea monster and later escape together"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Each adventure pushes Pinocchio closer to the honesty and courage he'll need to finally become a real boy."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in Pinocchio's story.",
+      "content": {
+        "left": ["Geppetto", "The talking cricket", "The fox and the cat", "The fairy with turquoise hair"],
+        "right": ["The woodcarver who wishes for a son", "Tries to warn Pinocchio to behave, but is ignored at first", "Trick Pinocchio out of his coins at the Field of Miracles", "Rescues Pinocchio and gently guides him toward honesty"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character represents a different force pulling at Pinocchio as he stumbles toward becoming a real boy."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What happens to the boys who do nothing but play all day on Pleasure Island?",
+      "content": { "options": ["They are slowly and horribly turned into donkeys", "They become permanent residents with unlimited toys", "They are sent home to their worried families", "They grow long wooden noses like Pinocchio's"], "correct": 0 },
+      "explanation": "Pleasure Island's carefree fun hides a terrible trap — boys who stay too long are transformed into donkeys."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Pinocchio truly deserved to become a real boy by the end of the story? Why or why not?",
+      "content": { "keywords": ["deserve", "brave", "honest", "change", "selfish", "learn", "father"] },
+      "explanation": "There's no single right answer — think about how much Pinocchio actually changes from his first reckless day to his final act of courage."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The Adventures of Pinocchio was written by the Italian author ___.",
+      "content": { "answer": "Carlo Collodi", "altAnswers": ["Collodi"] },
+      "explanation": "Carlo Collodi wrote The Adventures of Pinocchio, first published in Italy in 1883."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you could give Pinocchio one piece of advice before he sells his schoolbook, what would you tell him?",
+      "content": { "keywords": ["school", "honest", "careful", "trust", "think", "listen"] },
+      "explanation": "There's no single right answer — think about what might have helped Pinocchio avoid his biggest mistakes."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What finally proves Pinocchio is ready to become a real boy?",
+      "content": { "options": ["He bravely cares for Geppetto instead of thinking only of himself", "He grows the longest nose of the whole story", "He wins a fight against the fox and the cat", "He becomes rich from the Field of Miracles"], "correct": 0 },
+      "explanation": "It's Pinocchio's selfless courage in helping his father escape the sea monster — not wealth or strength — that finally proves he's changed."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If Pinocchio had listened to the talking cricket's warning at the very start, what would most likely have been different?",
+      "content": { "options": ["He might have avoided many of the tricks and dangers that follow", "He would never have been carved by Geppetto at all", "The fairy with turquoise hair would never have appeared", "His nose would have grown even faster"], "correct": 0 },
+      "explanation": "The cricket's early warning is exactly the kind of advice that could have helped Pinocchio sidestep the fox, the cat, and Pleasure Island."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "Pinocchio and Geppetto are eventually swallowed by an enormous ___.",
+      "content": { "answer": "sea monster", "altAnswers": ["fish", "shark", "whale"] },
+      "explanation": "Father and son are swallowed by a giant sea creature and must work together to escape from inside it."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who convinces Pinocchio to go to Pleasure Island instead of home?",
+      "content": { "options": ["His careless friend Lampwick", "The talking cricket", "Geppetto", "The fairy with turquoise hair"], "correct": 0 },
+      "explanation": "Lampwick convinces Pinocchio that a life of nothing but play sounds far more fun than going home."
+    }
+  ]
+}

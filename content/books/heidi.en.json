@@ -1,0 +1,119 @@
+{
+  "book_slug": "heidi",
+  "language": "en",
+  "title": "Heidi",
+  "author": "Johanna Spyri",
+  "genre": "Family Story",
+  "copyright_status": "public domain",
+  "short_summary": "Orphaned young Heidi is sent to live with her gruff but secretly kind grandfather high in the Swiss Alps, where she quickly comes to love the mountains, the goats, and her friend Peter the goatherd. Later she is taken to the city of Frankfurt to be a companion to Clara, an invalid girl who cannot walk, but Heidi grows terribly homesick for the mountains. Eventually Clara visits the Alps herself, and the fresh air, goat's milk, and Heidi's warm friendship help her grow stronger, until she is finally able to walk again.",
+  "extended_summary": "After her parents' deaths, young Heidi is brought by her aunt to live with her grandfather, a solitary old man who lives alone in a cabin high in the Swiss Alps and has a reputation in the village for being harsh and unfriendly. Despite his gruffness, Heidi's grandfather grows to love her, and Heidi herself falls in love with life on the mountain — the fresh air, the wildflowers, and the goats she helps tend with her new friend, the goatherd boy Peter. For a few happy years, Heidi lives simply and joyfully among the mountains she comes to call home.\n\nHeidi's aunt later takes her to Frankfurt to live with a wealthy family and be a companion to Clara, a kind girl who cannot walk and uses a wheelchair. Though Heidi and Clara become close friends, Heidi grows increasingly homesick for her grandfather, the mountains, and Peter, and eventually falls ill from longing for home, so she is sent back to the Alps. When Clara later visits Heidi in the mountains, the clean air, the goat's milk, and the joyful, active life there — along with Heidi's steady friendship and encouragement — slowly restore Clara's strength, and by the end of her visit she is able to stand and walk on her own for the first time.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where does Heidi go to live at the start of the story?",
+      "content": { "options": ["With her grandfather in the Swiss Alps", "With an aunt in the city", "With Peter's family", "With Clara's family"], "correct": 0 },
+      "explanation": "At the start, Heidi is brought to live with her grandfather in his cabin high in the Alps."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who is Peter in the story?",
+      "content": { "options": ["A goatherd boy who becomes Heidi's friend", "Heidi's cousin", "Clara's brother", "Heidi's grandfather's servant"], "correct": 0 },
+      "explanation": "Peter is the local goatherd boy who becomes one of Heidi's closest friends."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Why can't Clara walk?",
+      "content": { "options": ["She is an invalid and uses a wheelchair", "She broke her leg", "She is too young to walk", "She refuses to walk"], "correct": 0 },
+      "explanation": "Clara is an invalid who cannot walk and gets around in a wheelchair."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does Heidi grow homesick while living in Frankfurt?",
+      "content": { "options": ["She misses the mountains, her grandfather, and her simple life", "She misses her own bed", "She does not like Clara", "She is homesick for the goats only"], "correct": 0 },
+      "explanation": "Away from the mountains, Heidi deeply misses her grandfather, the fresh air, and her simple, free life."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Understand",
+      "prompt": "Why do you think the mountain life makes Heidi so happy, compared to life in the city?",
+      "content": { "keywords": ["freedom", "nature", "fresh air", "simplicity"] },
+      "explanation": "The mountain's freedom, nature, and simplicity suit Heidi's spirit far more than the confined city life."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Apply",
+      "prompt": "Sort each event by where it happens.",
+      "content": {
+        "groupA": "Happens in the Alps",
+        "groupB": "Happens in Frankfurt",
+        "options": [
+          { "label": "Heidi tends goats with Peter", "group": "A" },
+          { "label": "Heidi becomes companion to Clara", "group": "B" },
+          { "label": "Heidi lives with her grandfather", "group": "A" },
+          { "label": "Heidi grows homesick and ill", "group": "B" }
+        ]
+      },
+      "explanation": "The story is split between Heidi's life in the Alps and her time in the city of Frankfurt."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to the description that fits them best.",
+      "content": {
+        "left": ["The grandfather", "Peter", "Clara", "Heidi"],
+        "right": ["Gruff but secretly kind", "Goatherd and loyal friend", "Invalid girl who later walks", "Warm and joyful companion"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character has a distinct role and personality within the story."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Analyze",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": {
+        "items": ["Heidi goes to live with her grandfather", "Heidi becomes friends with Peter", "Heidi is taken to Frankfurt", "Heidi grows homesick and is sent home", "Clara visits the Alps", "Clara learns to walk again"],
+        "correctOrder": [0, 1, 2, 3, 4, 5]
+      },
+      "explanation": "The plot follows Heidi's arrival in the Alps, her friendship with Peter, her time in Frankfurt, and Clara's healing visit."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What helps Clara grow stronger during her visit to the Alps?",
+      "content": { "options": ["Fresh air, goat's milk, and an active, joyful life", "Medicine from a doctor", "A new wheelchair", "Staying indoors and resting"], "correct": 0 },
+      "explanation": "The combination of clean mountain air, nourishing goat's milk, and an active lifestyle helps restore Clara's strength."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Heidi's grandfather changes over the course of the story? Why or why not?",
+      "content": { "keywords": ["gruff", "kindness", "change", "love"] },
+      "explanation": "This question asks readers to consider the grandfather's transformation from a harsh recluse to a loving guardian."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What quality of Heidi's most helps Clara recover?",
+      "content": { "options": ["Her warmth, friendship, and encouragement", "Her medical knowledge", "Her wealth", "Her ability to climb mountains alone"], "correct": 0 },
+      "explanation": "Heidi's caring, joyful friendship is what truly encourages and supports Clara's recovery."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine Heidi and Clara plan one more adventure together in the Alps after the story ends. What might they do?",
+      "content": { "keywords": ["imagination", "mountains", "friendship", "adventure"] },
+      "explanation": "This invites imaginative extension of the girls' friendship and mountain adventures."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Heidi's grandfather lives high in the ___.",
+      "content": { "answer": "Swiss Alps", "altAnswers": ["Alps", "mountains"] },
+      "explanation": "Heidi's grandfather lives alone in a cabin high in the Swiss Alps."
+    }
+  ]
+}

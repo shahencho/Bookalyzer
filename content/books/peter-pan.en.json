@@ -1,0 +1,128 @@
+{
+  "book_slug": "peter-pan",
+  "language": "en",
+  "title": "Peter Pan",
+  "author": "J. M. Barrie",
+  "genre": "Fantasy",
+  "copyright_status": "public domain",
+  "short_summary": "Peter Pan, a boy who never wants to grow up, flies into the Darling children's nursery one night and whisks Wendy and her two younger brothers away to the magical island of Neverland. There they meet the Lost Boys, the fairy Tinker Bell, and the fearsome pirate Captain Hook, who has hated Peter ever since Peter cut off his hand and fed it to a crocodile.",
+  "extended_summary": "Wendy Darling loves telling her younger brothers, John and Michael, bedtime stories about Peter Pan, not realizing Peter is secretly listening from the window. When Peter loses his shadow in the Darling nursery, Wendy sews it back on for him, and in return he teaches all three children to fly using fairy dust and happy thoughts, carrying them off to Neverland. There, Wendy becomes a mother figure to Peter's band of Lost Boys, while Peter's tiny fairy companion Tinker Bell grows jealous of the attention Wendy receives.\n\nNeverland is full of danger, especially from Captain Hook, a pirate who lost his hand to Peter and a hungry crocodile in a duel, and who now lives in constant fear of the ticking clock the crocodile swallowed, which warns him whenever the creature is near. After thrilling battles, kidnappings, and daring rescues, Wendy begins to miss her parents and decides it is time to return home, bringing her brothers and even the Lost Boys with her. Peter chooses to stay behind in Neverland, refusing to grow up, though he promises to visit Wendy again — and as the years pass, only Peter remains forever a boy, while Wendy grows up just like everyone else.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where does Peter Pan take Wendy and her brothers?",
+      "content": { "options": ["Neverland", "Kansas", "The Emerald City", "A boarding school"], "correct": 0 },
+      "explanation": "Peter flies the Darling children away from their nursery to the magical island of Neverland."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Before he can fly the children to Neverland, Peter first has to reattach his lost ___.",
+      "content": { "answer": "shadow", "altAnswers": [] },
+      "explanation": "Wendy sews Peter's shadow back onto his feet after it comes loose in the nursery."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does Captain Hook hate Peter Pan so much?",
+      "content": { "options": ["Peter cut off his hand and fed it to a crocodile", "Peter stole his ship", "Peter told the Lost Boys embarrassing stories about him", "Peter refused to be his friend as a child"], "correct": 0 },
+      "explanation": "Hook's lasting hatred of Peter comes from losing his hand to Peter in a duel long ago."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the correct group.",
+      "content": {
+        "groupA": "Friends and companions in Neverland",
+        "groupB": "Dangers Peter and the children must face",
+        "options": [
+          { "label": "Tinker Bell", "group": "A" },
+          { "label": "The Lost Boys", "group": "A" },
+          { "label": "Captain Hook", "group": "B" },
+          { "label": "His band of pirates", "group": "B" }
+        ]
+      },
+      "explanation": "Neverland is home both to loyal friends and to real threats like Hook and his crew."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of the story in the order they happen.",
+      "content": {
+        "items": ["Peter Pan visits the Darling nursery and loses his shadow", "Wendy sews his shadow back on, and Peter teaches the children to fly", "The children arrive in Neverland and meet the Lost Boys and Captain Hook", "Wendy decides it's time to return home, and Peter chooses to stay behind"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The story moves from a London nursery to a magical adventure and finally to Wendy's decision to grow up."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If you needed to fly the way Peter's fairy dust lets the children fly, what else does the story say you would need?",
+      "content": { "options": ["A truly happy thought", "A brand-new pair of shoes", "Permission from Captain Hook", "A loud whistle"], "correct": 0 },
+      "explanation": "In the story, fairy dust alone isn't enough — the children also need a happy thought to lift off the ground."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Wendy made the right choice by returning home instead of staying in Neverland forever? Why or why not?",
+      "content": { "keywords": ["home", "family", "grow up", "choice", "Neverland", "miss"] },
+      "explanation": "There's no single right answer — the story presents staying a child forever and growing up as two different, equally meaningful paths."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to the role they play in the story.",
+      "content": {
+        "left": ["Peter Pan", "Wendy", "Tinker Bell", "Captain Hook"],
+        "right": ["A boy who refuses to ever grow up", "Becomes a caring, motherly figure to the Lost Boys", "A small fairy who grows jealous of the attention Wendy gets", "A pirate captain haunted by the crocodile that swallowed his hand"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character's role in Neverland reveals a different side of the story's themes about growing up and belonging."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Captain Hook is constantly afraid of a crocodile because it swallowed a ticking ___ along with his hand.",
+      "content": { "answer": "clock", "altAnswers": [] },
+      "explanation": "The ticking clock inside the crocodile always warns Hook whenever the creature is approaching."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each statement into whether it is true or false about the story.",
+      "content": {
+        "groupA": "True about the story",
+        "groupB": "False about the story",
+        "options": [
+          { "label": "Peter Pan refuses to grow up and stays in Neverland", "group": "A" },
+          { "label": "Wendy eventually returns home and grows up like everyone else", "group": "A" },
+          { "label": "Captain Hook and Peter Pan become close friends by the story's end", "group": "B" },
+          { "label": "Tinker Bell is a human girl who lives in London", "group": "B" }
+        ]
+      },
+      "explanation": "Peter's choice to stay a boy forever contrasts with Wendy's choice to return home and grow up."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine Wendy could send Peter one letter from London after returning home. What would she want to tell him?",
+      "content": { "keywords": ["miss", "remember", "Neverland", "friend", "grow up", "letter"] },
+      "explanation": "Answers will vary — this invites readers to imagine how Wendy might feel looking back on her adventure."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What does the ending of the story suggest about growing up?",
+      "content": { "options": ["Growing up is a natural part of life, even though staying young forever has its own appeal", "Growing up should always be avoided if possible", "Only children who visit Neverland ever grow up", "Growing up makes it impossible to remember childhood adventures"], "correct": 0 },
+      "explanation": "The story treats both paths, staying young and growing up, with gentle sympathy, without insisting one is entirely right."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who are the boys living with Peter in Neverland, whom Wendy begins caring for like a mother?",
+      "content": { "options": ["The Lost Boys", "The Darling brothers", "The pirate crew", "The Native American tribe"], "correct": 0 },
+      "explanation": "The Lost Boys live with Peter in Neverland, and Wendy quickly becomes a motherly figure to them."
+    }
+  ]
+}

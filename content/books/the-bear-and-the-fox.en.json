@@ -1,0 +1,121 @@
+{
+  "book_slug": "the-bear-and-the-fox",
+  "language": "en",
+  "title": "The Bear and the Fox",
+  "author": "Hovhannes Tumanyan",
+  "genre": "Fable",
+  "copyright_status": "public domain",
+  "short_summary": "In this classic animal fable, a big, strong bear and a small, clever fox decide to plant a field together and share the harvest. But the crafty fox has a trick in mind from the very start, and the good-natured but not-too-clever bear ends up outsmarted at every turn.",
+  "extended_summary": "The bear and the fox agree to work a field together, splitting the crop evenly between them. Before they plant anything, the fox slyly asks the bear which part of the harvest he would like — the tops that grow above the ground, or the roots that grow below it. The bear, thinking the leafy green tops sound like the better deal, chooses the tops. So the fox plants turnips: when harvest time comes, the fox gets to keep the plump, tasty roots, while the bear is left holding a pile of bitter green leaves.\n\nThe bear grumbles but agrees to try again the next year, and this time he chooses the roots instead — determined not to be fooled the same way twice. But the clever fox simply plants wheat instead, so the valuable part grows on top this time, and once again the fox walks away with the best of the harvest while the bear is left with nothing but roots and straw. By the end of the fable, the bear finally realizes that no matter what he chooses, the fox has always been one clever step ahead of him — and that working with a trickster requires more than just strength.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What do the bear and the fox agree to do together at the start of the fable?",
+      "content": { "options": ["Plant a field and share the harvest", "Build a den to live in together", "Race each other across the forest", "Search for a lost treasure"], "correct": 0 },
+      "explanation": "The two animals agree to work a shared field and split whatever grows."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The fox lets the bear choose between the tops or the ___ of the crop.",
+      "content": { "answer": "roots", "altAnswers": ["root"] },
+      "explanation": "This first choice is the fox's very first trick — the bear doesn't yet realize it matters what gets planted."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does the bear end up with only bitter green leaves the first year?",
+      "content": { "options": ["Because the fox planted turnips, so the valuable part grew underground", "Because the bear ate all his tasty share already", "Because the crop failed to grow at all", "Because the fox refused to share anything"], "correct": 0 },
+      "explanation": "The bear chose the tops without realizing that turnips grow their tasty part below the ground."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each choice into whether it favors the fox or the bear.",
+      "content": {
+        "groupA": "Ends up helping the clever fox",
+        "groupB": "Ends up leaving the bear with nothing tasty",
+        "options": [
+          { "label": "Planting turnips after the bear picks the tops", "group": "A" },
+          { "label": "Planting wheat after the bear picks the roots", "group": "A" },
+          { "label": "The bear choosing tops, not knowing what's planted", "group": "B" },
+          { "label": "The bear choosing roots the second year, still without knowing what's planted", "group": "B" }
+        ]
+      },
+      "explanation": "In both years, the fox secretly decides what crop to plant only after learning the bear's choice."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of the fable in the order they happen.",
+      "content": {
+        "items": ["The bear and the fox agree to share a field's harvest", "The bear picks the tops, and the fox secretly plants turnips", "The bear picks the roots the next year, and the fox plants wheat instead", "The bear realizes the fox has outsmarted him both times"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The bear tries a new strategy each year, but the clever fox always adjusts the trick to match."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If the bear wanted to finally outsmart the fox in a third year, what would be the smartest thing to do?",
+      "content": { "options": ["Insist on choosing what crop gets planted, not just which part he'll take", "Let the fox choose everything as usual", "Grow a completely different animal's crop instead", "Give up on sharing the field entirely"], "correct": 0 },
+      "explanation": "The bear's real mistake both times is letting the fox control which crop is planted — the true source of the trick."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think the bear should keep working with the fox after being tricked twice? Why or why not?",
+      "content": { "keywords": ["trust", "trick", "fair", "share", "clever", "honest"] },
+      "explanation": "There's no single right answer — this fable invites readers to think about when it's wise to keep trusting a partner who hasn't played fair."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to the trait the fable shows about them.",
+      "content": {
+        "left": ["The fox", "The bear", "The shared field", "The harvest"],
+        "right": ["Clever and always one step ahead", "Strong but too trusting to notice the trick", "The place where the animals' partnership is tested", "What reveals, each time, who truly benefited"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each element of the fable helps highlight the contrast between cleverness and simple trust."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "In the second year, the fox plants ___ so that the valuable part of the crop grows above ground.",
+      "content": { "answer": "wheat", "altAnswers": [] },
+      "explanation": "By switching crops, the fox makes sure the bear loses no matter which part he picks."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each statement into whether it is true or false about the fable.",
+      "content": {
+        "groupA": "True about the fable",
+        "groupB": "False about the fable",
+        "options": [
+          { "label": "The fox decides what to plant only after the bear makes his choice", "group": "A" },
+          { "label": "The bear ends up disappointed with the harvest both years", "group": "A" },
+          { "label": "The bear outsmarts the fox by the end of the story", "group": "B" },
+          { "label": "The two animals split the harvest exactly evenly both times", "group": "B" }
+        ]
+      },
+      "explanation": "The fable's humor comes from the fox always staying one clever step ahead of the trusting bear."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine a third year where the bear finally gets a fair share. Describe what the bear would need to say or do differently to make that happen.",
+      "content": { "keywords": ["choose", "crop", "fair", "plant", "together", "agree"] },
+      "explanation": "Answers will vary — the key insight is that fairness would require the bear to have a say in what gets planted, not just which part he takes."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What is the main lesson this fable teaches about working with others?",
+      "content": { "options": ["Being clever can outweigh being strong, and it pays to think carefully before agreeing to a deal", "Bears should never work with foxes under any circumstances", "Sharing always ends up being fair for everyone involved", "The biggest, strongest partner always benefits the most"], "correct": 0 },
+      "explanation": "The fable is a classic example of trickster tales, where wit outsmarts brute strength, and it rewards readers who notice the fine print of a deal."
+    }
+  ]
+}

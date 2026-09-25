@@ -1,0 +1,112 @@
+{
+  "book_slug": "anahit",
+  "language": "en",
+  "title": "Anahit",
+  "author": "Ghazaros Aghayan",
+  "genre": "Classic Literature",
+  "copyright_status": "public domain",
+  "short_summary": "Anahit is a kind and hardworking girl who lives with an unkind stepmother and stepsisters, doing all the hardest chores without complaint. When a wise old woman in the forest notices her goodness, she gives Anahit a quiet gift that no unkindness can take away — and it changes the course of her life forever.",
+  "extended_summary": "Anahit grows up doing the household's hardest work while her stepmother and stepsisters mock her plain dress and never thank her for her labor. Yet Anahit stays gentle and honest, sharing her bread with hungry animals and helping travelers who lose their way near her village. One day, deep in the forest while gathering firewood, she meets an old woman who is really testing the hearts of everyone she meets. Anahit treats her with the same kindness she shows everyone else, without knowing who the old woman truly is.\n\nImpressed by her honesty and warmth, the old woman blesses Anahit, and soon good fortune begins to follow the girl wherever she goes. When the ruler of the land searches for a wife whose heart matches her beauty, it is Anahit's kindness — not her stepsisters' jealous scheming — that is finally recognized and rewarded. Anahit becomes a beloved queen who never forgets the villagers she grew up among, while her stepsisters' unkindness is exposed for all to see. The tale closes as a gentle reminder that true goodness, however quietly it is practiced, is eventually seen and rewarded.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who does Anahit live with at the start of the story?",
+      "content": { "options": ["Her unkind stepmother and stepsisters", "Her two loving grandparents", "A kind old shepherd", "Alone in a small cottage"], "correct": 0 },
+      "explanation": "Anahit's stepmother and stepsisters treat her unkindly and give her all the hardest chores."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Anahit meets a wise old woman while gathering ___ in the forest.",
+      "content": { "answer": "firewood", "altAnswers": ["wood"] },
+      "explanation": "Anahit is out gathering firewood when she crosses paths with the old woman who is quietly testing her heart."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does the old woman decide to bless Anahit?",
+      "content": { "options": ["Because Anahit is kind and honest even when no one is watching", "Because Anahit is the most beautiful girl in the village", "Because Anahit brings her the most firewood", "Because Anahit's stepmother asks her to"], "correct": 0 },
+      "explanation": "The old woman is quietly testing people's hearts, and Anahit's genuine kindness is what earns her the blessing."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each action into who is most likely to do it — Anahit, or her stepsisters.",
+      "content": {
+        "groupA": "Anahit",
+        "groupB": "Her stepsisters",
+        "options": [
+          { "label": "Shares her bread with hungry animals", "group": "A" },
+          { "label": "Mocks Anahit's plain, worn clothes", "group": "B" },
+          { "label": "Helps a lost traveler find their way", "group": "A" },
+          { "label": "Schemes jealously to be chosen instead of Anahit", "group": "B" }
+        ]
+      },
+      "explanation": "Anahit's warmth toward others contrasts sharply with her stepsisters' jealousy and unkindness throughout the story."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of Anahit's story in order.",
+      "content": {
+        "items": ["Anahit does the household's hardest chores while her stepfamily mocks her", "She meets an old woman in the forest and treats her with kindness", "The old woman blesses her, and good fortune begins to follow her", "Anahit is recognized and becomes a beloved queen"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Anahit's quiet goodness in the forest is the turning point that changes the rest of her story."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in the story.",
+      "content": {
+        "left": ["Anahit", "The stepmother and stepsisters", "The old woman in the forest", "The ruler of the land"],
+        "right": ["A kind, hardworking girl treated unfairly at home", "Give Anahit the hardest chores and mock her", "Secretly tests people's hearts and blesses Anahit", "Searches for a wife whose heart matches her kindness"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character's role highlights how Anahit's genuine kindness is eventually noticed and rewarded."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Was it fair that Anahit's stepsisters lost out on becoming queen? Why or why not?",
+      "content": { "keywords": ["fair", "jealous", "kind", "deserve", "honest", "reward"] },
+      "explanation": "There's no single right answer — think about whether kindness should be rewarded over jealousy and scheming."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What is the real reason Anahit ends up chosen over her stepsisters?",
+      "content": { "options": ["Her genuine kindness and honesty, proven when she didn't know she was being tested", "Her stepsisters forgot to compete", "She was the only unmarried girl in the village", "She asked the ruler directly to choose her"], "correct": 0 },
+      "explanation": "Anahit is kind even when she has nothing to gain from it, which is exactly what reveals her true character."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Anahit was written by the Armenian author ___.",
+      "content": { "answer": "Ghazaros Aghayan", "altAnswers": ["Aghayan"] },
+      "explanation": "Ghazaros Aghayan, known for his Armenian fairy tales, wrote the story of Anahit."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you were Anahit and became queen, what is one thing you would do for the village you grew up in?",
+      "content": { "keywords": ["help", "kind", "village", "share", "remember", "give"] },
+      "explanation": "There's no single right answer — the story shows Anahit staying kind and connected to her roots even after becoming queen."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What lesson does Anahit's story mainly teach?",
+      "content": { "options": ["True kindness is valuable even when no one is watching or rewarding it", "Beauty is more important than kindness", "It's best to always complain about unfair chores", "Magic solves every problem without effort"], "correct": 0 },
+      "explanation": "Anahit is kind even in private, unwatched moments — and it is exactly that quiet goodness that eventually gets recognized."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "In the end, Anahit's stepsisters' unkindness is finally ___ for everyone to see.",
+      "content": { "answer": "exposed", "altAnswers": ["revealed"] },
+      "explanation": "As Anahit's kindness is rewarded, the contrast makes her stepsisters' jealous behavior plain to everyone around them."
+    }
+  ]
+}

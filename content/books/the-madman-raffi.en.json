@@ -1,0 +1,96 @@
+{
+  "book_slug": "the-madman-raffi",
+  "language": "en",
+  "title": "The Madman",
+  "author": "Raffi",
+  "genre": "Classic Literature",
+  "copyright_status": "public domain",
+  "short_summary": "Set in the Armenian villages of the Ottoman Empire in the years around the 1877-78 Russo-Turkish War, this historical novel follows Vartan, a young man nicknamed 'the Madman' for his fierce idealism, as he travels from village to village trying to awaken his people's national spirit and organize them to defend themselves. It is a story of hope, sacrifice, and a movement that arrived before the world was ready for it.",
+  "extended_summary": "Vartan grew up hearing stories of a freer Armenian past, and as a young man he cannot accept the quiet, fearful way his people live under Ottoman rule. Other villagers call him 'the Madman' because he refuses to stay silent, walking from settlement to settlement to urge farmers, priests, and elders to stop waiting for outside help and start organizing themselves - forming self-defense groups, teaching their children their own history and language, and standing up for their rights. His passion inspires some and unsettles others, who worry that his boldness will bring down punishment on innocent people. As war between Russia and the Ottoman Empire breaks out nearby, Vartan's hopes for real change rise, only for the peace that follows to leave Armenian communities still unprotected and exposed to future danger. The novel is remembered as one of the first major works to give voice to the idea of Armenian national self-determination, and Vartan's tireless, misunderstood idealism became a symbol for generations of readers who saw him not as mad, but as someone who simply saw the truth before everyone else did.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Why do the villagers nickname Vartan 'the Madman'?",
+      "content": { "options": ["Because he is careless with money", "Because of his fierce, unwavering passion for waking up his people", "Because he refuses to work", "Because he tells jokes constantly"], "correct": 1 },
+      "explanation": "Vartan earns the nickname because his intense devotion to national awakening seems reckless and extreme to people used to staying quiet and cautious."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What historical conflict forms the backdrop of the novel's events?",
+      "content": { "options": ["The First World War", "The 1877-78 Russo-Turkish War", "The French Revolution", "The Crimean War of the 1850s"], "correct": 1 },
+      "explanation": "The novel is set in the years surrounding the Russo-Turkish War of 1877-78, a period of great hope and uncertainty for Armenians living under Ottoman rule."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What is the main goal Vartan pursues as he travels between villages?",
+      "content": { "options": ["Collecting taxes for the government", "Awakening national consciousness and organizing self-defense", "Finding a wealthy family to marry into", "Mapping trade routes for merchants"], "correct": 1 },
+      "explanation": "Vartan's central mission is to encourage Armenian villagers to embrace their history and language and to organize for their own protection rather than wait passively for outside help."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Why do some villagers respond to Vartan with fear rather than support?",
+      "content": { "options": ["They dislike him personally", "They worry his bold actions will provoke punishment from the authorities", "They do not believe he is Armenian", "They think he wants their land"], "correct": 1 },
+      "explanation": "Many villagers live under real threat of retaliation, so Vartan's openness about resistance frightens people who fear the consequences more than they hope for change."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "Which theme best captures why the novel is remembered as tragic even though Vartan's cause is noble?",
+      "content": { "options": ["The movement he champions arrives before conditions allow it to fully succeed", "Vartan loses interest in his own cause", "The villagers are never in any real danger", "The Ottoman authorities support his ideas"], "correct": 0 },
+      "explanation": "Much of the novel's power comes from the sense that Vartan's vision was right, but the historical moment was not yet ready to support it, leaving communities still exposed after the war ends."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these stages of Vartan's journey in the order they occur in the story.",
+      "content": { "items": ["Vartan grows up hearing stories of a freer Armenian past", "He travels village to village urging people to organize and defend themselves", "War breaks out between Russia and the Ottoman Empire", "Peace returns, but Armenian communities remain unprotected"], "correctOrder": [0, 1, 2, 3] },
+      "explanation": "The novel follows Vartan from his early convictions, through his organizing work, into the war itself, and finally to the disappointing peace that leaves his people's situation unresolved."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Understand",
+      "prompt": "Match each term from the novel's world to its meaning.",
+      "content": { "left": ["National awakening", "Self-defense organizing", "Ottoman rule", "Idealism"], "right": ["Renewed pride in one's people's history, language, and identity", "Villagers banding together to protect their own communities", "The political authority Armenian villagers lived under", "Devotion to a cause even at great personal cost"], "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 } },
+      "explanation": "These are the core concepts that drive the novel's plot and Vartan's character."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Vartan is nicknamed 'the ___' because of how intensely he pursues his cause.",
+      "content": { "answer": "Madman", "altAnswers": ["madman"] },
+      "explanation": "The title of the novel comes directly from this nickname the villagers give Vartan."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each attitude below into how it relates to Vartan's movement.",
+      "content": { "groupA": "Supports the movement", "groupB": "Hesitant or fearful of the movement", "options": [ { "label": "Teaching children their own history and language", "group": "A" }, { "label": "Forming village self-defense groups", "group": "A" }, { "label": "Worrying that resistance will bring punishment", "group": "B" }, { "label": "Preferring to stay quiet and wait for things to change on their own", "group": "B" } ] },
+      "explanation": "The novel shows a real split among villagers between those inspired by Vartan and those made anxious by the risks of open resistance."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why might Raffi have chosen a nickname like 'the Madman' as the title of his novel, instead of Vartan's real name?",
+      "content": { "keywords": ["irony", "misunderstood", "idealism", "ahead of his time", "villagers", "title"] },
+      "explanation": "Using the mocking nickname as the title invites readers to question who is really 'mad' - Vartan for demanding dignity, or a society too afraid to claim it."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you are Vartan arriving in a new village. Write two or three sentences of what you might say to convince the villagers to organize and protect themselves.",
+      "content": { "keywords": ["courage", "history", "together", "protect", "future", "children"] },
+      "explanation": "This invites students to step into Vartan's persuasive, hopeful voice and connect with the novel's central message about collective action."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Where are the events of the novel mainly set?",
+      "content": { "options": ["Armenian villages within the Ottoman Empire", "A royal palace in Constantinople", "A ship crossing the Black Sea", "A university in Europe"], "correct": 0 },
+      "explanation": "The story takes place among Armenian communities living in villages under Ottoman rule in the late 1870s."
+    }
+  ]
+}

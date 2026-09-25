@@ -1,0 +1,119 @@
+{
+  "book_slug": "charlie-and-the-great-glass-elevator",
+  "language": "en",
+  "title": "Charlie and the Great Glass Elevator",
+  "author": "Roald Dahl",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "Charlie Bucket, his grandfather Joe, and Willy Wonka soar into space in Wonka's Great Glass Elevator after it shoots straight through the roof of the chocolate factory. They dock with an orbiting Space Hotel and must survive a dangerous encounter with shape-shifting alien Vermicious Knids before returning safely to Earth. Back at the factory, a batch of age-reversing Wonka-Vite candy causes new chaos when it is used incorrectly.",
+  "extended_summary": "Just after Charlie wins Willy Wonka's chocolate factory, he, his grandfather Joe, Mr. Wonka, and the rest of the Bucket family are riding home in the fantastical Great Glass Elevator when Mr. Wonka presses the wrong button and the elevator blasts straight up through the factory roof and into outer space. There they discover a brand-new American Space Hotel being launched into orbit, empty and waiting for its official opening — and the glass elevator docks right alongside it. Before long, the group finds themselves facing off against terrifying, shape-shifting alien creatures called Vermicious Knids, who threaten to destroy the hotel and everyone aboard.\n\nAfter a tense escape from the Knids and a safe return to the chocolate factory, the story is not yet finished — Mr. Wonka has invented Wonka-Vite, a candy that makes a person younger, and its dangerous opposite, Vita-Wonk, which makes a person older. When Charlie's grandparents secretly take far too many Wonka-Vite pills, they shrink into babies and nearly vanish into nothingness, forcing Mr. Wonka and Charlie to use Vita-Wonk carefully to bring them back to the right age. The adventure highlights Mr. Wonka's endless, sometimes reckless, inventiveness and Charlie's steady courage and quick thinking in the face of danger.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What sends the Great Glass Elevator shooting into space?",
+      "content": { "options": ["Mr. Wonka presses the wrong button", "A storm blows it off course", "Charlie pulls a lever by accident", "It is struck by lightning"], "correct": 0 },
+      "explanation": "Mr. Wonka presses a button he shouldn't, and the elevator's power sends it blasting up through the roof."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What do Charlie and the others find already in orbit?",
+      "content": { "options": ["An American Space Hotel", "A second chocolate factory", "A UFO full of Oompa-Loompas", "An empty rocket ship"], "correct": 0 },
+      "explanation": "Orbiting nearby is a brand-new Space Hotel, empty and waiting to open."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What are the shape-shifting alien creatures called?",
+      "content": { "options": ["Vermicious Knids", "Grumpy Groats", "Space Snozzwangers", "Whangdoodles"], "correct": 0 },
+      "explanation": "The Vermicious Knids are shape-shifting alien creatures that threaten the hotel."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why is the Space Hotel dangerous when Charlie's group arrives?",
+      "content": { "options": ["It is under attack by the Vermicious Knids before its grand opening", "It is on fire", "It has run out of oxygen", "It is falling out of orbit"], "correct": 0 },
+      "explanation": "The Knids arrive to attack the Space Hotel just as it is about to open, putting everyone in danger."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Understand",
+      "prompt": "Why do you think Mr. Wonka is excited rather than afraid when the elevator shoots into space?",
+      "content": { "keywords": ["adventurous", "curious", "inventor", "fearless"] },
+      "explanation": "Mr. Wonka's character is defined by his boundless curiosity and love of invention and adventure, even in risky situations."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Apply",
+      "prompt": "Sort each event by where it happens.",
+      "content": {
+        "groupA": "Happens in space",
+        "groupB": "Happens back at the factory",
+        "options": [
+          { "label": "Docking with the Space Hotel", "group": "A" },
+          { "label": "Fighting the Vermicious Knids", "group": "A" },
+          { "label": "Grandparents taking too much Wonka-Vite", "group": "B" },
+          { "label": "Using Vita-Wonk to fix the shrinking", "group": "B" }
+        ]
+      },
+      "explanation": "The space adventure and the factory crisis are two separate parts of the story with different settings and dangers."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each item or creature to what it does.",
+      "content": {
+        "left": ["Wonka-Vite", "Vita-Wonk", "Vermicious Knids", "Great Glass Elevator"],
+        "right": ["Makes a person younger", "Makes a person older", "Shape-shifting alien threat", "Vehicle that flies into space"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each Wonka invention or danger has a specific, opposite effect or role in the story."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Analyze",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": {
+        "items": ["The elevator shoots through the factory roof", "The group discovers the Space Hotel", "The Vermicious Knids attack", "The elevator returns safely to the factory", "The grandparents take too much Wonka-Vite", "Vita-Wonk is used to save them"],
+        "correctOrder": [0, 1, 2, 3, 4, 5]
+      },
+      "explanation": "The plot moves from the accidental launch, through the Space Hotel danger, safely home, and into the Wonka-Vite crisis."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What causes the second crisis, back at the factory?",
+      "content": { "options": ["Charlie's grandparents secretly overdose on Wonka-Vite pills", "The elevator gets stuck in orbit", "The Knids follow them home", "Willy Wonka loses his factory"], "correct": 0 },
+      "explanation": "Charlie's grandparents take far more Wonka-Vite than intended, which starts shrinking them dangerously."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Mr. Wonka's inventions, like Wonka-Vite, are more helpful or more dangerous? Why?",
+      "content": { "keywords": ["risk", "invention", "careful", "consequences"] },
+      "explanation": "This question asks readers to weigh the benefits and risks of Mr. Wonka's powerful but unpredictable inventions."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What quality helps Charlie stay calm and think clearly during the space danger and the Wonka-Vite crisis?",
+      "content": { "options": ["His courage and quick thinking", "His magic powers", "His great strength", "His ability to fly"], "correct": 0 },
+      "explanation": "Throughout both crises, Charlie remains brave and thinks clearly, which helps guide the adults around him."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine the Great Glass Elevator makes one more unexpected stop after this story. Where does it go and what happens there?",
+      "content": { "keywords": ["imagination", "elevator", "adventure", "Wonka"] },
+      "explanation": "This invites imaginative extension of the story's fantastical elevator adventures."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The candy that makes a person younger is called ___.",
+      "content": { "answer": "Wonka-Vite", "altAnswers": ["Wonka Vite"] },
+      "explanation": "Wonka-Vite is the candy Mr. Wonka invents that makes whoever eats it younger."
+    }
+  ]
+}

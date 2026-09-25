@@ -1,0 +1,128 @@
+{
+  "book_slug": "a-little-princess",
+  "language": "en",
+  "title": "A Little Princess",
+  "author": "Frances Hodgson Burnett",
+  "genre": "Family Story",
+  "copyright_status": "public domain",
+  "short_summary": "Wealthy young Sara Crewe is enrolled at Miss Minchin's strict London boarding school, where her imagination and kindness make her a favorite among the other students. When Sara's father dies and his fortune seems lost, Miss Minchin forces Sara into servitude as a scullery maid, cold and half-starved, yet Sara clings to the idea of being a princess in spirit no matter how she is treated. A mysterious, kind neighbor secretly helps her, and Sara's fortune and place in the world are eventually restored.",
+  "extended_summary": "Sara Crewe arrives at Miss Minchin's boarding school in London as a wealthy little girl with a vivid imagination, a generous heart, and a beloved doll named Emily. She quickly becomes a favorite of both students and teachers for her kindness, storytelling, and the elaborate birthday party her father arranges for her. But everything changes when news arrives that Sara's father has died and, it seems, lost his entire fortune in a risky investment. Miss Minchin, who once flattered Sara for her wealth, coldly strips her of her privileges and forces her to live in a bare attic room and work as an unpaid servant, given barely enough food and warmth to survive.\n\nThrough it all, Sara holds onto the idea that a true princess is defined not by money or comfort but by how she treats others, and she continues to be kind to the school's other servant girl, Becky, and to imagine comfort even in her cold, empty attic. Unknown to Sara, a mysterious and unwell gentleman named Mr. Carrisford has moved in next door, and it is gradually revealed that he was her father's business partner, believed his investment scheme actually succeeded, and has been searching for Sara ever since to give her back her rightful fortune. His servant secretly leaves Sara food, warm clothes, and comforts in her attic room before the full truth comes out and Sara's fortune, and her place in the world, are restored.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What is the name of Sara Crewe's beloved doll?",
+      "content": { "options": ["Emily", "Lavinia", "Becky", "Rose"], "correct": 0 },
+      "explanation": "Emily is Sara's cherished doll, a gift from her father when she first arrives at the school."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What happens to change Sara's life at Miss Minchin's school?",
+      "content": { "options": ["Her father dies and his fortune is believed to be lost", "She fails all of her classes", "She runs away from the school", "Miss Minchin closes the school down"], "correct": 0 },
+      "explanation": "News of her father's death and the apparent loss of his fortune is the turning point that changes Sara's treatment at the school."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "How does Miss Minchin's treatment of Sara change after she loses her fortune?",
+      "content": { "options": ["Miss Minchin forces her to work as an unpaid servant with little food or warmth", "Miss Minchin adopts Sara as her own daughter", "Miss Minchin gives Sara a full scholarship to stay as a student", "Miss Minchin sends Sara to live with relatives"], "correct": 0 },
+      "explanation": "Once Sara appears to have no money, Miss Minchin coldly turns her into a servant, giving her hard chores and little comfort."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Sara believes that even without money, she can still act like a ___ inside.",
+      "content": { "answer": "princess", "altAnswers": [] },
+      "explanation": "Sara holds onto the idea that being a true princess is about how you treat others, not about wealth or comfort."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Who is Becky, and how does Sara treat her?",
+      "content": { "options": ["The school's other servant girl, whom Sara treats with kindness and friendship", "Sara's wealthy cousin, whom Sara envies", "A teacher who is unkind to Sara", "Sara's younger sister"], "correct": 0 },
+      "explanation": "Becky is a servant girl at the school, and Sara treats her with genuine kindness even after Sara herself becomes a servant."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of Sara's story in the order they happen.",
+      "content": {
+        "items": ["Sara arrives at Miss Minchin's school as a wealthy, well-loved student", "Sara's father dies and his fortune is believed lost", "Miss Minchin forces Sara to live in the attic and work as a servant", "Mr. Carrisford's search reveals that Sara's fortune can be restored"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Sara's fall in fortune comes after her happy beginning, and it takes Mr. Carrisford's search to finally restore her place in the world."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in the story.",
+      "content": {
+        "left": ["Sara Crewe", "Miss Minchin", "Becky", "Mr. Carrisford"],
+        "right": ["The imaginative girl who keeps her kindness despite hardship", "The headmistress who turns cold once Sara seems to have no money", "The school's servant girl who becomes Sara's friend", "The mysterious neighbor secretly searching for Sara"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character shapes a different part of Sara's fall and eventual return to fortune."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each character into the right group.",
+      "content": {
+        "groupA": "Treats Sara with kindness during her hardship",
+        "groupB": "Treats Sara harshly during her hardship",
+        "options": [
+          { "label": "Becky, the servant girl", "group": "A" },
+          { "label": "Miss Minchin", "group": "B" },
+          { "label": "Mr. Carrisford's servant, who secretly leaves Sara gifts", "group": "A" },
+          { "label": "Lavinia, a jealous former classmate", "group": "B" }
+        ]
+      },
+      "explanation": "Some characters remain loyal and kind to Sara even after she loses her fortune, while others treat her worse because of it."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you agree with Sara's idea that a real princess is defined by kindness rather than wealth? Why or why not?",
+      "content": { "keywords": ["kindness", "wealth", "character", "princess", "behavior", "respect", "dignity"] },
+      "explanation": "There's no single right answer — Sara's belief challenges the idea that status comes from money rather than how a person treats others."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who turns out to have been searching for Sara, hoping to return her father's fortune to her?",
+      "content": { "options": ["Mr. Carrisford, her father's former business partner", "Miss Minchin", "Lavinia's father", "A stranger from another country"], "correct": 0 },
+      "explanation": "Mr. Carrisford was Sara's father's business partner and had been searching for her because the investment scheme actually succeeded after all."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each detail into the right group for Sara's life at the school.",
+      "content": {
+        "groupA": "True about Sara's life before her father's death",
+        "groupB": "True about Sara's life after her father's death",
+        "options": [
+          { "label": "Sara has a lavish birthday party and fine clothes", "group": "A" },
+          { "label": "Sara sleeps in a cold, bare attic room", "group": "B" },
+          { "label": "Sara is treated as a favorite student by Miss Minchin", "group": "A" },
+          { "label": "Sara works long hours as an unpaid servant", "group": "B" }
+        ]
+      },
+      "explanation": "Sara's circumstances change dramatically once her father's fortune is believed lost, though her character stays the same throughout."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Sara imagines comfort and beauty even in her cold, bare attic room. If you had to make a plain, empty room feel special using only your imagination, what would you picture there?",
+      "content": { "keywords": ["imagination", "comfort", "attic", "picture", "creative", "pretend"] },
+      "explanation": "There's no single right answer — this draws on the same imaginative resilience that helps Sara endure her hardest days."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Understand",
+      "prompt": "Sara is forced to become a scullery ___ after her father's fortune is believed lost.",
+      "content": { "answer": "maid", "altAnswers": ["servant"] },
+      "explanation": "Miss Minchin forces Sara to work as a scullery maid once she believes Sara has no money left."
+    }
+  ]
+}

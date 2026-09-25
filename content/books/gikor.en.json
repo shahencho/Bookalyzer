@@ -1,0 +1,121 @@
+{
+  "book_slug": "gikor",
+  "language": "en",
+  "title": "Gikor",
+  "author": "Hovhannes Tumanyan",
+  "genre": "Classic Literature",
+  "copyright_status": "public domain",
+  "short_summary": "In a poor mountain village, a peasant father decides to send his young son Gikor to the city to work as an apprentice in a merchant's shop, hoping to earn money for the family. Life in the city is hard and lonely, and Gikor longs for his home, his parents, and the mountains he loves. This gentle, sad classic explores how much a poor family sometimes gives up in search of a better life.",
+  "extended_summary": "Gikor's family is desperately poor, and his father believes that sending Gikor to work as a shop apprentice in the city is the only way to help them survive the winter. Gikor tries his best to please his strict master, running errands and doing chores from early morning until late at night, but the city feels cold and unfriendly compared to his village, and he misses his parents more each day. He grows thin and sad, and though he sometimes dreams of running back home across the mountains, an apprentice cannot simply leave.\n\nEventually Gikor falls seriously ill from the hard work, poor food, and heartbreak of being away from everyone he loves. He is finally sent back to his village, but by then he is too weak to recover, and he dies at home, surrounded at last by the family he had missed so much. The story ends in sorrow, but it leaves readers with a powerful message about love, poverty, and how much a family's hope can sometimes cost.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Why does Gikor's father send him away to the city?",
+      "content": { "options": ["To work as an apprentice in a shop and earn money for the family", "To attend a famous school", "To visit relatives who live there", "To learn to become a soldier"], "correct": 0 },
+      "explanation": "The family is very poor, and Gikor's father hopes that an apprentice's wages will help them get through hard times."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "In the city, Gikor works as an ___ in a merchant's shop.",
+      "content": { "answer": "apprentice", "altAnswers": ["apprentice boy", "shop apprentice"] },
+      "explanation": "Gikor's new life in the city is centered entirely on serving his master in the shop."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What does Gikor miss most while he is living away from his village?",
+      "content": { "options": ["His family, his home, and the mountains he grew up in", "The taste of city food", "The games he used to play with shopkeepers", "His old school lessons"], "correct": 0 },
+      "explanation": "Homesickness is at the heart of Gikor's sadness — he longs for the people and places he loves."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each detail into where it belongs in Gikor's story.",
+      "content": {
+        "groupA": "Gikor's life back in his village",
+        "groupB": "Gikor's life in the city shop",
+        "options": [
+          { "label": "Running freely through the mountains", "group": "A" },
+          { "label": "Sitting with his family by the fire", "group": "A" },
+          { "label": "Being scolded by a strict master", "group": "B" },
+          { "label": "Working long hours far from home", "group": "B" }
+        ]
+      },
+      "explanation": "Tumanyan contrasts the warmth of village life with the coldness Gikor feels in the city."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put the events of Gikor's story in the order they happen.",
+      "content": {
+        "items": ["Gikor's father decides to send him to work in the city", "Gikor becomes an apprentice in a merchant's shop", "Gikor grows more homesick and unwell as time passes", "Gikor is sent home, too weak to recover"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The story moves steadily from hope, to hardship, to a sorrowful ending."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each person to their role in Gikor's story.",
+      "content": {
+        "left": ["Gikor", "Gikor's father", "Gikor's mother", "The shopkeeper"],
+        "right": ["A poor village boy sent to work far from home", "Sends his son away, hoping to help the family survive", "Waits and worries for her son back in the village", "The strict master Gikor must obey in the city"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character's choices and feelings shape the sadness and love at the center of the story."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think Gikor's father believed sending him away was the right choice, even though it made Gikor so unhappy?",
+      "content": { "keywords": ["poverty", "poor", "money", "family", "hope", "survive"] },
+      "explanation": "There's no single right answer — the story shows how poverty can force parents to make painful choices out of love and desperation."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If you were writing a letter to cheer up a homesick friend like Gikor, what would be the most helpful thing to include?",
+      "content": { "options": ["Reminders that his family loves him and is thinking of him", "A list of complaints about how hard things are", "Instructions for how to run away", "A joke that has nothing to do with his feelings"], "correct": 0 },
+      "explanation": "Comfort and reminders of love are what someone as homesick as Gikor would need most."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "Gikor often dreams of returning to his ___, even though he cannot leave the shop.",
+      "content": { "answer": "village", "altAnswers": ["home village", "village home"] },
+      "explanation": "Gikor's thoughts constantly drift back to the home and family he left behind."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each statement into whether it is true or false about Gikor's story.",
+      "content": {
+        "groupA": "True about Gikor's story",
+        "groupB": "False about Gikor's story",
+        "options": [
+          { "label": "Gikor's family sends him away because they are poor", "group": "A" },
+          { "label": "Gikor becomes ill after working hard and missing home", "group": "A" },
+          { "label": "Gikor happily chooses city life over his village", "group": "B" },
+          { "label": "The shopkeeper treats Gikor with great warmth and kindness", "group": "B" }
+        ]
+      },
+      "explanation": "Gikor never stops longing for his village, and his master is strict rather than warm."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you could add one new scene to Gikor's story, showing one happy day he has in the city. What would happen in it?",
+      "content": { "keywords": ["happy", "kindness", "friend", "letter", "village", "visit"] },
+      "explanation": "Answers will vary — this invites readers to imagine a small moment of comfort within a sad story."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What is the most important lesson Tumanyan's story about Gikor teaches readers?",
+      "content": { "options": ["That poverty can force families to make heartbreaking sacrifices", "That city life is always better than village life", "That children should never listen to their parents", "That working hard always leads to a happy ending"], "correct": 0 },
+      "explanation": "Gikor's story is a serious classic about the real costs of poverty, not a simple lesson about hard work paying off."
+    }
+  ]
+}

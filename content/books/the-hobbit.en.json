@@ -1,0 +1,112 @@
+{
+  "book_slug": "the-hobbit",
+  "language": "en",
+  "title": "The Hobbit",
+  "author": "J. R. R. Tolkien",
+  "genre": "Fantasy",
+  "copyright_status": "active copyright",
+  "short_summary": "Bilbo Baggins, a comfort-loving hobbit who has never had an adventure in his life, is swept out of his cozy home by the wizard Gandalf and thirteen dwarves led by Thorin Oakenshield. Their quest: to reclaim the dwarves' lost mountain kingdom from the fearsome dragon Smaug. Along the way, Bilbo wins a magic ring in a riddle contest with the creature Gollum and discovers a courage he never knew he had.",
+  "extended_summary": "Bilbo Baggins lives a quiet, comfortable life in his hobbit-hole until the wizard Gandalf arrives with thirteen dwarves, led by the proud Thorin Oakenshield, and talks him into joining their quest as a burglar. Their goal is the Lonely Mountain, once the dwarves' home, now guarded by the terrible dragon Smaug, who drove them out and claimed their vast treasure long ago. Bilbo reluctantly leaves his comfortable life behind, and the company is soon tested by hungry trolls, captured by goblins deep in the Misty Mountains, and separated in the tunnels, where Bilbo stumbles upon a strange golden ring and encounters the creature Gollum, narrowly winning his freedom in a deadly riddle contest.\n\nReunited with the dwarves, Bilbo faces giant spiders in the dark forest of Mirkwood, helps rescue the company from the Elvenking's dungeons, and finally reaches the ruins of Lake-town in the shadow of the Lonely Mountain. There, Bilbo bravely sneaks into Smaug's lair to spy on the dragon, and a fatal weakness in Smaug's armor, learned from Bilbo's daring visit, leads to the dragon's downfall at the hands of the archer Bard. But the treasure brings new conflict, as men, elves, dwarves, and goblins all clash in the massive Battle of Five Armies. In the end, Bilbo returns home to the Shire, forever changed by his journey, quietly carrying both treasure and a magic ring whose true power he has yet to understand.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Which wizard convinces Bilbo Baggins to leave his comfortable home and join the quest?",
+      "content": { "options": ["Gandalf", "Thorin Oakenshield", "Beorn", "Elrond"], "correct": 0 },
+      "explanation": "Gandalf the wizard is the one who recommends Bilbo as the company's burglar and talks him into the adventure."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The mountain the dwarves are trying to reclaim from the dragon is called the ___ Mountain.",
+      "content": { "answer": "Lonely", "altAnswers": [] },
+      "explanation": "The Lonely Mountain is the dwarves' ancestral home, taken over by the dragon Smaug long before the story begins."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why do Thorin and his company of dwarves want to reach the Lonely Mountain?",
+      "content": { "options": ["To reclaim their ancestral home and treasure from the dragon Smaug", "To build a new hobbit village there", "To rescue Gandalf, who is trapped inside", "To trade with the Elvenking"], "correct": 0 },
+      "explanation": "Smaug drove the dwarves from their mountain home long ago and took their treasure, and the company's quest is to take it back."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their part in the story.",
+      "content": {
+        "left": ["Bilbo Baggins", "Gandalf", "Thorin Oakenshield", "Gollum"],
+        "right": ["Hobbit burglar who grows braver over the course of the journey", "Wizard who organizes the quest and guides the company", "Proud dwarf leader determined to reclaim his kingdom", "Strange, ring-obsessed creature living deep under the mountains"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character plays a distinct part in Bilbo's journey from a comfortable hobbit-hole to the far side of Middle-earth."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each figure into the right group.",
+      "content": {
+        "groupA": "A danger the company faces on the journey",
+        "groupB": "An ally who helps the company along the way",
+        "options": [
+          { "label": "Hungry trolls who capture the dwarves", "group": "A" },
+          { "label": "Beorn, the skin-changer who shelters them", "group": "B" },
+          { "label": "Giant spiders in Mirkwood", "group": "A" },
+          { "label": "Bard the Bowman, who ultimately defeats Smaug", "group": "B" }
+        ]
+      },
+      "explanation": "Bilbo and the dwarves face genuine dangers throughout their journey, but they're also helped along the way by unexpected allies."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": {
+        "items": ["Bilbo wins a magic ring from Gollum in a riddle contest", "The company is attacked by giant spiders in Mirkwood", "Bilbo sneaks into Smaug's lair and discovers a weakness in the dragon's armor", "The Battle of Five Armies breaks out over the dragon's treasure"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The story builds from Bilbo's first real test of cleverness against Gollum to the massive battle that follows Smaug's defeat."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What is significant about the golden ring Bilbo wins from Gollum?",
+      "content": { "options": ["It can make its wearer invisible, and its true power is far greater than Bilbo realizes", "It grants its wearer the ability to fly", "It can only be used once before disappearing", "It turns anything it touches to gold"], "correct": 0 },
+      "explanation": "The ring makes Bilbo invisible and proves enormously useful on the quest, though neither Bilbo nor the reader yet fully understands its deeper, darker significance."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The fearsome dragon guarding the dwarves' treasure inside the Lonely Mountain is named ___.",
+      "content": { "answer": "Smaug", "altAnswers": [] },
+      "explanation": "Smaug is the dragon who long ago drove the dwarves from their mountain home and now guards their treasure."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "In the riddle contest with Gollum, what is the smartest strategy for Bilbo to use to win?",
+      "content": { "options": ["Think carefully about each riddle's hidden meaning and use logic, not just guessing", "Refuse to answer any riddles at all", "Ask Gollum to simply give him the ring", "Answer as quickly as possible without thinking"], "correct": 0 },
+      "explanation": "Bilbo survives the deadly riddle game by thinking carefully through each clue, showing the cleverness that will serve him throughout the quest."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "How does Bilbo change the most by the end of his journey?",
+      "content": { "options": ["He grows from a comfort-loving homebody into someone genuinely brave and resourceful", "He becomes the strongest warrior in Middle-earth", "He decides he never wants to see his home again", "He loses interest in adventure completely"], "correct": 0 },
+      "explanation": "Bilbo's journey is fundamentally about growth: the same hobbit who once feared leaving home ends the story with real courage and wisdom."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Bilbo was right to join the dwarves' quest, even though it meant leaving his safe, comfortable home? Why or why not?",
+      "content": { "keywords": ["Bilbo", "courage", "home", "adventure", "risk", "growth"] },
+      "explanation": "There's no single right answer — the story suggests that leaving comfort behind, while risky, can lead to genuine growth and unexpected reward."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you had to invent your own riddle to challenge a creature like Gollum. Write your riddle and explain what the answer is.",
+      "content": { "keywords": ["riddle", "invent", "answer", "clever", "imagine", "Gollum"] },
+      "explanation": "This is a creative question — a strong riddle, like those in the story, should have a clever, logical answer that isn't too obvious."
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "book_slug": "emil-and-the-detectives",
+  "language": "en",
+  "title": "Emil and the Detectives",
+  "author": "Erich Kästner",
+  "genre": "Adventure",
+  "copyright_status": "active copyright",
+  "short_summary": "Young Emil Tischbein travels alone by train to Berlin carrying money his mother has saved for his grandmother, only to have it stolen by a suspicious man while he sleeps. Too ashamed to go to the police, Emil teams up with a gang of Berlin street kids led by a boy named Gustav to track down the thief themselves.",
+  "extended_summary": "Emil Tischbein has never been to Berlin before, but he's making the trip alone to visit his grandmother, carrying an envelope of money his hardworking mother has scraped together. On the train, a strange man named Grundeis seems friendly enough, but after Emil falls asleep, he wakes up to find the money gone and the man vanished at the next stop. Ashamed of an earlier prank that once got him in trouble with the police back home, Emil decides not to report the theft to the authorities and instead follows Grundeis through the unfamiliar streets of Berlin on his own.\n\nHe doesn't stay alone for long. A cheerful, resourceful Berlin boy named Gustav, famous for the car horn he carries everywhere, quickly rounds up an entire gang of local children willing to help a stranger in trouble. Together the children organize a real detective operation — trailing Grundeis in relay shifts, gathering evidence, and finally cornering him at a bank, where they discover the thief is wanted by the police for an entirely different, much bigger crime. Emil gets his money back, earns new friends, and proves that a group of ordinary kids working together can outsmart a grown criminal.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Why is Emil traveling alone to Berlin?",
+      "content": { "options": ["To visit his grandmother, carrying money his mother saved for her", "To start a new school in the city", "To find a lost family pet", "To compete in a sports competition"], "correct": 0 },
+      "explanation": "Emil is sent to Berlin to visit his grandmother, entrusted with money his mother worked hard to save for her."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "What happens to Emil's money on the train?",
+      "content": { "options": ["A man named Grundeis steals it while Emil sleeps", "Emil loses it by accident on the platform", "He spends it all on snacks during the trip", "It falls out of his pocket and is never found"], "correct": 0 },
+      "explanation": "The suspicious passenger Grundeis steals the money from Emil while he is asleep and then gets off at the next stop."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The leader of the Berlin street kids who helps Emil is a boy named ___, famous for the car horn he carries.",
+      "content": { "answer": "Gustav", "altAnswers": ["Gustav (with the car horn)"] },
+      "explanation": "Gustav, easily recognized by the car horn he honks to gather attention, organizes the local children to help Emil."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does Emil decide not to go to the police about the stolen money?",
+      "content": { "options": ["He's ashamed of an earlier prank that once got him in trouble with the police", "He doesn't believe the money was actually stolen", "He can't find a police station anywhere in Berlin", "He is told by Grundeis not to tell anyone"], "correct": 0 },
+      "explanation": "A past incident where Emil got in trouble for a prank makes him wary of approaching the police, so he chooses to handle the problem himself."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in the story.",
+      "content": {
+        "left": ["Emil Tischbein", "Grundeis", "Gustav", "Emil's mother"],
+        "right": ["The boy whose stolen money starts the whole adventure", "The suspicious man who steals the money on the train", "Leader of the Berlin kids who organizes the detective operation", "Works hard to save the money Emil is carrying"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character plays a distinct part in setting up, complicating, or resolving the mystery of the stolen money."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events of the story in the order they happen.",
+      "content": {
+        "items": ["Emil boards the train to Berlin with his mother's money", "Grundeis steals the money while Emil is asleep", "Gustav and the Berlin kids organize to help Emil track the thief", "The children corner Grundeis at a bank and recover the money"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The story moves from the theft on the train, through Emil's alliance with the Berlin children, to the final confrontation at the bank."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each action into the right group.",
+      "content": {
+        "groupA": "Something the children's detective operation involves",
+        "groupB": "Something outside the children's plan",
+        "options": [
+          { "label": "Trailing Grundeis in relay shifts through the city", "group": "A" },
+          { "label": "Gathering evidence about where Grundeis goes", "group": "A" },
+          { "label": "Calling in a team of professional adult detectives", "group": "B" },
+          { "label": "Waiting for the police to solve the case on their own", "group": "B" }
+        ]
+      },
+      "explanation": "The children solve the case through their own organized teamwork, not by relying on adult professionals."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What surprising discovery do the children make about Grundeis when they finally corner him?",
+      "content": { "options": ["He is wanted by the police for a much bigger crime than stealing Emil's money", "He is actually a distant relative of Emil's", "He had already spent all of Emil's money", "He turns out to be completely innocent of any wrongdoing"], "correct": 0 },
+      "explanation": "The children's pursuit reveals that Grundeis is a wanted criminal, and catching him for Emil's stolen money uncovers a much larger crime."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The children finally corner Grundeis at a ___.",
+      "content": { "answer": "bank", "altAnswers": ["a bank"] },
+      "explanation": "The chase comes to a head at a bank, where Grundeis is caught trying to use the stolen money."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Emil made the right choice by not going to the police right away? Why or why not?",
+      "content": { "keywords": ["shame", "trust", "police", "friends", "responsibility", "courage"] },
+      "explanation": "There's no single right answer — the story invites readers to weigh Emil's fear of not being believed against the benefits of asking for adult help sooner."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "What makes Gustav such an effective leader for the group of children?",
+      "content": { "options": ["He's resourceful, well-known in the neighborhood, and quick to organize others", "He is the oldest and physically strongest child in Berlin", "He is a police officer's son with special authority", "He refuses to let anyone else help with the plan"], "correct": 0 },
+      "explanation": "Gustav's local knowledge, resourcefulness, and ability to rally other kids quickly make him a natural leader of the detective operation."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort each moment into the right group.",
+      "content": {
+        "groupA": "Happens before Emil meets Gustav's gang",
+        "groupB": "Happens after Emil meets Gustav's gang",
+        "options": [
+          { "label": "Emil falls asleep on the train", "group": "A" },
+          { "label": "Grundeis steals the money and gets off the train", "group": "A" },
+          { "label": "The children organize relay shifts to trail Grundeis", "group": "B" },
+          { "label": "The group corners Grundeis and recovers the money at the bank", "group": "B" }
+        ]
+      },
+      "explanation": "The story turns once Emil finds allies in Berlin, shifting from a lonely problem to a coordinated group effort."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine Emil and Gustav's gang solve one more mystery together the following year. What kind of problem might bring them back together, and how would they organize to solve it?",
+      "content": { "keywords": ["detective", "teamwork", "mystery", "Berlin", "friends", "organize"] },
+      "explanation": "There's no single correct answer — this invites readers to imagine a new mystery using the same spirit of resourceful teamwork the children showed."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What is the central lesson of Emil and the Detectives?",
+      "content": { "options": ["A group of ordinary children working together can accomplish what looks impossible alone", "Children should never trust anyone they don't already know", "Adults are always better equipped to solve problems than children", "Money matters more than friendship or trust"], "correct": 0 },
+      "explanation": "The story's heart is about teamwork — a lone, ashamed boy becomes part of an effective group that succeeds precisely because the children work together."
+    }
+  ]
+}

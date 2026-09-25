@@ -1,0 +1,112 @@
+{
+  "book_slug": "twenty-thousand-leagues",
+  "language": "en",
+  "title": "Twenty Thousand Leagues Under the Sea",
+  "author": "Jules Verne",
+  "genre": "Adventure",
+  "copyright_status": "public domain",
+  "short_summary": "When ships around the world report attacks by a mysterious sea monster, Professor Pierre Aronnax joins an expedition to hunt it down, only to discover the 'monster' is really an extraordinary submarine called the Nautilus. Taken aboard along with his servant Conseil and the harpooner Ned Land, Aronnax meets its brilliant, secretive commander, Captain Nemo, and begins a voyage beneath every ocean on Earth.",
+  "extended_summary": "Professor Pierre Aronnax, a marine biologist, sets out with harpooner Ned Land and loyal servant Conseil to investigate reports of a giant sea creature attacking ships. Their hunt ends in disaster when their own vessel is struck, and the three are thrown into the sea, only to find themselves rescued aboard the very 'monster' they were chasing: a futuristic submarine called the Nautilus, commanded by the mysterious Captain Nemo. Nemo has turned his back on life on land entirely, choosing to live beneath the waves with his loyal crew, and while he treats his three new guests with courtesy, he makes clear they can never leave.\n\nAs prisoners and passengers both, Aronnax, Conseil, and Ned Land travel to the far corners of the ocean world, exploring dazzling coral reefs, diving to the sunken ruins of Atlantis, and surviving a terrifying attack by giant squid that nearly destroys the Nautilus. They witness Nemo's genius and his hidden sorrow, journey all the way to the South Pole, and eventually face their greatest danger yet: the Nautilus is caught in the deadly whirlpool of the Maelstrom. Amid the chaos, Aronnax, Conseil, and Ned Land finally find their chance to escape, leaving Captain Nemo and the secrets of the Nautilus behind them in the depths.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Which three men end up as guests, and prisoners, aboard the Nautilus?",
+      "content": { "options": ["Professor Aronnax, Conseil, and Ned Land", "Captain Nemo, Aronnax, and Conseil", "Ned Land, Nemo, and a ship's captain", "Aronnax, a sailor named Jacques, and Conseil"], "correct": 0 },
+      "explanation": "Professor Aronnax, his servant Conseil, and the harpooner Ned Land are the three swept overboard and taken aboard the Nautilus."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The extraordinary submarine commanded by Captain Nemo is called the ___.",
+      "content": { "answer": "Nautilus", "altAnswers": [] },
+      "explanation": "The Nautilus is Captain Nemo's advanced, self-sufficient submarine, mistaken by the outside world for a sea monster."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why were Aronnax, Conseil, and Ned Land originally at sea when they ended up aboard the Nautilus?",
+      "content": { "options": ["They were hunting a mysterious sea creature that had been attacking ships", "They were exploring for sunken treasure", "They were sailing to a new colony", "They were competing in a fishing contest"], "correct": 0 },
+      "explanation": "The trio joined an expedition to track down what turns out to be the Nautilus, mistaken by the world for a dangerous sea monster."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to their role in the voyage.",
+      "content": {
+        "left": ["Professor Aronnax", "Conseil", "Ned Land", "Captain Nemo"],
+        "right": ["Marine biologist who narrates the voyage", "Aronnax's loyal, endlessly knowledgeable servant", "Skilled harpooner eager to escape and return home", "Brilliant but embittered commander of the Nautilus"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character brings a different perspective to the voyage, from scientific wonder to a fierce longing for freedom."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each moment into the right group.",
+      "content": {
+        "groupA": "A wonder the Nautilus's passengers witness",
+        "groupB": "A danger the Nautilus's passengers face",
+        "options": [
+          { "label": "Exploring colorful coral reefs", "group": "A" },
+          { "label": "An attack by giant squid", "group": "B" },
+          { "label": "Diving to the sunken ruins of Atlantis", "group": "A" },
+          { "label": "Being trapped in the deadly Maelstrom whirlpool", "group": "B" }
+        ]
+      },
+      "explanation": "The voyage of the Nautilus mixes breathtaking natural wonders with genuine life-threatening danger."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": {
+        "items": ["Aronnax, Conseil, and Ned Land are thrown overboard while hunting the 'sea monster'", "They are rescued and taken aboard the Nautilus by Captain Nemo", "The Nautilus survives a terrifying attack by giant squid", "The Nautilus is caught in the Maelstrom, giving the three their chance to escape"],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "Their journey moves from a mistaken monster hunt, to genuine wonder and danger beneath the sea, to a final desperate escape."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What does Captain Nemo's choice to live entirely beneath the sea suggest about his character?",
+      "content": { "options": ["He has deliberately cut himself off from human society, hinting at some deep past pain or grievance", "He simply prefers marine biology to any other science", "He is required by law to stay underwater", "He is testing the Nautilus for a government"], "correct": 0 },
+      "explanation": "Nemo's total rejection of life on land, combined with his hidden sorrow, suggests a man deeply wounded by something in his past."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The skilled harpooner who is desperate to escape the Nautilus and return home is named ___ Land.",
+      "content": { "answer": "Ned", "altAnswers": [] },
+      "explanation": "Ned Land is the harpooner among the three companions, and the one most restless to regain his freedom."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "If Aronnax wanted to learn as much as possible about ocean life during the voyage instead of just worrying about escape, what would be the most useful thing for him to do?",
+      "content": { "options": ["Carefully observe and record the marine life and phenomena the Nautilus encounters", "Refuse to look out the windows at all", "Spend all his time trying to sabotage the submarine", "Ignore Captain Nemo's knowledge completely"], "correct": 0 },
+      "explanation": "As a scientist, Aronnax's careful observation of the ocean world is exactly what turns the voyage into an extraordinary scientific record, even while he is a prisoner."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "Which best describes Captain Nemo by the end of the voyage?",
+      "content": { "options": ["A brilliant but deeply wounded man who is both admirable and dangerous", "A simple villain with no redeeming qualities", "An ordinary sailor with no special skills", "A character with no real emotions at all"], "correct": 0 },
+      "explanation": "Nemo is one of literature's great complex characters: a genius engineer and freedom-loving fighter for justice, but also isolated and capable of ruthlessness."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Do you think Captain Nemo made the right choice by cutting all ties with human society and living beneath the sea? Why or why not?",
+      "content": { "keywords": ["Nemo", "isolation", "freedom", "society", "choice", "justify"] },
+      "explanation": "There's no single right answer — the novel presents Nemo's choice as understandable given his pain, but also costly and isolating."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "If you could design your own underwater vessel like the Nautilus, what one amazing feature would it have, and what ocean wonder would you want it to explore first?",
+      "content": { "keywords": ["design", "submarine", "ocean", "explore", "invent", "imagine"] },
+      "explanation": "This is a creative question — like Jules Verne imagining the Nautilus long before real submarines existed, a strong answer invents something original and explains why it matters."
+    }
+  ]
+}

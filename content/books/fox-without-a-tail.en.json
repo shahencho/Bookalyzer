@@ -1,0 +1,109 @@
+{
+  "book_slug": "fox-without-a-tail",
+  "language": "en",
+  "title": "The Fox Without a Tail",
+  "author": "Hovhannes Tumanyan",
+  "genre": "Fable",
+  "copyright_status": "public domain",
+  "short_summary": "A clever but vain fox loses her tail in a hunter's trap. Ashamed to be the only tailless fox in the forest, she calls all the foxes together and tries to convince them that tails are useless — so they will all cut theirs off too.",
+  "extended_summary": "One day a fox steals into a farmyard for chickens and gets her beautiful bushy tail caught in a hunter's trap. She pulls free, but leaves her tail behind. Too ashamed to be seen without it, and unable to grow it back, she comes up with a plan: if every fox in the forest loses its tail, she will no longer stand out. She calls a great meeting of foxes and gives a passionate speech, claiming that tails are heavy, useless things that only get caught in bushes, drag through mud, and give hunters something to grab. She insists foxes would run faster and live better without them, and offers to be the first to show how fine a tailless fox looks.\n\nBut one clever old fox suspects something and asks her plainly: would she be giving this speech if she still had her own beautiful tail? Caught out, the fox has no good answer, and the other foxes burst out laughing and refuse to give up their tails. The tailless fox slinks away in shame, and to this day foxes remember her story whenever someone tries too hard to convince others to share their own misfortune.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "How does the fox lose her tail?",
+      "content": { "options": ["It gets caught in a hunter's trap", "A wolf bites it off in a fight", "She trades it away for a chicken", "It gets stuck in a river and freezes off"], "correct": 0 },
+      "explanation": "While sneaking into a farmyard after chickens, the fox's tail is caught in a hunter's trap, and she has to leave it behind to escape."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "Why does the fox call a meeting of all the foxes in the forest?",
+      "content": { "options": ["To convince them to cut off their tails too", "To warn them about the hunter's trap", "To organize a hunt for food together", "To choose a new leader for the foxes"], "correct": 0 },
+      "explanation": "Ashamed to be the only tailless fox, she wants the others to lose their tails too so she won't stand out."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "Why do you think the fox really wants the other foxes to cut off their tails?",
+      "content": { "keywords": ["ashamed", "alone", "jealous", "hide", "embarrassed", "like her"] },
+      "explanation": "She is embarrassed about losing her own tail and wants everyone to look like her so her loss won't be noticed."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "What is the real reason behind the fox's speech about tails being useless, even though she claims it is for everyone's benefit?",
+      "content": { "options": ["She wants to hide her own shame by making others tailless too", "She truly believes tails slow foxes down", "She wants to save the forest's bushes from damage", "She is testing which foxes are the bravest"], "correct": 0 },
+      "explanation": "Her claims sound logical, but her true motive is personal — she doesn't want to be the only tailless fox."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these events from the story in the order they happen.",
+      "content": { "items": ["The fox sneaks into a farmyard for chickens", "Her tail is caught in a hunter's trap", "She calls a meeting of all the foxes", "She gives a speech about how useless tails are", "An old fox asks her a clever question", "The foxes laugh and keep their tails"], "correctOrder": [0, 1, 2, 3, 4, 5] },
+      "explanation": "The story moves from the fox's theft and loss of her tail, to her attempt to trick the others, to her public failure."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "Match each character to what they do in the story.",
+      "content": {
+        "left": ["The fox who lost her tail", "The old, clever fox", "The hunter", "The other foxes"],
+        "right": ["Gives a speech claiming tails are useless", "Asks a question that exposes the trick", "Sets the trap that catches the tail", "Laugh and refuse to cut off their tails"],
+        "correctMap": { "0": 0, "1": 1, "2": 2, "3": 3 }
+      },
+      "explanation": "Each character plays a distinct role in how the trick is set up and then uncovered."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "In her speech, the fox claims a tail is nothing but a heavy weight that drags through the ___.",
+      "content": { "answer": "mud", "altAnswers": ["dirt"] },
+      "explanation": "She lists reasons tails are supposedly bad, including that they drag through mud and get caught on branches."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Analyze",
+      "prompt": "Sort each statement into the right group.",
+      "content": {
+        "groupA": "Something the tailless fox says to convince the others",
+        "groupB": "Something the wise old fox points out",
+        "options": [
+          { "label": "Tails are just heavy, useless weight", "group": "A" },
+          { "label": "Tails get caught in branches and slow you down", "group": "A" },
+          { "label": "You would still love your tail if you had one", "group": "B" },
+          { "label": "Would you say this if your own tail were still there?", "group": "B" }
+        ]
+      },
+      "explanation": "The tailless fox argues against tails, while the old fox questions her true motives."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "Who sees through the fox's trick at the meeting?",
+      "content": { "options": ["A clever old fox", "The hunter", "A young rabbit", "The fox's own cub"], "correct": 0 },
+      "explanation": "An old, experienced fox in the crowd is not fooled and asks the question that reveals the truth."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "What question does the old fox ask that exposes the trick?",
+      "content": { "options": ["Would you still say tails are useless if you had one?", "How did you lose your tail in the first place?", "Do you know how fast foxes without tails can run?", "Why didn't you ask the hunter for your tail back?"], "correct": 0 },
+      "explanation": "This question forces the fox to admit — without saying so directly — that she only wants others to match her loss."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "Imagine you are one of the foxes listening to the speech. What would you say back to her?",
+      "content": { "keywords": ["tail", "keep", "no", "true reason", "funny", "kind"] },
+      "explanation": "There's no single right answer — the point is to notice the trick and respond honestly and kindly."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Evaluate",
+      "prompt": "What lesson does this fable teach?",
+      "content": { "options": ["Be careful about advice from someone who benefits from you following it", "Always trust what an older animal tells you", "Tails are the most useless part of an animal", "Chickens are too dangerous to hunt"], "correct": 0 },
+      "explanation": "The fable warns that someone who lost something might try to convince others to give up the same thing, for their own comfort."
+    }
+  ]
+}
