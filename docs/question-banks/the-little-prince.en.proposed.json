@@ -1,0 +1,164 @@
+{
+  "book_slug": "the-little-prince",
+  "language": "en",
+  "title": "The Little Prince",
+  "author": "Antoine de Saint-Exupéry",
+  "genre": "Fable",
+  "short_summary": "A pilot crash-lands in the Sahara desert and meets a curious little boy who says he has come from a tiny planet far away. The boy, a prince, tells the pilot about the single rose he left behind, and about the strange grown-ups he visited on his journey — a king with no subjects, a businessman who counts stars he cannot own, a lamplighter obeying an order that no longer makes sense. On Earth, the prince meets a fox who asks to be tamed, and learns that what matters most is often invisible to the eye.",
+  "extended_summary": "A pilot crash-lands in the Sahara desert and meets a curious little boy who says he has come from a tiny planet far away. The boy, a prince, tells the pilot about the single rose he left behind, and about the strange grown-ups he visited on his journey — a king with no subjects, a businessman who counts stars he cannot own, a lamplighter obeying an order that no longer makes sense. On Earth, the prince meets a fox who asks to be tamed, and learns that what matters most is often invisible to the eye.\n\nThe fox explains that taming means creating ties — that a tamed rose becomes unlike any other rose in the world, simply because time was spent on it. The prince realizes his own rose, ordinary as she seemed, is irreplaceable because he loved and cared for her. Before returning to his planet and his rose, the prince leaves the pilot with a quiet truth: it is the time we give to someone that makes them matter, and the eye is blind to that — you have to look with the heart.",
+  "questions": [
+    {
+      "type": "mc",
+      "bloom_level": "Remember",
+      "prompt": "When the narrator was six, he drew a boa constrictor digesting an elephant. What did the grown-ups think his drawing showed?",
+      "content": { "options": ["A hill", "A hat", "A sleeping snake", "A big stone"], "correct": 1 },
+      "explanation": "Every grown-up said it was a hat. Only the little prince, years later, saw the elephant inside the snake at once. The book begins by showing that grown-ups see only the outside of things."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "The pilot's drawings of a sheep all disappointed the prince, so he drew just a box with holes. Why was the prince delighted with the box?",
+      "content": {
+        "options": [
+          "The box would stop the sheep from eating his rose",
+          "He could imagine the exact sheep he wanted inside",
+          "It was the neatest drawing the pilot had ever made",
+          "A box would keep the sheep warm on cold nights"
+        ],
+        "correct": 1
+      },
+      "explanation": "The sheep in the box can be any sheep the prince imagines — exactly the one he wanted. Like the snake-and-elephant drawing, it only works if you look with imagination, not just with your eyes."
+    },
+    {
+      "type": "ordering",
+      "bloom_level": "Understand",
+      "prompt": "Put these moments in order to show how the prince's feelings about his rose change during the story.",
+      "content": {
+        "items": [
+          "The rose blooms on his planet and he is amazed by her beauty",
+          "Her pride and demands make him unhappy, and he decides to leave",
+          "He finds a garden of five thousand roses and cries, thinking his rose is ordinary",
+          "The fox helps him see that his rose is unique because of the time he gave her"
+        ],
+        "correctOrder": [0, 1, 2, 3]
+      },
+      "explanation": "The prince first loves the rose, then runs from her difficult ways, then doubts she is special, and finally understands that the time and care he gave her make her the only rose in the world for him."
+    },
+    {
+      "type": "matching",
+      "bloom_level": "Analyze",
+      "prompt": "On his journey the prince visits small planets, each with one grown-up. Match each grown-up to the thing they are stuck on.",
+      "content": {
+        "left": ["The King", "The Tippler", "The Businessman", "The Geographer"],
+        "right": [
+          "Writing about places he has never gone out to see",
+          "Giving orders, even when nobody is there to follow them",
+          "Owning things just so he can count them and write the number down",
+          "Doing something he is ashamed of, to forget his shame"
+        ],
+        "correctMap": { "0": 1, "1": 3, "2": 2, "3": 0 }
+      },
+      "explanation": "Each grown-up is trapped in one idea: power, a sad habit, possession, or knowledge from books alone. None of them is really connected to anyone or anything — which is exactly what the prince will later learn from the fox."
+    },
+    {
+      "type": "fillblank",
+      "bloom_level": "Remember",
+      "prompt": "The fox's secret: \"It is only with the ___ that one can see rightly; what is essential is invisible to the eye.\"",
+      "content": { "answer": "heart", "altAnswers": [] },
+      "explanation": "This is the fox's goodbye gift and the main idea of the whole book: what truly matters — love, friendship, the time we give — cannot be seen with the eyes."
+    },
+    {
+      "type": "classification",
+      "bloom_level": "Understand",
+      "prompt": "Sort what the prince does: at home on his tiny planet, or during his time on Earth?",
+      "content": {
+        "groupA": "At home on his planet",
+        "groupB": "On Earth",
+        "options": [
+          { "label": "Cries in a garden full of roses", "group": "B" },
+          { "label": "Rakes out his volcanoes", "group": "A" },
+          { "label": "Climbs a high mountain and hears only an echo", "group": "B" },
+          { "label": "Puts a glass globe over his flower at night", "group": "A" },
+          { "label": "Talks with a railway switchman", "group": "B" },
+          { "label": "Watches many sunsets in one day by moving his chair", "group": "A" }
+        ]
+      },
+      "explanation": "At home, the prince's days are about small daily care: the volcanoes, the rose, the sunsets. On Earth he meets a world that is huge, lonely and confusing — until he finds the fox and the pilot."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Analyze",
+      "prompt": "Of all the grown-ups on the small planets, the prince says only one could have been his friend. Who was it, and why?",
+      "content": {
+        "options": [
+          "The king, because he let the prince give orders",
+          "The geographer, because he knew so many places",
+          "The businessman, because he worked so very hard",
+          "The lamplighter, as he thought beyond himself"
+        ],
+        "correct": 3
+      },
+      "explanation": "The prince thinks the lamplighter's job is silly, but he respects him because he is the only one busy with something other than himself. Caring about something outside yourself is the first step toward the friendship the fox describes."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Understand",
+      "prompt": "A merchant sells pills that stop thirst, saving fifty-three minutes a week. What does the prince say he would do with those minutes?",
+      "content": {
+        "options": [
+          "Watch one more sunset from his little chair",
+          "Walk slowly toward a spring of fresh water",
+          "Sleep a little longer every morning",
+          "Hurry back home to water his rose"
+        ],
+        "correct": 1
+      },
+      "explanation": "The prince would spend the saved time doing exactly the thing the pill replaces — walking to water. For him the journey and the experience are the point; grown-ups only want to save time, not to enjoy it."
+    },
+    {
+      "type": "mc",
+      "bloom_level": "Apply",
+      "prompt": "Imagine a grown-up today who posts photos only to collect likes and wants everyone to say how wonderful they are. Which planet grown-up would the prince say they remind him of?",
+      "content": { "options": ["The businessman", "The geographer", "The conceited man", "The lamplighter"], "correct": 2 },
+      "explanation": "The conceited man only wants to be admired. He asks the prince to clap and hears nothing except praise. Collecting likes is the same wish: to be admired rather than to truly connect with someone."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Evaluate",
+      "prompt": "The fox says: \"You become responsible, forever, for what you have tamed.\" Do you agree? Think of a person, pet or plant in your own life and explain your answer.",
+      "content": { "keywords": ["look after", "take care of", "feed it", "feed him", "feed her", "go back to his rose", "went back to his rose"] },
+      "explanation": "Any position is fine if it is explained. A strong answer links the idea to a real example (a pet that needs feeding, a friend who counts on you) and may mention why the prince decides to go back to his rose: once you make someone special to you, they depend on you."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Analyze",
+      "prompt": "Before leaving, the little prince tells the pilot that from now on all the stars will seem to be laughing for him. Why will the stars make the pilot feel that way?",
+      "content": { "keywords": ["remember", "memory", "misses him", "miss him", "lives on one", "one of the stars", "thinks of him", "think of him"] },
+      "explanation": "The pilot knows his friend is living on one of the stars, laughing — so every star now reminds him of the prince. It is the same thing the fox said about the wheat fields: once you love someone, ordinary things become special because they remind you of them."
+    },
+    {
+      "type": "open",
+      "bloom_level": "Create",
+      "prompt": "The little prince lands in your town. Describe one thing grown-ups there do that would puzzle him, and write what he would say to them.",
+      "content": { "keywords": ["matters of consequence"] },
+      "explanation": "Any imaginative answer that fits the prince's way of seeing is correct: he asks simple, honest questions and notices when grown-ups are busy with 'matters of consequence' (money, numbers, rushing, screens) instead of friendship, beauty or care."
+    },
+    {
+      "type": "crossword",
+      "bloom_level": "Remember",
+      "prompt": "Fill in the crossword with things from the little prince's story.",
+      "content": {
+        "gridSize": { "rows": 9, "cols": 8 },
+        "words": [
+          { "answer": "BAOBAB", "clue": "Trees that could split the prince's tiny planet if he did not pull them up in time", "row": 5, "col": 2, "direction": "across" },
+          { "answer": "SNAKE", "clue": "It coils around the prince's ankle like a golden bracelet and speaks in riddles", "row": 3, "col": 3, "direction": "down" },
+          { "answer": "SHEEP", "clue": "The prince worries this animal might eat his flower", "row": 3, "col": 3, "direction": "across" },
+          { "answer": "ROSE", "clue": "A proud flower with four thorns to protect her", "row": 7, "col": 0, "direction": "across" },
+          { "answer": "LAMP", "clue": "On the smallest planet, a man lights and puts this out once every minute", "row": 0, "col": 7, "direction": "down" },
+          { "answer": "FOX", "clue": "He shares a secret with the prince when they say goodbye", "row": 6, "col": 1, "direction": "down" }
+        ]
+      },
+      "explanation": "Baobabs, the sheep, the rose, the lamplighter, the snake and the fox all mark key moments of the prince's journey — from his planet to Earth and home again."
+    }
+  ]
+}
