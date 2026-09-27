@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { User, Plus } from "lucide-react";
+import { User, Plus, LogOut } from "lucide-react";
 import { useLang } from "@/components/layout/LangProvider";
 import { t, UI } from "@/lib/i18n";
 import { fetchOrRedirect } from "@/lib/fetchOrRedirect";
@@ -34,6 +34,11 @@ export default function ParentDashboardPage() {
     fetchOrRedirect("/api/parent/children", router, "/parent/login", [] as ChildSummary[]).then(setChildren);
   }, [router]);
 
+  async function handleLogout() {
+    await fetch("/api/auth/parent/logout", { method: "POST" });
+    router.replace("/parent/login");
+  }
+
   async function handleAddChild() {
     setSaving(true);
     setError(null);
@@ -62,12 +67,20 @@ export default function ParentDashboardPage() {
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center justify-between mb-1">
           <h2 className="bk-display text-2xl">{t(UI.parentHeading, lang)}</h2>
-          <button
-            onClick={() => setShowAddChild((v) => !v)}
-            className="flex items-center gap-1 bk-btn-outline rounded-lg px-3 py-1.5 text-sm font-medium"
-          >
-            <Plus size={14} /> Add child
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowAddChild((v) => !v)}
+              className="flex items-center gap-1 bk-btn-outline rounded-lg px-3 py-1.5 text-sm font-medium"
+            >
+              <Plus size={14} /> Add child
+            </button>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-1 bk-slate text-sm px-2 py-1.5 hover:bk-ink"
+            >
+              <LogOut size={14} /> Log out
+            </button>
+          </div>
         </div>
         <p className="bk-slate text-sm mb-6">{t(UI.parentSub, lang)}</p>
         {showAddChild && (

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, User, Award, Clock } from "lucide-react";
+import { ArrowLeft, User, Award, Clock, LogOut } from "lucide-react";
 import { useLang } from "@/components/layout/LangProvider";
 import { t, UI } from "@/lib/i18n";
 import { RewardBar } from "@/components/child/RewardBar";
@@ -34,14 +34,24 @@ export default function ChildProfilePage() {
     fetchOrRedirect<ChildMe | null>("/api/child/me", router, "/child/login", null).then(setMe);
   }, [router]);
 
+  async function handleLogout() {
+    await fetch("/api/auth/child/logout", { method: "POST" });
+    router.replace("/child/login");
+  }
+
   if (!me) return <div className="bk-bg-cream min-h-[560px] px-6 py-10 text-center bk-slate text-sm">...</div>;
 
   return (
     <div className="bk-bg-cream min-h-[560px] px-6 py-10">
       <div className="max-w-2xl mx-auto">
-        <Link href="/child/library" className="flex items-center gap-1 bk-slate text-sm mb-6 hover:bk-ink">
-          <ArrowLeft size={14} /> {t(UI.backToLibrary, lang)}
-        </Link>
+        <div className="flex items-center justify-between mb-6">
+          <Link href="/child/library" className="flex items-center gap-1 bk-slate text-sm hover:bk-ink">
+            <ArrowLeft size={14} /> {t(UI.backToLibrary, lang)}
+          </Link>
+          <button onClick={handleLogout} className="flex items-center gap-1 bk-slate text-sm hover:bk-ink">
+            <LogOut size={14} /> {t(UI.logout, lang)}
+          </button>
+        </div>
 
         <div className="flex items-center gap-3 mb-8">
           <div className="w-12 h-12 rounded-full bk-bg-night flex items-center justify-center">

@@ -89,6 +89,7 @@ export const UI: Record<string, LocalizedText> = {
   noAssessmentsYet: { en: "No completed assessments yet.", hy: "Դեռ ավարտված առաջադրանքներ չկան։", ru: "Пока нет завершённых заданий." },
 
   profileHeading: { en: "My Profile", hy: "Իմ պրոֆիլը", ru: "Мой профиль" },
+  logout: { en: "Log out", hy: "Դուրս գալ", ru: "Выйти" },
   myBadges: { en: "My badges", hy: "Իմ շքանշանները", ru: "Мои значки" },
   myHistory: { en: "My reading history", hy: "Իմ ընթերցանության պատմությունը", ru: "История моего чтения" },
   rewardHeading: { en: "Free book reward", hy: "Անվճար գրքի պարգև", ru: "Награда — бесплатная книга" },
