@@ -33,8 +33,10 @@ pushed first** — there is no local build or file-copy step.
 7. `npm run build`
 8. `pm2 restart bookalyzer --update-env`
 9. `curl http://127.0.0.1:3001/api/health` — real DB-connectivity check
-   (`prisma.$queryRaw`SELECT 1``), not just a liveness ping. Non-zero exit if
-   it fails.
+   (`prisma.$queryRaw`SELECT 1``), not just a liveness ping. Retried once a
+   second for up to 15s, because `pm2 restart` returns before Next has bound
+   the port — a single 2s sleep used to report a false `Deploy FAILED` on a
+   perfectly good deploy. Non-zero exit only if every attempt fails.
 
 ## The bug already found and fixed once: don't `source .env` in the script
 

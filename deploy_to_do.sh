@@ -41,10 +41,16 @@ echo "==> Restarting app"
 pm2 restart bookalyzer --update-env
 
 echo "==> Verifying health"
-sleep 2
-if curl -fsS "http://127.0.0.1:${PORT:-3001}/api/health" > /dev/null; then
-  echo "Deploy OK: health check passed."
-else
-  echo "Deploy FAILED: health check did not return 200. Check 'pm2 logs bookalyzer'."
-  exit 1
-fi
+# pm2 restart returns before Next has finished binding the port, so poll
+# instead of sleeping once. A single `sleep 2` reported "Deploy FAILED" on a
+# perfectly good deploy (connection refused, then 200 a second later).
+health_url="http://127.0.0.1:${PORT:-3001}/api/health"
+for attempt in $(seq 1 15); do
+  if curl -fsS --max-time 5 "$health_url" > /dev/null 2>&1; then
+    echo "Deploy OK: health check passed (attempt $attempt)."
+    exit 0
+  fi
+  sleep 1
+done
+echo "Deploy FAILED: health check did not return 200 within 15s. Check 'pm2 logs bookalyzer'."
+exit 1
