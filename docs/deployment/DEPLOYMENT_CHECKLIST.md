@@ -46,10 +46,17 @@ FLUSH PRIVILEGES;
 
 ### 3. Repo access
 - [ ] GitHub repo exists and this machine can `git push` to it.
-- [ ] SSH key for droplet access exists locally (`~/.ssh/id_ed25519_do` or
-  similar) and its public half is in the droplet's `~/.ssh/authorized_keys`.
-- [ ] `~/.ssh/config` has a `do-deploy` host alias pointing at
-  `139.59.136.124`. Test: `ssh do-deploy "whoami && hostname"`.
+- [ ] SSH key for droplet access exists locally (`~/.ssh/id_ed25519_do_deploy`)
+  and its public half is in the droplet's `~/.ssh/authorized_keys`.
+- [ ] `~/.ssh/config` has a `do-deploy` host alias:
+  ```
+  Host do-deploy
+      HostName 139.59.136.124
+      User root
+      IdentityFile ~/.ssh/id_ed25519_do_deploy
+      IdentitiesOnly yes
+  ```
+  Test: `ssh do-deploy "whoami && hostname"` → `root` / `ubuntu-shahen`.
 - [ ] The droplet itself needs **no** GitHub credentials — it only ever
   clones/fetches a public repo. If the repo is ever made private, the
   droplet will need read-only deploy-key access added; don't add push
