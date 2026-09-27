@@ -142,6 +142,11 @@ model QuestionAttempt {
   questionId  Int
   answerGiven Json?
   score       Float?
+  // How `score` was produced: EXACT (rule-based types), KEYWORD (open,
+  // left blank — no LLM call), LLM (open, graded by DeepSeek),
+  // LLM_FAILED (DeepSeek unavailable, keyword score kept).
+  gradingMethod    String?
+  gradingReasoning String?  @db.Text
   createdAt   DateTime @default(now())
 
   session   AssessmentSession @relation(fields: [sessionId], references: [id])

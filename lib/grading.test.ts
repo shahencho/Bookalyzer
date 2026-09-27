@@ -15,6 +15,13 @@ test("fillblank: matches answer or alt answers, case/whitespace insensitive", ()
   assert.equal(gradeQuestion("fillblank", content, "ear"), 0);
 });
 
+test("fillblank: accepts grammatical forms in hy / ru / en", () => {
+  assert.equal(gradeQuestion("fillblank", { answer: "աշակերտ", altAnswers: [] }, "աշակերտը"), 1);
+  assert.equal(gradeQuestion("fillblank", { answer: "учеником" }, "ученик"), 1);
+  assert.equal(gradeQuestion("fillblank", { answer: "apprentice" }, "an apprentice"), 1);
+  assert.equal(gradeQuestion("fillblank", { answer: "apprentice" }, "merchant"), 0);
+});
+
 test("ordering: partial credit per correctly placed item", () => {
   const content = { items: ["a", "b", "c", "d"], correctOrder: [0, 1, 2, 3] };
   assert.equal(gradeQuestion("ordering", content, [0, 1, 2, 3]), 1);

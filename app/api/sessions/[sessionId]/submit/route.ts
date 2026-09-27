@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getChildSession } from "@/lib/auth";
 import { gradeQuestion, type QuestionType } from "@/lib/grading";
+import { gradeOpenWithLlm } from "@/lib/llmGrading";
 
 const BADGE_BY_MODE: Record<string, "BRONZE" | "SILVER" | "GOLD"> = {
   SHORT: "BRONZE",
@@ -23,7 +24,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ ses
 
   const assessmentSession = await prisma.assessmentSession.findUnique({
     where: { id: Number(sessionId) },
-    include: { questionAttempts: { include: { question: true } } },
+    include: { book: true, questionAttempts: { include: { question: true } } },
   });
   if (!assessmentSession || assessmentSession.childId !== session.childId) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
@@ -32,11 +33,43 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ ses
     return NextResponse.json({ error: "Session already submitted" }, { status: 409 });
   }
 
-  const breakdown = assessmentSession.questionAttempts.map((attempt) => {
-    const type = attempt.question.type.toLowerCase() as QuestionType;
-    const score = gradeQuestion(type, attempt.question.content as never, attempt.answerGiven);
-    return { attempt, score };
-  });
+  const { book } = assessmentSession;
+
+  // Rule-based grading first. Every answered open question then goes to the
+  // LLM (all in parallel), which judges meaning with the keywords as hints
+  // only — a keyword can appear inside an answer that misses the point, and
+  // a good answer can use none. On LLM failure the keyword score stands.
+  const breakdown = await Promise.all(
+    assessmentSession.questionAttempts.map(async (attempt) => {
+      type Graded = { attempt: typeof attempt; score: number; gradingMethod: string; gradingReasoning: string | null };
+      const type = attempt.question.type.toLowerCase() as QuestionType;
+      const score = gradeQuestion(type, attempt.question.content as never, attempt.answerGiven);
+      if (type !== "open") {
+        return { attempt, score, gradingMethod: "EXACT", gradingReasoning: null } satisfies Graded;
+      }
+
+      const answerText = String(attempt.answerGiven ?? "").trim();
+      if (answerText === "") {
+        return { attempt, score: 0, gradingMethod: "KEYWORD", gradingReasoning: null } satisfies Graded;
+      }
+
+      const llm = await gradeOpenWithLlm({
+        language: book.language,
+        bookTitle: book.title,
+        bookAuthor: book.author,
+        bookSummary: book.extendedSummary,
+        prompt: attempt.question.prompt,
+        bloomLevel: attempt.question.bloomLevel,
+        explanation: attempt.question.explanation,
+        keywords: (attempt.question.content as { keywords?: string[] }).keywords ?? [],
+        answer: answerText,
+      });
+      const graded: Graded = llm
+        ? { attempt, score: llm.score, gradingMethod: "LLM", gradingReasoning: llm.reasoning }
+        : { attempt, score, gradingMethod: "LLM_FAILED", gradingReasoning: null };
+      return graded;
+    })
+  );
 
   const overallScore =
     breakdown.length === 0
@@ -46,8 +79,11 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ ses
   const badgeTier = BADGE_BY_MODE[assessmentSession.readingMode] ?? "BRONZE";
 
   await prisma.$transaction(async (tx) => {
-    for (const { attempt, score } of breakdown) {
-      await tx.questionAttempt.update({ where: { id: attempt.id }, data: { score } });
+    for (const { attempt, score, gradingMethod, gradingReasoning } of breakdown) {
+      await tx.questionAttempt.update({
+        where: { id: attempt.id },
+        data: { score, gradingMethod, gradingReasoning },
+      });
     }
 
     await tx.assessmentSession.update({

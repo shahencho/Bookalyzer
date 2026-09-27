@@ -1,3 +1,5 @@
+import { answerMentions, answersMatch } from "./answerMatching";
+
 export type QuestionType =
   | "mc"
   | "ordering"
@@ -87,11 +89,7 @@ export function gradeQuestion(
 
     case "fillblank": {
       const c = content as FillblankContent;
-      const norm = (s: unknown) => String(s ?? "").trim().toLowerCase();
-      const given = norm(answer);
-      if (given === norm(c.answer)) return 1;
-      if ((c.altAnswers ?? []).some((a) => given === norm(a))) return 1;
-      return 0;
+      return [c.answer, ...(c.altAnswers ?? [])].some((a) => answersMatch(answer, a)) ? 1 : 0;
     }
 
     case "ordering":
@@ -127,8 +125,9 @@ export function gradeQuestion(
 
     case "open": {
       const c = content as OpenContent;
-      const text = String(answer ?? "").toLowerCase();
-      return c.keywords.some((k) => text.includes(k.toLowerCase())) ? 1 : 0;
+      // Whole-word match, so a keyword is not found inside an unrelated
+      // longer word. A miss here is what sends the answer to the LLM.
+      return c.keywords.some((k) => answerMentions(answer, k)) ? 1 : 0;
     }
 
     case "crossword": {

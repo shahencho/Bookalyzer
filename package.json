@@ -12,6 +12,7 @@
     "prisma:deploy": "prisma migrate deploy",
     "prisma:seed": "tsx prisma/seed.ts",
     "create-admin": "tsx scripts/create-admin.ts",
+    "eval-open-grading": "tsx scripts/eval-open-grading.ts",
     "test": "node --import tsx --test lib/**/*.test.ts"
   },
   "engines": {
