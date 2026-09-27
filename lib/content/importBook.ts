@@ -1,5 +1,6 @@
 import { PrismaClient, BookStatus } from "@prisma/client";
 import { validateBookContent } from "./validateBookContent";
+import { scrambleQuestionContent } from "./scrambleOptions";
 
 const QUESTION_TYPE_MAP: Record<string, string> = {
   mc: "MC",
@@ -116,6 +117,7 @@ export async function importBookFile(prisma: PrismaClient, raw: unknown, filePat
       const existing = existingByPrompt.get(key);
       const type = QUESTION_TYPE_MAP[q.type];
       const bloomLevel = BLOOM_MAP[q.bloom_level];
+      const content = scrambleQuestionContent(q.type, q.content, key);
 
       if (existing) {
         await tx.question.update({
@@ -123,7 +125,7 @@ export async function importBookFile(prisma: PrismaClient, raw: unknown, filePat
           data: {
             type: type as never,
             bloomLevel: bloomLevel as never,
-            content: q.content as never,
+            content: content as never,
             explanation: q.explanation,
           },
         });
@@ -135,7 +137,7 @@ export async function importBookFile(prisma: PrismaClient, raw: unknown, filePat
             type: type as never,
             bloomLevel: bloomLevel as never,
             prompt: q.prompt,
-            content: q.content as never,
+            content: content as never,
             explanation: q.explanation,
           },
         });
